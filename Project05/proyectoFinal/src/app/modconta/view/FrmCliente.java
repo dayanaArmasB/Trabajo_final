@@ -35,6 +35,7 @@ public class FrmCliente extends javax.swing.JInternalFrame {
      * Creates new form FrmCliente
      */
     public FrmCliente() {
+    	setTitle("CLIENTES");
         initComponents();
          ClienteDAO = new ClienteDAO();
         _DefaultTableModel = (DefaultTableModel)tblCliente.getModel();
@@ -158,7 +159,7 @@ public void llenaTabla(boolean swr, String cadr)
 
         lblTitulo.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         lblTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblTitulo.setText("CLIENTE");
+        lblTitulo.setText("CLIENTES");
 
         btnSalir.setText("Salir");
         btnSalir.addActionListener(new java.awt.event.ActionListener() {
@@ -200,14 +201,10 @@ public void llenaTabla(boolean swr, String cadr)
         txtNombre.setBounds(130, 10, 310, 30);
         jLabel5 = new javax.swing.JLabel();
         jLabel5.setBounds(58, 279, 60, 20);
-        btnLimpiar = new javax.swing.JButton();
-        btnLimpiar.setBounds(535, 188, 80, 30);
         txtRUC = new javax.swing.JTextField();
         txtRUC.setBounds(130, 317, 310, 30);
         jLabel6 = new javax.swing.JLabel();
         jLabel6.setBounds(50, 236, 50, 21);
-        btnRegistrar = new javax.swing.JButton();
-        btnRegistrar.setBounds(525, 145, 90, 30);
         txtTelefono = new javax.swing.JTextField();
         txtTelefono.setBounds(130, 231, 310, 30);
         txtDNI = new javax.swing.JTextField();
@@ -224,8 +221,6 @@ public void llenaTabla(boolean swr, String cadr)
         txtDireccion.setBounds(130, 188, 310, 30);
         jLabel8 = new javax.swing.JLabel();
         jLabel8.setBounds(50, 150, 40, 21);
-        jButton2 = new javax.swing.JButton();
-        jButton2.setBounds(545, 236, 60, 32);
         
                 jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
                 
@@ -245,13 +240,6 @@ public void llenaTabla(boolean swr, String cadr)
                                         });
                                         
                                                 jLabel5.setText("DNI");
-                                                
-                                                        btnLimpiar.setText("Limpiar");
-                                                        btnLimpiar.addActionListener(new java.awt.event.ActionListener() {
-                                                            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                                                                btnLimpiarActionPerformed(evt);
-                                                            }
-                                                        });
                                                         
                                                                 txtRUC.setName("txtRUC"); // NOI18N
                                                                 txtRUC.addActionListener(new java.awt.event.ActionListener() {
@@ -262,108 +250,86 @@ public void llenaTabla(boolean swr, String cadr)
                                                                 
                                                                         jLabel6.setText("Telefono");
                                                                         
-                                                                                btnRegistrar.setText("Registrar");
-                                                                                btnRegistrar.addActionListener(new java.awt.event.ActionListener() {
+                                                                                txtTelefono.setName("txtDireccion"); // NOI18N
+                                                                                txtTelefono.addActionListener(new java.awt.event.ActionListener() {
                                                                                     public void actionPerformed(java.awt.event.ActionEvent evt) {
-                                                                                        btnRegistrarActionPerformed(evt);
-                                                                                    }
-                                                                                });
-                                                                                btnRegistrar.addKeyListener(new java.awt.event.KeyAdapter() {
-                                                                                    public void keyPressed(java.awt.event.KeyEvent evt) {
-                                                                                        btnRegistrarKeyPressed(evt);
+                                                                                        txtTelefonoActionPerformed(evt);
                                                                                     }
                                                                                 });
                                                                                 
-                                                                                        txtTelefono.setName("txtDireccion"); // NOI18N
-                                                                                        txtTelefono.addActionListener(new java.awt.event.ActionListener() {
+                                                                                        txtDNI.setName("txtDireccion"); // NOI18N
+                                                                                        txtDNI.addActionListener(new java.awt.event.ActionListener() {
                                                                                             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                                                                                                txtTelefonoActionPerformed(evt);
+                                                                                                txtDNIActionPerformed(evt);
                                                                                             }
                                                                                         });
                                                                                         
-                                                                                                txtDNI.setName("txtDireccion"); // NOI18N
-                                                                                                txtDNI.addActionListener(new java.awt.event.ActionListener() {
-                                                                                                    public void actionPerformed(java.awt.event.ActionEvent evt) {
-                                                                                                        txtDNIActionPerformed(evt);
-                                                                                                    }
-                                                                                                });
+                                                                                                jLabel7.setText("RUC");
                                                                                                 
-                                                                                                        jLabel7.setText("RUC");
+                                                                                                        jLabel1.setText("Direcci\u00F3n");
                                                                                                         
-                                                                                                                jLabel1.setText("Direcci\u00F3n");
+                                                                                                                jPanelrbtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
                                                                                                                 
-                                                                                                                        jPanelrbtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+                                                                                                                        jRadioButton1.setText("Masculino");
                                                                                                                         
-                                                                                                                                jRadioButton1.setText("Masculino");
+                                                                                                                                jRadioButton2.setText("Femenino");
+                                                                                                                                jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
+                                                                                                                                    public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                                                                                                                        jRadioButton2ActionPerformed(evt);
+                                                                                                                                    }
+                                                                                                                                });
                                                                                                                                 
-                                                                                                                                        jRadioButton2.setText("Femenino");
-                                                                                                                                        jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
-                                                                                                                                            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                                                                                                                                                jRadioButton2ActionPerformed(evt);
-                                                                                                                                            }
-                                                                                                                                        });
+                                                                                                                                        javax.swing.GroupLayout jPanelrbtnLayout = new javax.swing.GroupLayout(jPanelrbtn);
+                                                                                                                                        jPanelrbtn.setLayout(jPanelrbtnLayout);
+                                                                                                                                        jPanelrbtnLayout.setHorizontalGroup(
+                                                                                                                                            jPanelrbtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                                                                                                            .addGroup(jPanelrbtnLayout.createSequentialGroup()
+                                                                                                                                                .addGap(22, 22, 22)
+                                                                                                                                                .addComponent(jRadioButton1)
+                                                                                                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
+                                                                                                                                                .addComponent(jRadioButton2)
+                                                                                                                                                .addGap(32, 32, 32))
+                                                                                                                                        );
+                                                                                                                                        jPanelrbtnLayout.setVerticalGroup(
+                                                                                                                                            jPanelrbtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                                                                                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelrbtnLayout.createSequentialGroup()
+                                                                                                                                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                                                                                                                .addGroup(jPanelrbtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                                                                                                                                    .addComponent(jRadioButton1)
+                                                                                                                                                    .addComponent(jRadioButton2))
+                                                                                                                                                .addContainerGap())
+                                                                                                                                        );
                                                                                                                                         
-                                                                                                                                                javax.swing.GroupLayout jPanelrbtnLayout = new javax.swing.GroupLayout(jPanelrbtn);
-                                                                                                                                                jPanelrbtn.setLayout(jPanelrbtnLayout);
-                                                                                                                                                jPanelrbtnLayout.setHorizontalGroup(
-                                                                                                                                                    jPanelrbtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                                                                                                                    .addGroup(jPanelrbtnLayout.createSequentialGroup()
-                                                                                                                                                        .addGap(22, 22, 22)
-                                                                                                                                                        .addComponent(jRadioButton1)
-                                                                                                                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
-                                                                                                                                                        .addComponent(jRadioButton2)
-                                                                                                                                                        .addGap(32, 32, 32))
-                                                                                                                                                );
-                                                                                                                                                jPanelrbtnLayout.setVerticalGroup(
-                                                                                                                                                    jPanelrbtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                                                                                                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelrbtnLayout.createSequentialGroup()
-                                                                                                                                                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                                                                                                                        .addGroup(jPanelrbtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                                                                                                                                            .addComponent(jRadioButton1)
-                                                                                                                                                            .addComponent(jRadioButton2))
-                                                                                                                                                        .addContainerGap())
-                                                                                                                                                );
-                                                                                                                                                
-                                                                                                                                                        jLabel8.setText("Sexo");
+                                                                                                                                                jLabel8.setText("Sexo");
                                                                                                                                                         
-                                                                                                                                                                jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/buscar.gif"))); // NOI18N
-                                                                                                                                                                jButton2.addActionListener(new java.awt.event.ActionListener() {
-                                                                                                                                                                    public void actionPerformed(java.awt.event.ActionEvent evt) {
-                                                                                                                                                                        jButton2ActionPerformed(evt);
-                                                                                                                                                                    }
-                                                                                                                                                                });
+                                                                                                                                                                jTabbedPane1.addTab("Registrar", jPanel4);
                                                                                                                                                                 
-                                                                                                                                                                        jTabbedPane1.addTab("Registrar", jPanel4);
-                                                                                                                                                                        
-                                                                                                                                                                        lblApellidoMaterno = new JLabel();
-                                                                                                                                                                        lblApellidoMaterno.setBounds(16, 97, 102, 21);
-                                                                                                                                                                        lblApellidoMaterno.setText("Apellido Materno");
-                                                                                                                                                                        
-                                                                                                                                                                        txtApellidoM = new JTextField();
-                                                                                                                                                                        txtApellidoM.setBounds(130, 92, 189, 30);
-                                                                                                                                                                        jPanel4.setLayout(null);
-                                                                                                                                                                        jPanel4.add(jLabel3);
-                                                                                                                                                                        jPanel4.add(jLabel4);
-                                                                                                                                                                        jPanel4.add(txtNombre);
-                                                                                                                                                                        jPanel4.add(jLabel5);
-                                                                                                                                                                        jPanel4.add(btnLimpiar);
-                                                                                                                                                                        jPanel4.add(txtRUC);
-                                                                                                                                                                        jPanel4.add(jLabel6);
-                                                                                                                                                                        jPanel4.add(btnRegistrar);
-                                                                                                                                                                        jPanel4.add(txtTelefono);
-                                                                                                                                                                        jPanel4.add(txtDNI);
-                                                                                                                                                                        jPanel4.add(jLabel7);
-                                                                                                                                                                        jPanel4.add(jLabel1);
-                                                                                                                                                                        jPanel4.add(jPanelrbtn);
-                                                                                                                                                                        jPanel4.add(txtDireccion);
-                                                                                                                                                                        jPanel4.add(jLabel8);
-                                                                                                                                                                        jPanel4.add(jButton2);
-                                                                                                                                                                        jPanel4.add(lblApellidoMaterno);
-                                                                                                                                                                        jPanel4.add(txtApellidoM);
-                                                                                                                                                                        
-                                                                                                                                                                        txtApellidoP = new JTextField();
-                                                                                                                                                                        txtApellidoP.setBounds(130, 53, 189, 30);
-                                                                                                                                                                        jPanel4.add(txtApellidoP);
+                                                                                                                                                                lblApellidoMaterno = new JLabel();
+                                                                                                                                                                lblApellidoMaterno.setBounds(16, 97, 102, 21);
+                                                                                                                                                                lblApellidoMaterno.setText("Apellido Materno");
+                                                                                                                                                                
+                                                                                                                                                                txtApellidoM = new JTextField();
+                                                                                                                                                                txtApellidoM.setBounds(130, 92, 189, 30);
+                                                                                                                                                                jPanel4.setLayout(null);
+                                                                                                                                                                jPanel4.add(jLabel3);
+                                                                                                                                                                jPanel4.add(jLabel4);
+                                                                                                                                                                jPanel4.add(txtNombre);
+                                                                                                                                                                jPanel4.add(jLabel5);
+                                                                                                                                                                jPanel4.add(txtRUC);
+                                                                                                                                                                jPanel4.add(jLabel6);
+                                                                                                                                                                jPanel4.add(txtTelefono);
+                                                                                                                                                                jPanel4.add(txtDNI);
+                                                                                                                                                                jPanel4.add(jLabel7);
+                                                                                                                                                                jPanel4.add(jLabel1);
+                                                                                                                                                                jPanel4.add(jPanelrbtn);
+                                                                                                                                                                jPanel4.add(txtDireccion);
+                                                                                                                                                                jPanel4.add(jLabel8);
+                                                                                                                                                                jPanel4.add(lblApellidoMaterno);
+                                                                                                                                                                jPanel4.add(txtApellidoM);
+                                                                                                                                                                
+                                                                                                                                                                txtApellidoP = new JTextField();
+                                                                                                                                                                txtApellidoP.setBounds(130, 53, 189, 30);
+                                                                                                                                                                jPanel4.add(txtApellidoP);
         jPanel3.add(jTextField1);
         jTextField1.setBounds(230, 10, 250, 30);
 
@@ -373,37 +339,81 @@ public void llenaTabla(boolean swr, String cadr)
         jComboBox1.setBounds(100, 10, 120, 30);
 
         jTabbedPane1.addTab("Búsqueda", jPanel3);
+        btnRegistrar = new javax.swing.JButton();
+        
+                btnRegistrar.setText("Registrar");
+                btnRegistrar.addActionListener(new java.awt.event.ActionListener() {
+                    public void actionPerformed(java.awt.event.ActionEvent evt) {
+                        btnRegistrarActionPerformed(evt);
+                    }
+                });
+                btnRegistrar.addKeyListener(new java.awt.event.KeyAdapter() {
+                    public void keyPressed(java.awt.event.KeyEvent evt) {
+                        btnRegistrarKeyPressed(evt);
+                    }
+                });
+        btnLimpiar = new javax.swing.JButton();
+        
+                btnLimpiar.setText("Limpiar");
+                btnLimpiar.addActionListener(new java.awt.event.ActionListener() {
+                    public void actionPerformed(java.awt.event.ActionEvent evt) {
+                        btnLimpiarActionPerformed(evt);
+                    }
+                });
+        jButton2 = new javax.swing.JButton();
+        
+                jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/buscar.gif"))); // NOI18N
+                jButton2.addActionListener(new java.awt.event.ActionListener() {
+                    public void actionPerformed(java.awt.event.ActionEvent evt) {
+                        jButton2ActionPerformed(evt);
+                    }
+                });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         layout.setHorizontalGroup(
-        	layout.createParallelGroup(Alignment.LEADING)
-        		.addGroup(layout.createSequentialGroup()
-        			.addGap(191)
-        			.addComponent(jButton1, GroupLayout.PREFERRED_SIZE, 196, GroupLayout.PREFERRED_SIZE)
-        			.addGap(18)
-        			.addComponent(btnSalir, GroupLayout.PREFERRED_SIZE, 73, GroupLayout.PREFERRED_SIZE)
-        			.addContainerGap(412, Short.MAX_VALUE))
-        		.addGroup(layout.createSequentialGroup()
-        			.addContainerGap()
-        			.addComponent(jTabbedPane1, GroupLayout.PREFERRED_SIZE, 781, GroupLayout.PREFERRED_SIZE)
-        			.addContainerGap())
-        		.addGroup(layout.createSequentialGroup()
-        			.addGap(67)
-        			.addComponent(lblTitulo, GroupLayout.DEFAULT_SIZE, 687, Short.MAX_VALUE)
-        			.addGap(136))
+        	layout.createParallelGroup(Alignment.TRAILING)
+        		.addGroup(Alignment.LEADING, layout.createSequentialGroup()
+        			.addGap(143)
+        			.addComponent(lblTitulo, GroupLayout.DEFAULT_SIZE, 514, Short.MAX_VALUE)
+        			.addGap(180))
+        		.addGroup(Alignment.LEADING, layout.createSequentialGroup()
+        			.addGap(27)
+        			.addGroup(layout.createParallelGroup(Alignment.LEADING)
+        				.addComponent(jTabbedPane1, GroupLayout.PREFERRED_SIZE, 798, GroupLayout.PREFERRED_SIZE)
+        				.addGroup(layout.createSequentialGroup()
+        					.addComponent(btnRegistrar, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE)
+        					.addPreferredGap(ComponentPlacement.UNRELATED)
+        					.addComponent(btnLimpiar, GroupLayout.PREFERRED_SIZE, 80, GroupLayout.PREFERRED_SIZE)
+        					.addGap(18)
+        					.addComponent(jButton2, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE)
+        					.addGap(248)
+        					.addComponent(jButton1, GroupLayout.PREFERRED_SIZE, 196, GroupLayout.PREFERRED_SIZE)
+        					.addPreferredGap(ComponentPlacement.RELATED)
+        					.addComponent(btnSalir, GroupLayout.PREFERRED_SIZE, 73, GroupLayout.PREFERRED_SIZE)))
+        			.addContainerGap(12, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
         	layout.createParallelGroup(Alignment.LEADING)
         		.addGroup(layout.createSequentialGroup()
-        			.addGap(22)
+        			.addGap(20)
         			.addComponent(lblTitulo)
-        			.addPreferredGap(ComponentPlacement.RELATED)
+        			.addGap(18)
         			.addComponent(jTabbedPane1, GroupLayout.PREFERRED_SIZE, 411, GroupLayout.PREFERRED_SIZE)
-        			.addGap(27)
-        			.addGroup(layout.createParallelGroup(Alignment.BASELINE)
-        				.addComponent(btnSalir, GroupLayout.PREFERRED_SIZE, 38, GroupLayout.PREFERRED_SIZE)
-        				.addComponent(jButton1, GroupLayout.PREFERRED_SIZE, 53, GroupLayout.PREFERRED_SIZE))
-        			.addContainerGap(23, Short.MAX_VALUE))
+        			.addGap(18)
+        			.addGroup(layout.createParallelGroup(Alignment.LEADING)
+        				.addGroup(layout.createSequentialGroup()
+        					.addGap(18)
+        					.addGroup(layout.createParallelGroup(Alignment.BASELINE)
+        						.addComponent(btnSalir)
+        						.addComponent(jButton1)))
+        				.addGroup(layout.createSequentialGroup()
+        					.addGap(18)
+        					.addGroup(layout.createParallelGroup(Alignment.LEADING)
+        						.addComponent(jButton2, GroupLayout.PREFERRED_SIZE, 32, GroupLayout.PREFERRED_SIZE)
+        						.addGroup(layout.createParallelGroup(Alignment.BASELINE)
+        							.addComponent(btnRegistrar, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+        							.addComponent(btnLimpiar, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)))))
+        			.addContainerGap(44, Short.MAX_VALUE))
         );
         getContentPane().setLayout(layout);
 

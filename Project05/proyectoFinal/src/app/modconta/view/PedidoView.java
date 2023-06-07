@@ -22,6 +22,9 @@ import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.engine.JasperReport;
 import net.sf.jasperreports.view.JasperViewer;
 import org.jdesktop.swingx.autocomplete.AutoCompleteDecorator;
+import javax.swing.GroupLayout.Alignment;
+import javax.swing.GroupLayout;
+import javax.swing.LayoutStyle.ComponentPlacement;
 
 
 public class PedidoView extends javax.swing.JInternalFrame 
@@ -41,6 +44,7 @@ public class PedidoView extends javax.swing.JInternalFrame
     
     public PedidoView() 
     {
+    	setTitle("PEDIDOS");
         initComponents();
         
         dtm2 = (DefaultTableModel)tbGrupos.getModel();
@@ -155,11 +159,11 @@ public class PedidoView extends javax.swing.JInternalFrame
         btnFechaEntrega.setDate(Calendar.getInstance().getTime());
         btnFechaEntrega.setPreferredSize(new java.awt.Dimension(120, 20));
         jPanel4.add(btnFechaEntrega);
-        btnFechaEntrega.setBounds(140, 80, 120, 20);
+        btnFechaEntrega.setBounds(150, 119, 120, 20);
 
         jLabel5.setText("Fecha de Entrega");
         jPanel4.add(jLabel5);
-        jLabel5.setBounds(30, 80, 110, 20);
+        jLabel5.setBounds(30, 119, 110, 20);
 
         comboGrupos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -167,7 +171,7 @@ public class PedidoView extends javax.swing.JInternalFrame
             }
         });
         jPanel4.add(comboGrupos);
-        comboGrupos.setBounds(80, 140, 90, 29);
+        comboGrupos.setBounds(105, 159, 90, 29);
 
         tbGrupos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -185,9 +189,9 @@ public class PedidoView extends javax.swing.JInternalFrame
         jScrollPane4.setViewportView(tbGrupos);
 
         jPanel4.add(jScrollPane4);
-        jScrollPane4.setBounds(30, 220, 590, 200);
+        jScrollPane4.setBounds(30, 249, 590, 200);
         jPanel4.add(txtPlantel);
-        txtPlantel.setBounds(440, 140, 90, 29);
+        txtPlantel.setBounds(364, 159, 90, 29);
 
         btnAgregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGES/agregar.png"))); // NOI18N
         btnAgregar.addActionListener(new java.awt.event.ActionListener() {
@@ -196,7 +200,7 @@ public class PedidoView extends javax.swing.JInternalFrame
             }
         });
         jPanel4.add(btnAgregar);
-        btnAgregar.setBounds(540, 100, 35, 32);
+        btnAgregar.setBounds(585, 107, 35, 32);
 
         btnModificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/update.png"))); // NOI18N
         btnModificar.addActionListener(new java.awt.event.ActionListener() {
@@ -205,7 +209,7 @@ public class PedidoView extends javax.swing.JInternalFrame
             }
         });
         jPanel4.add(btnModificar);
-        btnModificar.setBounds(540, 140, 35, 32);
+        btnModificar.setBounds(585, 140, 35, 32);
 
         btnEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGES/eliminar.png"))); // NOI18N
         btnEliminar.addActionListener(new java.awt.event.ActionListener() {
@@ -214,7 +218,7 @@ public class PedidoView extends javax.swing.JInternalFrame
             }
         });
         jPanel4.add(btnEliminar);
-        btnEliminar.setBounds(540, 180, 37, 34);
+        btnEliminar.setBounds(583, 175, 37, 34);
 
         btnLimpiar.setText("Limpiar");
         btnLimpiar.addActionListener(new java.awt.event.ActionListener() {
@@ -227,25 +231,25 @@ public class PedidoView extends javax.swing.JInternalFrame
 
         jLabel9.setText("Grupo");
         jPanel4.add(jLabel9);
-        jLabel9.setBounds(30, 140, 50, 21);
+        jLabel9.setBounds(31, 163, 50, 21);
 
         jLabel3.setText("Plantel");
         jPanel4.add(jLabel3);
-        jLabel3.setBounds(380, 140, 50, 20);
+        jLabel3.setBounds(300, 163, 50, 20);
 
         spincant.setModel(new javax.swing.SpinnerNumberModel(0, 0, 10000, 1));
         jPanel4.add(spincant);
-        spincant.setBounds(440, 170, 123, 29);
+        spincant.setBounds(413, 201, 123, 29);
 
         jLabel4.setText("Horas");
         jPanel4.add(jLabel4);
-        jLabel4.setBounds(380, 170, 50, 20);
+        jLabel4.setBounds(364, 205, 50, 20);
         jPanel4.add(txtRucCliente);
-        txtRucCliente.setBounds(220, 50, 140, 29);
+        txtRucCliente.setBounds(274, 70, 140, 29);
 
         jLabel10.setText("Cliente");
         jPanel4.add(jLabel10);
-        jLabel10.setBounds(30, 50, 100, 20);
+        jLabel10.setBounds(30, 74, 61, 20);
 
         comboClientes.setEditable(true);
         comboClientes.addActionListener(new java.awt.event.ActionListener() {
@@ -254,19 +258,19 @@ public class PedidoView extends javax.swing.JInternalFrame
             }
         });
         jPanel4.add(comboClientes);
-        comboClientes.setBounds(80, 50, 130, 29);
+        comboClientes.setBounds(105, 70, 130, 29);
 
         jLabel2.setText("Folio");
         jPanel4.add(jLabel2);
-        jLabel2.setBounds(30, 20, 33, 21);
+        jLabel2.setBounds(30, 24, 33, 21);
         jPanel4.add(txtfolio);
         txtfolio.setBounds(80, 20, 130, 29);
         jPanel4.add(txtobservaciondetalle);
-        txtobservaciondetalle.setBounds(120, 170, 230, 29);
+        txtobservaciondetalle.setBounds(108, 201, 230, 29);
 
-        lblObservacion.setText("Observación");
+        lblObservacion.setText("Observaci\u00F3n");
         jPanel4.add(lblObservacion);
-        lblObservacion.setBounds(30, 170, 82, 21);
+        lblObservacion.setBounds(30, 205, 82, 21);
 
         btnLeer.setText("Leer");
         btnLeer.addActionListener(new java.awt.event.ActionListener() {
@@ -284,7 +288,7 @@ public class PedidoView extends javax.swing.JInternalFrame
             }
         });
         jPanel4.add(btnBuscar);
-        btnBuscar.setBounds(220, 13, 40, 30);
+        btnBuscar.setBounds(321, 15, 40, 30);
 
         jTabbedPane1.addTab("Registrar Pedidos", jPanel4);
 
@@ -346,52 +350,53 @@ public class PedidoView extends javax.swing.JInternalFrame
         });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(34, 34, 34)
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 651, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnRegistrar, javax.swing.GroupLayout.DEFAULT_SIZE, 136, Short.MAX_VALUE)
-                    .addComponent(btnSalir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnModificarPedido, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnAnular, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnAprobar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnCotizar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnExportarPDF, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(50, 50, 50))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(284, 284, 284))
+        	layout.createParallelGroup(Alignment.LEADING)
+        		.addGroup(layout.createSequentialGroup()
+        			.addGap(34)
+        			.addComponent(jTabbedPane1, GroupLayout.PREFERRED_SIZE, 651, GroupLayout.PREFERRED_SIZE)
+        			.addGap(18)
+        			.addGroup(layout.createParallelGroup(Alignment.LEADING, false)
+        				.addComponent(btnSalir, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        				.addComponent(btnCotizar, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        				.addComponent(btnExportarPDF, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        				.addComponent(btnAnular, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        				.addComponent(btnAprobar, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        				.addComponent(btnModificarPedido, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        				.addComponent(btnRegistrar, GroupLayout.PREFERRED_SIZE, 161, GroupLayout.PREFERRED_SIZE))
+        			.addContainerGap(99, Short.MAX_VALUE))
+        		.addGroup(Alignment.TRAILING, layout.createSequentialGroup()
+        			.addContainerGap(303, Short.MAX_VALUE)
+        			.addComponent(jLabel1)
+        			.addGap(293))
         );
         layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(7, 7, 7)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 465, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 26, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(100, 100, 100)
-                .addComponent(btnRegistrar)
-                .addGap(3, 3, 3)
-                .addComponent(btnModificarPedido)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnAprobar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnAnular)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnExportarPDF)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnCotizar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnSalir)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        	layout.createParallelGroup(Alignment.LEADING)
+        		.addGroup(layout.createSequentialGroup()
+        			.addGroup(layout.createParallelGroup(Alignment.LEADING)
+        				.addGroup(layout.createSequentialGroup()
+        					.addGap(12)
+        					.addComponent(jLabel1, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)
+        					.addPreferredGap(ComponentPlacement.RELATED)
+        					.addComponent(jTabbedPane1, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        				.addGroup(layout.createSequentialGroup()
+        					.addGap(100)
+        					.addComponent(btnRegistrar)
+        					.addGap(3)
+        					.addComponent(btnModificarPedido)
+        					.addPreferredGap(ComponentPlacement.RELATED)
+        					.addComponent(btnAprobar)
+        					.addPreferredGap(ComponentPlacement.RELATED)
+        					.addComponent(btnAnular)
+        					.addPreferredGap(ComponentPlacement.RELATED)
+        					.addComponent(btnExportarPDF)
+        					.addPreferredGap(ComponentPlacement.RELATED)
+        					.addComponent(btnCotizar)
+        					.addPreferredGap(ComponentPlacement.RELATED)
+        					.addComponent(btnSalir)))
+        			.addContainerGap())
         );
+        getContentPane().setLayout(layout);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

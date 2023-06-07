@@ -26,7 +26,7 @@ public class MovimientosDo {
     }
     
     
- /* public List<Movimiento> ListarMovimientos() 
+  public List<Movimiento> ListarMovimientos() 
   { 
    List<Movimiento> listaMov = null;
    Movimiento mov = null;
@@ -64,7 +64,7 @@ public class MovimientosDo {
            System.out.println("The 'try catch' is finished.");}
           }
      return listaMov;
-  }*/
+  }
 
     /*public boolean RegistrarMovimiento ( Movimiento mov ) throws SQLException
     {       

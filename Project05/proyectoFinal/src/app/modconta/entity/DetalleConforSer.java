@@ -7,10 +7,7 @@ package app.modconta.entity;
 
 import java.util.logging.Logger;
 
-/**
- *
- * @author RAUL
- */
+
 public class DetalleConforSer 
 {
     

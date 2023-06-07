@@ -23,6 +23,8 @@ import org.jdesktop.swingx.autocomplete.AutoCompleteDecorator;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.GroupLayout;
 import javax.swing.LayoutStyle.ComponentPlacement;
+import javax.swing.JTable;
+import javax.swing.JTextArea;
 
 public class ServicioView extends javax.swing.JInternalFrame {
       //variables  
@@ -36,6 +38,7 @@ public class ServicioView extends javax.swing.JInternalFrame {
     int idClie; 
     Helper h = new Helper();
     public ServicioView() {
+    	setTitle("ORDEN DE SERVICIO");
         ServicioDAO = new ServicioDAO();
         detserDAO = new detserDAO();
         initComponents();
@@ -47,32 +50,32 @@ public class ServicioView extends javax.swing.JInternalFrame {
         comboTienda.setModel(h.getvaluesTienda("Tienda"));
         AutoCompleteDecorator.decorate(comboTienda);
         jButton5 = new javax.swing.JButton();
-        jButton5.setBounds(109, 471, 85, 20);
+        jButton5.setBounds(95, 384, 85, 20);
         jPanel4.add(jButton5);
         
                 jButton5.setText("Registrar");
                 jButton7 = new javax.swing.JButton();
-                jButton7.setBounds(206, 471, 79, 20);
+                jButton7.setBounds(200, 384, 79, 20);
                 jPanel4.add(jButton7);
                 
                         jButton7.setText("Aprobar");
                         jButton8 = new javax.swing.JButton();
-                        jButton8.setBounds(294, 471, 69, 20);
+                        jButton8.setBounds(300, 384, 69, 20);
                         jPanel4.add(jButton8);
                         
                                 jButton8.setText("Anular");
                                 jButton9 = new javax.swing.JButton();
-                                jButton9.setBounds(362, 471, 81, 20);
+                                jButton9.setBounds(389, 384, 81, 20);
                                 jPanel4.add(jButton9);
                                 
                                         jButton9.setText("Imprimir");
                                         jButton6 = new javax.swing.JButton();
-                                        jButton6.setBounds(446, 471, 125, 20);
+                                        jButton6.setBounds(495, 384, 125, 20);
                                         jPanel4.add(jButton6);
                                         
                                                 jButton6.setText("Generar Factura");
                                                 jButton4 = new javax.swing.JButton();
-                                                jButton4.setBounds(583, 471, 83, 20);
+                                                jButton4.setBounds(319, 437, 83, 20);
                                                 jPanel4.add(jButton4);
                                                 
                                                         jButton4.setText("Salir");
@@ -96,7 +99,6 @@ public class ServicioView extends javax.swing.JInternalFrame {
                                 jButton7ActionPerformed(evt);
                             }
                         });
-         dtm = (DefaultTableModel)tblServicio.getModel();
 //         dtm2 = (DefaultTableModel)jTable1.getModel();
        // llenaTabla(false, "");
     }
@@ -117,7 +119,6 @@ public class ServicioView extends javax.swing.JInternalFrame {
         jLabel9 = new javax.swing.JLabel();
         comboTienda = new javax.swing.JComboBox<>();
         jScrollPane4 = new javax.swing.JScrollPane();
-        tblServicio = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         btnLimpiar = new javax.swing.JButton();
@@ -128,13 +129,13 @@ public class ServicioView extends javax.swing.JInternalFrame {
         setMaximizable(true);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel1.setText("MANTENIMIENTO ORDEN DE SERVICIO");
+        jLabel1.setText("ORDEN DE SERVICIO");
 
         jTabbedPane1.setMaximumSize(new java.awt.Dimension(32769, 32769));
 
         jPanel4.setLayout(null);
 
-        jLabel8.setText("Número de Factura");
+        jLabel8.setText("N�mero de Factura");
         jPanel4.add(jLabel8);
         jLabel8.setBounds(30, 20, 100, 16);
 
@@ -170,33 +171,28 @@ public class ServicioView extends javax.swing.JInternalFrame {
         jPanel4.add(comboTienda);
         comboTienda.setBounds(150, 50, 120, 22);
 
-        tblServicio.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
+        jPanel4.add(jScrollPane4);
+        jScrollPane4.setBounds(20, 140, 630, 141);
+        
+        tblServicio = new JTable();
+        tblServicio.setModel(new DefaultTableModel(
+        	new Object[][] {
+        	},
+        	new String[] {
+        		"N\u00FAmero de factura", "Tienda", "Fecha de recepci\u00F3n", "Fecha de entrega"
+        	}
         ));
         jScrollPane4.setViewportView(tblServicio);
 
-        jPanel4.add(jScrollPane4);
-        jScrollPane4.setBounds(20, 140, 630, 141);
-
         jLabel2.setText("Recomendaciones");
         jPanel4.add(jLabel2);
-        jLabel2.setBounds(30, 365, 103, 16);
+        jLabel2.setBounds(30, 320, 103, 16);
 
         jPanel4.add(jScrollPane1);
-        jScrollPane1.setBounds(150, 333, 510, 100);
-        txtRecomendacion = new javax.swing.JTextArea();
-        jScrollPane1.setViewportView(txtRecomendacion);
+        jScrollPane1.setBounds(130, 302, 520, 60);
         
-                txtRecomendacion.setColumns(20);
-                txtRecomendacion.setRows(5);
+        JTextArea txtRecomendaciones = new JTextArea();
+        jScrollPane1.setViewportView(txtRecomendaciones);
 
         btnLimpiar.setText("Limpiar");
         btnLimpiar.addActionListener(new java.awt.event.ActionListener() {
@@ -205,25 +201,24 @@ public class ServicioView extends javax.swing.JInternalFrame {
             }
         });
         jPanel4.add(btnLimpiar);
-        btnLimpiar.setBounds(662, 184, 107, 25);
+        btnLimpiar.setBounds(664, 190, 107, 25);
 
         jLabel13.setText("Fecha de Recibido");
         jPanel4.add(jLabel13);
         jLabel13.setBounds(360, 20, 110, 20);
 
-        jTabbedPane1.addTab("Ficha Técnica", jPanel4);
+        jTabbedPane1.addTab("Detalles", jPanel4);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         layout.setHorizontalGroup(
         	layout.createParallelGroup(Alignment.LEADING)
         		.addGroup(layout.createSequentialGroup()
-        			.addGroup(layout.createParallelGroup(Alignment.LEADING)
-        				.addGroup(layout.createSequentialGroup()
-        					.addGap(259)
-        					.addComponent(jLabel1, GroupLayout.PREFERRED_SIZE, 479, GroupLayout.PREFERRED_SIZE))
-        				.addGroup(layout.createSequentialGroup()
-        					.addGap(34)
-        					.addComponent(jTabbedPane1, GroupLayout.PREFERRED_SIZE, 786, GroupLayout.PREFERRED_SIZE)))
+        			.addContainerGap(285, Short.MAX_VALUE)
+        			.addComponent(jLabel1, GroupLayout.PREFERRED_SIZE, 286, GroupLayout.PREFERRED_SIZE)
+        			.addGap(285))
+        		.addGroup(layout.createSequentialGroup()
+        			.addGap(34)
+        			.addComponent(jTabbedPane1, GroupLayout.PREFERRED_SIZE, 786, GroupLayout.PREFERRED_SIZE)
         			.addContainerGap(36, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -232,8 +227,8 @@ public class ServicioView extends javax.swing.JInternalFrame {
         			.addContainerGap()
         			.addComponent(jLabel1, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)
         			.addPreferredGap(ComponentPlacement.RELATED)
-        			.addComponent(jTabbedPane1, GroupLayout.PREFERRED_SIZE, 579, GroupLayout.PREFERRED_SIZE)
-        			.addGap(55))
+        			.addComponent(jTabbedPane1, GroupLayout.PREFERRED_SIZE, 505, GroupLayout.PREFERRED_SIZE)
+        			.addGap(96))
         );
         getContentPane().setLayout(layout);
 
@@ -350,7 +345,5 @@ public class ServicioView extends javax.swing.JInternalFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTable tblServicio;
-    private javax.swing.JTextArea txtRecomendacion;
-    // End of variables declaration//GEN-END:variables
+    private JTable tblServicio;
 }

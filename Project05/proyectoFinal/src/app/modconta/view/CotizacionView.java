@@ -22,6 +22,9 @@ import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.engine.JasperReport;
 import net.sf.jasperreports.view.JasperViewer;
 import org.jdesktop.swingx.autocomplete.AutoCompleteDecorator;
+import javax.swing.GroupLayout.Alignment;
+import javax.swing.GroupLayout;
+import javax.swing.LayoutStyle.ComponentPlacement;
 
 public class CotizacionView extends javax.swing.JInternalFrame 
 {
@@ -42,6 +45,7 @@ public class CotizacionView extends javax.swing.JInternalFrame
     
     public CotizacionView() 
     {
+    	setTitle("COTIZACIONES");
         initComponents();
         boPedido = new Negocios();
         //ServicioDAO = new ServicioDAO();
@@ -56,6 +60,11 @@ public class CotizacionView extends javax.swing.JInternalFrame
        // comboGrupos.setModel(boPedido.getvaluesName("codigo", "grupo_ma"));
        //comboClientes.setModel(h.getvaluesTienda("Tienda"));
          AutoCompleteDecorator.decorate(comboPedidos);
+         lbMonto = new javax.swing.JLabel();
+         lbMonto.setBounds(17, 124, 70, 14);
+         jPanel4.add(lbMonto);
+         
+                 lbMonto.setText("Monto (s/.)");
        //  dtm2 = (DefaultTableModel)tbGrupos.getModel();
         //dtm2 = (DefaultTableModel)jTable1.getModel();
        //llenaTabla(false, "");
@@ -97,7 +106,6 @@ public class CotizacionView extends javax.swing.JInternalFrame
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel4 = new javax.swing.JPanel();
         btnFechaEntrega = new com.toedter.calendar.JDateChooser();
-        jLabel5 = new javax.swing.JLabel();
         btnLimpiar = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
         comboPedidos = new javax.swing.JComboBox<>();
@@ -115,7 +123,6 @@ public class CotizacionView extends javax.swing.JInternalFrame
         btnAprobar = new javax.swing.JButton();
         btnAnular = new javax.swing.JButton();
         btnModificarPedido = new javax.swing.JButton();
-        lbMonto = new javax.swing.JLabel();
 
         setClosable(true);
         setIconifiable(true);
@@ -132,10 +139,6 @@ public class CotizacionView extends javax.swing.JInternalFrame
         btnFechaEntrega.setPreferredSize(new java.awt.Dimension(120, 20));
         jPanel4.add(btnFechaEntrega);
         btnFechaEntrega.setBounds(80, 80, 130, 20);
-
-        jLabel5.setText("Monto (S/.)");
-        jPanel4.add(jLabel5);
-        jLabel5.setBounds(30, 120, 70, 20);
 
         btnLimpiar.setText("Limpiar");
         btnLimpiar.addActionListener(new java.awt.event.ActionListener() {
@@ -159,11 +162,11 @@ public class CotizacionView extends javax.swing.JInternalFrame
         jPanel4.add(comboPedidos);
         comboPedidos.setBounds(80, 50, 130, 22);
 
-        jLabel2.setText("Folio Coti");
+        jLabel2.setText("Folio Cotizaci\u00F3n");
         jPanel4.add(jLabel2);
-        jLabel2.setBounds(17, 20, 70, 16);
+        jLabel2.setBounds(17, 20, 89, 16);
         jPanel4.add(txtfolio);
-        txtfolio.setBounds(90, 20, 130, 22);
+        txtfolio.setBounds(110, 17, 130, 22);
 
         btnLeer.setText("Leer");
         btnLeer.addActionListener(new java.awt.event.ActionListener() {
@@ -181,7 +184,7 @@ public class CotizacionView extends javax.swing.JInternalFrame
             }
         });
         jPanel4.add(btnBuscar);
-        btnBuscar.setBounds(240, 20, 50, 30);
+        btnBuscar.setBounds(551, 70, 50, 30);
         jPanel4.add(txtDescripcion);
         txtDescripcion.setBounds(110, 160, 480, 22);
 
@@ -195,7 +198,7 @@ public class CotizacionView extends javax.swing.JInternalFrame
         jPanel4.add(txtMonto);
         txtMonto.setBounds(110, 120, 130, 22);
 
-        jTabbedPane1.addTab("Registrar Coti", jPanel4);
+        jTabbedPane1.addTab("Registrar Cotización", jPanel4);
 
         btnSalir.setText("Salir");
         btnSalir.addActionListener(new java.awt.event.ActionListener() {
@@ -247,62 +250,51 @@ public class CotizacionView extends javax.swing.JInternalFrame
             }
         });
 
-        lbMonto.setText("Monto (s/.)");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 660, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnRegistrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnSalir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnModificarPedido, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnExportarPDF, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnAnular, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnAprobar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(50, 50, 50))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(221, 221, 221))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 164, Short.MAX_VALUE)
-                    .addComponent(lbMonto, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 641, Short.MAX_VALUE)))
+        	layout.createParallelGroup(Alignment.TRAILING)
+        		.addGroup(layout.createSequentialGroup()
+        			.addGap(25)
+        			.addComponent(jTabbedPane1, GroupLayout.PREFERRED_SIZE, 660, GroupLayout.PREFERRED_SIZE)
+        			.addGap(18)
+        			.addGroup(layout.createParallelGroup(Alignment.LEADING)
+        				.addComponent(btnRegistrar, GroupLayout.DEFAULT_SIZE, 122, Short.MAX_VALUE)
+        				.addComponent(btnSalir, GroupLayout.DEFAULT_SIZE, 122, Short.MAX_VALUE)
+        				.addComponent(btnModificarPedido, GroupLayout.DEFAULT_SIZE, 122, Short.MAX_VALUE)
+        				.addComponent(btnExportarPDF, GroupLayout.PREFERRED_SIZE, 122, GroupLayout.PREFERRED_SIZE)
+        				.addComponent(btnAnular, GroupLayout.DEFAULT_SIZE, 122, Short.MAX_VALUE)
+        				.addComponent(btnAprobar, GroupLayout.DEFAULT_SIZE, 122, Short.MAX_VALUE))
+        			.addGap(50))
+        		.addGroup(layout.createSequentialGroup()
+        			.addContainerGap(257, Short.MAX_VALUE)
+        			.addComponent(jLabel1)
+        			.addGap(249))
         );
         layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(100, 100, 100)
-                .addComponent(btnRegistrar)
-                .addGap(3, 3, 3)
-                .addComponent(btnModificarPedido)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnAprobar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnAnular)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnExportarPDF)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnSalir)
-                .addContainerGap(141, Short.MAX_VALUE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(lbMonto)
-                    .addGap(0, 405, Short.MAX_VALUE)))
+        	layout.createParallelGroup(Alignment.LEADING)
+        		.addGroup(layout.createSequentialGroup()
+        			.addGroup(layout.createParallelGroup(Alignment.LEADING)
+        				.addGroup(layout.createSequentialGroup()
+        					.addContainerGap()
+        					.addComponent(jLabel1, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)
+        					.addPreferredGap(ComponentPlacement.RELATED)
+        					.addComponent(jTabbedPane1, GroupLayout.PREFERRED_SIZE, 235, GroupLayout.PREFERRED_SIZE))
+        				.addGroup(layout.createSequentialGroup()
+        					.addGap(100)
+        					.addComponent(btnRegistrar)
+        					.addGap(3)
+        					.addComponent(btnModificarPedido)
+        					.addPreferredGap(ComponentPlacement.RELATED)
+        					.addComponent(btnAprobar)
+        					.addPreferredGap(ComponentPlacement.RELATED)
+        					.addComponent(btnAnular)
+        					.addPreferredGap(ComponentPlacement.RELATED)
+        					.addComponent(btnExportarPDF)
+        					.addPreferredGap(ComponentPlacement.RELATED)
+        					.addComponent(btnSalir)))
+        			.addContainerGap(121, Short.MAX_VALUE))
         );
+        getContentPane().setLayout(layout);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -538,7 +530,6 @@ public class CotizacionView extends javax.swing.JInternalFrame
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JTabbedPane jTabbedPane1;

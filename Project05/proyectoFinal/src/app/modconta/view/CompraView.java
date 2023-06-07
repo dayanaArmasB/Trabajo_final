@@ -4,12 +4,13 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.GroupLayout;
 import javax.swing.LayoutStyle.ComponentPlacement;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
 
 public class CompraView extends javax.swing.JInternalFrame {
       DefaultTableModel dtm;
     public CompraView() {
         initComponents();
-        dtm = (DefaultTableModel)tblDetCompra.getModel();
         this.setAutoscrolls(true);
     }
     /**
@@ -47,9 +48,6 @@ public class CompraView extends javax.swing.JInternalFrame {
         jLabel9 = new javax.swing.JLabel();
         jTextField8 = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
-        dcFechaRegistro = new com.toedter.calendar.JDateChooser();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        tblDetCompra = new javax.swing.JTable();
         jPanel3 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -66,19 +64,19 @@ public class CompraView extends javax.swing.JInternalFrame {
         setClosable(true);
         setIconifiable(true);
         setMaximizable(true);
-        setTitle("::COMPRA_FRM::");
+        setTitle("ORDENES DE COMPRA");
         setAutoscrolls(true);
         getContentPane().setLayout(null);
 
         lblTitulo.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         lblTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblTitulo.setText("MANTENIMIENTO - COMPRA");
+        lblTitulo.setText("ORDENES DE COMPRA");
         getContentPane().add(lblTitulo);
-        lblTitulo.setBounds(20, 0, 666, 29);
+        lblTitulo.setBounds(21, 11, 666, 29);
 
         jLabel1.setText("Proveedor");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(21, 130, 67, 16);
+        jLabel1.setBounds(21, 124, 67, 16);
 
         jLabel2.setText("Responsable");
         getContentPane().add(jLabel2);
@@ -96,33 +94,31 @@ public class CompraView extends javax.swing.JInternalFrame {
         });
 
         javax.swing.GroupLayout jPanelrbtnLayout = new javax.swing.GroupLayout(jPanelrbtn);
-        jPanelrbtn.setLayout(jPanelrbtnLayout);
         jPanelrbtnLayout.setHorizontalGroup(
-            jPanelrbtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelrbtnLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jRadioButton1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelrbtnLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jRadioButton2)
-                .addContainerGap())
+        	jPanelrbtnLayout.createParallelGroup(Alignment.TRAILING)
+        		.addGroup(jPanelrbtnLayout.createSequentialGroup()
+        			.addContainerGap()
+        			.addGroup(jPanelrbtnLayout.createParallelGroup(Alignment.LEADING)
+        				.addComponent(jRadioButton1)
+        				.addComponent(jRadioButton2))
+        			.addContainerGap(30, Short.MAX_VALUE))
         );
         jPanelrbtnLayout.setVerticalGroup(
-            jPanelrbtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelrbtnLayout.createSequentialGroup()
-                .addGap(10, 10, 10)
-                .addComponent(jRadioButton1)
-                .addGap(18, 18, 18)
-                .addComponent(jRadioButton2)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        	jPanelrbtnLayout.createParallelGroup(Alignment.TRAILING)
+        		.addGroup(Alignment.LEADING, jPanelrbtnLayout.createSequentialGroup()
+        			.addGap(10)
+        			.addComponent(jRadioButton1)
+        			.addPreferredGap(ComponentPlacement.UNRELATED)
+        			.addComponent(jRadioButton2)
+        			.addContainerGap(30, Short.MAX_VALUE))
         );
+        jPanelrbtn.setLayout(jPanelrbtnLayout);
 
         getContentPane().add(jPanelrbtn);
-        jPanelrbtn.setBounds(12, 391, 161, 110);
+        jPanelrbtn.setBounds(12, 391, 161, 90);
 
         getContentPane().add(jComboBox1);
-        jComboBox1.setBounds(117, 127, 142, 22);
+        jComboBox1.setBounds(119, 121, 142, 22);
 
         getContentPane().add(jComboBox2);
         jComboBox2.setBounds(117, 190, 144, 22);
@@ -153,13 +149,13 @@ public class CompraView extends javax.swing.JInternalFrame {
         );
 
         getContentPane().add(jPanel1);
-        jPanel1.setBounds(342, 391, 152, 108);
+        jPanel1.setBounds(351, 399, 152, 63);
 
         jLabel4.setText("RUC");
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(279, 130, 24, 16);
+        jLabel4.setBounds(284, 124, 24, 16);
         getContentPane().add(jTextField2);
-        jTextField2.setBounds(318, 127, 59, 22);
+        jTextField2.setBounds(318, 121, 59, 22);
 
         btnAgregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGES/agregar.png"))); // NOI18N
         btnAgregar.addActionListener(new java.awt.event.ActionListener() {
@@ -168,11 +164,11 @@ public class CompraView extends javax.swing.JInternalFrame {
             }
         });
         getContentPane().add(btnAgregar);
-        btnAgregar.setBounds(630, 196, 35, 33);
+        btnAgregar.setBounds(630, 221, 35, 33);
 
         btnModificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/update.png"))); // NOI18N
         getContentPane().add(btnModificar);
-        btnModificar.setBounds(630, 235, 35, 33);
+        btnModificar.setBounds(630, 265, 35, 33);
 
         btnEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGES/eliminar.png"))); // NOI18N
         btnEliminar.addActionListener(new java.awt.event.ActionListener() {
@@ -181,7 +177,7 @@ public class CompraView extends javax.swing.JInternalFrame {
             }
         });
         getContentPane().add(btnEliminar);
-        btnEliminar.setBounds(630, 274, 37, 34);
+        btnEliminar.setBounds(630, 309, 37, 34);
 
         jLabel5.setText("Direcccion");
         getContentPane().add(jLabel5);
@@ -196,41 +192,42 @@ public class CompraView extends javax.swing.JInternalFrame {
         jRadioButton4.setText("No incluye IGV");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jRadioButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jRadioButton4))
-                .addContainerGap(16, Short.MAX_VALUE))
+        	jPanel2Layout.createParallelGroup(Alignment.LEADING)
+        		.addGroup(jPanel2Layout.createSequentialGroup()
+        			.addContainerGap()
+        			.addGroup(jPanel2Layout.createParallelGroup(Alignment.LEADING)
+        				.addComponent(jRadioButton3, GroupLayout.PREFERRED_SIZE, 131, GroupLayout.PREFERRED_SIZE)
+        				.addComponent(jRadioButton4))
+        			.addContainerGap(18, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jRadioButton3)
-                .addGap(18, 18, 18)
-                .addComponent(jRadioButton4)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        	jPanel2Layout.createParallelGroup(Alignment.LEADING)
+        		.addGroup(jPanel2Layout.createSequentialGroup()
+        			.addContainerGap()
+        			.addComponent(jRadioButton3)
+        			.addPreferredGap(ComponentPlacement.UNRELATED)
+        			.addComponent(jRadioButton4)
+        			.addContainerGap(25, Short.MAX_VALUE))
         );
+        jPanel2.setLayout(jPanel2Layout);
 
         getContentPane().add(jPanel2);
-        jPanel2.setBounds(176, 399, 165, 102);
+        jPanel2.setBounds(183, 391, 165, 81);
 
         jButton4.setText("Salir");
         getContentPane().add(jButton4);
-        jButton4.setBounds(560, 560, 83, 20);
+        jButton4.setBounds(614, 558, 83, 20);
 
         jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jLabel9.setText("N\u00B0 Orden de Compra");
 
         jLabel10.setText("Fecha de emisi\u00F3n");
-
-        dcFechaRegistro.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        dcFechaRegistro.setPreferredSize(new java.awt.Dimension(150, 26));
+        dcFechaRegistro = new com.toedter.calendar.JDateChooser();
+        
+                dcFechaRegistro.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+                dcFechaRegistro.setPreferredSize(new java.awt.Dimension(150, 26));
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4Layout.setHorizontalGroup(
@@ -240,47 +237,28 @@ public class CompraView extends javax.swing.JInternalFrame {
         			.addComponent(jLabel9)
         			.addGap(18)
         			.addComponent(jTextField8, GroupLayout.PREFERRED_SIZE, 123, GroupLayout.PREFERRED_SIZE)
-        			.addGap(32)
+        			.addGap(56)
         			.addComponent(jLabel10)
-        			.addGap(26)
+        			.addGap(18)
         			.addComponent(dcFechaRegistro, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-        			.addContainerGap(28, Short.MAX_VALUE))
+        			.addContainerGap(65, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
-        	jPanel4Layout.createParallelGroup(Alignment.LEADING)
-        		.addGroup(jPanel4Layout.createSequentialGroup()
-        			.addGap(21)
-        			.addGroup(jPanel4Layout.createParallelGroup(Alignment.BASELINE)
-        				.addComponent(jLabel9)
-        				.addComponent(jTextField8, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-        			.addContainerGap(18, Short.MAX_VALUE))
-        		.addGroup(Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-        			.addContainerGap(23, Short.MAX_VALUE)
-        			.addGroup(jPanel4Layout.createParallelGroup(Alignment.LEADING)
+        	jPanel4Layout.createParallelGroup(Alignment.TRAILING)
+        		.addGroup(Alignment.LEADING, jPanel4Layout.createSequentialGroup()
+        			.addGap(15)
+        			.addGroup(jPanel4Layout.createParallelGroup(Alignment.TRAILING)
         				.addComponent(dcFechaRegistro, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-        				.addComponent(jLabel10))
-        			.addContainerGap())
+        				.addGroup(jPanel4Layout.createParallelGroup(Alignment.BASELINE)
+        					.addComponent(jLabel9)
+        					.addComponent(jTextField8, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+        					.addComponent(jLabel10)))
+        			.addContainerGap(20, Short.MAX_VALUE))
         );
         jPanel4.setLayout(jPanel4Layout);
 
         getContentPane().add(jPanel4);
         jPanel4.setBounds(30, 42, 647, 63);
-
-        tblDetCompra.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane1.setViewportView(tblDetCompra);
-
-        getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(12, 239, 599, 102);
 
         jPanel3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
 
@@ -329,7 +307,7 @@ public class CompraView extends javax.swing.JInternalFrame {
         );
 
         getContentPane().add(jPanel3);
-        jPanel3.setBounds(517, 379, 164, 122);
+        jPanel3.setBounds(517, 379, 164, 110);
 
         jButton5.setText("Registrar");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
@@ -338,7 +316,7 @@ public class CompraView extends javax.swing.JInternalFrame {
             }
         });
         getContentPane().add(jButton5);
-        jButton5.setBounds(130, 560, 85, 20);
+        jButton5.setBounds(117, 509, 85, 20);
 
         jButton7.setText("Aprobar");
         jButton7.addActionListener(new java.awt.event.ActionListener() {
@@ -347,7 +325,7 @@ public class CompraView extends javax.swing.JInternalFrame {
             }
         });
         getContentPane().add(jButton7);
-        jButton7.setBounds(210, 560, 79, 20);
+        jButton7.setBounds(212, 509, 79, 20);
 
         jButton8.setText("Anular");
         jButton8.addActionListener(new java.awt.event.ActionListener() {
@@ -356,7 +334,7 @@ public class CompraView extends javax.swing.JInternalFrame {
             }
         });
         getContentPane().add(jButton8);
-        jButton8.setBounds(290, 560, 69, 20);
+        jButton8.setBounds(308, 509, 69, 20);
 
         jButton9.setText("Imprimir");
         jButton9.addActionListener(new java.awt.event.ActionListener() {
@@ -365,7 +343,7 @@ public class CompraView extends javax.swing.JInternalFrame {
             }
         });
         getContentPane().add(jButton9);
-        jButton9.setBounds(360, 560, 81, 20);
+        jButton9.setBounds(385, 509, 81, 20);
 
         jButton6.setText("Generar Factura");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
@@ -374,7 +352,21 @@ public class CompraView extends javax.swing.JInternalFrame {
             }
         });
         getContentPane().add(jButton6);
-        jButton6.setBounds(440, 560, 125, 20);
+        jButton6.setBounds(479, 509, 125, 20);
+        
+        scrollPane = new JScrollPane();
+        scrollPane.setBounds(20, 221, 602, 129);
+        getContentPane().add(scrollPane);
+        
+        tblDetCompra = new JTable();
+        tblDetCompra.setModel(new DefaultTableModel(
+        	new Object[][] {
+        	},
+        	new String[] {
+        		"N\u00B0 de Orden de compra", "Fecha de emisi\u00F3n", "Proveedor", "Direcci\u00F3n", "RUC", "Responsable"
+        	}
+        ));
+        scrollPane.setViewportView(tblDetCompra);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -488,7 +480,6 @@ public class CompraView extends javax.swing.JInternalFrame {
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JRadioButton jRadioButton3;
     private javax.swing.JRadioButton jRadioButton4;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
@@ -497,6 +488,7 @@ public class CompraView extends javax.swing.JInternalFrame {
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;
     private javax.swing.JLabel lblTitulo;
-    private javax.swing.JTable tblDetCompra;
+    private JScrollPane scrollPane;
+    private JTable tblDetCompra;
     // End of variables declaration//GEN-END:variables
 }
