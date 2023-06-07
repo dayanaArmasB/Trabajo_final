@@ -1,13 +1,10 @@
 package MODEL;
 import app.modconta.databaase.dbBean;
-import app.modconta.entity.Diagnostico;
+
 import java.sql.ResultSet;
 import java.util.Vector;
-/**
- *
- * @author MARCELO
- */
-public class DiagnosticoDAO {
+
+/*public class DiagnosticoDAO {
         public Vector<Diagnostico> ListaItem(boolean sw, String str){
         Vector<Diagnostico> item = new Vector<Diagnostico>();
         dbBean con = new dbBean();
@@ -65,8 +62,8 @@ public class DiagnosticoDAO {
             e.printStackTrace();
         }
         return resultado;       
-    }     
+    }     */
     
     
     
-}
+

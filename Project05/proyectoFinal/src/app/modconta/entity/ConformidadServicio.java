@@ -5,18 +5,12 @@
  */
 package app.modconta.entity;
 
-import java.util.logging.Logger;
-
-/**
- *
- * @author RAUL
- */
 public class ConformidadServicio {
     public ConformidadServicio()
     {
                   
     }
-           private int idPedido;
+          private int idPedido;
           private String Folio;
           private String FechaRecibido;
           private String FechaAnulacion;
@@ -36,9 +30,6 @@ public class ConformidadServicio {
     public void setIdServicio(int idServicio) {
         this.idServicio = idServicio;
     }
-    private static final Logger LOG = Logger.getLogger(ConformidadServicio.class.getName());
-          
-
     public int getIdPedido() {
         return idPedido;
     }

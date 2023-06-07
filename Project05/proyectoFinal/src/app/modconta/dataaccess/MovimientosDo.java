@@ -16,10 +16,7 @@ import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 
-/**
- *
- * @author MARCELO
- */
+
 public class MovimientosDo {
     
     private final db con;
@@ -29,7 +26,7 @@ public class MovimientosDo {
     }
     
     
-  public List<Movimiento> ListarMovimientos() 
+ /* public List<Movimiento> ListarMovimientos() 
   { 
    List<Movimiento> listaMov = null;
    Movimiento mov = null;
@@ -67,9 +64,9 @@ public class MovimientosDo {
            System.out.println("The 'try catch' is finished.");}
           }
      return listaMov;
-  }
+  }*/
 
-    public boolean RegistrarMovimiento ( Movimiento mov ) throws SQLException
+    /*public boolean RegistrarMovimiento ( Movimiento mov ) throws SQLException
     {       
         boolean ok = false;
       //Movimiento mov = null;
@@ -97,6 +94,6 @@ public class MovimientosDo {
            System.out.println("The 'try catch' is finished.");}
           }
         return true;
-      }
+      }*/
 
 }

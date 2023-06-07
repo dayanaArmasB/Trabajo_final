@@ -5,7 +5,7 @@ import app.modconta.databaase.util;
 import app.modconta.entity.DetalleVenta;
 import app.modconta.entity.DetalleServicio;
 import app.modconta.entity.Servicio;
-import MODEL.EquipoDAO;
+import MODEL.ProductoDAO;
 import MODEL.ServicioDAO;
 import MODEL.VentaDAO;
 import MODEL.detserDAO;
@@ -20,10 +20,13 @@ import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.engine.JasperReport;
 import net.sf.jasperreports.view.JasperViewer;
 import org.jdesktop.swingx.autocomplete.AutoCompleteDecorator;
+import javax.swing.GroupLayout.Alignment;
+import javax.swing.GroupLayout;
+import javax.swing.LayoutStyle.ComponentPlacement;
 
 public class ServicioView extends javax.swing.JInternalFrame {
       //variables  
-    EquipoDAO eqx = new EquipoDAO();
+    ProductoDAO eqx = new ProductoDAO();
     ServicioDAO ServicioDAO;
     detserDAO detserDAO;
     VentaDAO vaux;
@@ -43,6 +46,56 @@ public class ServicioView extends javax.swing.JInternalFrame {
         //comboVentas.setModel(h.getvaluesVentas("Venta"));
         comboTienda.setModel(h.getvaluesTienda("Tienda"));
         AutoCompleteDecorator.decorate(comboTienda);
+        jButton5 = new javax.swing.JButton();
+        jButton5.setBounds(109, 471, 85, 20);
+        jPanel4.add(jButton5);
+        
+                jButton5.setText("Registrar");
+                jButton7 = new javax.swing.JButton();
+                jButton7.setBounds(206, 471, 79, 20);
+                jPanel4.add(jButton7);
+                
+                        jButton7.setText("Aprobar");
+                        jButton8 = new javax.swing.JButton();
+                        jButton8.setBounds(294, 471, 69, 20);
+                        jPanel4.add(jButton8);
+                        
+                                jButton8.setText("Anular");
+                                jButton9 = new javax.swing.JButton();
+                                jButton9.setBounds(362, 471, 81, 20);
+                                jPanel4.add(jButton9);
+                                
+                                        jButton9.setText("Imprimir");
+                                        jButton6 = new javax.swing.JButton();
+                                        jButton6.setBounds(446, 471, 125, 20);
+                                        jPanel4.add(jButton6);
+                                        
+                                                jButton6.setText("Generar Factura");
+                                                jButton4 = new javax.swing.JButton();
+                                                jButton4.setBounds(583, 471, 83, 20);
+                                                jPanel4.add(jButton4);
+                                                
+                                                        jButton4.setText("Salir");
+                                                jButton6.addActionListener(new java.awt.event.ActionListener() {
+                                                    public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                                        jButton6ActionPerformed(evt);
+                                                    }
+                                                });
+                                        jButton9.addActionListener(new java.awt.event.ActionListener() {
+                                            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                                jButton9ActionPerformed(evt);
+                                            }
+                                        });
+                                jButton8.addActionListener(new java.awt.event.ActionListener() {
+                                    public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                        jButton8ActionPerformed(evt);
+                                    }
+                                });
+                        jButton7.addActionListener(new java.awt.event.ActionListener() {
+                            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                jButton7ActionPerformed(evt);
+                            }
+                        });
          dtm = (DefaultTableModel)tblServicio.getModel();
 //         dtm2 = (DefaultTableModel)jTable1.getModel();
        // llenaTabla(false, "");
@@ -67,15 +120,8 @@ public class ServicioView extends javax.swing.JInternalFrame {
         tblServicio = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        txtRecomendacion = new javax.swing.JTextArea();
         btnLimpiar = new javax.swing.JButton();
         jLabel13 = new javax.swing.JLabel();
-        jButton5 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
-        jButton9 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
 
         setClosable(true);
         setIconifiable(true);
@@ -138,18 +184,19 @@ public class ServicioView extends javax.swing.JInternalFrame {
         jScrollPane4.setViewportView(tblServicio);
 
         jPanel4.add(jScrollPane4);
-        jScrollPane4.setBounds(20, 140, 630, 270);
+        jScrollPane4.setBounds(20, 140, 630, 141);
 
         jLabel2.setText("Recomendaciones");
         jPanel4.add(jLabel2);
-        jLabel2.setBounds(20, 430, 103, 16);
-
-        txtRecomendacion.setColumns(20);
-        txtRecomendacion.setRows(5);
-        jScrollPane1.setViewportView(txtRecomendacion);
+        jLabel2.setBounds(30, 365, 103, 16);
 
         jPanel4.add(jScrollPane1);
-        jScrollPane1.setBounds(140, 420, 510, 100);
+        jScrollPane1.setBounds(150, 333, 510, 100);
+        txtRecomendacion = new javax.swing.JTextArea();
+        jScrollPane1.setViewportView(txtRecomendacion);
+        
+                txtRecomendacion.setColumns(20);
+                txtRecomendacion.setRows(5);
 
         btnLimpiar.setText("Limpiar");
         btnLimpiar.addActionListener(new java.awt.event.ActionListener() {
@@ -158,7 +205,7 @@ public class ServicioView extends javax.swing.JInternalFrame {
             }
         });
         jPanel4.add(btnLimpiar);
-        btnLimpiar.setBounds(280, 30, 120, 25);
+        btnLimpiar.setBounds(662, 184, 107, 25);
 
         jLabel13.setText("Fecha de Recibido");
         jPanel4.add(jLabel13);
@@ -166,87 +213,29 @@ public class ServicioView extends javax.swing.JInternalFrame {
 
         jTabbedPane1.addTab("Ficha Técnica", jPanel4);
 
-        jButton5.setText("Registrar");
-
-        jButton7.setText("Aprobar");
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
-            }
-        });
-
-        jButton8.setText("Anular");
-        jButton8.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton8ActionPerformed(evt);
-            }
-        });
-
-        jButton9.setText("Imprimir");
-        jButton9.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton9ActionPerformed(evt);
-            }
-        });
-
-        jButton6.setText("Generar Factura");
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
-            }
-        });
-
-        jButton4.setText("Salir");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(259, 259, 259)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 479, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(151, 151, 151)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton5)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(80, 80, 80)
-                                .addComponent(jButton7)))
-                        .addGap(1, 1, 1)
-                        .addComponent(jButton8)
-                        .addGap(1, 1, 1)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton9)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(200, 200, 200)
-                                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(80, 80, 80)
-                                .addComponent(jButton6))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(34, 34, 34)
-                        .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 786, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(36, Short.MAX_VALUE))
+        	layout.createParallelGroup(Alignment.LEADING)
+        		.addGroup(layout.createSequentialGroup()
+        			.addGroup(layout.createParallelGroup(Alignment.LEADING)
+        				.addGroup(layout.createSequentialGroup()
+        					.addGap(259)
+        					.addComponent(jLabel1, GroupLayout.PREFERRED_SIZE, 479, GroupLayout.PREFERRED_SIZE))
+        				.addGroup(layout.createSequentialGroup()
+        					.addGap(34)
+        					.addComponent(jTabbedPane1, GroupLayout.PREFERRED_SIZE, 786, GroupLayout.PREFERRED_SIZE)))
+        			.addContainerGap(36, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 579, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
+        	layout.createParallelGroup(Alignment.LEADING)
+        		.addGroup(layout.createSequentialGroup()
+        			.addContainerGap()
+        			.addComponent(jLabel1, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)
+        			.addPreferredGap(ComponentPlacement.RELATED)
+        			.addComponent(jTabbedPane1, GroupLayout.PREFERRED_SIZE, 579, GroupLayout.PREFERRED_SIZE)
+        			.addGap(55))
         );
+        getContentPane().setLayout(layout);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

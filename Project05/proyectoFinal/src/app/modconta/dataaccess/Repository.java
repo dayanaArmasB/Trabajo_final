@@ -12,7 +12,6 @@ import app.modconta.entity.Cotizacion;
 import app.modconta.entity.DetalleConforSer;
 import app.modconta.entity.DetallePedido;
 import app.modconta.entity.Fact;
-import app.modconta.entity.Grupos_MA;
 import app.modconta.entity.Pedido;
 import app.modconta.entity.ProtocoloPrueba;
 import app.modconta.entity.Venta;
@@ -235,7 +234,7 @@ public class Repository {
     }
 
   //  public List<Grupos_MA> LeerDatosGrupo(String codigo) 
-     public Grupos_MA LeerDatosGrupo(String codigo) 
+     /*public Grupos_MA LeerDatosGrupo(String codigo) 
     {   String sSQL ="";
         Grupos_MA grupoaux  = new Grupos_MA();
          //item es el vector
@@ -286,7 +285,7 @@ public class Repository {
         return grupoaux; 
         
         
-    }
+    }*/
      
      
      

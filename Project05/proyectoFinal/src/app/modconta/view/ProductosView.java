@@ -2,8 +2,8 @@ package app.modconta.view;
 import app.modconta.databaase.Helper;
 import app.modconta.databaase.dbBean;
 import app.modconta.databaase.util;
-import app.modconta.entity.Equipo;
-import MODEL.EquipoDAO;
+import app.modconta.entity.Productos;
+import MODEL.ProductoDAO;
 import java.sql.Connection;
 import java.util.HashMap;
 import java.util.Vector;
@@ -21,7 +21,7 @@ import net.sf.jasperreports.view.JasperViewer;
 public class ProductosView extends javax.swing.JInternalFrame {
     
     Helper h = new Helper();
-   EquipoDAO EquipoDAO;
+   ProductoDAO EquipoDAO;
     DefaultTableModel dtm;
     boolean sw = false;
     String cad = "";
@@ -31,7 +31,7 @@ public class ProductosView extends javax.swing.JInternalFrame {
         initComponents();    
         //variables
         dtm = (DefaultTableModel)tblEquipo.getModel();
-         EquipoDAO = new EquipoDAO();
+         EquipoDAO = new ProductoDAO();
          //comboMarca.setModel(h.getvalues("Marca"));
          //llenaTabla(false, "");
          
@@ -39,12 +39,12 @@ public class ProductosView extends javax.swing.JInternalFrame {
     
     public void llenaTabla(boolean swr, String cadr)
     {
-         Vector<Equipo> equip = EquipoDAO.ListaItem(swr, cadr);
+         Vector<Productos> equip = EquipoDAO.ListaItem(swr, cadr);
         int i = equip.size(); 
         for(int j = 0; j<i;j++){
           Vector vect = new Vector();
-          vect.addElement(equip.get(j).getIdEquipo());
-          vect.addElement(equip.get(j).getNombre_equipo());
+          vect.addElement(equip.get(j).getIdProducto());
+          vect.addElement(equip.get(j).getNombre_Producto());
           vect.addElement(equip.get(j).getSO());
           vect.addElement(equip.get(j).getProcesador());
           vect.addElement(equip.get(j).getRAM());
@@ -687,8 +687,8 @@ public void limpiaControles(){
         {
             //this.spincant.getValue().toString()
               util u = new util();
-              Equipo eq = new Equipo();
-              eq.setNombre_equipo(this.txtNombreEquip.getText());
+              Productos eq = new Productos();
+              eq.setNombre_Producto(this.txtNombreEquip.getText());
               JOptionPane.showMessageDialog(this, "ya esta nombre" );
               System.out.println(this.comboMarca.getSelectedItem().toString());
               //eq.marc.setNombre(this.comboMarca.getSelectedItem().toString());
@@ -716,7 +716,7 @@ public void limpiaControles(){
                id = this.idEqui;
                 pr = "update";
             }
-            eq.setIdEquipo(id);
+            eq.setIdProducto(id);
             EquipoDAO.procesaItem(eq, pr);
             limpiaControles();
             limpiaTabla();

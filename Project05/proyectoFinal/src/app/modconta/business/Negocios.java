@@ -13,7 +13,6 @@ import app.modconta.entity.Cotizacion;
 import app.modconta.entity.DetalleConforSer;
 import app.modconta.entity.DetallePedido;
 import app.modconta.entity.Fact;
-import app.modconta.entity.Grupos_MA;
 import app.modconta.entity.Pedido;
 import app.modconta.entity.ProtocoloPrueba;
 import java.sql.Connection;
@@ -24,10 +23,6 @@ import java.util.List;
 import javax.jws.WebParam;
 import javax.swing.DefaultComboBoxModel;
 
-/**
- *
- * @author RAUL
- */
 public class Negocios {
  
     Repository _doDatos = null;
@@ -100,7 +95,7 @@ public class Negocios {
     
     
     
-    //métodos de pedido
+    //metodos de pedido
     public boolean RegistrarPedido(Pedido p)
     {   boolean resultado = false;
         try {
@@ -147,7 +142,7 @@ public class Negocios {
 
        
     //PRUEBAS DE CARGA  
-    public Grupos_MA LeerDatosGrupo(String codigo) 
+    /*public Grupos_MA LeerDatosGrupo(String codigo) 
     {
         //List<Grupos_MA> lista_datos = new ArrayList<>();
         Grupos_MA  datos =  new Grupos_MA();
@@ -159,7 +154,7 @@ public class Negocios {
            System.out.println(e.getMessage());
         }
         return datos;
-    }
+    }*/
 
  
     //LEER DATOS CONSULTORIA  

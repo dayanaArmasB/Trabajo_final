@@ -1,8 +1,5 @@
 package app.modconta.entity;
-/**
- *
- * @author MARCELO
- */
+
 public class Marca {
      
     private int IdMarca;

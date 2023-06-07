@@ -8,11 +8,12 @@ import java.sql.Statement;
 import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JOptionPane;
+
 
 public class ClienteDAO {
     
  public Vector<Cliente> ListaItem(boolean sw, String str) {
+	 //procedimento almacenado
         Vector<Cliente> ClientesCollection = new Vector<Cliente>();
         dbBean con = new dbBean();
       PreparedStatement pe = null;
@@ -53,7 +54,7 @@ public class ClienteDAO {
         if(proc.equals("insert")){
             //insertar
             sql = "insert into clientes(ap_paterno,ap_materno,nombre,telefono,direccion,estado,sexo,DNI,RUC) values ('" + p.getApellidoP()+"','"+p.getApellidoM()+"', '"+ p.getNombre() + "', '"+  p.getTelefono()+"', '"+p.getDireccion()+"', 'S','"+ p.getSexo().charAt(0)+"', '"+  p.getDNI() + "', '"+p.getRUC() +"')" ;
-            System.out.println("la query es " + sql);
+            //System.out.println("la query es " + sql);
         }
         try{
         	Statement s = con.getConnection().createStatement();

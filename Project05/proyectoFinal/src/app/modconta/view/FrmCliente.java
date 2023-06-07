@@ -372,7 +372,7 @@ public void llenaTabla(boolean swr, String cadr)
         jPanel3.add(jComboBox1);
         jComboBox1.setBounds(100, 10, 120, 30);
 
-        jTabbedPane1.addTab("BÃºsqueda", jPanel3);
+        jTabbedPane1.addTab("Búsqueda", jPanel3);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         layout.setHorizontalGroup(
@@ -385,13 +385,12 @@ public void llenaTabla(boolean swr, String cadr)
         			.addContainerGap(412, Short.MAX_VALUE))
         		.addGroup(layout.createSequentialGroup()
         			.addContainerGap()
-        			.addGroup(layout.createParallelGroup(Alignment.LEADING)
-        				.addGroup(layout.createSequentialGroup()
-        					.addComponent(jTabbedPane1, GroupLayout.PREFERRED_SIZE, 781, GroupLayout.PREFERRED_SIZE)
-        					.addContainerGap())
-        				.addGroup(layout.createSequentialGroup()
-        					.addComponent(lblTitulo, GroupLayout.DEFAULT_SIZE, 729, Short.MAX_VALUE)
-        					.addGap(191))))
+        			.addComponent(jTabbedPane1, GroupLayout.PREFERRED_SIZE, 781, GroupLayout.PREFERRED_SIZE)
+        			.addContainerGap())
+        		.addGroup(layout.createSequentialGroup()
+        			.addGap(67)
+        			.addComponent(lblTitulo, GroupLayout.DEFAULT_SIZE, 687, Short.MAX_VALUE)
+        			.addGap(136))
         );
         layout.setVerticalGroup(
         	layout.createParallelGroup(Alignment.LEADING)
@@ -404,7 +403,7 @@ public void llenaTabla(boolean swr, String cadr)
         			.addGroup(layout.createParallelGroup(Alignment.BASELINE)
         				.addComponent(btnSalir, GroupLayout.PREFERRED_SIZE, 38, GroupLayout.PREFERRED_SIZE)
         				.addComponent(jButton1, GroupLayout.PREFERRED_SIZE, 53, GroupLayout.PREFERRED_SIZE))
-        			.addContainerGap(54, Short.MAX_VALUE))
+        			.addContainerGap(23, Short.MAX_VALUE))
         );
         getContentPane().setLayout(layout);
 
@@ -464,6 +463,7 @@ public void llenaTabla(boolean swr, String cadr)
             Cliente p = new Cliente();
             p.setNombre(txtNombre.getText());
             p.setApellidoP(txtApellidoP.getText());
+            p.setApellidoM(txtApellidoM.getText());
             p.setTelefono(txtTelefono.getText());
             p.setDireccion(txtDireccion.getText());
             if(jRadioButton1.isSelected())

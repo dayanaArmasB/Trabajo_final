@@ -1,7 +1,7 @@
 package app.modconta.view;
 import app.modconta.databaase.Helper;
 import app.modconta.databaase.util;
-import MODEL.EquipoDAO;
+import MODEL.ProductoDAO;
 import MODEL.ServicioDAO;
 import MODEL.VentaDAO;
 import MODEL.detserDAO;

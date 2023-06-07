@@ -1,7 +1,7 @@
 package app.modconta.view;
 import app.modconta.databaase.Helper;
 import app.modconta.databaase.util;
-import MODEL.EquipoDAO;
+import MODEL.ProductoDAO;
 import MODEL.ServicioDAO;
 import MODEL.VentaDAO;
 import MODEL.detserDAO;
@@ -26,7 +26,7 @@ import org.jdesktop.swingx.autocomplete.AutoCompleteDecorator;
 public class CotizacionView extends javax.swing.JInternalFrame 
 {
       //variables  
-    EquipoDAO eqx = new EquipoDAO();
+    ProductoDAO eqx = new ProductoDAO();
     ServicioDAO ServicioDAO;
     detserDAO detserDAO;
     VentaDAO vaux;
@@ -122,7 +122,7 @@ public class CotizacionView extends javax.swing.JInternalFrame
         setMaximizable(true);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel1.setText("GENERACIÓN DE COTIZACIÓN");
+        jLabel1.setText("GENERACI\u00D3N DE COTIZACI\u00D3N");
 
         jTabbedPane1.setMaximumSize(new java.awt.Dimension(32769, 32769));
 
@@ -146,7 +146,7 @@ public class CotizacionView extends javax.swing.JInternalFrame
         jPanel4.add(btnLimpiar);
         btnLimpiar.setBounds(510, 40, 120, 25);
 
-        jLabel10.setText("Descripción");
+        jLabel10.setText("Descripci\u00F3n");
         jPanel4.add(jLabel10);
         jLabel10.setBounds(30, 160, 100, 20);
 

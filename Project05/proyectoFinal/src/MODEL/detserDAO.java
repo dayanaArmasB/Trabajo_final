@@ -7,7 +7,6 @@ package MODEL;
 
 import app.modconta.databaase.dbBean;
 import app.modconta.entity.DetalleServicio;
-import app.modconta.entity.DetalleVenta;
 import java.sql.ResultSet;
 import java.util.Vector;
 

@@ -7,7 +7,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import javax.swing.JOptionPane;
+
 
 public class dbBean {
     String dbURL = "jdbc:sqlserver://localhost:1433;databaseName=dblogistica;integratedSecurity=true";
