@@ -36,10 +36,7 @@ import javax.swing.JTable;
 import javax.swing.DefaultComboBoxModel;
 import java.awt.Font;
 
-/**
- *
- * @author Administrador
- */
+
 public class FrmAuditoria extends javax.swing.JInternalFrame {
 
      AuditoriaBO _auditoriaBO;

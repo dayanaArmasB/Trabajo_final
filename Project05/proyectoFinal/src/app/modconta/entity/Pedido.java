@@ -21,9 +21,6 @@ public class Pedido {
   private String NombreCliente;
   private String Estado; 
 
-   
-  
-
     public Pedido() 
     {
         

@@ -25,10 +25,6 @@ public class ProductoDAO {
                 e = new Producto();
                 e.setIdProducto(resultado.getInt(1));
                 e.setNombre_Producto(resultado.getString(2));
-                e.setProcesador(resultado.getString(3));
-                e.setRAM(resultado.getString(4));
-                e.setSO(resultado.getString(5));
-                e.setTarjetaMadre(resultado.getString(6));
                 e.setStock(resultado.getInt(7));
                 e.setStockMax(resultado.getInt(8));
                 e.setStockMin(resultado.getInt(9));
@@ -89,13 +85,13 @@ public int procesaItem(Producto p, String proc){
        //insertar
        System.out.println("que fue ");
         //sql = "insert into Equipo values ('"+ p.getIdEquipo()+"', '"+p.getNombre_equipo()+"', '"+ p.marc.getNombre()+"', '"+  p.mode.getNombre()+"', '"+ p.getSO() +"', '"+ p.getProcesador() +"', '"+p.getRAM()+"', '"+p.getTarjetaMadre()+"')";
-        sql = "insert into Equipo values ('"+ p.getIdProducto()+"', '"+p.getNombre_Producto()+"', '"+ p.getSO() +"', '"+ p.getProcesador() +"', '"+p.getRAM()+"', '"+p.getTarjetaMadre()+"',"+ p.getStock()+","+ p.getStockMax()+"," +p.getStockMin()+","+p.getIdModelo()+")";
+        sql = "insert into Equipo values ('"+ p.getIdProducto()+"', '"+p.getNombre_Producto()+"', "+ p.getStock()+","+ p.getStockMax()+"," +p.getStockMin()+","+p.getIdModelo()+")";
        // sql = "insert into Equipo values ('"+ p.getIdEquipo()+"', '"+ p.getMarc()+"', '"+  p.getMode()+"', '"+ p.getSO() +"', '"+ p.getProcesador() +"', '"+p.getRAM()+"', '"+p.getTarjetaMadre() +"')"; 
        }
         if(proc.equals("update")){ 
             //actualizar 
             //el criterio de busqueda , se basa en ingresar el código de CLiente
-            sql = "update Cliente set Nombre = '"+ p.getNombre_Producto()+"', SO = '"+ p.getSO()+"', Procesador = '"+ p.getProcesador()+"',RAM='"+p.getRAM()+"', TarjetaMadre = '"+ p.getTarjetaMadre()+"' where idEquipo = '"+ p.getIdProducto()+"'";
+            sql = "update Cliente set Nombre = '"+ p.getNombre_Producto()+"' where idEquipo = '"+ p.getIdProducto()+"'";
         }
         try{
             resultado = con.updateSQL(sql);

@@ -26,11 +26,16 @@ import org.jdesktop.swingx.autocomplete.AutoCompleteDecorator;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.GroupLayout;
 import javax.swing.LayoutStyle.ComponentPlacement;
+import javax.swing.JLabel;
+import com.toedter.calendar.JDateChooser;
+import java.awt.Dimension;
+import javax.swing.JTextField;
+import javax.swing.JComboBox;
+import javax.swing.DefaultComboBoxModel;
 
 
 public class PedidoView extends javax.swing.JInternalFrame 
 {
-	
 	PedidoBO _pedidoBO;
     ServicioDAO ServicioDAO;
     detserDAO detserDAO;
@@ -50,9 +55,62 @@ public class PedidoView extends javax.swing.JInternalFrame
         dtm2 = (DefaultTableModel)tbGrupos.getModel();
         _pedidoBO = new PedidoBO();
         comboClientes.setModel(boPedido.getvaluesName("nombre", "clientes"));
-        comboGrupos.setModel(boPedido.getvaluesName("codigo", "grupo_ma"));
        //comboClientes.setModel(h.getvaluesTienda("Tienda"));
          AutoCompleteDecorator.decorate(comboClientes);
+         
+         lblFechaDeAprobacin = new JLabel();
+         lblFechaDeAprobacin.setText("Fecha de Aprobaci\u00F3n");
+         lblFechaDeAprobacin.setBounds(12, 128, 130, 20);
+         jPanel4.add(lblFechaDeAprobacin);
+         
+         JDateChooser btnFechaAprobación = new JDateChooser();
+         btnFechaAprobación.setPreferredSize(new Dimension(120, 20));
+         btnFechaAprobación.setBounds(136, 128, 120, 20);
+         jPanel4.add(btnFechaAprobación);
+         
+         JLabel lblFechaDeAnulacin = new JLabel();
+         lblFechaDeAnulacin.setText("Fecha de Anulaci\u00F3n");
+         lblFechaDeAnulacin.setBounds(267, 128, 130, 20);
+         jPanel4.add(lblFechaDeAnulacin);
+         
+         JDateChooser btnFechaAnulacion = new JDateChooser();
+         btnFechaAnulacion.setPreferredSize(new Dimension(120, 20));
+         btnFechaAnulacion.setBounds(395, 128, 120, 20);
+         jPanel4.add(btnFechaAnulacion);
+         
+         JLabel lblFechaDeCreacin = new JLabel();
+         lblFechaDeCreacin.setText("Fecha de Creaci\u00F3n");
+         lblFechaDeCreacin.setBounds(12, 95, 130, 20);
+         jPanel4.add(lblFechaDeCreacin);
+         
+         JDateChooser btnFechaCreación = new JDateChooser();
+         btnFechaCreación.setPreferredSize(new Dimension(120, 20));
+         btnFechaCreación.setBounds(126, 95, 120, 20);
+         jPanel4.add(btnFechaCreación);
+         
+         JLabel lblId = new JLabel();
+         lblId.setText("ID");
+         lblId.setBounds(12, 21, 33, 21);
+         jPanel4.add(lblId);
+         
+         txtID = new JTextField();
+         txtID.setBounds(40, 18, 130, 29);
+         jPanel4.add(txtID);
+         
+         JLabel lblCliente = new JLabel();
+         lblCliente.setText("Cliente");
+         lblCliente.setBounds(12, 57, 63, 21);
+         jPanel4.add(lblCliente);
+         
+         JLabel lblEstado = new JLabel();
+         lblEstado.setText("Estado");
+         lblEstado.setBounds(12, 161, 63, 21);
+         jPanel4.add(lblEstado);
+         
+         JComboBox comboBox = new JComboBox();
+         comboBox.setModel(new DefaultComboBoxModel(new String[] {"Anulado", "Activo", "Finalizado"}));
+         comboBox.setBounds(90, 161, 80, 22);
+         jPanel4.add(comboBox);
         //dtm2 = (DefaultTableModel)jTable1.getModel();
     }
 
@@ -78,13 +136,10 @@ public class PedidoView extends javax.swing.JInternalFrame
         return true;
       }
 
-     
-
     //MÃ‰TODO PARA LIMPIAR CONTROLES 
     public void limpiaControles()
      {
-        this.txtRucCliente.setText("");   
-        this.txtPlantel.setText("");
+        this.txtRucCliente.setText("");
         this.btnRegistrar.setText("Registrar");
        //   this.txtNombre.requestFocus();
      }
@@ -108,20 +163,13 @@ public class PedidoView extends javax.swing.JInternalFrame
         jPanel4 = new javax.swing.JPanel();
         btnFechaEntrega = new com.toedter.calendar.JDateChooser();
         jLabel5 = new javax.swing.JLabel();
-        comboGrupos = new javax.swing.JComboBox<>();
         jScrollPane4 = new javax.swing.JScrollPane();
         tbGrupos = new javax.swing.JTable();
-        txtPlantel = new javax.swing.JTextField();
         btnAgregar = new javax.swing.JButton();
         btnModificar = new javax.swing.JButton();
         btnEliminar = new javax.swing.JButton();
         btnLimpiar = new javax.swing.JButton();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        spincant = new javax.swing.JSpinner();
-        jLabel4 = new javax.swing.JLabel();
         txtRucCliente = new javax.swing.JTextField();
-        jLabel10 = new javax.swing.JLabel();
         comboClientes = new javax.swing.JComboBox<>();
         jLabel2 = new javax.swing.JLabel();
         txtfolio = new javax.swing.JTextField();
@@ -152,27 +200,18 @@ public class PedidoView extends javax.swing.JInternalFrame
         btnFechaEntrega.setDate(Calendar.getInstance().getTime());
         btnFechaEntrega.setPreferredSize(new java.awt.Dimension(120, 20));
         jPanel4.add(btnFechaEntrega);
-        btnFechaEntrega.setBounds(150, 119, 120, 20);
+        btnFechaEntrega.setBounds(374, 95, 120, 20);
 
         jLabel5.setText("Fecha de Entrega");
         jPanel4.add(jLabel5);
-        jLabel5.setBounds(30, 119, 110, 20);
+        jLabel5.setBounds(257, 95, 110, 20);
 
-        comboGrupos.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                comboGruposActionPerformed(evt);
-            }
-        });
-        jPanel4.add(comboGrupos);
-        comboGrupos.setBounds(105, 159, 90, 29);
-
-        tbGrupos.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "CÃ³digo grupo", "Plantel", "Horas", "Observaciones"
-            }
+        tbGrupos.setModel(new DefaultTableModel(
+        	new Object[][] {
+        	},
+        	new String[] {
+        		"ID Pedido", "Fecha de Creacion", "Fecha de Entrega", "Fecha de Aprobacion", "Fecha de Anulacion", "Estado", "Folio", "ID Cliente", "Observacion"
+        	}
         ));
         tbGrupos.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -182,9 +221,7 @@ public class PedidoView extends javax.swing.JInternalFrame
         jScrollPane4.setViewportView(tbGrupos);
 
         jPanel4.add(jScrollPane4);
-        jScrollPane4.setBounds(30, 249, 590, 200);
-        jPanel4.add(txtPlantel);
-        txtPlantel.setBounds(364, 159, 90, 29);
+        jScrollPane4.setBounds(12, 249, 678, 200);
 
         btnAgregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGES/agregar.png"))); // NOI18N
         btnAgregar.addActionListener(new java.awt.event.ActionListener() {
@@ -193,7 +230,7 @@ public class PedidoView extends javax.swing.JInternalFrame
             }
         });
         jPanel4.add(btnAgregar);
-        btnAgregar.setBounds(585, 107, 35, 32);
+        btnAgregar.setBounds(639, 107, 35, 32);
 
         btnModificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/update.png"))); // NOI18N
         btnModificar.addActionListener(new java.awt.event.ActionListener() {
@@ -202,7 +239,7 @@ public class PedidoView extends javax.swing.JInternalFrame
             }
         });
         jPanel4.add(btnModificar);
-        btnModificar.setBounds(585, 140, 35, 32);
+        btnModificar.setBounds(639, 140, 35, 32);
 
         btnEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGES/eliminar.png"))); // NOI18N
         btnEliminar.addActionListener(new java.awt.event.ActionListener() {
@@ -211,7 +248,7 @@ public class PedidoView extends javax.swing.JInternalFrame
             }
         });
         jPanel4.add(btnEliminar);
-        btnEliminar.setBounds(583, 175, 37, 34);
+        btnEliminar.setBounds(639, 178, 35, 32);
 
         btnLimpiar.setText("Limpiar");
         btnLimpiar.addActionListener(new java.awt.event.ActionListener() {
@@ -220,29 +257,9 @@ public class PedidoView extends javax.swing.JInternalFrame
             }
         });
         jPanel4.add(btnLimpiar);
-        btnLimpiar.setBounds(500, 50, 120, 29);
-
-        jLabel9.setText("Grupo");
-        jPanel4.add(jLabel9);
-        jLabel9.setBounds(31, 163, 50, 21);
-
-        jLabel3.setText("Plantel");
-        jPanel4.add(jLabel3);
-        jLabel3.setBounds(300, 163, 50, 20);
-
-        spincant.setModel(new javax.swing.SpinnerNumberModel(0, 0, 10000, 1));
-        jPanel4.add(spincant);
-        spincant.setBounds(413, 201, 123, 29);
-
-        jLabel4.setText("Horas");
-        jPanel4.add(jLabel4);
-        jLabel4.setBounds(364, 205, 50, 20);
+        btnLimpiar.setBounds(554, 49, 120, 29);
         jPanel4.add(txtRucCliente);
-        txtRucCliente.setBounds(274, 70, 140, 29);
-
-        jLabel10.setText("Cliente");
-        jPanel4.add(jLabel10);
-        jLabel10.setBounds(30, 74, 61, 20);
+        txtRucCliente.setBounds(247, 53, 140, 29);
 
         comboClientes.setEditable(true);
         comboClientes.addActionListener(new java.awt.event.ActionListener() {
@@ -251,19 +268,19 @@ public class PedidoView extends javax.swing.JInternalFrame
             }
         });
         jPanel4.add(comboClientes);
-        comboClientes.setBounds(105, 70, 130, 29);
+        comboClientes.setBounds(99, 53, 130, 29);
 
         jLabel2.setText("Folio");
         jPanel4.add(jLabel2);
-        jLabel2.setBounds(30, 24, 33, 21);
+        jLabel2.setBounds(214, 19, 33, 21);
         jPanel4.add(txtfolio);
-        txtfolio.setBounds(80, 20, 130, 29);
+        txtfolio.setBounds(257, 15, 130, 29);
         jPanel4.add(txtobservaciondetalle);
-        txtobservaciondetalle.setBounds(108, 201, 230, 29);
+        txtobservaciondetalle.setBounds(90, 196, 230, 29);
 
         lblObservacion.setText("Observaci\u00F3n");
         jPanel4.add(lblObservacion);
-        lblObservacion.setBounds(30, 205, 82, 21);
+        lblObservacion.setBounds(12, 200, 82, 21);
 
         btnLeer.setText("Leer");
         btnLeer.addActionListener(new java.awt.event.ActionListener() {
@@ -272,7 +289,7 @@ public class PedidoView extends javax.swing.JInternalFrame
             }
         });
         jPanel4.add(btnLeer);
-        btnLeer.setBounds(500, 20, 120, 29);
+        btnLeer.setBounds(554, 15, 120, 29);
 
         btnBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/buscar.gif"))); // NOI18N
         btnBuscar.addActionListener(new java.awt.event.ActionListener() {
@@ -281,7 +298,7 @@ public class PedidoView extends javax.swing.JInternalFrame
             }
         });
         jPanel4.add(btnBuscar);
-        btnBuscar.setBounds(321, 15, 40, 30);
+        btnBuscar.setBounds(506, 33, 40, 30);
 
         jTabbedPane1.addTab("Registrar Pedidos", jPanel4);
 
@@ -344,10 +361,10 @@ public class PedidoView extends javax.swing.JInternalFrame
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         layout.setHorizontalGroup(
-        	layout.createParallelGroup(Alignment.LEADING)
+        	layout.createParallelGroup(Alignment.TRAILING)
         		.addGroup(layout.createSequentialGroup()
-        			.addGap(34)
-        			.addComponent(jTabbedPane1, GroupLayout.PREFERRED_SIZE, 651, GroupLayout.PREFERRED_SIZE)
+        			.addContainerGap()
+        			.addComponent(jTabbedPane1, GroupLayout.PREFERRED_SIZE, 707, GroupLayout.PREFERRED_SIZE)
         			.addGap(18)
         			.addGroup(layout.createParallelGroup(Alignment.LEADING, false)
         				.addComponent(btnSalir, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -357,9 +374,9 @@ public class PedidoView extends javax.swing.JInternalFrame
         				.addComponent(btnAprobar, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         				.addComponent(btnModificarPedido, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         				.addComponent(btnRegistrar, GroupLayout.PREFERRED_SIZE, 161, GroupLayout.PREFERRED_SIZE))
-        			.addContainerGap(99, Short.MAX_VALUE))
-        		.addGroup(Alignment.TRAILING, layout.createSequentialGroup()
-        			.addContainerGap(303, Short.MAX_VALUE)
+        			.addContainerGap(31, Short.MAX_VALUE))
+        		.addGroup(layout.createSequentialGroup()
+        			.addContainerGap(350, Short.MAX_VALUE)
         			.addComponent(jLabel1)
         			.addGap(293))
         );
@@ -371,7 +388,7 @@ public class PedidoView extends javax.swing.JInternalFrame
         					.addGap(12)
         					.addComponent(jLabel1, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)
         					.addPreferredGap(ComponentPlacement.RELATED)
-        					.addComponent(jTabbedPane1, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        					.addComponent(jTabbedPane1, GroupLayout.PREFERRED_SIZE, 518, GroupLayout.PREFERRED_SIZE))
         				.addGroup(layout.createSequentialGroup()
         					.addGap(100)
         					.addComponent(btnRegistrar)
@@ -387,7 +404,7 @@ public class PedidoView extends javax.swing.JInternalFrame
         					.addComponent(btnCotizar)
         					.addPreferredGap(ComponentPlacement.RELATED)
         					.addComponent(btnSalir)))
-        			.addContainerGap())
+        			.addContainerGap(40, Short.MAX_VALUE))
         );
         getContentPane().setLayout(layout);
 
@@ -510,9 +527,6 @@ public class PedidoView extends javax.swing.JInternalFrame
     private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
         //crea un vector  y le asignamos los valores 
         Vector vec = new Vector();
-        vec.addElement(this.comboGrupos.getSelectedItem().toString());
-        vec.addElement(this.txtPlantel.getText());
-        vec.addElement(this.spincant.getValue().toString());
         vec.addElement(this.txtobservaciondetalle.getText());
         //float foo = Float.parseFloat(txtpunit.getText());
         //int can = Integer.parseInt(this.spincant.getValue().toString());
@@ -616,11 +630,6 @@ public class PedidoView extends javax.swing.JInternalFrame
         txtRucCliente.setText(RUCClient);
     }//GEN-LAST:event_comboClientesActionPerformed
 
-    private void comboGruposActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboGruposActionPerformed
-        //comboGrupos.setEnabled(true);
-        //comboEquipos.setModel(h.getvaluesEqVe(Integer.parseInt(comboGrupos.getSelectedItem().toString())));
-    }//GEN-LAST:event_comboGruposActionPerformed
-
     private void btnModificarPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarPedidoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnModificarPedidoActionPerformed
@@ -671,25 +680,19 @@ public class PedidoView extends javax.swing.JInternalFrame
     private javax.swing.JButton btnRegistrar;
     private javax.swing.JButton btnSalir;
     private javax.swing.JComboBox<String> comboClientes;
-    private javax.swing.JComboBox<String> comboGrupos;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JLabel lblObservacion;
-    private javax.swing.JSpinner spincant;
     private javax.swing.JTable tbGrupos;
-    private javax.swing.JTextField txtPlantel;
     private javax.swing.JTextField txtRucCliente;
     private javax.swing.JTextField txtfolio;
     private javax.swing.JTextField txtobservaciondetalle;
-    // End of variables declaration//GEN-END:variables
+    private JLabel lblFechaDeAprobacin;
+    private JTextField txtID;
 }
 
    

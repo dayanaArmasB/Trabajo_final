@@ -31,9 +31,7 @@ public class FrmCliente extends javax.swing.JInternalFrame {
     String cad = "";
     int idClie; 
     ButtonGroup buttonGroup;
-    /**
-     * Creates new form FrmCliente
-     */
+
     public FrmCliente() {
     	setTitle("CLIENTES");
         initComponents();

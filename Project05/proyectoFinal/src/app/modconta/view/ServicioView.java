@@ -137,7 +137,7 @@ public class ServicioView extends javax.swing.JInternalFrame {
 
         jLabel8.setText("Número de Factura");
         jPanel4.add(jLabel8);
-        jLabel8.setBounds(30, 20, 100, 16);
+        jLabel8.setBounds(12, 20, 118, 16);
 
         btnFechaEntrega.setDate(Calendar.getInstance().getTime());
         btnFechaEntrega.setPreferredSize(new java.awt.Dimension(120, 20));
@@ -186,7 +186,7 @@ public class ServicioView extends javax.swing.JInternalFrame {
 
         jLabel2.setText("Recomendaciones");
         jPanel4.add(jLabel2);
-        jLabel2.setBounds(30, 320, 103, 16);
+        jLabel2.setBounds(15, 321, 103, 16);
 
         jPanel4.add(jScrollPane1);
         jScrollPane1.setBounds(130, 302, 520, 60);
