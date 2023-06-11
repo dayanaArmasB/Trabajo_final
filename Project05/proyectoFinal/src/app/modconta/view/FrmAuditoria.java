@@ -6,6 +6,7 @@
 package app.modconta.view;
 
 
+import app.modconta.business.AuditoriaBO;
 import app.modconta.business.Negocios;
 import app.modconta.databaase.dbBean;
 import app.modconta.entity.Mutation;
@@ -39,17 +40,16 @@ import java.awt.Font;
  *
  * @author Administrador
  */
-public class ConsultasView extends javax.swing.JInternalFrame {
+public class FrmAuditoria extends javax.swing.JInternalFrame {
 
-      Negocios boPedido;
-       DefaultTableModel dtm;
+     AuditoriaBO _auditoriaBO;
+     DefaultTableModel dtm;
        
-       
-    public ConsultasView() 
+    public FrmAuditoria() 
     {
     	setTitle("CONSULTAS");
         initComponents();
-        boPedido = new Negocios();
+        _auditoriaBO = new AuditoriaBO();
         llenaTabla("");   
    
     }
@@ -57,7 +57,8 @@ public class ConsultasView extends javax.swing.JInternalFrame {
     
      private void llenaTabla(String tabla)
      {
-        List<Mutation> productos = boPedido.LeerDatosAuditoría(tabla);
+     
+        List<Mutation> productos = _auditoriaBO.readAll();
         for(int i=0; i<productos.size();i++){
             Vector vec = new Vector();
             vec.add(productos.get(i).getCodigo());
@@ -135,13 +136,13 @@ public class ConsultasView extends javax.swing.JInternalFrame {
         		.addGroup(layout.createSequentialGroup()
         			.addGap(214)
         			.addComponent(jLabel1)
-        			.addContainerGap(231, Short.MAX_VALUE))
+        			.addContainerGap(232, Short.MAX_VALUE))
         		.addGroup(layout.createSequentialGroup()
-        			.addGap(86)
+        			.addGap(20)
         			.addComponent(jLabel2)
         			.addPreferredGap(ComponentPlacement.UNRELATED)
         			.addComponent(cmbFiltro, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE)
-        			.addPreferredGap(ComponentPlacement.RELATED, 328, Short.MAX_VALUE)
+        			.addPreferredGap(ComponentPlacement.RELATED, 395, Short.MAX_VALUE)
         			.addComponent(btnLeer, GroupLayout.PREFERRED_SIZE, 79, GroupLayout.PREFERRED_SIZE)
         			.addGap(163))
         		.addGroup(layout.createSequentialGroup()
@@ -153,7 +154,7 @@ public class ConsultasView extends javax.swing.JInternalFrame {
         			.addComponent(btnGenerarPDF)
         			.addGap(62)
         			.addComponent(btnSalir, GroupLayout.PREFERRED_SIZE, 80, GroupLayout.PREFERRED_SIZE)
-        			.addContainerGap(300, Short.MAX_VALUE))
+        			.addContainerGap(301, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
         	layout.createParallelGroup(Alignment.LEADING)
@@ -162,9 +163,9 @@ public class ConsultasView extends javax.swing.JInternalFrame {
         			.addComponent(jLabel1)
         			.addGap(24)
         			.addGroup(layout.createParallelGroup(Alignment.BASELINE)
+        				.addComponent(btnLeer)
         				.addComponent(jLabel2)
-        				.addComponent(cmbFiltro, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-        				.addComponent(btnLeer))
+        				.addComponent(cmbFiltro, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
         			.addGap(18)
         			.addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 207, GroupLayout.PREFERRED_SIZE)
         			.addGap(18)

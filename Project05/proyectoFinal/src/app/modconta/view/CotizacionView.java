@@ -410,7 +410,7 @@ public class CotizacionView extends javax.swing.JInternalFrame
     }//GEN-LAST:event_btnExportarPDFActionPerformed
 
     private void btnAprobarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAprobarActionPerformed
-      try {
+     /* try {
         int id = 0, est;
         int idClient = 0;
         String pr = "";
@@ -441,11 +441,12 @@ public class CotizacionView extends javax.swing.JInternalFrame
         {
             JOptionPane.showMessageDialog(null, "Se aprobó el pedido con éxito", "ÉXITO", JOptionPane.OK_OPTION);
             limpiaControles();
-        }
+        } 
+        */
     }//GEN-LAST:event_btnAprobarActionPerformed
 
     private void btnAnularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAnularActionPerformed
-        try {
+       /* try {
         int id = 0, est;
         int idClient = 0;
         String pr = "";
@@ -477,7 +478,7 @@ public class CotizacionView extends javax.swing.JInternalFrame
         {
             JOptionPane.showMessageDialog(null, "Se anuló el pedido con éxito", "ÉXITO", JOptionPane.OK_OPTION);
             limpiaControles();
-        }
+        }*/
     }//GEN-LAST:event_btnAnularActionPerformed
 
     private void comboPedidosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboPedidosActionPerformed
