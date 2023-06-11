@@ -2,25 +2,32 @@ package app.modconta.business;
 
 import java.util.List;
 
+import app.modconta.dataaccess.ClienteRepository;
 import app.modconta.entity.Cliente;
 
 public class ClienteBO implements IGeneralBO<Cliente>{
+	
+	ClienteRepository _doClienteRep;
+	
+	public ClienteBO() {
+		_doClienteRep = new ClienteRepository();
+	}
 
 	@Override
-	public void Create(Cliente param) {
-		// TODO Auto-generated method stub
+	public void Create(Cliente p) {
+		_doClienteRep.Create(p);
 		
 	}
 
 	@Override
-	public void Update(Cliente param) {
-		// TODO Auto-generated method stub
+	public void Update(Cliente p) {
+		_doClienteRep.Update(p);
 		
 	}
 
 	@Override
 	public void Delete(int id) {
-		// TODO Auto-generated method stub
+		_doClienteRep.Delete(id);
 		
 	}
 
@@ -33,7 +40,7 @@ public class ClienteBO implements IGeneralBO<Cliente>{
 	@Override
 	public List<Cliente> readAll() {
 		// TODO Auto-generated method stub
-		return null;
+		return _doClienteRep.readAll();
 	}
 
  

@@ -3,12 +3,14 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JInternalFrame.java to edit this template
  */
 package app.modconta.view;
-import MODEL.ClienteDAO;
+import MODEL.ProveedorDAO;
+import app.modconta.business.ClienteBO;
 import app.modconta.databaase.dbBean;
 import app.modconta.databaase.util;
 import app.modconta.entity.Cliente;
 import java.sql.Connection;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Vector;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -25,7 +27,7 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 
 public class FrmProveedor extends javax.swing.JInternalFrame {
-    ClienteDAO ClienteDAO;
+	ClienteBO _Clientebo;
     DefaultTableModel _DefaultTableModel;
     boolean sw = false;
     String cad = "";
@@ -35,7 +37,7 @@ public class FrmProveedor extends javax.swing.JInternalFrame {
     public FrmProveedor() {
     	setTitle("CLIENTES");
         initComponents();
-         ClienteDAO = new ClienteDAO();
+        _Clientebo = new ClienteBO();
         _DefaultTableModel = (DefaultTableModel)tblCliente.getModel();
         llenaTabla(false, "");
         
@@ -43,19 +45,19 @@ public class FrmProveedor extends javax.swing.JInternalFrame {
     }
 public void llenaTabla(boolean swr, String cadr)
     {
-        Vector<Cliente> ClientesCollection = ClienteDAO.ListaItem(swr, cadr);
-        int i = ClientesCollection.size(); 
+	List<Cliente> Clientes = _Clientebo.readAll();
+        int i = Clientes.size(); 
         for(int j = 0; j<i;j++){
             Vector vect = new Vector();
-            vect.addElement(ClientesCollection.get(j).getIdCliente());
-            vect.addElement(ClientesCollection.get(j).getNombre());
-            vect.addElement(ClientesCollection.get(j).getApellidoP());
-            vect.addElement(ClientesCollection.get(j).getApellidoM());
-            vect.addElement(ClientesCollection.get(j).getTelefono());
-            vect.addElement(ClientesCollection.get(j).getDireccion());
-            vect.addElement(ClientesCollection.get(j).getSexo());
-            vect.addElement(ClientesCollection.get(j).getDNI());
-            vect.addElement(ClientesCollection.get(j).getRUC());
+            vect.addElement(Clientes.get(j).getIdCliente());
+            vect.addElement(Clientes.get(j).getNombre());
+            vect.addElement(Clientes.get(j).getApellidoP());
+            vect.addElement(Clientes.get(j).getApellidoM());
+            vect.addElement(Clientes.get(j).getTelefono());
+            vect.addElement(Clientes.get(j).getDireccion());
+            vect.addElement(Clientes.get(j).getSexo());
+            vect.addElement(Clientes.get(j).getDNI());
+            vect.addElement(Clientes.get(j).getRUC());
             _DefaultTableModel.addRow(vect);
         }
         
@@ -418,7 +420,7 @@ public void llenaTabla(boolean swr, String cadr)
                 pr = "update";
             }
             p.setIdCliente(id);
-            ClienteDAO.procesaItem(p, pr);
+            _Clientebo.Create(p);
             limpiaControles();
             limpiaTabla();
             llenaTabla(false, "");

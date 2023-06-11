@@ -57,7 +57,6 @@ public void limpiaControles(){
         this.txtNombreProduc.requestFocus();
     }
       
-    //funcion limpia la tabla de lista de Equipos
     public void limpiaTabla(){
         DefaultTableModel dm = (DefaultTableModel)this.tblEquipo.getModel();
         if(dm.getRowCount()>0){
@@ -69,7 +68,7 @@ public void limpiaControles(){
     public boolean valida(){
         boolean sw = false;
         if(this.txtNombreProduc.getText().equals("")){
-           JOptionPane.showMessageDialog(this, "Ingrese Nombre del Equipo");
+           JOptionPane.showMessageDialog(this, "Ingrese Nombre del Product");
         }else{
            if(this.txtNombreProduc.getText().equals("")){
                 JOptionPane.showMessageDialog(this, "Ingresa bien");
