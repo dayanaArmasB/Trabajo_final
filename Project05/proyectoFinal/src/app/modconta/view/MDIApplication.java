@@ -209,7 +209,7 @@ public class MDIApplication extends javax.swing.JFrame {
     }//GEN-LAST:event_btnClientesActionPerformed
 
     private void btnEquiposActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEquiposActionPerformed
-        cargarFormulario(ProductosView.class);
+        cargarFormulario(FrmProductos.class);
     }//GEN-LAST:event_btnEquiposActionPerformed
 
     private void btnEmpleadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEmpleadosActionPerformed

@@ -5,26 +5,25 @@ public class Producto
 
 {
     private int idProducto;
-    private String Nombre_Producto;
+    private String Nombre;
     private int Stock;
     private int StockMax;
     private int StockMin;
     private int idModelo;
-
+    private int idCategoria;
     public Producto() {
     }
 
-    public Producto(int idProducto, String Nombre_Producto, int Stock, int StockMax, int StockMin, int idModelo) {
+    public Producto(int idProducto, String Nombre, int Stock, int StockMax, int StockMin, int idModelo) {
         this.idProducto = idProducto;
-        this.Nombre_Producto = Nombre_Producto;
+        this.Nombre = Nombre;
         this.Stock = Stock;
         this.StockMax = StockMax;
         this.StockMin = StockMin;
         this.idModelo = idModelo;
     }
-    
 
-    public int getIdProducto() {
+	public int getIdProducto() {
 		return idProducto;
 	}
 
@@ -32,47 +31,55 @@ public class Producto
 		this.idProducto = idProducto;
 	}
 
-	public String getNombre_Producto() {
-		return Nombre_Producto;
+	public String getNombre() {
+		return Nombre;
 	}
 
-	public void setNombre_Producto(String nombre_Producto) {
-		Nombre_Producto = nombre_Producto;
+	public void setNombre(String nombre) {
+		Nombre = nombre;
 	}
 
-   
+	public int getStock() {
+		return Stock;
+	}
 
-    public int getStock() {
-        return Stock;
-    }
+	public void setStock(int stock) {
+		Stock = stock;
+	}
 
-    public void setStock(int Stock) {
-        this.Stock = Stock;
-    }
+	public int getStockMax() {
+		return StockMax;
+	}
 
-    public int getStockMax() {
-        return StockMax;
-    }
+	public void setStockMax(int stockMax) {
+		StockMax = stockMax;
+	}
 
-    public void setStockMax(int StockMax) {
-        this.StockMax = StockMax;
-    }
+	public int getStockMin() {
+		return StockMin;
+	}
 
-    public int getStockMin() {
-        return StockMin;
-    }
+	public void setStockMin(int stockMin) {
+		StockMin = stockMin;
+	}
 
-    public void setStockMin(int StockMin) {
-        this.StockMin = StockMin;
-    }
+	public int getIdModelo() {
+		return idModelo;
+	}
 
-    public int getIdModelo() {
-        return idModelo;
-    }
+	public void setIdModelo(int idModelo) {
+		this.idModelo = idModelo;
+	}
 
-    public void setIdModelo(int idModelo) {
-        this.idModelo = idModelo;
-    }
+	public int getIdCategoria() {
+		return idCategoria;
+	}
 
+	public void setIdCategoria(int idCategoria) {
+		this.idCategoria = idCategoria;
+	}
+    
+
+  
     
 }

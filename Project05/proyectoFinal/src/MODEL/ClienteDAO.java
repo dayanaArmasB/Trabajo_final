@@ -18,7 +18,7 @@ public class ClienteDAO {
         dbBean con = new dbBean();
       PreparedStatement pe = null;
      try {
-         pe = con.getConnection().prepareCall("usp_clientes_listar");
+         pe = con.dbCon.prepareCall("usp_clientes_listar");
      } catch (SQLException ex) {
          Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);
      }

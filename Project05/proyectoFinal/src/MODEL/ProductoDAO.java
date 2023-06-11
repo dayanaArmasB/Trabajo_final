@@ -7,43 +7,6 @@ import java.util.Vector;
 
 public class ProductoDAO {
 
-//funcion listar  
-    public Vector<Producto> ListaItem(boolean sw, String str){
-       Vector<Producto> item = new Vector<Producto>();
-        dbBean con = new dbBean();
-        String sql = "Select * from Equipo";
-        //El criterio de busqueda para mostrar datos 
-        if(sw == true)
-        {
-            sql = sql + " where Nombre_Equipo like '"+str +" %'";
-        }
-        System.out.println("FII: "+ sql);
-        try{
-            ResultSet resultado = con.execSQL(sql);
-            while(resultado.next()){
-                Producto e; 
-                e = new Producto();
-                e.setIdProducto(resultado.getInt(1));
-                e.setNombre_Producto(resultado.getString(2));
-                e.setStock(resultado.getInt(7));
-                e.setStockMax(resultado.getInt(8));
-                e.setStockMin(resultado.getInt(9));
-                e.setIdModelo(resultado.getInt(10));
-                        
-                item.addElement(e);
-            }
-            
-        }catch(java.sql.SQLException e){
-            e.printStackTrace();
-        }
-        try{
-            con.close();
-        }catch(java.sql.SQLException e){
-            e.printStackTrace();
-        }
-        
-        return item;
-    }
 
     
 public int FindID(String s ) 
@@ -74,40 +37,8 @@ public int FindID(String s )
  }
     
     
-//funcion procesar 
-public int procesaItem(Producto p, String proc){
-        int resultado = 0;
-        String sql = "";
-        String x1= "null";
-        String x2 = "null";
-        dbBean con = new dbBean();
-        if(proc.equals("insert")){
-       //insertar
-       System.out.println("que fue ");
-        //sql = "insert into Equipo values ('"+ p.getIdEquipo()+"', '"+p.getNombre_equipo()+"', '"+ p.marc.getNombre()+"', '"+  p.mode.getNombre()+"', '"+ p.getSO() +"', '"+ p.getProcesador() +"', '"+p.getRAM()+"', '"+p.getTarjetaMadre()+"')";
-        sql = "insert into Equipo values ('"+ p.getIdProducto()+"', '"+p.getNombre_Producto()+"', "+ p.getStock()+","+ p.getStockMax()+"," +p.getStockMin()+","+p.getIdModelo()+")";
-       // sql = "insert into Equipo values ('"+ p.getIdEquipo()+"', '"+ p.getMarc()+"', '"+  p.getMode()+"', '"+ p.getSO() +"', '"+ p.getProcesador() +"', '"+p.getRAM()+"', '"+p.getTarjetaMadre() +"')"; 
-       }
-        if(proc.equals("update")){ 
-            //actualizar 
-            //el criterio de busqueda , se basa en ingresar el código de CLiente
-            sql = "update Cliente set Nombre = '"+ p.getNombre_Producto()+"' where idEquipo = '"+ p.getIdProducto()+"'";
-        }
-        try{
-            resultado = con.updateSQL(sql);
-        }catch(java.sql.SQLException e){
-            e.printStackTrace();
-        }
-        try{
-            con.close();
-        }catch(java.sql.SQLException e){
-            e.printStackTrace();
-        }
-        return resultado;       
-    }    
-    
- 
 
+    
 public int FindIDEquipo(String s ) 
  {   
      dbBean con2 = new dbBean();  

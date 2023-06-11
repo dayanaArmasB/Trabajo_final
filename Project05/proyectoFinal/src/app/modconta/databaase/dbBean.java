@@ -12,13 +12,13 @@ import java.sql.Statement;
 public class dbBean {
     String dbURL = "jdbc:sqlserver://localhost:1433;databaseName=dblogistica;integratedSecurity=true";
     String dbDriver="com.microsoft.sqlserver.jdbc.SQLServerDriver" ;
-    private Connection dbCon;
+    public Connection dbCon;
     private String Login=Constantes.user_sa;
     private String password=Constantes.clave_sa;
 
     
   public dbBean(){
-	  
+	  getConnection();
   }
  
   public Connection getConnection()

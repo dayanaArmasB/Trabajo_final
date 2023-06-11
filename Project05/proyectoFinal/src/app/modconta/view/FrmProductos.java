@@ -1,4 +1,5 @@
 package app.modconta.view;
+import app.modconta.business.ProductoBO;
 import app.modconta.databaase.Helper;
 import app.modconta.databaase.dbBean;
 import app.modconta.databaase.util;
@@ -6,6 +7,7 @@ import app.modconta.entity.Producto;
 import MODEL.ProductoDAO;
 import java.sql.Connection;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Vector;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -20,38 +22,32 @@ import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
-public class ProductosView extends javax.swing.JInternalFrame {
+public class FrmProductos extends javax.swing.JInternalFrame {
     
     Helper h = new Helper();
-   ProductoDAO ProductoDAO;
+    ProductoBO _Productobo;
     DefaultTableModel dtm;
-    boolean sw = false;
-    String cad = "";
     int idEqui; 
-    public ProductosView() {
-      
+    public FrmProductos() {
         initComponents();    
-        //variables
         dtm = (DefaultTableModel)tblEquipo.getModel();
-        ProductoDAO = new ProductoDAO();
-         //comboMarca.setModel(h.getvalues("Marca"));
-         //llenaTabla(false, "");
-         
+        _Productobo = new ProductoBO();
+        LeerProductosGrid();    
     }
     
-    public void llenaTabla(boolean swr, String cadr)
+    public void LeerProductosGrid()
     {
-         Vector<Producto> equip = ProductoDAO.ListaItem(swr, cadr);
+         List<Producto> equip = _Productobo.readAll();
         int i = equip.size(); 
         for(int j = 0; j<i;j++){
           Vector vect = new Vector();
           vect.addElement(equip.get(j).getIdProducto());
-          vect.addElement(equip.get(j).getNombre_Producto());
+          vect.addElement(equip.get(j).getNombre());
           vect.addElement(equip.get(j).getStock());
           vect.addElement(equip.get(j).getStockMax());
           vect.addElement(equip.get(j).getStockMin());
           vect.addElement(equip.get(j).getIdModelo());
-         dtm.addRow(vect);
+          dtm.addRow(vect);
         }
             
     } 
@@ -107,7 +103,6 @@ public void limpiaControles(){
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblEquipo = new javax.swing.JTable();
-        jTextField1 = new javax.swing.JTextField();
         jComboBox4 = new javax.swing.JComboBox<>();
         jTextField2 = new javax.swing.JTextField();
         jLabel15 = new javax.swing.JLabel();
@@ -393,16 +388,7 @@ public void limpiaControles(){
         jScrollPane1.setViewportView(tblEquipo);
 
         jPanel3.add(jScrollPane1);
-        jScrollPane1.setBounds(30, 120, 800, 350);
-
-        jTextField1.setName("txtBusqueda"); // NOI18N
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
-            }
-        });
-        jPanel3.add(jTextField1);
-        jTextField1.setBounds(40, 120, 260, 30);
+        jScrollPane1.setBounds(30, 110, 800, 350);
 
         jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jPanel3.add(jComboBox4);
@@ -484,10 +470,6 @@ public void limpiaControles(){
             //   llenaModifica();
         }
     }//GEN-LAST:event_tblEquipoMouseClicked
-
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void txtNombreEquipKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombreEquipKeyPressed
         if(evt.getKeyCode() == evt.VK_ENTER){
@@ -577,7 +559,7 @@ public void limpiaControles(){
             //this.spincant.getValue().toString()
               util u = new util();
               Producto eq = new Producto();
-              eq.setNombre_Producto(this.txtNombreProduc.getText());
+              eq.setNombre(this.txtNombreProduc.getText());
               JOptionPane.showMessageDialog(this, "ya esta nombre" );
               System.out.println(this.comboMarca.getSelectedItem().toString());
               //eq.marc.setNombre(this.comboMarca.getSelectedItem().toString());
@@ -592,7 +574,7 @@ public void limpiaControles(){
               eq.setStockMax(Integer.parseInt(this.spinstockMAX.getValue().toString()));
               eq.setStockMin(Integer.parseInt(this.spinstockMIN.getValue().toString()));
               JOptionPane.showMessageDialog(this, "ok" );
-              eq.setIdModelo(ProductoDAO.FindID(this.comboModelo.getSelectedItem().toString()));
+             // eq.setIdModelo(ProductoDAO.FindID(this.comboModelo.getSelectedItem().toString()));
            if(proc.equals("Registrar")){
                 id = u.idNext("Equipo", "idEquipo");
                 pr = "insert";
@@ -602,10 +584,10 @@ public void limpiaControles(){
                 pr = "update";
             }
             eq.setIdProducto(id);
-            ProductoDAO.procesaItem(eq, pr);
+            //ProductoDAO.procesaItem(eq, pr);
             limpiaControles();
             limpiaTabla();
-            llenaTabla(false, "");
+            this.LeerProductosGrid();
         }
 
         
@@ -665,7 +647,6 @@ public void limpiaControles(){
     private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JLabel lblMarca;
     private javax.swing.JLabel lblTitulo;
