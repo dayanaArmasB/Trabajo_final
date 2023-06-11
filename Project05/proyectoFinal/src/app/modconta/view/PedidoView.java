@@ -6,6 +6,7 @@ import MODEL.ServicioDAO;
 import MODEL.VentaDAO;
 import MODEL.detserDAO;
 import app.modconta.business.Negocios;
+import app.modconta.business.PedidoBO;
 import app.modconta.databaase.dbBean;
 import app.modconta.entity.Constantes;
 import app.modconta.entity.DetallePedido;
@@ -29,8 +30,8 @@ import javax.swing.LayoutStyle.ComponentPlacement;
 
 public class PedidoView extends javax.swing.JInternalFrame 
 {
-   //definir variables globales 
-    //EquipoDAO eqx = new EquipoDAO();
+	
+	PedidoBO _pedidoBO;
     ServicioDAO ServicioDAO;
     detserDAO detserDAO;
     VentaDAO vaux;
@@ -46,23 +47,15 @@ public class PedidoView extends javax.swing.JInternalFrame
     {
     	setTitle("PEDIDOS");
         initComponents();
-        
         dtm2 = (DefaultTableModel)tbGrupos.getModel();
-        boPedido = new Negocios();
-        //comboEquipos.setEnabled(false);
-        //AreaCausa.setEnabled(false);
-        //AreaFallas.setEnabled(false);
-        //AreaSolucion.setEnabled(false);
-        //comboClientes.setModel(h.getvaluesVentas("Venta"));
+        _pedidoBO = new PedidoBO();
         comboClientes.setModel(boPedido.getvaluesName("nombre", "clientes"));
         comboGrupos.setModel(boPedido.getvaluesName("codigo", "grupo_ma"));
        //comboClientes.setModel(h.getvaluesTienda("Tienda"));
          AutoCompleteDecorator.decorate(comboClientes);
-  
         //dtm2 = (DefaultTableModel)jTable1.getModel();
     }
 
-      //Método de validación
        public boolean valida()
       {
         boolean sw = false;
@@ -83,7 +76,7 @@ public class PedidoView extends javax.swing.JInternalFrame
         return false;
         }
         return true;
-}
+      }
 
      
 
@@ -408,7 +401,7 @@ public class PedidoView extends javax.swing.JInternalFrame
 
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
         
-        try {
+       /* try {
         int id = 0, est;
         int idClient = 0;
         String pr = "";
@@ -476,7 +469,7 @@ public class PedidoView extends javax.swing.JInternalFrame
         finally
         {
         
-        }
+        }*/
     }//GEN-LAST:event_btnRegistrarActionPerformed
 
     
@@ -548,7 +541,7 @@ public class PedidoView extends javax.swing.JInternalFrame
     }//GEN-LAST:event_btnEliminarActionPerformed
 
     private void btnAprobarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAprobarActionPerformed
-      try {
+     /* try {
         int id = 0, est;
         int idClient = 0;
         String pr = "";
@@ -579,11 +572,11 @@ public class PedidoView extends javax.swing.JInternalFrame
             JOptionPane.showMessageDialog(null, "Se aprobó el pedido con éxito", "ÉXITO", JOptionPane.OK_OPTION);
             limpiaControles();
             limpiaTabla();
-        }
+        }*/
     }//GEN-LAST:event_btnAprobarActionPerformed
 
     private void btnAnularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAnularActionPerformed
-        try {
+      /*  try {
         int id = 0, est;
         int idClient = 0;
         String pr = "";
@@ -615,7 +608,7 @@ public class PedidoView extends javax.swing.JInternalFrame
             JOptionPane.showMessageDialog(null, "Se anuló el pedido con éxito", "ÉXITO", JOptionPane.OK_OPTION);
             limpiaControles();
             limpiaTabla();
-        }
+        } */
     }//GEN-LAST:event_btnAnularActionPerformed
 
     private void comboClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboClientesActionPerformed

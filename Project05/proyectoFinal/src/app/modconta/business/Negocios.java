@@ -61,8 +61,7 @@ public class Negocios {
        return id; 
   }
     
-    
-      
+   
     public DefaultComboBoxModel getvaluesName(String campoNombre, String NombreTabla)
     {        
         
