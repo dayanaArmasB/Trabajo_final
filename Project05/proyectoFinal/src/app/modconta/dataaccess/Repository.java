@@ -11,7 +11,7 @@ import app.modconta.entity.ConformidadServicio;
 import app.modconta.entity.Cotizacion;
 import app.modconta.entity.DetalleConforSer;
 import app.modconta.entity.DetallePedido;
-import app.modconta.entity.Fact;
+import app.modconta.entity.Mutation;
 import app.modconta.entity.Pedido;
 import app.modconta.entity.ProtocoloPrueba;
 import app.modconta.entity.Venta;
@@ -31,7 +31,6 @@ import javax.swing.DefaultComboBoxModel;
  */
 public class Repository {
 
-    //Métodos genéricos INICIO 
     
    //función genérica para listar combo
     public DefaultComboBoxModel getvaluesName(String campoNombre, String NombreTabla)
@@ -107,11 +106,9 @@ public class Repository {
      boolean ok = false;
      int id = 0 ;
      try {
-         
-     sSQL = "insert into pedido values ('M', getdate(), null,null,null,'S',"+ p.getIdCliente() + ",'" + p.getFolio()+"');"; 
-     // "Select idTienda,Nombre from clientes where Nombre= '"+ s +"'";
-     System.out.println(sSQL);
-     
+           sSQL = "insert into pedido values ('M', getdate(), null,null,null,'S',"+ p.getIdCliente() + ",'" + p.getFolio()+"');"; 
+           //"Select idTienda,Nombre from clientes where Nombre= '"+ s +"'";
+            System.out.println(sSQL);
      //ResultSet resultado = con2.execSQL(sSQL);
      int resultado = con2.updateSQL(sSQL);
      if(resultado>0)
@@ -290,9 +287,9 @@ public class Repository {
      
      
      //datos auditoria
-  public  List<Fact> LeerDatosAuditoría(String tabla) 
+  public  List<Mutation> LeerDatosAuditoría(String tabla) 
     {   String sSQL ="";
-        List<Fact> grupoaux  = new ArrayList();
+        List<Mutation> grupoaux  = new ArrayList();
       
          //item es el vector
        // Vector<Venta> item = new Vector<Venta>();
@@ -316,7 +313,7 @@ public class Repository {
       
             while(resultado.next())
             {
-                Fact aux = new Fact();
+                Mutation aux = new Mutation();
                 aux.setCodigo(resultado.getString(1));//setPotencia(resultado.getString(2));
                 aux.setObservaciones(resultado.getString(2));
                 aux.setVal_antes(resultado.getString(3));

@@ -1,6 +1,6 @@
 package MODEL;
 import app.modconta.databaase.dbBean;
-import app.modconta.entity.Productos;
+import app.modconta.entity.Producto;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Vector;
@@ -8,8 +8,8 @@ import java.util.Vector;
 public class ProductoDAO {
 
 //funcion listar  
-    public Vector<Productos> ListaItem(boolean sw, String str){
-       Vector<Productos> item = new Vector<Productos>();
+    public Vector<Producto> ListaItem(boolean sw, String str){
+       Vector<Producto> item = new Vector<Producto>();
         dbBean con = new dbBean();
         String sql = "Select * from Equipo";
         //El criterio de busqueda para mostrar datos 
@@ -21,8 +21,8 @@ public class ProductoDAO {
         try{
             ResultSet resultado = con.execSQL(sql);
             while(resultado.next()){
-                Productos e; 
-                e = new Productos();
+                Producto e; 
+                e = new Producto();
                 e.setIdProducto(resultado.getInt(1));
                 e.setNombre_Producto(resultado.getString(2));
                 e.setProcesador(resultado.getString(3));
@@ -79,7 +79,7 @@ public int FindID(String s )
     
     
 //funcion procesar 
-public int procesaItem(Productos p, String proc){
+public int procesaItem(Producto p, String proc){
         int resultado = 0;
         String sql = "";
         String x1= "null";

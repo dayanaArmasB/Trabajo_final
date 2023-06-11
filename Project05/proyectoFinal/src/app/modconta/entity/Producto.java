@@ -1,7 +1,7 @@
 
 package app.modconta.entity;
 
-public class Productos 
+public class Producto 
 
 {
     private int idProducto;
@@ -14,13 +14,11 @@ public class Productos
     private int StockMax;
     private int StockMin;
     private int idModelo;
-  // public Marca marc;
-   // public Modelo mode;
 
-    public Productos() {
+    public Producto() {
     }
 
-    public Productos(int idProducto, String Nombre_Producto, String SO, String Procesador, String RAM, String TarjetaMadre, int Stock, int StockMax, int StockMin, int idModelo) {
+    public Producto(int idProducto, String Nombre_Producto, String SO, String Procesador, String RAM, String TarjetaMadre, int Stock, int StockMax, int StockMin, int idModelo) {
         this.idProducto = idProducto;
         this.Nombre_Producto = Nombre_Producto;
         this.SO = SO;
@@ -49,7 +47,6 @@ public class Productos
 	public void setNombre_Producto(String nombre_Producto) {
 		Nombre_Producto = nombre_Producto;
 	}
-
 
     public String getSO() {
         return SO;

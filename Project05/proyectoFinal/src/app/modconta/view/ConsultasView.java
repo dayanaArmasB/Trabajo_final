@@ -8,7 +8,7 @@ package app.modconta.view;
 
 import app.modconta.business.Negocios;
 import app.modconta.databaase.dbBean;
-import app.modconta.entity.Fact;
+import app.modconta.entity.Mutation;
 import java.awt.Color;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -57,7 +57,7 @@ public class ConsultasView extends javax.swing.JInternalFrame {
     
      private void llenaTabla(String tabla)
      {
-        List<Fact> productos = boPedido.LeerDatosAuditoría(tabla);
+        List<Mutation> productos = boPedido.LeerDatosAuditoría(tabla);
         for(int i=0; i<productos.size();i++){
             Vector vec = new Vector();
             vec.add(productos.get(i).getCodigo());
@@ -224,41 +224,7 @@ public class ConsultasView extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_btnGenerarPDFActionPerformed
 
-//    /**
-//     * @param args the command line arguments
-//     */
-//    public static void main(String args[]) {
-//        /* Set the Nimbus look and feel */
-//        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-//        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-//         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-//         */
-//        try {
-//            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-//                if ("Nimbus".equals(info.getName())) {
-//                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-//                    break;
-//                }
-//            }
-//        } catch (ClassNotFoundException ex) {
-//            java.util.logging.Logger.getLogger(ConsultasView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (InstantiationException ex) {
-//            java.util.logging.Logger.getLogger(ConsultasView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (IllegalAccessException ex) {
-//            java.util.logging.Logger.getLogger(ConsultasView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-//            java.util.logging.Logger.getLogger(ConsultasView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        }
-//        //</editor-fold>
-//        //</editor-fold>
-//
-//        /* Create and display the form */
-//        java.awt.EventQueue.invokeLater(new Runnable() {
-//            public void run() {
-//                new ConsultasView().setVisible(true);
-//            }
-//        });
-//    }
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnGenerarPDF;

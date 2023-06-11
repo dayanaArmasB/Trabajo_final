@@ -9,7 +9,7 @@ package app.modconta.entity;
  *
  * @author RAUL
  */
-public class Fact {
+public class Mutation {
     
     String rol_bd;
     String rol;

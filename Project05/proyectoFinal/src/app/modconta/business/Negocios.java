@@ -12,7 +12,7 @@ import app.modconta.entity.ConformidadServicio;
 import app.modconta.entity.Cotizacion;
 import app.modconta.entity.DetalleConforSer;
 import app.modconta.entity.DetallePedido;
-import app.modconta.entity.Fact;
+import app.modconta.entity.Mutation;
 import app.modconta.entity.Pedido;
 import app.modconta.entity.ProtocoloPrueba;
 import java.sql.Connection;
@@ -34,7 +34,6 @@ public class Negocios {
     }
     
     
-     //funcion para buscar idtienda
     public int FindIDClientes(String s ) 
    {   
      dbBean con2 = new dbBean();  
@@ -63,9 +62,8 @@ public class Negocios {
   }
     
     
-
       
-       public DefaultComboBoxModel getvaluesName(String campoNombre, String NombreTabla)
+    public DefaultComboBoxModel getvaluesName(String campoNombre, String NombreTabla)
     {        
         
         DefaultComboBoxModel modelo = new DefaultComboBoxModel();
@@ -92,31 +90,6 @@ public class Negocios {
     }
     
     
-    
-    
-    
-    //metodos de pedido
-    public boolean RegistrarPedido(Pedido p)
-    {   boolean resultado = false;
-        try {
-       //_doDatos = new MovimientosDo();
-         resultado = _doDatos.RegistrarPedido(p);
-        } catch (Exception e) {
-           System.out.println(e.getMessage());
-        }
-        return resultado;
-    }
-    
-      public boolean ActualizarPedido(Pedido p)
-    {   
-        try {
-       //_doDatos = new MovimientosDo();
-         return _doDatos.ActualizarPedido(p);
-        } catch (Exception e) {
-           throw e;
-        }
-    }
-       
       public boolean AnularPedido(Pedido p )
     {  
         try {
@@ -155,25 +128,6 @@ public class Negocios {
         }
         return datos;
     }*/
-
- 
-    //LEER DATOS CONSULTORIA  
-    public List<Fact>  LeerDatosAuditoría(String tabla) 
-    {
-        List<Fact> lista_datos = new ArrayList<>();
-        //Grupos_MA  datos =  new Grupos_MA();
-        try {
-       //_doDatos = new MovimientosDo();
-         lista_datos = _doDatos.LeerDatosAuditoría(tabla);
-        } catch (Exception e) 
-        {
-           System.out.println(e.getMessage());
-        }
-        return lista_datos;
-    }   
-
-    
-    
     //MÉTODOS DE COTIZACION
     public boolean RegistrarCotizacion(Cotizacion c) {
      boolean resultado = false;
@@ -220,9 +174,5 @@ public class Negocios {
         }
         return resultado;
     }
-      
-      
-      
-    
        
 }

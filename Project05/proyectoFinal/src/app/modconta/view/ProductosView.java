@@ -2,7 +2,7 @@ package app.modconta.view;
 import app.modconta.databaase.Helper;
 import app.modconta.databaase.dbBean;
 import app.modconta.databaase.util;
-import app.modconta.entity.Productos;
+import app.modconta.entity.Producto;
 import MODEL.ProductoDAO;
 import java.sql.Connection;
 import java.util.HashMap;
@@ -39,7 +39,7 @@ public class ProductosView extends javax.swing.JInternalFrame {
     
     public void llenaTabla(boolean swr, String cadr)
     {
-         Vector<Productos> equip = EquipoDAO.ListaItem(swr, cadr);
+         Vector<Producto> equip = EquipoDAO.ListaItem(swr, cadr);
         int i = equip.size(); 
         for(int j = 0; j<i;j++){
           Vector vect = new Vector();
@@ -681,7 +681,7 @@ public void limpiaControles(){
         {
             //this.spincant.getValue().toString()
               util u = new util();
-              Productos eq = new Productos();
+              Producto eq = new Producto();
               eq.setNombre_Producto(this.txtNombreEquip.getText());
               JOptionPane.showMessageDialog(this, "ya esta nombre" );
               System.out.println(this.comboMarca.getSelectedItem().toString());
