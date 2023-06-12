@@ -30,9 +30,7 @@ public class ClienteRepository implements IRepository<Cliente> {
              con.close();
         }catch(java.sql.SQLException e){
             e.printStackTrace();
-        }
-    
-		
+        }	
 	}
 
 	@Override
@@ -68,8 +66,21 @@ public class ClienteRepository implements IRepository<Cliente> {
 	@Override
 	public Cliente Find(int code) {
 		
-		return null;
+		int resultado = 0;
+        String sql = "";
+        dbBean con = new dbBean();
+        
+        	try{
+             	sql = "SELECT * FROM clientes WHERE idCliente = '"+code+"'";
+     	        resultado = con.updateSQL(sql);
+     	       //resultado = con.execSQL(sql);
+     	        con.close();
+             }catch(java.sql.SQLException e){
+                 e.printStackTrace();
+             } 
+        	 return null;
 	}
+	
 
 	@Override
 	public List<Cliente> readAll() {

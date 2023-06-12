@@ -33,7 +33,7 @@ public class ClienteBO implements IGeneralBO<Cliente>{
 
 	@Override
 	public Cliente Find(int code) {
-		return null;
+		return _doClienteRep.Find(code);
 	}
 
 	@Override

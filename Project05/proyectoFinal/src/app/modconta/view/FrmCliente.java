@@ -27,6 +27,7 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Dimension;
 
 public class FrmCliente extends javax.swing.JInternalFrame implements ActionListener {
 	ClienteBO _Clientebo;
@@ -39,8 +40,6 @@ public class FrmCliente extends javax.swing.JInternalFrame implements ActionList
     public FrmCliente() {
     	setMaximizable(true);
     	setIconifiable(true);
-    	setFrameIcon(null);
-    	setAutoscrolls(true);
     	setTitle("CLIENTES");
         initComponents();
         _Clientebo = new ClienteBO();
@@ -466,21 +465,27 @@ public class FrmCliente extends javax.swing.JInternalFrame implements ActionList
         int x ;
         x = Integer.parseInt(JOptionPane.showInputDialog(" Ingrese el codigo del Cliente"));
         try {
-            //creamos un objeto dbBean
-            dbBean aux = new dbBean();
-            HashMap map = new HashMap();
-            //Connection cn = DriverManager.getConnection("jdbc:sqlserver://localhost:1433;databaseName=ST;user=sa;password=sasasa;");
-            Connection cn = aux.getConnection();
-            JasperReport jr= JasperCompileManager.compileReport("src/REPORTS/ClienteReporte.jrxml");
-            map.put("idCliente",x);
-            JasperPrint jp = JasperFillManager.fillReport(jr,map,cn);
-            // JasperPrint jp= JasperFillManager.fillReport(jr,idClie,cn);
-
-            JasperViewer jv= new JasperViewer(jp,false);
-            jv.setVisible(true);
+           
+        	_Clientebo.Find(x);
+            JOptionPane.showMessageDialog(this, "Se encontró el resgistro con exito");
+            
         } catch (Exception e) {
-            System.out.println(e);
+        	JOptionPane.showMessageDialog(this, "error ");
         }
+        
+        
+        /*creamos un objeto dbBean
+        dbBean aux = new dbBean();
+        HashMap map = new HashMap();
+        //Connection cn = DriverManager.getConnection("jdbc:sqlserver://localhost:1433;databaseName=ST;user=sa;password=sasasa;");
+        Connection cn = aux.getConnection();
+        JasperReport jr= JasperCompileManager.compileReport("src/REPORTS/ClienteReporte.jrxml");
+        map.put("idCliente",x);
+        JasperPrint jp = JasperFillManager.fillReport(jr,map,cn);
+        // JasperPrint jp= JasperFillManager.fillReport(jr,idClie,cn);
+
+        JasperViewer jv= new JasperViewer(jp,false);
+        jv.setVisible(true);*/
     }
     private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {
         limpiaControles();
@@ -519,9 +524,6 @@ public class FrmCliente extends javax.swing.JInternalFrame implements ActionList
             llenaTabla(false, "");
         }
     }
-
-
-
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {
         
@@ -573,6 +575,15 @@ public class FrmCliente extends javax.swing.JInternalFrame implements ActionList
 		}
 	}
 	protected void do_btnActualizar_actionPerformed(ActionEvent e) {
+        
+		String nombre = String.valueOf(_DefaultTableModel.getValueAt(tblCliente.getSelectedRow(),1));
+		Cliente p = new Cliente();
+		p.setNombre(nombre.toString());
+        _Clientebo.Update(p);
+        limpiaTabla();
+        llenaTabla(false, "");
+        JOptionPane.showMessageDialog(this, "Se actuaizó el resgistro con exito");
+        
 	}
 	protected void do_btnEliminar_actionPerformed(ActionEvent e) {
 		
