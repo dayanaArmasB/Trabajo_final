@@ -179,7 +179,7 @@ public class ServicioView extends javax.swing.JInternalFrame {
         	new Object[][] {
         	},
         	new String[] {
-        		"N\u00FAmero de factura", "Tienda", "Fecha de recepci\u00F3n", "Fecha de entrega"
+        		"N\u00FAmero de factura", "Tienda", "Fecha de recepci\u00F3n", "Fecha de entrega", "Recomendaciones"
         	}
         ));
         jScrollPane4.setViewportView(tblServicio);

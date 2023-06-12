@@ -23,6 +23,7 @@ import net.sf.jasperreports.view.JasperViewer;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.GroupLayout;
 import javax.swing.LayoutStyle.ComponentPlacement;
+import javax.swing.DefaultComboBoxModel;
 
 public class EmpleadoView extends javax.swing.JInternalFrame {
      //variables  
@@ -80,9 +81,7 @@ public class EmpleadoView extends javax.swing.JInternalFrame {
         jLabel4 = new javax.swing.JLabel();
         txtNombre = new javax.swing.JTextField();
         txtApellidos = new javax.swing.JTextField();
-        btnLimpiar = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
-        btnRegistrar = new javax.swing.JButton();
         txtDNI = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         txtTelefono = new javax.swing.JTextField();
@@ -169,32 +168,9 @@ public class EmpleadoView extends javax.swing.JInternalFrame {
         jPanel4.add(txtApellidos);
         txtApellidos.setBounds(130, 90, 330, 30);
 
-        btnLimpiar.setText("Limpiar");
-        btnLimpiar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnLimpiarActionPerformed(evt);
-            }
-        });
-        jPanel4.add(btnLimpiar);
-        btnLimpiar.setBounds(500, 81, 80, 30);
-
         jLabel6.setText("DNI");
         jPanel4.add(jLabel6);
         jLabel6.setBounds(40, 140, 50, 10);
-
-        btnRegistrar.setText("Registrar");
-        btnRegistrar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRegistrarActionPerformed(evt);
-            }
-        });
-        btnRegistrar.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                btnRegistrarKeyPressed(evt);
-            }
-        });
-        jPanel4.add(btnRegistrar);
-        btnRegistrar.setBounds(500, 40, 80, 30);
 
         txtDNI.setName("txtDireccion"); // NOI18N
         txtDNI.addActionListener(new java.awt.event.ActionListener() {
@@ -308,7 +284,7 @@ public class EmpleadoView extends javax.swing.JInternalFrame {
 
         jLabel10.setText("Cargo");
 
-        cbxArea.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "VENTAS", "CONTABILIDAD", "SOPORTE TÃ‰CNICO" }));
+        cbxArea.setModel(new DefaultComboBoxModel(new String[] {"VENTAS", "ALMACEN"}));
         cbxArea.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbxAreaActionPerformed(evt);
@@ -489,6 +465,27 @@ public class EmpleadoView extends javax.swing.JInternalFrame {
                 jButton2ActionPerformed(evt);
             }
         });
+        btnRegistrar = new javax.swing.JButton();
+        
+                btnRegistrar.setText("Registrar");
+                btnRegistrar.addActionListener(new java.awt.event.ActionListener() {
+                    public void actionPerformed(java.awt.event.ActionEvent evt) {
+                        btnRegistrarActionPerformed(evt);
+                    }
+                });
+                btnRegistrar.addKeyListener(new java.awt.event.KeyAdapter() {
+                    public void keyPressed(java.awt.event.KeyEvent evt) {
+                        btnRegistrarKeyPressed(evt);
+                    }
+                });
+        btnLimpiar = new javax.swing.JButton();
+        
+                btnLimpiar.setText("Limpiar");
+                btnLimpiar.addActionListener(new java.awt.event.ActionListener() {
+                    public void actionPerformed(java.awt.event.ActionEvent evt) {
+                        btnLimpiarActionPerformed(evt);
+                    }
+                });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         layout.setHorizontalGroup(
@@ -496,16 +493,23 @@ public class EmpleadoView extends javax.swing.JInternalFrame {
         		.addGroup(layout.createSequentialGroup()
         			.addGroup(layout.createParallelGroup(Alignment.LEADING)
         				.addGroup(layout.createSequentialGroup()
-        					.addGap(30)
-        					.addComponent(jTabbedPane1, GroupLayout.PREFERRED_SIZE, 584, GroupLayout.PREFERRED_SIZE)
-        					.addGap(18)
-        					.addGroup(layout.createParallelGroup(Alignment.LEADING)
-        						.addComponent(jButton2)
-        						.addComponent(btnSalir)
-        						.addComponent(jButton1)))
-        				.addGroup(layout.createSequentialGroup()
         					.addGap(101)
-        					.addComponent(lblTitulo, GroupLayout.PREFERRED_SIZE, 608, GroupLayout.PREFERRED_SIZE)))
+        					.addComponent(lblTitulo, GroupLayout.PREFERRED_SIZE, 608, GroupLayout.PREFERRED_SIZE))
+        				.addGroup(layout.createParallelGroup(Alignment.TRAILING)
+        					.addGroup(layout.createSequentialGroup()
+        						.addContainerGap()
+        						.addComponent(btnRegistrar, GroupLayout.PREFERRED_SIZE, 97, GroupLayout.PREFERRED_SIZE)
+        						.addGap(18)
+        						.addComponent(btnLimpiar, GroupLayout.PREFERRED_SIZE, 80, GroupLayout.PREFERRED_SIZE)
+        						.addGap(18)
+        						.addComponent(jButton2)
+        						.addPreferredGap(ComponentPlacement.RELATED, 234, Short.MAX_VALUE)
+        						.addGroup(layout.createParallelGroup(Alignment.TRAILING)
+        							.addComponent(btnSalir)
+        							.addComponent(jButton1)))
+        					.addGroup(Alignment.LEADING, layout.createSequentialGroup()
+        						.addGap(30)
+        						.addComponent(jTabbedPane1, GroupLayout.PREFERRED_SIZE, 663, GroupLayout.PREFERRED_SIZE))))
         			.addContainerGap(18, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -513,18 +517,24 @@ public class EmpleadoView extends javax.swing.JInternalFrame {
         		.addGroup(layout.createSequentialGroup()
         			.addContainerGap()
         			.addComponent(lblTitulo)
-        			.addGroup(layout.createParallelGroup(Alignment.LEADING)
+        			.addPreferredGap(ComponentPlacement.RELATED)
+        			.addComponent(jTabbedPane1, GroupLayout.PREFERRED_SIZE, 416, GroupLayout.PREFERRED_SIZE)
+        			.addGroup(layout.createParallelGroup(Alignment.LEADING, false)
         				.addGroup(layout.createSequentialGroup()
-        					.addGap(118)
-        					.addComponent(btnSalir, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-        					.addPreferredGap(ComponentPlacement.UNRELATED)
-        					.addComponent(jButton1, GroupLayout.PREFERRED_SIZE, 35, GroupLayout.PREFERRED_SIZE)
-        					.addPreferredGap(ComponentPlacement.RELATED)
-        					.addComponent(jButton2, GroupLayout.PREFERRED_SIZE, 47, GroupLayout.PREFERRED_SIZE))
-        				.addGroup(layout.createSequentialGroup()
-        					.addPreferredGap(ComponentPlacement.RELATED)
-        					.addComponent(jTabbedPane1, GroupLayout.PREFERRED_SIZE, 416, GroupLayout.PREFERRED_SIZE)))
-        			.addGap(39))
+        					.addGap(44)
+        					.addGroup(layout.createParallelGroup(Alignment.BASELINE)
+        						.addComponent(btnRegistrar, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+        						.addComponent(btnLimpiar, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE))
+        					.addGap(61))
+        				.addGroup(Alignment.TRAILING, layout.createSequentialGroup()
+        					.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        					.addGroup(layout.createParallelGroup(Alignment.LEADING)
+        						.addComponent(jButton2, GroupLayout.PREFERRED_SIZE, 47, GroupLayout.PREFERRED_SIZE)
+        						.addGroup(layout.createSequentialGroup()
+        							.addComponent(jButton1, GroupLayout.PREFERRED_SIZE, 35, GroupLayout.PREFERRED_SIZE)
+        							.addPreferredGap(ComponentPlacement.RELATED)
+        							.addComponent(btnSalir, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)))
+        					.addGap(28))))
         );
         getContentPane().setLayout(layout);
 

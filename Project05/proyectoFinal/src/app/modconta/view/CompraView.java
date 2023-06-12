@@ -213,7 +213,7 @@ public class CompraView extends javax.swing.JInternalFrame {
 
         jButton4.setText("Salir");
         getContentPane().add(jButton4);
-        jButton4.setBounds(614, 558, 83, 20);
+        jButton4.setBounds(648, 545, 83, 20);
 
         jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 

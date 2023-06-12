@@ -172,91 +172,6 @@ public void llenaTabla(boolean swr, String cadr)
                 jTextField1ActionPerformed(evt);
             }
         });
-        jPanel3.add(jTextField1);
-        jTextField1.setBounds(230, 10, 250, 30);
-
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "(Elija el criterio)", "Nombre", "Apellidos", "DNI", "RUC" }));
-        jComboBox1.setAutoscrolls(true);
-        jPanel3.add(jComboBox1);
-        jComboBox1.setBounds(100, 10, 120, 30);
-
-        jTabbedPane1.addTab("Búsqueda", jPanel3);
-        btnRegistrar = new javax.swing.JButton();
-        
-                btnRegistrar.setText("Registrar");
-                btnRegistrar.addActionListener(new java.awt.event.ActionListener() {
-                    public void actionPerformed(java.awt.event.ActionEvent evt) {
-                        btnRegistrarActionPerformed(evt);
-                    }
-                });
-                btnRegistrar.addKeyListener(new java.awt.event.KeyAdapter() {
-                    public void keyPressed(java.awt.event.KeyEvent evt) {
-                        btnRegistrarKeyPressed(evt);
-                    }
-                });
-        btnLimpiar = new javax.swing.JButton();
-        
-                btnLimpiar.setText("Limpiar");
-                btnLimpiar.addActionListener(new java.awt.event.ActionListener() {
-                    public void actionPerformed(java.awt.event.ActionEvent evt) {
-                        btnLimpiarActionPerformed(evt);
-                    }
-                });
-        jButton2 = new javax.swing.JButton();
-        
-                jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/buscar.gif"))); // NOI18N
-                jButton2.addActionListener(new java.awt.event.ActionListener() {
-                    public void actionPerformed(java.awt.event.ActionEvent evt) {
-                        jButton2ActionPerformed(evt);
-                    }
-                });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        layout.setHorizontalGroup(
-        	layout.createParallelGroup(Alignment.TRAILING)
-        		.addGroup(Alignment.LEADING, layout.createSequentialGroup()
-        			.addGap(49)
-        			.addComponent(btnRegistrar, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE)
-        			.addGap(18)
-        			.addComponent(btnLimpiar, GroupLayout.PREFERRED_SIZE, 80, GroupLayout.PREFERRED_SIZE)
-        			.addGap(18)
-        			.addComponent(jButton2, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE)
-        			.addPreferredGap(ComponentPlacement.RELATED, 280, Short.MAX_VALUE)
-        			.addComponent(jButton1, GroupLayout.PREFERRED_SIZE, 213, GroupLayout.PREFERRED_SIZE)
-        			.addGap(36))
-        		.addGroup(layout.createSequentialGroup()
-        			.addContainerGap(675, Short.MAX_VALUE)
-        			.addComponent(btnSalir, GroupLayout.PREFERRED_SIZE, 73, GroupLayout.PREFERRED_SIZE)
-        			.addGap(96))
-        		.addGroup(layout.createSequentialGroup()
-        			.addGap(27)
-        			.addComponent(jTabbedPane1, GroupLayout.PREFERRED_SIZE, 787, GroupLayout.PREFERRED_SIZE)
-        			.addContainerGap(30, Short.MAX_VALUE))
-        		.addGroup(layout.createSequentialGroup()
-        			.addGap(169)
-        			.addComponent(lblTitulo, GroupLayout.DEFAULT_SIZE, 484, Short.MAX_VALUE)
-        			.addGap(191))
-        );
-        layout.setVerticalGroup(
-        	layout.createParallelGroup(Alignment.LEADING)
-        		.addGroup(layout.createSequentialGroup()
-        			.addGap(20)
-        			.addComponent(lblTitulo)
-        			.addGap(18)
-        			.addComponent(jTabbedPane1, GroupLayout.PREFERRED_SIZE, 389, GroupLayout.PREFERRED_SIZE)
-        			.addPreferredGap(ComponentPlacement.RELATED)
-        			.addGroup(layout.createParallelGroup(Alignment.LEADING)
-        				.addGroup(layout.createParallelGroup(Alignment.BASELINE)
-        					.addComponent(btnRegistrar, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-        					.addComponent(btnLimpiar, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE))
-        				.addGroup(layout.createSequentialGroup()
-        					.addGap(5)
-        					.addComponent(jButton1)
-        					.addPreferredGap(ComponentPlacement.UNRELATED)
-        					.addComponent(btnSalir))
-        				.addComponent(jButton2, GroupLayout.PREFERRED_SIZE, 32, GroupLayout.PREFERRED_SIZE))
-        			.addContainerGap(37, Short.MAX_VALUE))
-        );
         jPanel4 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel3.setBounds(58, 56, 60, 21);
@@ -349,6 +264,91 @@ public void llenaTabla(boolean swr, String cadr)
                                                                                 lblCuentaCorriente.setText("Cuenta Corriente");
                                                                                 lblCuentaCorriente.setBounds(12, 286, 116, 21);
                                                                                 jPanel4.add(lblCuentaCorriente);
+        jPanel3.add(jTextField1);
+        jTextField1.setBounds(230, 10, 250, 30);
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "(Elija el criterio)", "Nombre", "Apellidos", "DNI", "RUC" }));
+        jComboBox1.setAutoscrolls(true);
+        jPanel3.add(jComboBox1);
+        jComboBox1.setBounds(100, 10, 120, 30);
+
+        jTabbedPane1.addTab("Búsqueda", jPanel3);
+        btnRegistrar = new javax.swing.JButton();
+        
+                btnRegistrar.setText("Registrar");
+                btnRegistrar.addActionListener(new java.awt.event.ActionListener() {
+                    public void actionPerformed(java.awt.event.ActionEvent evt) {
+                        btnRegistrarActionPerformed(evt);
+                    }
+                });
+                btnRegistrar.addKeyListener(new java.awt.event.KeyAdapter() {
+                    public void keyPressed(java.awt.event.KeyEvent evt) {
+                        btnRegistrarKeyPressed(evt);
+                    }
+                });
+        btnLimpiar = new javax.swing.JButton();
+        
+                btnLimpiar.setText("Limpiar");
+                btnLimpiar.addActionListener(new java.awt.event.ActionListener() {
+                    public void actionPerformed(java.awt.event.ActionEvent evt) {
+                        btnLimpiarActionPerformed(evt);
+                    }
+                });
+        jButton2 = new javax.swing.JButton();
+        
+                jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/buscar.gif"))); // NOI18N
+                jButton2.addActionListener(new java.awt.event.ActionListener() {
+                    public void actionPerformed(java.awt.event.ActionEvent evt) {
+                        jButton2ActionPerformed(evt);
+                    }
+                });
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        layout.setHorizontalGroup(
+        	layout.createParallelGroup(Alignment.TRAILING)
+        		.addGroup(Alignment.LEADING, layout.createSequentialGroup()
+        			.addGap(49)
+        			.addComponent(btnRegistrar, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE)
+        			.addGap(18)
+        			.addComponent(btnLimpiar, GroupLayout.PREFERRED_SIZE, 80, GroupLayout.PREFERRED_SIZE)
+        			.addGap(18)
+        			.addComponent(jButton2, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE)
+        			.addPreferredGap(ComponentPlacement.RELATED, 280, Short.MAX_VALUE)
+        			.addComponent(jButton1, GroupLayout.PREFERRED_SIZE, 213, GroupLayout.PREFERRED_SIZE)
+        			.addGap(36))
+        		.addGroup(layout.createSequentialGroup()
+        			.addContainerGap(675, Short.MAX_VALUE)
+        			.addComponent(btnSalir, GroupLayout.PREFERRED_SIZE, 73, GroupLayout.PREFERRED_SIZE)
+        			.addGap(96))
+        		.addGroup(layout.createSequentialGroup()
+        			.addGap(27)
+        			.addComponent(jTabbedPane1, GroupLayout.PREFERRED_SIZE, 787, GroupLayout.PREFERRED_SIZE)
+        			.addContainerGap(30, Short.MAX_VALUE))
+        		.addGroup(layout.createSequentialGroup()
+        			.addGap(169)
+        			.addComponent(lblTitulo, GroupLayout.DEFAULT_SIZE, 484, Short.MAX_VALUE)
+        			.addGap(191))
+        );
+        layout.setVerticalGroup(
+        	layout.createParallelGroup(Alignment.LEADING)
+        		.addGroup(layout.createSequentialGroup()
+        			.addGap(20)
+        			.addComponent(lblTitulo)
+        			.addGap(18)
+        			.addComponent(jTabbedPane1, GroupLayout.PREFERRED_SIZE, 389, GroupLayout.PREFERRED_SIZE)
+        			.addPreferredGap(ComponentPlacement.RELATED)
+        			.addGroup(layout.createParallelGroup(Alignment.LEADING)
+        				.addGroup(layout.createParallelGroup(Alignment.BASELINE)
+        					.addComponent(btnRegistrar, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+        					.addComponent(btnLimpiar, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE))
+        				.addGroup(layout.createSequentialGroup()
+        					.addGap(5)
+        					.addComponent(jButton1)
+        					.addPreferredGap(ComponentPlacement.UNRELATED)
+        					.addComponent(btnSalir))
+        				.addComponent(jButton2, GroupLayout.PREFERRED_SIZE, 32, GroupLayout.PREFERRED_SIZE))
+        			.addContainerGap(37, Short.MAX_VALUE))
+        );
         getContentPane().setLayout(layout);
 
         pack();
