@@ -37,6 +37,10 @@ public class FrmCliente extends javax.swing.JInternalFrame implements ActionList
     ButtonGroup buttonGroup;
 
     public FrmCliente() {
+    	setMaximizable(true);
+    	setIconifiable(true);
+    	setFrameIcon(null);
+    	setAutoscrolls(true);
     	setTitle("CLIENTES");
         initComponents();
         _Clientebo = new ClienteBO();
@@ -44,92 +48,40 @@ public class FrmCliente extends javax.swing.JInternalFrame implements ActionList
         llenaTabla(false, "");
         
         buttonGroup = new ButtonGroup();
-        buttonGroup.add(this.jRadioButton1);
-        buttonGroup.add(this.jRadioButton2);
-    }
-public void llenaTabla(boolean swr, String cadr)
-    {
-        List<Cliente> Clientes = _Clientebo.readAll();
-        int i = Clientes.size(); 
-        for(int j = 0; j<i;j++){
-            Vector vect = new Vector();
-            vect.addElement(Clientes.get(j).getIdCliente());
-            vect.addElement(Clientes.get(j).getNombre());
-            vect.addElement(Clientes.get(j).getApellidoP());
-            vect.addElement(Clientes.get(j).getApellidoM());
-            vect.addElement(Clientes.get(j).getTelefono());
-            vect.addElement(Clientes.get(j).getDireccion());
-            vect.addElement(Clientes.get(j).getSexo());
-            vect.addElement(Clientes.get(j).getDNI());
-            vect.addElement(Clientes.get(j).getRUC());
-            _DefaultTableModel.addRow(vect);
-        }
+        buttonGroup.add(jRadioButton1);
+        buttonGroup.add(jRadioButton2);
+        getContentPane().setLayout(null);
+        getContentPane().add(lblTitulo);
+        getContentPane().add(jTabbedPane1);
+        getContentPane().add(btnRegistrar);
+        getContentPane().add(btnLimpiar);
+        getContentPane().add(btnBuscar);
+        getContentPane().add(jButton1);
+        getContentPane().add(btnSalir);
         
-    }     
-       public void limpiaControles(){
-        txtNombre.setText("");
-        txtApellidoP.setText("");
-        txtApellidoM.setText("");
-        txtTelefono.setText("");
-        txtDNI.setText("");
-        txtDireccion.setText("");
-        txtRUC.setText("");
-        btnRegistrar.setText("Registrar");
-        txtNombre.requestFocus();
-    }
-    public void limpiaTabla(){
-        DefaultTableModel dm = (DefaultTableModel)this.tblCliente.getModel();
-        if(dm.getRowCount()>0){
-            while(dm.getRowCount()>0){
-                dm.removeRow(dm.getRowCount()-1);
-            }
-        }
-    }
-    public boolean valida(){
-        boolean sw = false;
-        if (txtNombre.getText().equals("")) {
-        	JOptionPane.showMessageDialog(this, "Ingrese Nombres");
-        	return sw;
-		}
-        if(txtApellidoP.getText().equals("")){
-        	JOptionPane.showMessageDialog(this, "Debe ingresar apellido paterno");
-         	return sw;
-        }
-
-        if(txtApellidoM.getText().equals("")){
-        	JOptionPane.showMessageDialog(this, "Debe ingresar apellido Materno ");
-        	return sw;
-        }
-        if(txtDireccion.getText().equals("")){
-        	JOptionPane.showMessageDialog(this, "Debe ingresar direccion");
-        }
-        if(txtTelefono.getText().equals("")){
-        	JOptionPane.showMessageDialog(this, "Debe ingresar telefono");
-        }
-        if(txtDNI.getText().equals("")){
-        	JOptionPane.showMessageDialog(this, "Debe ingresar DNI");
-        }
-        if(txtRUC.getText().equals("")){
-        	JOptionPane.showMessageDialog(this, "Debe ingresar RUC");
-        }
-        if(buttonGroup.getSelection()== null){
-        	JOptionPane.showMessageDialog(this, "Debe seleccionar un sexo");
-        }
+        btnActualizar = new JButton("Actualizar");
+        btnActualizar.addActionListener(this);
+        btnActualizar.setBounds(221, 517, 97, 25);
+        getContentPane().add(btnActualizar);
         
-        
-        
-        
-        return sw = true;
+        btnEliminar = new JButton("Eliminar");
+        btnEliminar.addActionListener(this);
+        btnEliminar.setBounds(325, 517, 97, 25);
+        getContentPane().add(btnEliminar);
     }
 
 
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+
     private void initComponents() {
 
         jButton1 = new javax.swing.JButton();
+        jButton1.setBounds(593, 514, 196, 25);
         lblTitulo = new javax.swing.JLabel();
+        lblTitulo.setBounds(143, 20, 574, 29);
         btnSalir = new javax.swing.JButton();
+        btnSalir.setBounds(796, 514, 73, 25);
         jTabbedPane1 = new javax.swing.JTabbedPane();
+        jTabbedPane1.setBounds(41, 68, 798, 411);
         jTabbedPane1.setToolTipText("test");
         jPanel3 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
@@ -154,7 +106,7 @@ public void llenaTabla(boolean swr, String cadr)
             }
         });
 
-        lblTitulo.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        lblTitulo.setFont(new java.awt.Font("Tahoma", 1, 24));
         lblTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTitulo.setText("CLIENTES");
 
@@ -183,7 +135,7 @@ public void llenaTabla(boolean swr, String cadr)
         jPanel3.add(jScrollPane1);
         jScrollPane1.setBounds(20, 80, 744, 261);
 
-        jTextField1.setName("txtBusqueda"); // NOI18N
+        jTextField1.setName("txtBusqueda");
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
@@ -337,6 +289,7 @@ public void llenaTabla(boolean swr, String cadr)
 
         jTabbedPane1.addTab("Búsqueda", jPanel3);
         btnRegistrar = new javax.swing.JButton();
+        btnRegistrar.setBounds(27, 514, 90, 30);
         
                 btnRegistrar.setText("Registrar");
                 btnRegistrar.addActionListener(new java.awt.event.ActionListener() {
@@ -350,6 +303,7 @@ public void llenaTabla(boolean swr, String cadr)
                     }
                 });
         btnLimpiar = new javax.swing.JButton();
+        btnLimpiar.setBounds(129, 514, 80, 30);
         
                 btnLimpiar.setText("Limpiar");
                 btnLimpiar.addActionListener(new java.awt.event.ActionListener() {
@@ -357,70 +311,20 @@ public void llenaTabla(boolean swr, String cadr)
                         btnLimpiarActionPerformed(evt);
                     }
                 });
-        jButton2 = new javax.swing.JButton();
+        btnBuscar = new javax.swing.JButton();
+        btnBuscar.setBounds(434, 514, 60, 33);
         
-                jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/buscar.gif"))); // NOI18N
-                jButton2.addActionListener(new java.awt.event.ActionListener() {
+                btnBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/buscar.gif"))); // NOI18N
+                btnBuscar.addActionListener(new java.awt.event.ActionListener() {
                     public void actionPerformed(java.awt.event.ActionEvent evt) {
                         jButton2ActionPerformed(evt);
                     }
                 });
-        
-        JButton btnEliminar = new JButton();
-        btnEliminar.addActionListener(this);
-        btnEliminar.setText("Eliminar");
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        layout.setHorizontalGroup(
-        	layout.createParallelGroup(Alignment.LEADING)
-        		.addGroup(layout.createSequentialGroup()
-        			.addGap(143)
-        			.addComponent(lblTitulo, GroupLayout.DEFAULT_SIZE, 514, Short.MAX_VALUE)
-        			.addGap(180))
-        		.addGroup(layout.createSequentialGroup()
-        			.addGap(27)
-        			.addGroup(layout.createParallelGroup(Alignment.LEADING)
-        				.addComponent(jTabbedPane1, GroupLayout.PREFERRED_SIZE, 798, GroupLayout.PREFERRED_SIZE)
-        				.addGroup(layout.createSequentialGroup()
-        					.addComponent(btnRegistrar, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE)
-        					.addPreferredGap(ComponentPlacement.UNRELATED)
-        					.addComponent(btnLimpiar, GroupLayout.PREFERRED_SIZE, 80, GroupLayout.PREFERRED_SIZE)
-        					.addGap(18)
-        					.addComponent(jButton2, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE)
-        					.addPreferredGap(ComponentPlacement.UNRELATED)
-        					.addComponent(btnEliminar, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE)
-        					.addGap(146)
-        					.addComponent(jButton1, GroupLayout.PREFERRED_SIZE, 196, GroupLayout.PREFERRED_SIZE)
-        					.addPreferredGap(ComponentPlacement.RELATED)
-        					.addComponent(btnSalir, GroupLayout.PREFERRED_SIZE, 73, GroupLayout.PREFERRED_SIZE)))
-        			.addContainerGap(12, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-        	layout.createParallelGroup(Alignment.LEADING)
-        		.addGroup(layout.createSequentialGroup()
-        			.addGap(20)
-        			.addComponent(lblTitulo)
-        			.addGap(18)
-        			.addComponent(jTabbedPane1, GroupLayout.PREFERRED_SIZE, 411, GroupLayout.PREFERRED_SIZE)
-        			.addGap(36)
-        			.addGroup(layout.createParallelGroup(Alignment.LEADING)
-        				.addGroup(layout.createParallelGroup(Alignment.BASELINE)
-        					.addComponent(btnSalir)
-        					.addComponent(jButton1)
-        					.addComponent(btnEliminar, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE))
-        				.addComponent(jButton2, GroupLayout.PREFERRED_SIZE, 32, GroupLayout.PREFERRED_SIZE)
-        				.addGroup(layout.createParallelGroup(Alignment.BASELINE)
-        					.addComponent(btnRegistrar, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-        					.addComponent(btnLimpiar, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)))
-        			.addContainerGap(48, Short.MAX_VALUE))
-        );
-        getContentPane().setLayout(layout);
 
         pack();
-    }// </editor-fold>//GEN-END:initComponents
+    }
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt){
         try {
             //creamos un objeto dbBean
             dbBean aux = new dbBean();
@@ -438,17 +342,17 @@ public void llenaTabla(boolean swr, String cadr)
             System.out.println(e);
         }
 
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }
 
-    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
-        this.dispose();
-    }//GEN-LAST:event_btnSalirActionPerformed
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {
+        dispose();
+    }
 
-    private void txtNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtNombreActionPerformed
+    private void txtNombreActionPerformed(java.awt.event.ActionEvent evt) {
+      
+    }
 
-    private void txtNombreKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombreKeyPressed
+    private void txtNombreKeyPressed(java.awt.event.KeyEvent evt) {
         if(evt.getKeyCode() == evt.VK_ENTER){
             this.getFocusOwner().transferFocus();
         }
@@ -457,7 +361,7 @@ public void llenaTabla(boolean swr, String cadr)
     
 
     private void txtRUCActionPerformed(java.awt.event.ActionEvent evt) {
-        // TODO add your handling code here:
+        
     }
 
 
@@ -466,15 +370,15 @@ public void llenaTabla(boolean swr, String cadr)
     }
 
     private void txtTelefonoActionPerformed(java.awt.event.ActionEvent evt) {
-        // TODO add your handling code here:
+        
     }
 
     private void txtDNIActionPerformed(java.awt.event.ActionEvent evt) {
-        // TODO add your handling code here:
+        
     }
 
     private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {
-        // TODO add your handling code here:
+       
     }
 
     
@@ -485,18 +389,149 @@ public void llenaTabla(boolean swr, String cadr)
             //llenaModifica();
         }
     }
+    
+    public void llenaTabla(boolean swr, String cadr)
+    {
+        List<Cliente> Clientes = _Clientebo.readAll();
+        int i = Clientes.size(); 
+        for(int j = 0; j<i;j++){
+            Vector vect = new Vector();
+            vect.addElement(Clientes.get(j).getIdCliente());
+            vect.addElement(Clientes.get(j).getNombre());
+            vect.addElement(Clientes.get(j).getApellidoP());
+            vect.addElement(Clientes.get(j).getApellidoM());
+            vect.addElement(Clientes.get(j).getTelefono());
+            vect.addElement(Clientes.get(j).getDireccion());
+            vect.addElement(Clientes.get(j).getSexo());
+            vect.addElement(Clientes.get(j).getDNI());
+            vect.addElement(Clientes.get(j).getRUC());
+            _DefaultTableModel.addRow(vect);
+        }
+        
+    }     
+       public void limpiaControles(){
+        txtNombre.setText("");
+        txtApellidoP.setText("");
+        txtApellidoM.setText("");
+        txtTelefono.setText("");
+        txtDNI.setText("");
+        txtDireccion.setText("");
+        txtRUC.setText("");
+        btnRegistrar.setText("Registrar");
+        txtNombre.requestFocus();
+    }
+    public void limpiaTabla(){
+        DefaultTableModel dm = (DefaultTableModel)tblCliente.getModel();
+        if(dm.getRowCount()>0){
+            while(dm.getRowCount()>0){
+                dm.removeRow(dm.getRowCount()-1);
+            }
+        }
+    }
+    public boolean valida(){
+        boolean sw = false;
+        if (txtNombre.getText().equals("")) {
+        	JOptionPane.showMessageDialog(this, "Ingrese Nombres");
+        	return sw;
+		}
+        if(txtApellidoP.getText().equals("")){
+        	JOptionPane.showMessageDialog(this, "Debe ingresar apellido paterno");
+         	return sw;
+        }
+
+        if(txtApellidoM.getText().equals("")){
+        	JOptionPane.showMessageDialog(this, "Debe ingresar apellido Materno ");
+        	return sw;
+        }
+        if(txtDireccion.getText().equals("")){
+        	JOptionPane.showMessageDialog(this, "Debe ingresar direccion");
+        }
+        if(txtTelefono.getText().equals("")){
+        	JOptionPane.showMessageDialog(this, "Debe ingresar telefono");
+        }
+        if(txtDNI.getText().equals("")){
+        	JOptionPane.showMessageDialog(this, "Debe ingresar DNI");
+        }
+        if(txtRUC.getText().equals("")){
+        	JOptionPane.showMessageDialog(this, "Debe ingresar RUC");
+        }
+        if(buttonGroup.getSelection()== null){
+        	JOptionPane.showMessageDialog(this, "Debe seleccionar un sexo");
+        }
+        
+        return sw = true;
+    }
+    
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {
+        int x ;
+        x = Integer.parseInt(JOptionPane.showInputDialog(" Ingrese el codigo del Cliente"));
+        try {
+            //creamos un objeto dbBean
+            dbBean aux = new dbBean();
+            HashMap map = new HashMap();
+            //Connection cn = DriverManager.getConnection("jdbc:sqlserver://localhost:1433;databaseName=ST;user=sa;password=sasasa;");
+            Connection cn = aux.getConnection();
+            JasperReport jr= JasperCompileManager.compileReport("src/REPORTS/ClienteReporte.jrxml");
+            map.put("idCliente",x);
+            JasperPrint jp = JasperFillManager.fillReport(jr,map,cn);
+            // JasperPrint jp= JasperFillManager.fillReport(jr,idClie,cn);
+
+            JasperViewer jv= new JasperViewer(jp,false);
+            jv.setVisible(true);
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+    private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {
+        limpiaControles();
+    }
+    private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {
+
+        String proc = btnRegistrar.getText();
+        int id = 0;
+        String pr = "";
+        if(valida()){
+            util u = new util();
+            Cliente p = new Cliente();
+            p.setNombre(txtNombre.getText());
+            p.setApellidoP(txtApellidoP.getText());
+            p.setApellidoM(txtApellidoM.getText());
+            p.setTelefono(txtTelefono.getText());
+            p.setDireccion(txtDireccion.getText());
+            if(jRadioButton1.isSelected())
+            p.setSexo(jRadioButton1.getText());
+            if(jRadioButton2.isSelected())
+            p.setSexo(jRadioButton2.getText());
+            p.setDNI(txtDNI.getText());
+            p.setRUC(txtRUC.getText());
+
+            if(proc.equals("Registrar")){
+                pr = "insert";
+            }
+            if(proc.equals("Actualizar")){
+                id = idClie;
+                pr = "update";
+            }
+            p.setIdCliente(id);
+            _Clientebo.Create(p);
+            limpiaControles();
+            limpiaTabla();
+            llenaTabla(false, "");
+        }
+    }
+
+
+
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {
         
     }
 
-
-    // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnLimpiar;
     private javax.swing.JButton btnRegistrar;
     private javax.swing.JButton btnSalir;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton btnBuscar;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -524,66 +559,33 @@ public void llenaTabla(boolean swr, String cadr)
     private JLabel lblApellidoMaterno;
     private JTextField txtApellidoM;
     private JTextField txtApellidoP;
+    private JButton btnActualizar;
+    private JButton btnEliminar;
     
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        int x ;
-        x = Integer.parseInt(JOptionPane.showInputDialog(" Ingrese el codigo del Cliente"));
-        try {
-            //creamos un objeto dbBean
-            dbBean aux = new dbBean();
-            HashMap map = new HashMap();
-            //Connection cn = DriverManager.getConnection("jdbc:sqlserver://localhost:1433;databaseName=ST;user=sa;password=sasasa;");
-            Connection cn = aux.getConnection();
-            JasperReport jr= JasperCompileManager.compileReport("src/REPORTS/ClienteReporte.jrxml");
-            map.put("idCliente",x);
-            JasperPrint jp = JasperFillManager.fillReport(jr,map,cn);
-            // JasperPrint jp= JasperFillManager.fillReport(jr,idClie,cn);
+   
 
-            JasperViewer jv= new JasperViewer(jp,false);
-            jv.setVisible(true);
-        } catch (Exception e) {
-            System.out.println(e);
-        }
-    }
-    private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {
-        limpiaControles();
-    }
-    private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {
-
-        String proc = this.btnRegistrar.getText();
-        int id = 0, est;
-        String pr = "";
-        if(valida()){
-            util u = new util();
-            Cliente p = new Cliente();
-            p.setNombre(txtNombre.getText());
-            p.setApellidoP(txtApellidoP.getText());
-            p.setApellidoM(txtApellidoM.getText());
-            p.setTelefono(txtTelefono.getText());
-            p.setDireccion(txtDireccion.getText());
-            if(jRadioButton1.isSelected())
-            p.setSexo(jRadioButton1.getText());
-            if(jRadioButton2.isSelected())
-            p.setSexo(jRadioButton2.getText());
-            p.setDNI(txtDNI.getText());
-            p.setRUC(txtRUC.getText());
-
-            if(proc.equals("Registrar")){
-               // id = u.idNext("Cliente", "idCliente");
-                pr = "insert";
-            }
-            if(proc.equals("Actualizar")){
-                id = idClie;
-                pr = "update";
-            }
-            p.setIdCliente(id);
-            _Clientebo.Create(p);
-            limpiaControles();
-            limpiaTabla();
-            llenaTabla(false, "");
-        }
-    }
-    public void actionPerformed(ActionEvent e) {
+	public void actionPerformed(ActionEvent e) {
+		if (e.getSource() == btnEliminar) {
+			do_btnEliminar_actionPerformed(e);
+		}
+		if (e.getSource() == btnActualizar) {
+			do_btnActualizar_actionPerformed(e);
+		}
+	}
+	protected void do_btnActualizar_actionPerformed(ActionEvent e) {
+	}
+	protected void do_btnEliminar_actionPerformed(ActionEvent e) {
+		
+		 try{
+			 int id= Integer.parseInt(String.valueOf(_DefaultTableModel.getValueAt(tblCliente.getSelectedRow(),0)));
+				_Clientebo.Delete(id);
+				 limpiaTabla();
+		         llenaTabla(false, "");
+		         JOptionPane.showMessageDialog(this, "Se elimnó el resgistro con exito");
+		 }
+		 catch(Exception e1){
+			 System.out.println(e1);
+		 }
 		
 	}
 }

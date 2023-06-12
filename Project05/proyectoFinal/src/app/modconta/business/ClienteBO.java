@@ -33,13 +33,11 @@ public class ClienteBO implements IGeneralBO<Cliente>{
 
 	@Override
 	public Cliente Find(int code) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public List<Cliente> readAll() {
-		// TODO Auto-generated method stub
 		return _doClienteRep.readAll();
 	}
 

@@ -21,8 +21,11 @@ import javax.swing.GroupLayout;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
-public class FrmProductos extends javax.swing.JInternalFrame {
+public class FrmProductos extends javax.swing.JInternalFrame implements ActionListener {
     
     Helper h = new Helper();
     ProductoBO _Productobo;
@@ -227,6 +230,10 @@ public void limpiaControles(){
                                                                                                                         lblId.setText("ID");
                                                                                                                         
                                                                                                                         txtIDProduc = new JTextField();
+                                                                                                                                
+                                                                                                                                btnActualizar = new JButton();
+                                                                                                                                btnActualizar.addActionListener(this);
+                                                                                                                                btnActualizar.setText("Actualizar");
                                                                                                                         
                                                                                                                                 javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
                                                                                                                                 jPanel4Layout.setHorizontalGroup(
@@ -245,19 +252,18 @@ public void limpiaControles(){
                                                                                                                                 							.addGroup(jPanel4Layout.createParallelGroup(Alignment.LEADING)
                                                                                                                                 								.addComponent(comboMarca, GroupLayout.PREFERRED_SIZE, 310, GroupLayout.PREFERRED_SIZE)
                                                                                                                                 								.addComponent(comboModelo, GroupLayout.PREFERRED_SIZE, 310, GroupLayout.PREFERRED_SIZE)))
-                                                                                                                                						.addGroup(jPanel4Layout.createParallelGroup(Alignment.LEADING)
-                                                                                                                                							.addGroup(jPanel4Layout.createSequentialGroup()
-                                                                                                                                								.addComponent(jLabel11, GroupLayout.PREFERRED_SIZE, 130, GroupLayout.PREFERRED_SIZE)
-                                                                                                                                								.addPreferredGap(ComponentPlacement.RELATED)
-                                                                                                                                								.addComponent(spinstockMAX, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE))
-                                                                                                                                							.addGroup(jPanel4Layout.createSequentialGroup()
-                                                                                                                                								.addComponent(jLabel12, GroupLayout.PREFERRED_SIZE, 120, GroupLayout.PREFERRED_SIZE)
-                                                                                                                                								.addGap(18)
-                                                                                                                                								.addComponent(spinstockMIN, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE))
-                                                                                                                                							.addGroup(jPanel4Layout.createSequentialGroup()
-                                                                                                                                								.addComponent(jLabel4, GroupLayout.PREFERRED_SIZE, 34, GroupLayout.PREFERRED_SIZE)
-                                                                                                                                								.addGap(18)
-                                                                                                                                								.addComponent(spinstock, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)))))
+                                                                                                                                						.addGroup(jPanel4Layout.createSequentialGroup()
+                                                                                                                                							.addComponent(jLabel11, GroupLayout.PREFERRED_SIZE, 130, GroupLayout.PREFERRED_SIZE)
+                                                                                                                                							.addPreferredGap(ComponentPlacement.RELATED)
+                                                                                                                                							.addComponent(spinstockMAX, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE))
+                                                                                                                                						.addGroup(jPanel4Layout.createSequentialGroup()
+                                                                                                                                							.addComponent(jLabel12, GroupLayout.PREFERRED_SIZE, 120, GroupLayout.PREFERRED_SIZE)
+                                                                                                                                							.addGap(18)
+                                                                                                                                							.addComponent(spinstockMIN, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE))
+                                                                                                                                						.addGroup(jPanel4Layout.createSequentialGroup()
+                                                                                                                                							.addComponent(jLabel4, GroupLayout.PREFERRED_SIZE, 34, GroupLayout.PREFERRED_SIZE)
+                                                                                                                                							.addGap(18)
+                                                                                                                                							.addComponent(spinstock, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE))))
                                                                                                                                 				.addGroup(jPanel4Layout.createSequentialGroup()
                                                                                                                                 					.addGap(39)
                                                                                                                                 					.addComponent(lblId, GroupLayout.PREFERRED_SIZE, 80, GroupLayout.PREFERRED_SIZE)
@@ -269,7 +275,10 @@ public void limpiaControles(){
                                                                                                                                 					.addGap(268)
                                                                                                                                 					.addComponent(btnLimpiar, GroupLayout.PREFERRED_SIZE, 120, GroupLayout.PREFERRED_SIZE)
                                                                                                                                 					.addGap(61)
-                                                                                                                                					.addComponent(btnRegistrar, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)))
+                                                                                                                                					.addComponent(btnRegistrar, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE))
+                                                                                                                                				.addGroup(jPanel4Layout.createSequentialGroup()
+                                                                                                                                					.addGap(360)
+                                                                                                                                					.addComponent(btnActualizar, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)))
                                                                                                                                 			.addContainerGap(297, Short.MAX_VALUE))
                                                                                                                                 );
                                                                                                                                 jPanel4Layout.setVerticalGroup(
@@ -307,7 +316,9 @@ public void limpiaControles(){
                                                                                                                                 			.addGroup(jPanel4Layout.createParallelGroup(Alignment.BASELINE)
                                                                                                                                 				.addComponent(btnRegistrar)
                                                                                                                                 				.addComponent(btnLimpiar))
-                                                                                                                                			.addContainerGap(81, Short.MAX_VALUE))
+                                                                                                                                			.addGap(18)
+                                                                                                                                			.addComponent(btnActualizar)
+                                                                                                                                			.addContainerGap(41, Short.MAX_VALUE))
                                                                                                                                 );
                                                                                                                                 jPanel4.setLayout(jPanel4Layout);
                                                                                                                                 
@@ -658,6 +669,9 @@ public void limpiaControles(){
     private javax.swing.JTextField txtNombreProduc;
     private JLabel lblId;
     private JTextField txtIDProduc;
+    private JButton btnActualizar;
     // End of variables declaration//GEN-END:variables
 
+	public void actionPerformed(ActionEvent e) {
+	}
 }

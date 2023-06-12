@@ -16,7 +16,6 @@ import app.modconta.entity.Cliente;
 public class ClienteRepository implements IRepository<Cliente> {
 
 	public ClienteRepository() {
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
@@ -68,7 +67,7 @@ public class ClienteRepository implements IRepository<Cliente> {
 
 	@Override
 	public Cliente Find(int code) {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 
