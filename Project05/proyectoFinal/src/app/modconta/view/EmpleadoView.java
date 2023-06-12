@@ -513,17 +513,18 @@ public class EmpleadoView extends javax.swing.JInternalFrame {
         		.addGroup(layout.createSequentialGroup()
         			.addContainerGap()
         			.addComponent(lblTitulo)
-        			.addPreferredGap(ComponentPlacement.RELATED)
         			.addGroup(layout.createParallelGroup(Alignment.LEADING)
         				.addGroup(layout.createSequentialGroup()
-        					.addGap(111)
+        					.addGap(118)
         					.addComponent(btnSalir, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
         					.addPreferredGap(ComponentPlacement.UNRELATED)
         					.addComponent(jButton1, GroupLayout.PREFERRED_SIZE, 35, GroupLayout.PREFERRED_SIZE)
         					.addPreferredGap(ComponentPlacement.RELATED)
         					.addComponent(jButton2, GroupLayout.PREFERRED_SIZE, 47, GroupLayout.PREFERRED_SIZE))
-        				.addComponent(jTabbedPane1, GroupLayout.PREFERRED_SIZE, 384, GroupLayout.PREFERRED_SIZE))
-        			.addGap(71))
+        				.addGroup(layout.createSequentialGroup()
+        					.addPreferredGap(ComponentPlacement.RELATED)
+        					.addComponent(jTabbedPane1, GroupLayout.PREFERRED_SIZE, 416, GroupLayout.PREFERRED_SIZE)))
+        			.addGap(39))
         );
         getContentPane().setLayout(layout);
 
