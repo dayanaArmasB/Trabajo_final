@@ -407,18 +407,23 @@ jPanel4.add(txtApellidoP);
         }
         if(txtDireccion.getText().equals("")){
         	JOptionPane.showMessageDialog(this, "Debe ingresar direccion");
+        	return sw;
         }
         if(txtTelefono.getText().equals("")){
         	JOptionPane.showMessageDialog(this, "Debe ingresar telefono");
+        	return sw;
         }
         if(txtDNI.getText().equals("")){
         	JOptionPane.showMessageDialog(this, "Debe ingresar DNI");
+        	return sw;
         }
         if(txtRUC.getText().equals("")){
         	JOptionPane.showMessageDialog(this, "Debe ingresar RUC");
+        	return sw;
         }
         if(buttonGroup.getSelection()== null){
         	JOptionPane.showMessageDialog(this, "Debe seleccionar un sexo");
+        	return sw;
         }
         
         return sw = true;

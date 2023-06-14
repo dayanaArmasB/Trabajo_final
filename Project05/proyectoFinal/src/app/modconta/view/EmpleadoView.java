@@ -833,9 +833,6 @@ public class EmpleadoView extends javax.swing.JInternalFrame {
 }
     
     
-    
-    
-    // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnLimpiar;
     private javax.swing.JButton btnLimpiar1;
     private javax.swing.JButton btnRegistrar;

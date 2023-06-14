@@ -43,11 +43,11 @@ public void llenaTabla(boolean swr, String cadr)
             Vector vect = new Vector();
             vect.addElement(Proveedores.get(j).getIdProveedor());
             vect.addElement(Proveedores.get(j).getNombre());
-            vect.addElement(Proveedores.get(j).getTelefono());
             vect.addElement(Proveedores.get(j).getDireccion());
-            vect.addElement(Proveedores.get(j).getCTA());
-            vect.addElement(Proveedores.get(j).getRUC());
+            vect.addElement(Proveedores.get(j).getTelefono());
             vect.addElement(Proveedores.get(j).getEstado());
+            vect.addElement(Proveedores.get(j).getRUC());
+            vect.addElement(Proveedores.get(j).getCTA());
             _DefaultTableModel.addRow(vect);
         }
         
@@ -57,6 +57,8 @@ public void llenaTabla(boolean swr, String cadr)
         txtTelefono.setText("");
         txtDireccion.setText("");
         txtRUC.setText("");
+        txtCta.setText("");
+        txtEstado.setText("");
         btnRegistrar.setText("Registrar");
         txtNombre.requestFocus();
     }
@@ -77,12 +79,19 @@ public void llenaTabla(boolean swr, String cadr)
 
         if(txtDireccion.getText().equals("")){
         	JOptionPane.showMessageDialog(this, "Debe ingresar direccion");
+        	return sw;
         }
         if(txtTelefono.getText().equals("")){
         	JOptionPane.showMessageDialog(this, "Debe ingresar telefono");
+        	return sw;
         }
         if(txtRUC.getText().equals("")){
         	JOptionPane.showMessageDialog(this, "Debe ingresar RUC");
+        	return sw;
+        }
+        if(txtCta.getText().equals("")){
+        	JOptionPane.showMessageDialog(this, "Debe ingresar Numero de cuenta");
+        	return sw;
         }
     
         
@@ -349,7 +358,9 @@ public void llenaTabla(boolean swr, String cadr)
             p.setNombre(txtNombre.getText());
             p.setTelefono(txtTelefono.getText());
             p.setDireccion(txtDireccion.getText());
+            p.setEstado(txtEstado.getText());
             p.setRUC(txtRUC.getText());
+            p.setCTA(txtCta.getText());
 
             if(proc.equals("Registrar")){
                // id = u.idNext("Cliente", "idCliente");
