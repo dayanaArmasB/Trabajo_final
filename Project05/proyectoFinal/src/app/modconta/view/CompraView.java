@@ -6,8 +6,10 @@ import javax.swing.GroupLayout;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
-public class CompraView extends javax.swing.JInternalFrame {
+public class CompraView extends javax.swing.JInternalFrame implements ActionListener {
       DefaultTableModel dtm;
     public CompraView() {
         initComponents();
@@ -40,6 +42,7 @@ public class CompraView extends javax.swing.JInternalFrame {
         jRadioButton3 = new javax.swing.JRadioButton();
         jRadioButton4 = new javax.swing.JRadioButton();
         jButton4 = new javax.swing.JButton();
+        jButton4.addActionListener(this);
         jPanel4 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         jTextField8 = new javax.swing.JTextField();
@@ -54,29 +57,19 @@ public class CompraView extends javax.swing.JInternalFrame {
         jButton5 = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
-        jButton9 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
-
-        setClosable(true);
         setIconifiable(true);
         setMaximizable(true);
         setTitle("ORDENES DE COMPRA");
         setAutoscrolls(true);
-        getContentPane().setLayout(null);
 
         lblTitulo.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         lblTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTitulo.setText("ORDENES DE COMPRA");
-        getContentPane().add(lblTitulo);
-        lblTitulo.setBounds(21, 11, 666, 29);
 
         jLabel1.setText("Proveedor");
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(21, 124, 67, 16);
 
         jLabel2.setText("Responsable");
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(21, 193, 78, 16);
 
         jPanelrbtn.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true), "Estado"));
 
@@ -110,15 +103,6 @@ public class CompraView extends javax.swing.JInternalFrame {
         );
         jPanelrbtn.setLayout(jPanelrbtnLayout);
 
-        getContentPane().add(jPanelrbtn);
-        jPanelrbtn.setBounds(12, 391, 161, 90);
-
-        getContentPane().add(jComboBox1);
-        jComboBox1.setBounds(119, 121, 142, 22);
-
-        getContentPane().add(jComboBox2);
-        jComboBox2.setBounds(117, 190, 144, 22);
-
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true), "Detalles"));
 
         jLabel3.setText("Items");
@@ -144,14 +128,7 @@ public class CompraView extends javax.swing.JInternalFrame {
                 .addContainerGap(50, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel1);
-        jPanel1.setBounds(351, 399, 152, 63);
-
         jLabel4.setText("RUC");
-        getContentPane().add(jLabel4);
-        jLabel4.setBounds(284, 124, 24, 16);
-        getContentPane().add(jTextField2);
-        jTextField2.setBounds(318, 121, 59, 22);
 
         btnAgregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGES/agregar.png"))); // NOI18N
         btnAgregar.addActionListener(new java.awt.event.ActionListener() {
@@ -159,12 +136,8 @@ public class CompraView extends javax.swing.JInternalFrame {
                 btnAgregarActionPerformed(evt);
             }
         });
-        getContentPane().add(btnAgregar);
-        btnAgregar.setBounds(630, 221, 35, 33);
 
-        btnModificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/update.png"))); // NOI18N
-        getContentPane().add(btnModificar);
-        btnModificar.setBounds(630, 265, 35, 33);
+        btnModificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/update.png")));
 
         btnEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGES/eliminar.png"))); // NOI18N
         btnEliminar.addActionListener(new java.awt.event.ActionListener() {
@@ -172,14 +145,8 @@ public class CompraView extends javax.swing.JInternalFrame {
                 btnEliminarActionPerformed(evt);
             }
         });
-        getContentPane().add(btnEliminar);
-        btnEliminar.setBounds(630, 309, 37, 34);
 
         jLabel5.setText("Direcccion");
-        getContentPane().add(jLabel5);
-        jLabel5.setBounds(21, 153, 58, 16);
-        getContentPane().add(jTextField3);
-        jTextField3.setBounds(117, 153, 377, 22);
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Incluye IVA/IGV"));
 
@@ -208,12 +175,7 @@ public class CompraView extends javax.swing.JInternalFrame {
         );
         jPanel2.setLayout(jPanel2Layout);
 
-        getContentPane().add(jPanel2);
-        jPanel2.setBounds(183, 391, 165, 81);
-
         jButton4.setText("Salir");
-        getContentPane().add(jButton4);
-        jButton4.setBounds(648, 545, 83, 20);
 
         jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
@@ -252,9 +214,6 @@ public class CompraView extends javax.swing.JInternalFrame {
         			.addContainerGap(20, Short.MAX_VALUE))
         );
         jPanel4.setLayout(jPanel4Layout);
-
-        getContentPane().add(jPanel4);
-        jPanel4.setBounds(30, 42, 647, 63);
 
         jPanel3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
 
@@ -302,17 +261,12 @@ public class CompraView extends javax.swing.JInternalFrame {
                 .addContainerGap(15, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel3);
-        jPanel3.setBounds(517, 379, 164, 110);
-
         jButton5.setText("Registrar");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton5);
-        jButton5.setBounds(117, 509, 85, 20);
 
         jButton7.setText("Aprobar");
         jButton7.addActionListener(new java.awt.event.ActionListener() {
@@ -320,8 +274,6 @@ public class CompraView extends javax.swing.JInternalFrame {
                 jButton7ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton7);
-        jButton7.setBounds(212, 509, 79, 20);
 
         jButton8.setText("Anular");
         jButton8.addActionListener(new java.awt.event.ActionListener() {
@@ -329,17 +281,6 @@ public class CompraView extends javax.swing.JInternalFrame {
                 jButton8ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton8);
-        jButton8.setBounds(308, 509, 69, 20);
-
-        jButton9.setText("Imprimir");
-        jButton9.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton9ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton9);
-        jButton9.setBounds(385, 509, 81, 20);
 
         jButton6.setText("Generar Factura");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
@@ -347,12 +288,8 @@ public class CompraView extends javax.swing.JInternalFrame {
                 jButton6ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton6);
-        jButton6.setBounds(479, 509, 125, 20);
         
         scrollPane = new JScrollPane();
-        scrollPane.setBounds(20, 221, 602, 129);
-        getContentPane().add(scrollPane);
         
         tblDetCompra = new JTable();
         tblDetCompra.setModel(new DefaultTableModel(
@@ -363,6 +300,122 @@ public class CompraView extends javax.swing.JInternalFrame {
         	}
         ));
         scrollPane.setViewportView(tblDetCompra);
+        GroupLayout groupLayout = new GroupLayout(getContentPane());
+        groupLayout.setHorizontalGroup(
+        	groupLayout.createParallelGroup(Alignment.LEADING)
+        		.addGroup(groupLayout.createSequentialGroup()
+        			.addGap(21)
+        			.addComponent(lblTitulo, GroupLayout.PREFERRED_SIZE, 666, GroupLayout.PREFERRED_SIZE))
+        		.addGroup(groupLayout.createSequentialGroup()
+        			.addGap(30)
+        			.addComponent(jPanel4, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+        		.addGroup(groupLayout.createSequentialGroup()
+        			.addGap(21)
+        			.addComponent(jLabel1, GroupLayout.PREFERRED_SIZE, 67, GroupLayout.PREFERRED_SIZE)
+        			.addGap(31)
+        			.addComponent(jComboBox1, GroupLayout.PREFERRED_SIZE, 142, GroupLayout.PREFERRED_SIZE)
+        			.addGap(23)
+        			.addComponent(jLabel4, GroupLayout.PREFERRED_SIZE, 24, GroupLayout.PREFERRED_SIZE)
+        			.addGap(10)
+        			.addComponent(jTextField2, GroupLayout.PREFERRED_SIZE, 59, GroupLayout.PREFERRED_SIZE))
+        		.addGroup(groupLayout.createSequentialGroup()
+        			.addGap(21)
+        			.addComponent(jLabel5, GroupLayout.PREFERRED_SIZE, 58, GroupLayout.PREFERRED_SIZE)
+        			.addGap(38)
+        			.addComponent(jTextField3, GroupLayout.PREFERRED_SIZE, 377, GroupLayout.PREFERRED_SIZE))
+        		.addGroup(groupLayout.createSequentialGroup()
+        			.addGap(21)
+        			.addComponent(jLabel2, GroupLayout.PREFERRED_SIZE, 78, GroupLayout.PREFERRED_SIZE)
+        			.addGap(18)
+        			.addComponent(jComboBox2, GroupLayout.PREFERRED_SIZE, 144, GroupLayout.PREFERRED_SIZE))
+        		.addGroup(groupLayout.createSequentialGroup()
+        			.addGap(20)
+        			.addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 602, GroupLayout.PREFERRED_SIZE)
+        			.addGap(8)
+        			.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+        				.addComponent(btnAgregar, GroupLayout.PREFERRED_SIZE, 35, GroupLayout.PREFERRED_SIZE)
+        				.addComponent(btnModificar, GroupLayout.PREFERRED_SIZE, 35, GroupLayout.PREFERRED_SIZE)
+        				.addComponent(btnEliminar, GroupLayout.PREFERRED_SIZE, 37, GroupLayout.PREFERRED_SIZE)))
+        		.addGroup(groupLayout.createSequentialGroup()
+        			.addGap(12)
+        			.addComponent(jPanelrbtn, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+        			.addGap(10)
+        			.addComponent(jPanel2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+        			.addGap(3)
+        			.addComponent(jPanel1, GroupLayout.PREFERRED_SIZE, 152, GroupLayout.PREFERRED_SIZE)
+        			.addGap(14)
+        			.addComponent(jPanel3, GroupLayout.PREFERRED_SIZE, 164, GroupLayout.PREFERRED_SIZE))
+        		.addGroup(groupLayout.createSequentialGroup()
+        			.addGap(117)
+        			.addComponent(jButton5, GroupLayout.PREFERRED_SIZE, 85, GroupLayout.PREFERRED_SIZE)
+        			.addGap(10)
+        			.addComponent(jButton7, GroupLayout.PREFERRED_SIZE, 79, GroupLayout.PREFERRED_SIZE)
+        			.addGap(17)
+        			.addComponent(jButton8, GroupLayout.PREFERRED_SIZE, 69, GroupLayout.PREFERRED_SIZE)
+        			.addGap(11)
+        			.addComponent(jButton6, GroupLayout.PREFERRED_SIZE, 125, GroupLayout.PREFERRED_SIZE)
+        			.addGap(136)
+        			.addComponent(jButton4, GroupLayout.PREFERRED_SIZE, 83, GroupLayout.PREFERRED_SIZE))
+        );
+        groupLayout.setVerticalGroup(
+        	groupLayout.createParallelGroup(Alignment.LEADING)
+        		.addGroup(groupLayout.createSequentialGroup()
+        			.addGap(11)
+        			.addComponent(lblTitulo)
+        			.addGap(2)
+        			.addComponent(jPanel4, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+        			.addGap(16)
+        			.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+        				.addGroup(groupLayout.createSequentialGroup()
+        					.addGap(3)
+        					.addComponent(jLabel1, GroupLayout.PREFERRED_SIZE, 16, GroupLayout.PREFERRED_SIZE))
+        				.addComponent(jComboBox1, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
+        				.addGroup(groupLayout.createSequentialGroup()
+        					.addGap(3)
+        					.addComponent(jLabel4, GroupLayout.PREFERRED_SIZE, 16, GroupLayout.PREFERRED_SIZE))
+        				.addComponent(jTextField2, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE))
+        			.addGap(10)
+        			.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+        				.addComponent(jLabel5, GroupLayout.PREFERRED_SIZE, 16, GroupLayout.PREFERRED_SIZE)
+        				.addComponent(jTextField3, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE))
+        			.addGap(15)
+        			.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+        				.addGroup(groupLayout.createSequentialGroup()
+        					.addGap(3)
+        					.addComponent(jLabel2, GroupLayout.PREFERRED_SIZE, 16, GroupLayout.PREFERRED_SIZE))
+        				.addComponent(jComboBox2, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE))
+        			.addGap(9)
+        			.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+        				.addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 129, GroupLayout.PREFERRED_SIZE)
+        				.addGroup(groupLayout.createSequentialGroup()
+        					.addComponent(btnAgregar)
+        					.addGap(11)
+        					.addComponent(btnModificar)
+        					.addGap(11)
+        					.addComponent(btnEliminar, GroupLayout.PREFERRED_SIZE, 34, GroupLayout.PREFERRED_SIZE)))
+        			.addGap(29)
+        			.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+        				.addGroup(groupLayout.createSequentialGroup()
+        					.addGap(12)
+        					.addComponent(jPanelrbtn, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE))
+        				.addGroup(groupLayout.createSequentialGroup()
+        					.addGap(12)
+        					.addComponent(jPanel2, GroupLayout.PREFERRED_SIZE, 81, GroupLayout.PREFERRED_SIZE))
+        				.addGroup(groupLayout.createSequentialGroup()
+        					.addGap(20)
+        					.addComponent(jPanel1, GroupLayout.PREFERRED_SIZE, 63, GroupLayout.PREFERRED_SIZE))
+        				.addComponent(jPanel3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+        			.addGap(20)
+        			.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+        				.addComponent(jButton5, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
+        				.addComponent(jButton7, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
+        				.addComponent(jButton8, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
+        				.addComponent(jButton6, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
+        				.addGroup(groupLayout.createSequentialGroup()
+        					.addGap(14)
+        					.addComponent(jButton4, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE))))
+        );
+        getContentPane().setLayout(groupLayout);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -400,10 +453,6 @@ public class CompraView extends javax.swing.JInternalFrame {
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton8ActionPerformed
-
-    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         //         int x ;
@@ -454,7 +503,6 @@ public class CompraView extends javax.swing.JInternalFrame {
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;
@@ -487,4 +535,12 @@ public class CompraView extends javax.swing.JInternalFrame {
     private JScrollPane scrollPane;
     private JTable tblDetCompra;
     // End of variables declaration//GEN-END:variables
+	public void actionPerformed(ActionEvent e) {
+		if (e.getSource() == jButton4) {
+			do_jButton4_actionPerformed(e);
+		}
+	}
+	protected void do_jButton4_actionPerformed(ActionEvent e) {
+		 dispose();
+	}
 }

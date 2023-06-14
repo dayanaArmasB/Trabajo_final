@@ -55,7 +55,6 @@ public class FrmCliente extends javax.swing.JInternalFrame implements ActionList
         getContentPane().add(btnRegistrar);
         getContentPane().add(btnLimpiar);
         getContentPane().add(btnBuscar);
-        getContentPane().add(jButton1);
         getContentPane().add(btnSalir);
         
         btnActualizar = new JButton("Actualizar");
@@ -72,13 +71,10 @@ public class FrmCliente extends javax.swing.JInternalFrame implements ActionList
 
 
     private void initComponents() {
-
-        jButton1 = new javax.swing.JButton();
-        jButton1.setBounds(593, 514, 196, 25);
         lblTitulo = new javax.swing.JLabel();
         lblTitulo.setBounds(143, 20, 574, 29);
         btnSalir = new javax.swing.JButton();
-        btnSalir.setBounds(796, 514, 73, 25);
+        btnSalir.setBounds(802, 533, 73, 25);
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jTabbedPane1.setBounds(41, 68, 798, 411);
         jTabbedPane1.setToolTipText("test");
@@ -97,13 +93,6 @@ public class FrmCliente extends javax.swing.JInternalFrame implements ActionList
         tblCliente.getColumnModel().getColumn(3).setPreferredWidth(114);
         jTextField1 = new javax.swing.JTextField();
         jComboBox1 = new javax.swing.JComboBox<>();
-
-        jButton1.setText("Generar Reporte Clientes");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
 
         lblTitulo.setFont(new java.awt.Font("Tahoma", 1, 24));
         lblTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -170,114 +159,113 @@ public class FrmCliente extends javax.swing.JInternalFrame implements ActionList
         jLabel8 = new javax.swing.JLabel();
         jLabel8.setBounds(50, 150, 40, 21);
         
-                jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
                 
-                        jLabel3.setText("Nombre");
+ jLabel3.setText("Nombre");
                         
-                                jLabel4.setText("Apellido Paterno");
+ jLabel4.setText("Apellido Paterno");
                                 
-                                        txtNombre.addActionListener(new java.awt.event.ActionListener() {
-                                            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                                                txtNombreActionPerformed(evt);
-                                            }
-                                        });
-                                        txtNombre.addKeyListener(new java.awt.event.KeyAdapter() {
-                                            public void keyPressed(java.awt.event.KeyEvent evt) {
-                                                txtNombreKeyPressed(evt);
-                                            }
-                                        });
+txtNombre.addActionListener(new java.awt.event.ActionListener() {
+public void actionPerformed(java.awt.event.ActionEvent evt) {
+txtNombreActionPerformed(evt);
+}
+});
+txtNombre.addKeyListener(new java.awt.event.KeyAdapter() {
+public void keyPressed(java.awt.event.KeyEvent evt) {
+ txtNombreKeyPressed(evt);
+}
+ });
                                         
-                                                jLabel5.setText("DNI");
+jLabel5.setText("DNI");
                                                         
-                                                                txtRUC.setName("txtRUC"); // NOI18N
-                                                                txtRUC.addActionListener(new java.awt.event.ActionListener() {
-                                                                    public void actionPerformed(java.awt.event.ActionEvent evt) {
-                                                                        txtRUCActionPerformed(evt);
-                                                                    }
-                                                                });
+txtRUC.setName("txtRUC"); // NOI18N
+ txtRUC.addActionListener(new java.awt.event.ActionListener() {
+  public void actionPerformed(java.awt.event.ActionEvent evt) {
+txtRUCActionPerformed(evt);
+ }
+});
                                                                 
-                                                                        jLabel6.setText("Telefono");
+jLabel6.setText("Telefono");
                                                                         
-                                                                                txtTelefono.setName("txtDireccion"); // NOI18N
-                                                                                txtTelefono.addActionListener(new java.awt.event.ActionListener() {
-                                                                                    public void actionPerformed(java.awt.event.ActionEvent evt) {
-                                                                                        txtTelefonoActionPerformed(evt);
-                                                                                    }
-                                                                                });
+txtTelefono.setName("txtDireccion"); // NOI18N
+ txtTelefono.addActionListener(new java.awt.event.ActionListener() {
+public void actionPerformed(java.awt.event.ActionEvent evt) {
+txtTelefonoActionPerformed(evt);
+ }
+});
                                                                                 
-                                                                                        txtDNI.setName("txtDireccion"); // NOI18N
-                                                                                        txtDNI.addActionListener(new java.awt.event.ActionListener() {
-                                                                                            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                                                                                                txtDNIActionPerformed(evt);
-                                                                                            }
-                                                                                        });
+txtDNI.setName("txtDireccion"); // NOI18N
+txtDNI.addActionListener(new java.awt.event.ActionListener() {
+public void actionPerformed(java.awt.event.ActionEvent evt) {
+txtDNIActionPerformed(evt);
+ }
+ });
                                                                                         
-                                                                                                jLabel7.setText("RUC");
+ jLabel7.setText("RUC");
                                                                                                 
-                                                                                                        jLabel1.setText("Direcci\u00F3n");
+jLabel1.setText("Direcci\u00F3n");
                                                                                                         
-                                                                                                                jPanelrbtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+jPanelrbtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
                                                                                                                 
-                                                                                                                        jRadioButton1.setText("Masculino");
+jRadioButton1.setText("Masculino");
                                                                                                                         
-                                                                                                                                jRadioButton2.setText("Femenino");
-                                                                                                                                jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
-                                                                                                                                    public void actionPerformed(java.awt.event.ActionEvent evt) {
-                                                                                                                                        jRadioButton2ActionPerformed(evt);
-                                                                                                                                    }
-                                                                                                                                });
+jRadioButton2.setText("Femenino");
+ jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
+public void actionPerformed(java.awt.event.ActionEvent evt) {
+jRadioButton2ActionPerformed(evt);
+}
+ });
                                                                                                                                 
-                                                                                                                                        javax.swing.GroupLayout jPanelrbtnLayout = new javax.swing.GroupLayout(jPanelrbtn);
-                                                                                                                                        jPanelrbtn.setLayout(jPanelrbtnLayout);
-                                                                                                                                        jPanelrbtnLayout.setHorizontalGroup(
-                                                                                                                                            jPanelrbtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                                                                                                            .addGroup(jPanelrbtnLayout.createSequentialGroup()
-                                                                                                                                                .addGap(22, 22, 22)
-                                                                                                                                                .addComponent(jRadioButton1)
-                                                                                                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
-                                                                                                                                                .addComponent(jRadioButton2)
-                                                                                                                                                .addGap(32, 32, 32))
-                                                                                                                                        );
-                                                                                                                                        jPanelrbtnLayout.setVerticalGroup(
-                                                                                                                                            jPanelrbtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                                                                                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelrbtnLayout.createSequentialGroup()
-                                                                                                                                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                                                                                                                .addGroup(jPanelrbtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                                                                                                                                    .addComponent(jRadioButton1)
-                                                                                                                                                    .addComponent(jRadioButton2))
-                                                                                                                                                .addContainerGap())
-                                                                                                                                        );
+ javax.swing.GroupLayout jPanelrbtnLayout = new javax.swing.GroupLayout(jPanelrbtn);
+jPanelrbtn.setLayout(jPanelrbtnLayout);
+      jPanelrbtnLayout.setHorizontalGroup(
+jPanelrbtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+.addGroup(jPanelrbtnLayout.createSequentialGroup()
+ .addGap(22, 22, 22)
+ .addComponent(jRadioButton1)
+.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
+ .addComponent(jRadioButton2)
+ .addGap(32, 32, 32))
+   );
+  jPanelrbtnLayout.setVerticalGroup(
+ jPanelrbtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+ .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelrbtnLayout.createSequentialGroup()
+     .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+     .addGroup(jPanelrbtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+    .addComponent(jRadioButton1)
+          .addComponent(jRadioButton2))
+   .addContainerGap())
+   );
                                                                                                                                         
-                                                                                                                                                jLabel8.setText("Sexo");
+jLabel8.setText("Sexo");
                                                                                                                                                         
-                                                                                                                                                                jTabbedPane1.addTab("Registrar", jPanel4);
+   jTabbedPane1.addTab("Registrar", jPanel4);
                                                                                                                                                                 
-                                                                                                                                                                lblApellidoMaterno = new JLabel();
-                                                                                                                                                                lblApellidoMaterno.setBounds(16, 97, 102, 21);
-                                                                                                                                                                lblApellidoMaterno.setText("Apellido Materno");
+ lblApellidoMaterno = new JLabel();
+ lblApellidoMaterno.setBounds(16, 97, 102, 21);
+ lblApellidoMaterno.setText("Apellido Materno");
                                                                                                                                                                 
-                                                                                                                                                                txtApellidoM = new JTextField();
-                                                                                                                                                                txtApellidoM.setBounds(130, 92, 189, 30);
-                                                                                                                                                                jPanel4.setLayout(null);
-                                                                                                                                                                jPanel4.add(jLabel3);
-                                                                                                                                                                jPanel4.add(jLabel4);
-                                                                                                                                                                jPanel4.add(txtNombre);
-                                                                                                                                                                jPanel4.add(jLabel5);
-                                                                                                                                                                jPanel4.add(txtRUC);
-                                                                                                                                                                jPanel4.add(jLabel6);
-                                                                                                                                                                jPanel4.add(txtTelefono);
-                                                                                                                                                                jPanel4.add(txtDNI);
-                                                                                                                                                                jPanel4.add(jLabel7);
-                                                                                                                                                                jPanel4.add(jLabel1);
-                                                                                                                                                                jPanel4.add(jPanelrbtn);
-                                                                                                                                                                jPanel4.add(txtDireccion);
-                                                                                                                                                                jPanel4.add(jLabel8);
-                                                                                                                                                                jPanel4.add(lblApellidoMaterno);
-                                                                                                                                                                jPanel4.add(txtApellidoM);
-                                                                                                                                                                
-                                                                                                                                                                txtApellidoP = new JTextField();
-                                                                                                                                                                txtApellidoP.setBounds(130, 53, 189, 30);
-                                                                                                                                                                jPanel4.add(txtApellidoP);
+ txtApellidoM = new JTextField();
+txtApellidoM.setBounds(130, 92, 189, 30);
+jPanel4.setLayout(null);
+  jPanel4.add(jLabel3);
+  jPanel4.add(jLabel4);
+  jPanel4.add(txtNombre);
+ jPanel4.add(jLabel5);
+  jPanel4.add(txtRUC);
+  jPanel4.add(jLabel6);
+   jPanel4.add(txtTelefono);
+ jPanel4.add(txtDNI);
+ jPanel4.add(jLabel7);
+  jPanel4.add(jLabel1);
+ jPanel4.add(jPanelrbtn);
+  jPanel4.add(txtDireccion);
+ jPanel4.add(jLabel8);
+  jPanel4.add(lblApellidoMaterno);
+ jPanel4.add(txtApellidoM);
+txtApellidoP = new JTextField();
+txtApellidoP.setBounds(130, 53, 189, 30);
+jPanel4.add(txtApellidoP);
         jPanel3.add(jTextField1);
         jTextField1.setBounds(230, 10, 250, 30);
 
@@ -321,26 +309,6 @@ public class FrmCliente extends javax.swing.JInternalFrame implements ActionList
                 });
 
         pack();
-    }
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt){
-        try {
-            //creamos un objeto dbBean
-            dbBean aux = new dbBean();
-            HashMap map = new HashMap();
-            //Connection cn = DriverManager.getConnection("jdbc:sqlserver://localhost:1433;databaseName=ST;user=sa;password=sasasa;");
-            Connection cn = aux.getConnection();
-            JasperReport jr= JasperCompileManager.compileReport("src/REPORTS/ClienteReporte.jrxml");
-            map.put("idCliente",idClie);
-            JasperPrint jp = JasperFillManager.fillReport(jr,null,cn);
-            // JasperPrint jp= JasperFillManager.fillReport(jr,idClie,cn);
-
-            JasperViewer jv= new JasperViewer(jp,false);
-            jv.setVisible(true);
-        } catch (Exception e) {
-            System.out.println(e);
-        }
-
     }
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {
@@ -532,7 +500,6 @@ public class FrmCliente extends javax.swing.JInternalFrame implements ActionList
     private javax.swing.JButton btnLimpiar;
     private javax.swing.JButton btnRegistrar;
     private javax.swing.JButton btnSalir;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton btnBuscar;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;

@@ -5,6 +5,7 @@ import javax.swing.JOptionPane;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.GroupLayout;
 import javax.swing.LayoutStyle.ComponentPlacement;
+import javax.swing.JFrame;
 
 public class MDIApplication extends javax.swing.JFrame {
 
@@ -18,7 +19,7 @@ public class MDIApplication extends javax.swing.JFrame {
        
     }
     @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+
     private void initComponents() {
 
         escritorio = new javax.swing.JDesktopPane();
@@ -41,10 +42,9 @@ public class MDIApplication extends javax.swing.JFrame {
         jSeparator3 = new javax.swing.JToolBar.Separator();
         jSeparator4 = new javax.swing.JToolBar.Separator();
         btnSalir = new javax.swing.JButton();
-        menuBar = new javax.swing.JMenuBar();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("EGENER V.0.2");
+        setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+        setTitle("ERP(LIBRERIA-BAZAR YULIZA)");
 
         jToolBar1.setBorder(javax.swing.BorderFactory.createCompoundBorder(new javax.swing.border.MatteBorder(null), javax.swing.BorderFactory.createCompoundBorder()));
         jToolBar1.setFloatable(false);
@@ -184,8 +184,6 @@ public class MDIApplication extends javax.swing.JFrame {
         );
         escritorio.setLayout(escritorioLayout);
 
-        setJMenuBar(menuBar);
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         layout.setHorizontalGroup(
         	layout.createParallelGroup(Alignment.LEADING)
@@ -202,52 +200,48 @@ public class MDIApplication extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
 
         pack();
-    }// </editor-fold>//GEN-END:initComponents
+    }
 
-    private void btnClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClientesActionPerformed
+    private void btnClientesActionPerformed(java.awt.event.ActionEvent evt) {
         cargarFormulario(FrmCliente.class);
-    }//GEN-LAST:event_btnClientesActionPerformed
+    }
 
-    private void btnEquiposActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEquiposActionPerformed
+    private void btnEquiposActionPerformed(java.awt.event.ActionEvent evt) {
         cargarFormulario(FrmProductos.class);
-    }//GEN-LAST:event_btnEquiposActionPerformed
+    }
 
-    private void btnEmpleadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEmpleadosActionPerformed
+    private void btnEmpleadosActionPerformed(java.awt.event.ActionEvent evt) {
       cargarFormulario(EmpleadoView.class);
-    }//GEN-LAST:event_btnEmpleadosActionPerformed
+    }
 
-    private void btnServiciosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnServiciosActionPerformed
+    private void btnServiciosActionPerformed(java.awt.event.ActionEvent evt) {
         cargarFormulario(CotizacionView.class);
-    }//GEN-LAST:event_btnServiciosActionPerformed
+    }
 
-    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {
       System.exit(0);
-        // this.dispose();
-    }//GEN-LAST:event_btnSalirActionPerformed
+    }
 
-    private void btnVentasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVentasActionPerformed
+    private void btnVentasActionPerformed(java.awt.event.ActionEvent evt) {
        cargarFormulario(VentaView.class);
-    }//GEN-LAST:event_btnVentasActionPerformed
+    }
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {
         cargarFormulario(CompraView.class);
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }
 
-    private void btnProveedoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProveedoresActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnProveedoresActionPerformed
+    private void btnProveedoresActionPerformed(java.awt.event.ActionEvent evt) {
+    	cargarFormulario(FrmProveedor.class);
+    }
 
-    private void btnPedidosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPedidosActionPerformed
+    private void btnPedidosActionPerformed(java.awt.event.ActionEvent evt) {
          cargarFormulario(PedidoView.class);
-    }//GEN-LAST:event_btnPedidosActionPerformed
+    }
 
-    private void btnAuditoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAuditoriaActionPerformed
+    private void btnAuditoriaActionPerformed(java.awt.event.ActionEvent evt) {
          cargarFormulario(FrmAuditoria.class);
-    }//GEN-LAST:event_btnAuditoriaActionPerformed
+    }
 
-    /**
-     * @param args the command line arguments
-     */
 //    public static void main(String args[]) {
 //        /* Set the Nimbus look and feel */
 //        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -283,9 +277,8 @@ public class MDIApplication extends javax.swing.JFrame {
     
      private void cargarFormulario(Class<?> aClass) {
         try {
-            //variable control
+
             JInternalFrame view = null;
-            //Buscar instancia 
             for(JInternalFrame f:escritorio.getAllFrames() )
             {
               if(aClass.isInstance(f)){
@@ -293,22 +286,18 @@ public class MDIApplication extends javax.swing.JFrame {
                   break;
               }
             }
-            //Crear la instancia
             if(view==null)
             {
               view = (JInternalFrame) Class.forName(aClass.getName()).newInstance();
               escritorio.add(view);
               view.setVisible(true);   
             }
-            //Activar el formulario 
         view.setSelected(true);
         } catch (Exception e) {
-            System.out.println("Ocurrió un error al abrir el formulario" + e.getMessage());
+            System.out.println("Ocurrio un error al abrir el formulario" + e.getMessage());
         }
     }
 
-  
-    // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAuditoria;
     private javax.swing.JButton btnClientes;
     private javax.swing.JButton btnEmpleados;
@@ -332,7 +321,6 @@ public class MDIApplication extends javax.swing.JFrame {
     private javax.swing.JToolBar.Separator jSeparator8;
     private javax.swing.JToolBar.Separator jSeparator9;
     private javax.swing.JToolBar jToolBar1;
-    private javax.swing.JMenuBar menuBar;
     // End of variables declaration//GEN-END:variables
 
 }

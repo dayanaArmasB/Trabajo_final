@@ -27,6 +27,12 @@ import javax.swing.GroupLayout;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.JTabbedPane;
 import javax.swing.JPanel;
+import javax.swing.JLabel;
+import java.awt.Dimension;
+import javax.swing.JScrollPane;
+import javax.swing.JTextField;
+import javax.swing.JComboBox;
+import javax.swing.JTable;
 
 public class CotizacionView extends javax.swing.JInternalFrame 
 {
@@ -69,12 +75,10 @@ public class CotizacionView extends javax.swing.JInternalFrame
                            lbMonto.setText("Monto (s/.)");
                            jPanel4 = new javax.swing.JPanel();
                            btnFechaEntrega = new com.toedter.calendar.JDateChooser();
-                           btnLimpiar = new javax.swing.JButton();
                            jLabel10 = new javax.swing.JLabel();
                            comboPedidos = new javax.swing.JComboBox<>();
                            jLabel2 = new javax.swing.JLabel();
                            txtfolio = new javax.swing.JTextField();
-                           btnLeer = new javax.swing.JButton();
                            btnBuscar = new javax.swing.JButton();
                            txtDescripcion = new javax.swing.JTextField();
                            jLabel6 = new javax.swing.JLabel();
@@ -87,19 +91,10 @@ public class CotizacionView extends javax.swing.JInternalFrame
                                            btnFechaEntrega.setPreferredSize(new java.awt.Dimension(120, 20));
                                            jPanel4.add(btnFechaEntrega);
                                            btnFechaEntrega.setBounds(80, 80, 130, 20);
-                                           
-                                                   btnLimpiar.setText("Limpiar");
-                                                   btnLimpiar.addActionListener(new java.awt.event.ActionListener() {
-                                                       public void actionPerformed(java.awt.event.ActionEvent evt) {
-                                                           btnLimpiarActionPerformed(evt);
-                                                       }
-                                                   });
-                                                   jPanel4.add(btnLimpiar);
-                                                   btnLimpiar.setBounds(510, 40, 120, 25);
                                                    
                                                            jLabel10.setText("Descripci\u00F3n");
                                                            jPanel4.add(jLabel10);
-                                                           jLabel10.setBounds(30, 160, 100, 20);
+                                                           jLabel10.setBounds(17, 161, 74, 20);
                                                            
                                                                    comboPedidos.setEditable(true);
                                                                    comboPedidos.addActionListener(new java.awt.event.ActionListener() {
@@ -112,18 +107,9 @@ public class CotizacionView extends javax.swing.JInternalFrame
                                                                    
                                                                            jLabel2.setText("Folio Cotizaci\u00F3n");
                                                                            jPanel4.add(jLabel2);
-                                                                           jLabel2.setBounds(17, 20, 89, 16);
+                                                                           jLabel2.setBounds(17, 20, 83, 16);
                                                                            jPanel4.add(txtfolio);
                                                                            txtfolio.setBounds(110, 17, 130, 22);
-                                                                           
-                                                                                   btnLeer.setText("Leer");
-                                                                                   btnLeer.addActionListener(new java.awt.event.ActionListener() {
-                                                                                       public void actionPerformed(java.awt.event.ActionEvent evt) {
-                                                                                           btnLeerActionPerformed(evt);
-                                                                                       }
-                                                                                   });
-                                                                                   jPanel4.add(btnLeer);
-                                                                                   btnLeer.setBounds(510, 10, 120, 25);
                                                                                    
                                                                                            btnBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/buscar.gif"))); // NOI18N
                                                                                            btnBuscar.addActionListener(new java.awt.event.ActionListener() {
@@ -132,27 +118,61 @@ public class CotizacionView extends javax.swing.JInternalFrame
                                                                                                }
                                                                                            });
                                                                                            jPanel4.add(btnBuscar);
-                                                                                           btnBuscar.setBounds(551, 70, 50, 30);
+                                                                                           btnBuscar.setBounds(595, 20, 50, 30);
                                                                                            jPanel4.add(txtDescripcion);
                                                                                            txtDescripcion.setBounds(110, 160, 480, 22);
                                                                                            
                                                                                                    jLabel6.setText("Fecha");
                                                                                                    jPanel4.add(jLabel6);
-                                                                                                   jLabel6.setBounds(30, 80, 50, 20);
+                                                                                                   jLabel6.setBounds(17, 80, 50, 20);
                                                                                                    
                                                                                                            jLabel11.setText("Pedido");
                                                                                                            jPanel4.add(jLabel11);
-                                                                                                           jLabel11.setBounds(30, 50, 100, 20);
+                                                                                                           jLabel11.setBounds(17, 51, 100, 20);
                                                                                                            jPanel4.add(txtMonto);
                                                                                                            txtMonto.setBounds(110, 120, 130, 22);
                                                                                                            
                                                                                                                    jTabbedPane1.addTab("Registrar Cotización", jPanel4);
-       //  dtm2 = (DefaultTableModel)tbGrupos.getModel();
-        //dtm2 = (DefaultTableModel)jTable1.getModel();
-       //llenaTabla(false, "");
+                                                                                                                   {
+                                                                                                                   	lblMonto = new JLabel();
+                                                                                                                   	lblMonto.setText("Monto");
+                                                                                                                   	lblMonto.setBounds(17, 121, 50, 20);
+                                                                                                                   	jPanel4.add(lblMonto);
+                                                                                                                   }
+                                                                                                                   {
+                                                                                                                   	panel = new JPanel();
+                                                                                                                   	jTabbedPane1.addTab("Busqueda", null, panel, null);
+                                                                                                                   	panel.setLayout(null);
+                                                                                                                   	{
+                                                                                                                   		label = new JLabel();
+                                                                                                                   		label.setText("Búsqueda");
+                                                                                                                   		label.setBounds(10, 25, 60, 20);
+                                                                                                                   		panel.add(label);
+                                                                                                                   	}
+                                                                                                                   	{
+                                                                                                                   		scrollPane = new JScrollPane();
+                                                                                                                   		scrollPane.setBounds(10, 60, 610, 200);
+                                                                                                                   		panel.add(scrollPane);
+                                                                                                                   		
+                                                                                                                   		table = new JTable();
+                                                                                                                   		scrollPane.setViewportView(table);
+                                                                                                                   	}
+                                                                                                                   	{
+                                                                                                                   		textField = new JTextField();
+                                                                                                                   		textField.setName("txtBusqueda");
+                                                                                                                   		textField.setBounds(230, 20, 300, 30);
+                                                                                                                   		panel.add(textField);
+                                                                                                                   	}
+                                                                                                                   	{
+                                                                                                                   		cbxCotizaciones = new JComboBox<String>();
+                                                                                                                   		cbxCotizaciones.setToolTipText("");
+                                                                                                                   		cbxCotizaciones.setBounds(70, 20, 150, 30);
+                                                                                                                   		panel.add(cbxCotizaciones);
+                                                                                                                   	}
+                                                                                                                   }
+
     }
 
-      //MÃ©todo de validaciÃ³n
        public boolean valida()
       {
    /*
@@ -187,7 +207,6 @@ public class CotizacionView extends javax.swing.JInternalFrame
         jLabel1 = new javax.swing.JLabel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         btnSalir = new javax.swing.JButton();
-        btnExportarPDF = new javax.swing.JButton();
         btnRegistrar = new javax.swing.JButton();
         btnAprobar = new javax.swing.JButton();
         btnAnular = new javax.swing.JButton();
@@ -206,15 +225,6 @@ public class CotizacionView extends javax.swing.JInternalFrame
         btnSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSalirActionPerformed(evt);
-            }
-        });
-
-        btnExportarPDF.setText("Exportar PDF");
-        btnExportarPDF.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnExportarPDF.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
-        btnExportarPDF.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnExportarPDFActionPerformed(evt);
             }
         });
 
@@ -251,6 +261,14 @@ public class CotizacionView extends javax.swing.JInternalFrame
                 btnModificarPedidoActionPerformed(evt);
             }
         });
+        btnLimpiar = new javax.swing.JButton();
+        
+                btnLimpiar.setText("Limpiar");
+                btnLimpiar.addActionListener(new java.awt.event.ActionListener() {
+                    public void actionPerformed(java.awt.event.ActionEvent evt) {
+                        btnLimpiarActionPerformed(evt);
+                    }
+                });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         layout.setHorizontalGroup(
@@ -258,29 +276,35 @@ public class CotizacionView extends javax.swing.JInternalFrame
         		.addGroup(layout.createSequentialGroup()
         			.addGap(25)
         			.addComponent(jTabbedPane1, GroupLayout.PREFERRED_SIZE, 660, GroupLayout.PREFERRED_SIZE)
-        			.addGap(18)
-        			.addGroup(layout.createParallelGroup(Alignment.LEADING)
-        				.addComponent(btnRegistrar, GroupLayout.DEFAULT_SIZE, 122, Short.MAX_VALUE)
-        				.addComponent(btnSalir, GroupLayout.DEFAULT_SIZE, 122, Short.MAX_VALUE)
-        				.addComponent(btnModificarPedido, GroupLayout.DEFAULT_SIZE, 122, Short.MAX_VALUE)
-        				.addComponent(btnExportarPDF, GroupLayout.PREFERRED_SIZE, 122, GroupLayout.PREFERRED_SIZE)
-        				.addComponent(btnAnular, GroupLayout.DEFAULT_SIZE, 122, Short.MAX_VALUE)
-        				.addComponent(btnAprobar, GroupLayout.DEFAULT_SIZE, 122, Short.MAX_VALUE))
-        			.addGap(50))
+        			.addPreferredGap(ComponentPlacement.RELATED)
+        			.addGroup(layout.createParallelGroup(Alignment.TRAILING)
+        				.addGroup(layout.createSequentialGroup()
+        					.addGap(18)
+        					.addGroup(layout.createParallelGroup(Alignment.LEADING)
+        						.addComponent(btnRegistrar, GroupLayout.DEFAULT_SIZE, 122, Short.MAX_VALUE)
+        						.addComponent(btnModificarPedido, GroupLayout.DEFAULT_SIZE, 122, Short.MAX_VALUE)
+        						.addComponent(btnAnular, GroupLayout.DEFAULT_SIZE, 122, Short.MAX_VALUE)
+        						.addComponent(btnAprobar, GroupLayout.DEFAULT_SIZE, 122, Short.MAX_VALUE)
+        						.addComponent(btnLimpiar, GroupLayout.PREFERRED_SIZE, 120, GroupLayout.PREFERRED_SIZE))
+        					.addGap(50))
+        				.addGroup(layout.createSequentialGroup()
+        					.addPreferredGap(ComponentPlacement.RELATED)
+        					.addComponent(btnSalir, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
+        					.addContainerGap())))
         		.addGroup(layout.createSequentialGroup()
         			.addContainerGap(257, Short.MAX_VALUE)
         			.addComponent(jLabel1)
         			.addGap(249))
         );
         layout.setVerticalGroup(
-        	layout.createParallelGroup(Alignment.LEADING)
+        	layout.createParallelGroup(Alignment.TRAILING)
         		.addGroup(layout.createSequentialGroup()
         			.addGroup(layout.createParallelGroup(Alignment.LEADING)
         				.addGroup(layout.createSequentialGroup()
         					.addContainerGap()
         					.addComponent(jLabel1, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)
         					.addPreferredGap(ComponentPlacement.RELATED)
-        					.addComponent(jTabbedPane1, GroupLayout.PREFERRED_SIZE, 235, GroupLayout.PREFERRED_SIZE))
+        					.addComponent(jTabbedPane1, GroupLayout.PREFERRED_SIZE, 321, GroupLayout.PREFERRED_SIZE))
         				.addGroup(layout.createSequentialGroup()
         					.addGap(100)
         					.addComponent(btnRegistrar)
@@ -291,10 +315,12 @@ public class CotizacionView extends javax.swing.JInternalFrame
         					.addPreferredGap(ComponentPlacement.RELATED)
         					.addComponent(btnAnular)
         					.addPreferredGap(ComponentPlacement.RELATED)
-        					.addComponent(btnExportarPDF)
-        					.addPreferredGap(ComponentPlacement.RELATED)
-        					.addComponent(btnSalir)))
-        			.addContainerGap(121, Short.MAX_VALUE))
+        					.addComponent(btnLimpiar, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)))
+        			.addContainerGap(43, Short.MAX_VALUE))
+        		.addGroup(layout.createSequentialGroup()
+        			.addContainerGap(301, Short.MAX_VALUE)
+        			.addComponent(btnSalir)
+        			.addContainerGap())
         );
         getContentPane().setLayout(layout);
 
@@ -392,25 +418,6 @@ public class CotizacionView extends javax.swing.JInternalFrame
         this.dispose();
     }//GEN-LAST:event_btnSalirActionPerformed
 
-    private void btnExportarPDFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExportarPDFActionPerformed
-   //   try { 
-            //creamos un objeto dbBean
-//              dbBean aux = new dbBean();
-//              HashMap map = new HashMap();
-//              //Connection cn = DriverManager.getConnection("jdbc:sqlserver://localhost:1433;databaseName=ST;user=sa;password=sasasa;");
-//              Connection cn = aux.getConnection();
-//              JasperReport jr= JasperCompileManager.compileReport("src/app.modconta.reports/FichaTecnica.jrxml");
-//              // map.put("idCliente",idClie); 
-//              JasperPrint jp = JasperFillManager.fillReport(jr,null,cn);
-//              JasperViewer jv= new JasperViewer(jp,false);
-//              jv.setVisible(true);
-//        } catch (Exception e) {
-//            System.out.println(e.getMessage());
-//        }  
-    
-
-    }//GEN-LAST:event_btnExportarPDFActionPerformed
-
     private void btnAprobarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAprobarActionPerformed
      /* try {
         int id = 0, est;
@@ -491,10 +498,6 @@ public class CotizacionView extends javax.swing.JInternalFrame
         // TODO add your handling code here:
     }//GEN-LAST:event_btnModificarPedidoActionPerformed
 
-    private void btnLeerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLeerActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnLeerActionPerformed
-
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
         int x ;
         x = Integer.parseInt(JOptionPane.showInputDialog(" Ingrese el codigo del Empleado"));
@@ -521,9 +524,7 @@ public class CotizacionView extends javax.swing.JInternalFrame
     private javax.swing.JButton btnAnular;
     private javax.swing.JButton btnAprobar;
     private javax.swing.JButton btnBuscar;
-    private javax.swing.JButton btnExportarPDF;
     private com.toedter.calendar.JDateChooser btnFechaEntrega;
-    private javax.swing.JButton btnLeer;
     private javax.swing.JButton btnLimpiar;
     private javax.swing.JButton btnModificarPedido;
     private javax.swing.JButton btnRegistrar;
@@ -540,6 +541,13 @@ public class CotizacionView extends javax.swing.JInternalFrame
     private javax.swing.JTextField txtDescripcion;
     private javax.swing.JTextField txtMonto;
     private javax.swing.JTextField txtfolio;
+    private JLabel lblMonto;
+    private JPanel panel;
+    private JLabel label;
+    private JScrollPane scrollPane;
+    private JTextField textField;
+    private JComboBox<String> cbxCotizaciones;
+    private JTable table;
 }
 
 

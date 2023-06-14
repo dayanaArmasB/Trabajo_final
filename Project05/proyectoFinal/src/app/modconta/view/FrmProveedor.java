@@ -108,8 +108,6 @@ public void llenaTabla(boolean swr, String cadr)
    
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-
-        jButton1 = new javax.swing.JButton();
         lblTitulo = new javax.swing.JLabel();
         btnSalir = new javax.swing.JButton();
         jTabbedPane1 = new javax.swing.JTabbedPane();
@@ -129,13 +127,6 @@ public void llenaTabla(boolean swr, String cadr)
         tblCliente.getColumnModel().getColumn(6).setPreferredWidth(121);
         jTextField1 = new javax.swing.JTextField();
         jComboBox1 = new javax.swing.JComboBox<>();
-
-        jButton1.setText("Generar Reporte Proveedores");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
 
         lblTitulo.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         lblTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -305,21 +296,17 @@ public void llenaTabla(boolean swr, String cadr)
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         layout.setHorizontalGroup(
-        	layout.createParallelGroup(Alignment.TRAILING)
-        		.addGroup(Alignment.LEADING, layout.createSequentialGroup()
+        	layout.createParallelGroup(Alignment.LEADING)
+        		.addGroup(layout.createSequentialGroup()
         			.addGap(49)
         			.addComponent(btnRegistrar, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE)
         			.addGap(18)
         			.addComponent(btnLimpiar, GroupLayout.PREFERRED_SIZE, 80, GroupLayout.PREFERRED_SIZE)
         			.addGap(18)
         			.addComponent(jButton2, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE)
-        			.addPreferredGap(ComponentPlacement.RELATED, 280, Short.MAX_VALUE)
-        			.addComponent(jButton1, GroupLayout.PREFERRED_SIZE, 213, GroupLayout.PREFERRED_SIZE)
-        			.addGap(36))
-        		.addGroup(layout.createSequentialGroup()
-        			.addContainerGap(675, Short.MAX_VALUE)
+        			.addPreferredGap(ComponentPlacement.RELATED, 436, Short.MAX_VALUE)
         			.addComponent(btnSalir, GroupLayout.PREFERRED_SIZE, 73, GroupLayout.PREFERRED_SIZE)
-        			.addGap(96))
+        			.addGap(20))
         		.addGroup(layout.createSequentialGroup()
         			.addGap(27)
         			.addComponent(jTabbedPane1, GroupLayout.PREFERRED_SIZE, 787, GroupLayout.PREFERRED_SIZE)
@@ -336,44 +323,23 @@ public void llenaTabla(boolean swr, String cadr)
         			.addComponent(lblTitulo)
         			.addGap(18)
         			.addComponent(jTabbedPane1, GroupLayout.PREFERRED_SIZE, 389, GroupLayout.PREFERRED_SIZE)
-        			.addPreferredGap(ComponentPlacement.RELATED)
         			.addGroup(layout.createParallelGroup(Alignment.LEADING)
-        				.addGroup(layout.createParallelGroup(Alignment.BASELINE)
-        					.addComponent(btnRegistrar, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-        					.addComponent(btnLimpiar, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE))
         				.addGroup(layout.createSequentialGroup()
-        					.addGap(5)
-        					.addComponent(jButton1)
-        					.addPreferredGap(ComponentPlacement.UNRELATED)
-        					.addComponent(btnSalir))
-        				.addComponent(jButton2, GroupLayout.PREFERRED_SIZE, 32, GroupLayout.PREFERRED_SIZE))
-        			.addContainerGap(37, Short.MAX_VALUE))
+        					.addPreferredGap(ComponentPlacement.RELATED)
+        					.addGroup(layout.createParallelGroup(Alignment.LEADING)
+        						.addGroup(layout.createParallelGroup(Alignment.BASELINE)
+        							.addComponent(btnRegistrar, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+        							.addComponent(btnLimpiar, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE))
+        						.addComponent(jButton2, GroupLayout.PREFERRED_SIZE, 32, GroupLayout.PREFERRED_SIZE)))
+        				.addGroup(layout.createSequentialGroup()
+        					.addGap(34)
+        					.addComponent(btnSalir)))
+        			.addContainerGap(56, Short.MAX_VALUE))
         );
         getContentPane().setLayout(layout);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-
-        try {
-            //creamos un objeto dbBean
-            dbBean aux = new dbBean();
-            HashMap map = new HashMap();
-            //Connection cn = DriverManager.getConnection("jdbc:sqlserver://localhost:1433;databaseName=ST;user=sa;password=sasasa;");
-            Connection cn = aux.getConnection();
-            JasperReport jr= JasperCompileManager.compileReport("src/REPORTS/ClienteReporte.jrxml");
-            map.put("idCliente",idClie);
-            JasperPrint jp = JasperFillManager.fillReport(jr,null,cn);
-            // JasperPrint jp= JasperFillManager.fillReport(jr,idClie,cn);
-
-            JasperViewer jv= new JasperViewer(jp,false);
-            jv.setVisible(true);
-        } catch (Exception e) {
-            System.out.println(e);
-        }
-
-    }//GEN-LAST:event_jButton1ActionPerformed
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
         this.dispose();
@@ -472,7 +438,6 @@ public void llenaTabla(boolean swr, String cadr)
     private javax.swing.JButton btnLimpiar;
     private javax.swing.JButton btnRegistrar;
     private javax.swing.JButton btnSalir;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;

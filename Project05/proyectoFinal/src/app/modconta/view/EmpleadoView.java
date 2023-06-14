@@ -74,7 +74,6 @@ public class EmpleadoView extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         sexo = new javax.swing.ButtonGroup();
-        jButton1 = new javax.swing.JButton();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel4 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
@@ -126,13 +125,6 @@ public class EmpleadoView extends javax.swing.JInternalFrame {
         setMaximizable(true);
         setTitle("EMPLEADOS");
         setAutoscrolls(true);
-
-        jButton1.setText("Generar Reporte Empleados");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
 
         jTabbedPane1.setMaximumSize(new java.awt.Dimension(32769, 32769));
 
@@ -493,24 +485,23 @@ public class EmpleadoView extends javax.swing.JInternalFrame {
         		.addGroup(layout.createSequentialGroup()
         			.addGroup(layout.createParallelGroup(Alignment.LEADING)
         				.addGroup(layout.createSequentialGroup()
-        					.addGap(101)
+        					.addGap(30)
+        					.addComponent(jTabbedPane1, GroupLayout.PREFERRED_SIZE, 663, GroupLayout.PREFERRED_SIZE))
+        				.addGroup(layout.createSequentialGroup()
+        					.addGap(58)
         					.addComponent(lblTitulo, GroupLayout.PREFERRED_SIZE, 608, GroupLayout.PREFERRED_SIZE))
-        				.addGroup(layout.createParallelGroup(Alignment.TRAILING)
-        					.addGroup(layout.createSequentialGroup()
-        						.addContainerGap()
-        						.addComponent(btnRegistrar, GroupLayout.PREFERRED_SIZE, 97, GroupLayout.PREFERRED_SIZE)
-        						.addGap(18)
-        						.addComponent(btnLimpiar, GroupLayout.PREFERRED_SIZE, 80, GroupLayout.PREFERRED_SIZE)
-        						.addGap(18)
-        						.addComponent(jButton2)
-        						.addPreferredGap(ComponentPlacement.RELATED, 234, Short.MAX_VALUE)
-        						.addGroup(layout.createParallelGroup(Alignment.TRAILING)
-        							.addComponent(btnSalir)
-        							.addComponent(jButton1)))
-        					.addGroup(Alignment.LEADING, layout.createSequentialGroup()
-        						.addGap(30)
-        						.addComponent(jTabbedPane1, GroupLayout.PREFERRED_SIZE, 663, GroupLayout.PREFERRED_SIZE))))
-        			.addContainerGap(18, Short.MAX_VALUE))
+        				.addGroup(layout.createSequentialGroup()
+        					.addContainerGap()
+        					.addComponent(btnRegistrar, GroupLayout.PREFERRED_SIZE, 97, GroupLayout.PREFERRED_SIZE)
+        					.addGap(18)
+        					.addComponent(btnLimpiar, GroupLayout.PREFERRED_SIZE, 80, GroupLayout.PREFERRED_SIZE)
+        					.addGap(18)
+        					.addComponent(jButton2)))
+        			.addContainerGap(32, Short.MAX_VALUE))
+        		.addGroup(Alignment.TRAILING, layout.createSequentialGroup()
+        			.addContainerGap(662, Short.MAX_VALUE)
+        			.addComponent(btnSalir)
+        			.addContainerGap())
         );
         layout.setVerticalGroup(
         	layout.createParallelGroup(Alignment.LEADING)
@@ -519,48 +510,27 @@ public class EmpleadoView extends javax.swing.JInternalFrame {
         			.addComponent(lblTitulo)
         			.addPreferredGap(ComponentPlacement.RELATED)
         			.addComponent(jTabbedPane1, GroupLayout.PREFERRED_SIZE, 416, GroupLayout.PREFERRED_SIZE)
-        			.addGroup(layout.createParallelGroup(Alignment.LEADING, false)
-        				.addGroup(layout.createSequentialGroup()
-        					.addGap(44)
-        					.addGroup(layout.createParallelGroup(Alignment.BASELINE)
-        						.addComponent(btnRegistrar, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-        						.addComponent(btnLimpiar, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE))
-        					.addGap(61))
-        				.addGroup(Alignment.TRAILING, layout.createSequentialGroup()
-        					.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        					.addGroup(layout.createParallelGroup(Alignment.LEADING)
+        			.addGroup(layout.createParallelGroup(Alignment.LEADING)
+        				.addGroup(layout.createParallelGroup(Alignment.LEADING)
+        					.addGroup(layout.createSequentialGroup()
+        						.addPreferredGap(ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
+        						.addGroup(layout.createParallelGroup(Alignment.BASELINE)
+        							.addComponent(btnRegistrar, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+        							.addComponent(btnLimpiar, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE))
+        						.addGap(61))
+        					.addGroup(layout.createSequentialGroup()
+        						.addGap(43)
         						.addComponent(jButton2, GroupLayout.PREFERRED_SIZE, 47, GroupLayout.PREFERRED_SIZE)
-        						.addGroup(layout.createSequentialGroup()
-        							.addComponent(jButton1, GroupLayout.PREFERRED_SIZE, 35, GroupLayout.PREFERRED_SIZE)
-        							.addPreferredGap(ComponentPlacement.RELATED)
-        							.addComponent(btnSalir, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)))
-        					.addGap(28))))
+        						.addGap(49)))
+        				.addGroup(layout.createSequentialGroup()
+        					.addGap(51)
+        					.addComponent(btnSalir, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+        					.addContainerGap())))
         );
         getContentPane().setLayout(layout);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        int x ;
-     x = Integer.parseInt(JOptionPane.showInputDialog(" Ingrese el codigo del Empleado"));
-      try { 
-            //creamos un objeto dbBean
-              dbBean aux = new dbBean();
-              HashMap map = new HashMap();
-              //Connection cn = DriverManager.getConnection("jdbc:sqlserver://localhost:1433;databaseName=ST;user=sa;password=sasasa;");
-              Connection cn = aux.getConnection();
-              JasperReport jr= JasperCompileManager.compileReport("src/REPORTS/EmpleadoReporte.jrxml");
-              map.put("idEmpleado",x); 
-              JasperPrint jp = JasperFillManager.fillReport(jr,map,cn);
-            // JasperPrint jp= JasperFillManager.fillReport(jr,idClie,cn);
-              
-              JasperViewer jv= new JasperViewer(jp,false);
-              jv.setVisible(true);
-        } catch (Exception e) {
-            System.out.println(e);
-        }
-    }//GEN-LAST:event_jButton1ActionPerformed
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
         this.dispose();
@@ -877,7 +847,6 @@ public class EmpleadoView extends javax.swing.JInternalFrame {
     private com.toedter.calendar.JDateChooser dcFechaIncio;
     private javax.swing.JTextField idint;
     private javax.swing.JTextField idint2;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JComboBox<String> jComboBox3;
     private javax.swing.JLabel jLabel1;

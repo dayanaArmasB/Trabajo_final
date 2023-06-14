@@ -165,9 +165,6 @@ public class PedidoView extends javax.swing.JInternalFrame
         jLabel5 = new javax.swing.JLabel();
         jScrollPane4 = new javax.swing.JScrollPane();
         tbGrupos = new javax.swing.JTable();
-        btnAgregar = new javax.swing.JButton();
-        btnModificar = new javax.swing.JButton();
-        btnEliminar = new javax.swing.JButton();
         btnLimpiar = new javax.swing.JButton();
         txtRucCliente = new javax.swing.JTextField();
         comboClientes = new javax.swing.JComboBox<>();
@@ -178,7 +175,6 @@ public class PedidoView extends javax.swing.JInternalFrame
         btnLeer = new javax.swing.JButton();
         btnBuscar = new javax.swing.JButton();
         btnSalir = new javax.swing.JButton();
-        btnExportarPDF = new javax.swing.JButton();
         btnRegistrar = new javax.swing.JButton();
         btnAprobar = new javax.swing.JButton();
         btnAnular = new javax.swing.JButton();
@@ -222,33 +218,6 @@ public class PedidoView extends javax.swing.JInternalFrame
 
         jPanel4.add(jScrollPane4);
         jScrollPane4.setBounds(12, 249, 678, 200);
-
-        btnAgregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGES/agregar.png"))); // NOI18N
-        btnAgregar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAgregarActionPerformed(evt);
-            }
-        });
-        jPanel4.add(btnAgregar);
-        btnAgregar.setBounds(639, 107, 35, 32);
-
-        btnModificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/update.png"))); // NOI18N
-        btnModificar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnModificarActionPerformed(evt);
-            }
-        });
-        jPanel4.add(btnModificar);
-        btnModificar.setBounds(639, 140, 35, 32);
-
-        btnEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGES/eliminar.png"))); // NOI18N
-        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEliminarActionPerformed(evt);
-            }
-        });
-        jPanel4.add(btnEliminar);
-        btnEliminar.setBounds(639, 178, 35, 32);
 
         btnLimpiar.setText("Limpiar");
         btnLimpiar.addActionListener(new java.awt.event.ActionListener() {
@@ -309,15 +278,6 @@ public class PedidoView extends javax.swing.JInternalFrame
             }
         });
 
-        btnExportarPDF.setText("Exportar PDF");
-        btnExportarPDF.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnExportarPDF.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
-        btnExportarPDF.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnExportarPDFActionPerformed(evt);
-            }
-        });
-
         btnRegistrar.setText("Registrar");
         btnRegistrar.setName("btnRegistrarPedido"); // NOI18N
         btnRegistrar.addActionListener(new java.awt.event.ActionListener() {
@@ -363,22 +323,25 @@ public class PedidoView extends javax.swing.JInternalFrame
         layout.setHorizontalGroup(
         	layout.createParallelGroup(Alignment.TRAILING)
         		.addGroup(layout.createSequentialGroup()
-        			.addContainerGap()
-        			.addComponent(jTabbedPane1, GroupLayout.PREFERRED_SIZE, 707, GroupLayout.PREFERRED_SIZE)
-        			.addGap(18)
-        			.addGroup(layout.createParallelGroup(Alignment.LEADING, false)
-        				.addComponent(btnSalir, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        				.addComponent(btnCotizar, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        				.addComponent(btnExportarPDF, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        				.addComponent(btnAnular, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        				.addComponent(btnAprobar, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        				.addComponent(btnModificarPedido, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        				.addComponent(btnRegistrar, GroupLayout.PREFERRED_SIZE, 161, GroupLayout.PREFERRED_SIZE))
-        			.addContainerGap(31, Short.MAX_VALUE))
-        		.addGroup(layout.createSequentialGroup()
-        			.addContainerGap(350, Short.MAX_VALUE)
+        			.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        			.addGroup(layout.createParallelGroup(Alignment.TRAILING)
+        				.addGroup(layout.createSequentialGroup()
+        					.addComponent(jTabbedPane1, GroupLayout.PREFERRED_SIZE, 707, GroupLayout.PREFERRED_SIZE)
+        					.addGap(18)
+        					.addGroup(layout.createParallelGroup(Alignment.LEADING, false)
+        						.addComponent(btnCotizar, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        						.addComponent(btnAnular, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        						.addComponent(btnAprobar, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        						.addComponent(btnModificarPedido, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        						.addComponent(btnRegistrar, GroupLayout.DEFAULT_SIZE, 161, Short.MAX_VALUE))
+        					.addGap(33))
+        				.addGroup(layout.createSequentialGroup()
+        					.addComponent(btnSalir, GroupLayout.PREFERRED_SIZE, 99, GroupLayout.PREFERRED_SIZE)
+        					.addGap(45))))
+        		.addGroup(Alignment.LEADING, layout.createSequentialGroup()
+        			.addGap(277)
         			.addComponent(jLabel1)
-        			.addGap(293))
+        			.addContainerGap(366, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
         	layout.createParallelGroup(Alignment.LEADING)
@@ -399,24 +362,22 @@ public class PedidoView extends javax.swing.JInternalFrame
         					.addPreferredGap(ComponentPlacement.RELATED)
         					.addComponent(btnAnular)
         					.addPreferredGap(ComponentPlacement.RELATED)
-        					.addComponent(btnExportarPDF)
-        					.addPreferredGap(ComponentPlacement.RELATED)
-        					.addComponent(btnCotizar)
-        					.addPreferredGap(ComponentPlacement.RELATED)
-        					.addComponent(btnSalir)))
-        			.addContainerGap(40, Short.MAX_VALUE))
+        					.addComponent(btnCotizar)))
+        			.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        			.addComponent(btnSalir)
+        			.addGap(34))
         );
         getContentPane().setLayout(layout);
 
         pack();
-    }// </editor-fold>//GEN-END:initComponents
+    }
 
-    private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
+    private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {
         limpiaControles();
         limpiaTabla();
-    }//GEN-LAST:event_btnLimpiarActionPerformed
+    }
 
-    private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
+    private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {
         
        /* try {
         int id = 0, est;
@@ -487,7 +448,7 @@ public class PedidoView extends javax.swing.JInternalFrame
         {
         
         }*/
-    }//GEN-LAST:event_btnRegistrarActionPerformed
+    }
 
     
     private void btnRegistrarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnRegistrarKeyPressed
@@ -497,62 +458,6 @@ public class PedidoView extends javax.swing.JInternalFrame
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
         this.dispose();
     }//GEN-LAST:event_btnSalirActionPerformed
-
-    private void btnExportarPDFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExportarPDFActionPerformed
-   try{           
-              String x = this.txtfolio.getText().trim();
-             //creamos un objeto dbBean
-              dbBean aux = new dbBean();
-             HashMap map = new HashMap();
-            // Connection cn = DriverManager.getConnection("jdbc:sqlserver://localhost:1433;databaseName=ST;user=sa;password=sasasa;");
-              Connection cn = aux.getConnection();
-              //JasperDesign jasdi = JRXmlLoader.load("C:\\Users\\RAUL\\Documents\\rmab\\JAVA\\app.modconta.egener\\src\\app\\modconta\\reports\\ReporteAuditoria.jrxml");
-                JasperReport jr= JasperCompileManager.compileReport("src/app/modconta/reports/ReportePedido.jrxml");
-               // String x =
-                map.put("folio",x);
-              //JasperReport jr= JasperCompileManager.compileReport(jasdi);
-             // map.put("idCliente",idClie); 
-              JasperPrint  jp = JasperFillManager.fillReport(jr,map,cn);
-            // JasperPrint jp= JasperFillManager.fillReport(jr,idClie,cn);
-              
-              JasperViewer jv= new JasperViewer(jp,false);
-              jv.setVisible(true);
-    } catch (Exception e) {
-            System.out.println(e);
-        }
-    
-
-    }//GEN-LAST:event_btnExportarPDFActionPerformed
-
-    private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
-        //crea un vector  y le asignamos los valores 
-        Vector vec = new Vector();
-        vec.addElement(this.txtobservaciondetalle.getText());
-        //float foo = Float.parseFloat(txtpunit.getText());
-        //int can = Integer.parseInt(this.spincant.getValue().toString());
-        //importexd = can*foo;
-        //vec.addElement(importexd);
-        dtm2.addRow(vec);
-        
-    }//GEN-LAST:event_btnAgregarActionPerformed
-
-    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
-              
-      try   
-      {
-            int fila;
-            if(this.tbGrupos.getRowCount()>0)
-            {
-              fila = this.tbGrupos.getSelectedRow();
-              dtm2.removeRow(fila);
-            }
-        }  
-          catch (Exception e) 
-        { 
-            JOptionPane.showMessageDialog(null,  e.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
-            System.out.println(e.getCause() +  " " + e.getLocalizedMessage());
-        }    
-    }//GEN-LAST:event_btnEliminarActionPerformed
 
     private void btnAprobarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAprobarActionPerformed
      /* try {
@@ -628,54 +533,40 @@ public class PedidoView extends javax.swing.JInternalFrame
     private void comboClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboClientesActionPerformed
        RUCClient =String.valueOf(boPedido.ObtenerCampoTablaGenerico("clientes", "RUC", "nombre", comboClientes.getSelectedItem().toString(),true));
         txtRucCliente.setText(RUCClient);
-    }//GEN-LAST:event_comboClientesActionPerformed
+    }
 
-    private void btnModificarPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarPedidoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnModificarPedidoActionPerformed
+    private void btnModificarPedidoActionPerformed(java.awt.event.ActionEvent evt) {
+       
+    }
 
-    private void btnModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnModificarActionPerformed
+    private void btnLeerActionPerformed(java.awt.event.ActionEvent evt) {
+       
+    }
 
-    private void btnLeerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLeerActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnLeerActionPerformed
-
-    private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
+    private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {
     
-    }//GEN-LAST:event_btnBuscarActionPerformed
+    }
 
-    private void btnCotizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCotizarActionPerformed
+    private void btnCotizarActionPerformed(java.awt.event.ActionEvent evt) {
       //Crear la instancia
       CotizacionView cotiz =new CotizacionView();
       MDIApplication.escritorio.add(cotiz);
       cotiz.setVisible(true);
        cotiz.toFront();
         //this.toBack();
-    }//GEN-LAST:event_btnCotizarActionPerformed
+    }
 
     private void tbGruposMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbGruposMouseClicked
  
 
     }//GEN-LAST:event_tbGruposMouseClicked
-
-    
-     
-    
-
-    // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAgregar;
     private javax.swing.JButton btnAnular;
     private javax.swing.JButton btnAprobar;
     private javax.swing.JButton btnBuscar;
     private javax.swing.JButton btnCotizar;
-    private javax.swing.JButton btnEliminar;
-    private javax.swing.JButton btnExportarPDF;
     private com.toedter.calendar.JDateChooser btnFechaEntrega;
     private javax.swing.JButton btnLeer;
     private javax.swing.JButton btnLimpiar;
-    private javax.swing.JButton btnModificar;
     private javax.swing.JButton btnModificarPedido;
     private javax.swing.JButton btnRegistrar;
     private javax.swing.JButton btnSalir;

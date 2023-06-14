@@ -64,31 +64,16 @@ public class ServicioView extends javax.swing.JInternalFrame {
                         jPanel4.add(jButton8);
                         
                                 jButton8.setText("Anular");
-                                jButton9 = new javax.swing.JButton();
-                                jButton9.setBounds(389, 384, 81, 20);
-                                jPanel4.add(jButton9);
-                                
-                                        jButton9.setText("Imprimir");
                                         jButton6 = new javax.swing.JButton();
                                         jButton6.setBounds(495, 384, 125, 20);
                                         jPanel4.add(jButton6);
                                         
                                                 jButton6.setText("Generar Factura");
-                                                jButton4 = new javax.swing.JButton();
-                                                jButton4.setBounds(319, 437, 83, 20);
-                                                jPanel4.add(jButton4);
-                                                
-                                                        jButton4.setText("Salir");
                                                 jButton6.addActionListener(new java.awt.event.ActionListener() {
                                                     public void actionPerformed(java.awt.event.ActionEvent evt) {
                                                         jButton6ActionPerformed(evt);
                                                     }
                                                 });
-                                        jButton9.addActionListener(new java.awt.event.ActionListener() {
-                                            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                                                jButton9ActionPerformed(evt);
-                                            }
-                                        });
                                 jButton8.addActionListener(new java.awt.event.ActionListener() {
                                     public void actionPerformed(java.awt.event.ActionEvent evt) {
                                         jButton8ActionPerformed(evt);
@@ -201,25 +186,33 @@ public class ServicioView extends javax.swing.JInternalFrame {
             }
         });
         jPanel4.add(btnLimpiar);
-        btnLimpiar.setBounds(664, 190, 107, 25);
+        btnLimpiar.setBounds(392, 382, 79, 25);
 
         jLabel13.setText("Fecha de Recibido");
         jPanel4.add(jLabel13);
         jLabel13.setBounds(360, 20, 110, 20);
 
         jTabbedPane1.addTab("Detalles", jPanel4);
+        jButton4 = new javax.swing.JButton();
+        
+                jButton4.setText("Salir");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         layout.setHorizontalGroup(
         	layout.createParallelGroup(Alignment.LEADING)
         		.addGroup(layout.createSequentialGroup()
-        			.addContainerGap(285, Short.MAX_VALUE)
-        			.addComponent(jLabel1, GroupLayout.PREFERRED_SIZE, 286, GroupLayout.PREFERRED_SIZE)
-        			.addGap(285))
+        			.addContainerGap(30, Short.MAX_VALUE)
+        			.addGroup(layout.createParallelGroup(Alignment.LEADING)
+        				.addGroup(Alignment.TRAILING, layout.createSequentialGroup()
+        					.addComponent(jTabbedPane1, GroupLayout.PREFERRED_SIZE, 715, GroupLayout.PREFERRED_SIZE)
+        					.addGap(34))
+        				.addGroup(Alignment.TRAILING, layout.createSequentialGroup()
+        					.addComponent(jButton4, GroupLayout.PREFERRED_SIZE, 83, GroupLayout.PREFERRED_SIZE)
+        					.addGap(18))))
         		.addGroup(layout.createSequentialGroup()
-        			.addGap(34)
-        			.addComponent(jTabbedPane1, GroupLayout.PREFERRED_SIZE, 786, GroupLayout.PREFERRED_SIZE)
-        			.addContainerGap(36, Short.MAX_VALUE))
+        			.addGap(236)
+        			.addComponent(jLabel1, GroupLayout.PREFERRED_SIZE, 286, GroupLayout.PREFERRED_SIZE)
+        			.addContainerGap(257, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
         	layout.createParallelGroup(Alignment.LEADING)
@@ -227,8 +220,10 @@ public class ServicioView extends javax.swing.JInternalFrame {
         			.addContainerGap()
         			.addComponent(jLabel1, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)
         			.addPreferredGap(ComponentPlacement.RELATED)
-        			.addComponent(jTabbedPane1, GroupLayout.PREFERRED_SIZE, 505, GroupLayout.PREFERRED_SIZE)
-        			.addGap(96))
+        			.addComponent(jTabbedPane1, GroupLayout.PREFERRED_SIZE, 450, GroupLayout.PREFERRED_SIZE)
+        			.addGap(26)
+        			.addComponent(jButton4, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
+        			.addGap(42))
         );
         getContentPane().setLayout(layout);
 
@@ -283,10 +278,6 @@ public class ServicioView extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton8ActionPerformed
 
-    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton9ActionPerformed
-
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         //         int x ;
         //
@@ -333,7 +324,6 @@ public class ServicioView extends javax.swing.JInternalFrame {
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;

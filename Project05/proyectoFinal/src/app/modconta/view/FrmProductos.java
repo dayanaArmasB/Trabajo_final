@@ -109,8 +109,6 @@ public void limpiaControles(){
         jTextField2 = new javax.swing.JTextField();
         jLabel15 = new javax.swing.JLabel();
         lblTitulo = new javax.swing.JLabel();
-
-        setClosable(true);
         setIconifiable(true);
         setMaximizable(true);
         setTitle("PRODUCTOS");
@@ -241,30 +239,6 @@ public void limpiaControles(){
                                                                                                                                 		.addGroup(jPanel4Layout.createSequentialGroup()
                                                                                                                                 			.addGroup(jPanel4Layout.createParallelGroup(Alignment.LEADING)
                                                                                                                                 				.addGroup(jPanel4Layout.createSequentialGroup()
-                                                                                                                                					.addGap(31)
-                                                                                                                                					.addGroup(jPanel4Layout.createParallelGroup(Alignment.LEADING)
-                                                                                                                                						.addGroup(jPanel4Layout.createSequentialGroup()
-                                                                                                                                							.addGroup(jPanel4Layout.createParallelGroup(Alignment.LEADING)
-                                                                                                                                								.addComponent(jLabel3, GroupLayout.PREFERRED_SIZE, 80, GroupLayout.PREFERRED_SIZE)
-                                                                                                                                								.addComponent(lblMarca, GroupLayout.PREFERRED_SIZE, 70, GroupLayout.PREFERRED_SIZE)
-                                                                                                                                								.addComponent(jLabel6, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE))
-                                                                                                                                							.addGap(18)
-                                                                                                                                							.addGroup(jPanel4Layout.createParallelGroup(Alignment.LEADING)
-                                                                                                                                								.addComponent(comboMarca, GroupLayout.PREFERRED_SIZE, 310, GroupLayout.PREFERRED_SIZE)
-                                                                                                                                								.addComponent(comboModelo, GroupLayout.PREFERRED_SIZE, 310, GroupLayout.PREFERRED_SIZE)))
-                                                                                                                                						.addGroup(jPanel4Layout.createSequentialGroup()
-                                                                                                                                							.addComponent(jLabel11, GroupLayout.PREFERRED_SIZE, 130, GroupLayout.PREFERRED_SIZE)
-                                                                                                                                							.addPreferredGap(ComponentPlacement.RELATED)
-                                                                                                                                							.addComponent(spinstockMAX, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE))
-                                                                                                                                						.addGroup(jPanel4Layout.createSequentialGroup()
-                                                                                                                                							.addComponent(jLabel12, GroupLayout.PREFERRED_SIZE, 120, GroupLayout.PREFERRED_SIZE)
-                                                                                                                                							.addGap(18)
-                                                                                                                                							.addComponent(spinstockMIN, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE))
-                                                                                                                                						.addGroup(jPanel4Layout.createSequentialGroup()
-                                                                                                                                							.addComponent(jLabel4, GroupLayout.PREFERRED_SIZE, 34, GroupLayout.PREFERRED_SIZE)
-                                                                                                                                							.addGap(18)
-                                                                                                                                							.addComponent(spinstock, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE))))
-                                                                                                                                				.addGroup(jPanel4Layout.createSequentialGroup()
                                                                                                                                 					.addGap(39)
                                                                                                                                 					.addComponent(lblId, GroupLayout.PREFERRED_SIZE, 80, GroupLayout.PREFERRED_SIZE)
                                                                                                                                 					.addPreferredGap(ComponentPlacement.RELATED)
@@ -272,14 +246,38 @@ public void limpiaControles(){
                                                                                                                                 						.addComponent(txtNombreProduc, GroupLayout.PREFERRED_SIZE, 310, GroupLayout.PREFERRED_SIZE)
                                                                                                                                 						.addComponent(txtIDProduc, GroupLayout.PREFERRED_SIZE, 310, GroupLayout.PREFERRED_SIZE)))
                                                                                                                                 				.addGroup(jPanel4Layout.createSequentialGroup()
-                                                                                                                                					.addGap(268)
-                                                                                                                                					.addComponent(btnLimpiar, GroupLayout.PREFERRED_SIZE, 120, GroupLayout.PREFERRED_SIZE)
-                                                                                                                                					.addGap(61)
-                                                                                                                                					.addComponent(btnRegistrar, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE))
-                                                                                                                                				.addGroup(jPanel4Layout.createSequentialGroup()
-                                                                                                                                					.addGap(360)
+                                                                                                                                					.addGroup(jPanel4Layout.createParallelGroup(Alignment.LEADING)
+                                                                                                                                						.addGroup(jPanel4Layout.createSequentialGroup()
+                                                                                                                                							.addGap(31)
+                                                                                                                                							.addGroup(jPanel4Layout.createParallelGroup(Alignment.LEADING)
+                                                                                                                                								.addGroup(jPanel4Layout.createSequentialGroup()
+                                                                                                                                									.addGroup(jPanel4Layout.createParallelGroup(Alignment.LEADING)
+                                                                                                                                										.addComponent(jLabel3, GroupLayout.PREFERRED_SIZE, 80, GroupLayout.PREFERRED_SIZE)
+                                                                                                                                										.addComponent(lblMarca, GroupLayout.PREFERRED_SIZE, 70, GroupLayout.PREFERRED_SIZE)
+                                                                                                                                										.addComponent(jLabel6, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE))
+                                                                                                                                									.addGap(18)
+                                                                                                                                									.addGroup(jPanel4Layout.createParallelGroup(Alignment.LEADING)
+                                                                                                                                										.addComponent(comboMarca, GroupLayout.PREFERRED_SIZE, 310, GroupLayout.PREFERRED_SIZE)
+                                                                                                                                										.addComponent(comboModelo, GroupLayout.PREFERRED_SIZE, 310, GroupLayout.PREFERRED_SIZE)
+                                                                                                                                										.addComponent(btnRegistrar, Alignment.TRAILING, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)))
+                                                                                                                                								.addGroup(jPanel4Layout.createSequentialGroup()
+                                                                                                                                									.addComponent(jLabel11, GroupLayout.PREFERRED_SIZE, 130, GroupLayout.PREFERRED_SIZE)
+                                                                                                                                									.addPreferredGap(ComponentPlacement.RELATED)
+                                                                                                                                									.addComponent(spinstockMAX, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE))
+                                                                                                                                								.addGroup(jPanel4Layout.createSequentialGroup()
+                                                                                                                                									.addComponent(jLabel12, GroupLayout.PREFERRED_SIZE, 120, GroupLayout.PREFERRED_SIZE)
+                                                                                                                                									.addGap(18)
+                                                                                                                                									.addComponent(spinstockMIN, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE))
+                                                                                                                                								.addGroup(jPanel4Layout.createSequentialGroup()
+                                                                                                                                									.addComponent(jLabel4, GroupLayout.PREFERRED_SIZE, 34, GroupLayout.PREFERRED_SIZE)
+                                                                                                                                									.addGap(18)
+                                                                                                                                									.addComponent(spinstock, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE))))
+                                                                                                                                						.addGroup(jPanel4Layout.createSequentialGroup()
+                                                                                                                                							.addGap(182)
+                                                                                                                                							.addComponent(btnLimpiar, GroupLayout.PREFERRED_SIZE, 120, GroupLayout.PREFERRED_SIZE)))
+                                                                                                                                					.addGap(53)
                                                                                                                                 					.addComponent(btnActualizar, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)))
-                                                                                                                                			.addContainerGap(297, Short.MAX_VALUE))
+                                                                                                                                			.addContainerGap(240, Short.MAX_VALUE))
                                                                                                                                 );
                                                                                                                                 jPanel4Layout.setVerticalGroup(
                                                                                                                                 	jPanel4Layout.createParallelGroup(Alignment.LEADING)
@@ -312,13 +310,12 @@ public void limpiaControles(){
                                                                                                                                 			.addGroup(jPanel4Layout.createParallelGroup(Alignment.BASELINE)
                                                                                                                                 				.addComponent(jLabel12, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
                                                                                                                                 				.addComponent(spinstockMIN, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE))
-                                                                                                                                			.addGap(50)
+                                                                                                                                			.addGap(26)
                                                                                                                                 			.addGroup(jPanel4Layout.createParallelGroup(Alignment.BASELINE)
+                                                                                                                                				.addComponent(btnLimpiar)
                                                                                                                                 				.addComponent(btnRegistrar)
-                                                                                                                                				.addComponent(btnLimpiar))
-                                                                                                                                			.addGap(18)
-                                                                                                                                			.addComponent(btnActualizar)
-                                                                                                                                			.addContainerGap(41, Short.MAX_VALUE))
+                                                                                                                                				.addComponent(btnActualizar))
+                                                                                                                                			.addContainerGap(120, Short.MAX_VALUE))
                                                                                                                                 );
                                                                                                                                 jPanel4.setLayout(jPanel4Layout);
                                                                                                                                 
@@ -411,11 +408,6 @@ public void limpiaControles(){
         jLabel15.setBounds(30, 69, 70, 30);
 
         jTabbedPane1.addTab("Búqueda", jPanel3);
-        jButton1 = new javax.swing.JButton();
-        jButton1.setBounds(454, 38, 235, 32);
-        jPanel3.add(jButton1);
-        
-                jButton1.setText("Generar reporte de productos");
                 jButton2 = new javax.swing.JButton();
                 jButton2.setBounds(699, 28, 60, 46);
                 jPanel3.add(jButton2);
@@ -426,11 +418,6 @@ public void limpiaControles(){
                                 jButton2ActionPerformed(evt);
                             }
                         });
-                jButton1.addActionListener(new java.awt.event.ActionListener() {
-                    public void actionPerformed(java.awt.event.ActionEvent evt) {
-                        jButton1ActionPerformed(evt);
-                    }
-                });
 
         lblTitulo.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         lblTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -446,17 +433,19 @@ public void limpiaControles(){
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         layout.setHorizontalGroup(
-        	layout.createParallelGroup(Alignment.TRAILING)
+        	layout.createParallelGroup(Alignment.LEADING)
         		.addGroup(layout.createSequentialGroup()
         			.addContainerGap(261, Short.MAX_VALUE)
         			.addComponent(lblTitulo, GroupLayout.PREFERRED_SIZE, 500, GroupLayout.PREFERRED_SIZE)
         			.addGap(184))
-        		.addGroup(Alignment.LEADING, layout.createSequentialGroup()
+        		.addGroup(layout.createSequentialGroup()
         			.addGap(22)
-        			.addGroup(layout.createParallelGroup(Alignment.LEADING)
-        				.addComponent(btnSalir1, GroupLayout.PREFERRED_SIZE, 105, GroupLayout.PREFERRED_SIZE)
-        				.addComponent(jTabbedPane1, GroupLayout.PREFERRED_SIZE, 853, GroupLayout.PREFERRED_SIZE))
+        			.addComponent(jTabbedPane1, GroupLayout.PREFERRED_SIZE, 853, GroupLayout.PREFERRED_SIZE)
         			.addContainerGap(70, Short.MAX_VALUE))
+        		.addGroup(Alignment.TRAILING, layout.createSequentialGroup()
+        			.addContainerGap(830, Short.MAX_VALUE)
+        			.addComponent(btnSalir1, GroupLayout.PREFERRED_SIZE, 105, GroupLayout.PREFERRED_SIZE)
+        			.addContainerGap())
         );
         layout.setVerticalGroup(
         	layout.createParallelGroup(Alignment.LEADING)
@@ -467,7 +456,7 @@ public void limpiaControles(){
         			.addComponent(jTabbedPane1, GroupLayout.PREFERRED_SIZE, 526, GroupLayout.PREFERRED_SIZE)
         			.addGap(18)
         			.addComponent(btnSalir1, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-        			.addGap(80))
+        			.addGap(21))
         );
         getContentPane().setLayout(layout);
 
@@ -526,20 +515,6 @@ public void limpiaControles(){
     private void btnSalir1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalir1ActionPerformed
         this.dispose();
     }//GEN-LAST:event_btnSalir1ActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-         try {
-              dbBean aux = new dbBean();
-              //Connection cn = DriverManager.getConnection("jdbc:sqlserver://localhost:1433;databaseName=ST;user=sa;password=sasasa;");
-              Connection cn = aux.getConnection();
-              JasperReport jr= JasperCompileManager.compileReport("src/REPORTS/EquipoReporte.jrxml");
-              JasperPrint jp= JasperFillManager.fillReport(jr,null,cn);
-              JasperViewer jv= new JasperViewer(jp,false);
-              jv.setVisible(true);
-        } catch (Exception e) {
-            System.out.println(e);
-        }
-    }//GEN-LAST:event_jButton1ActionPerformed
 
     private void comboMarcaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboMarcaActionPerformed
 
@@ -637,7 +612,6 @@ public void limpiaControles(){
     private javax.swing.JButton btnSalir1;
     private javax.swing.JComboBox<String> comboMarca;
     private javax.swing.JComboBox<String> comboModelo;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JComboBox<String> jComboBox4;
