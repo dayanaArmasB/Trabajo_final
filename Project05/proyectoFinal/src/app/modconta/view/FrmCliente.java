@@ -13,11 +13,6 @@ import java.util.List;
 import java.util.Vector;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-import net.sf.jasperreports.engine.JasperCompileManager;
-import net.sf.jasperreports.engine.JasperFillManager;
-import net.sf.jasperreports.engine.JasperPrint;
-import net.sf.jasperreports.engine.JasperReport;
-import net.sf.jasperreports.view.JasperViewer;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.ButtonGroup;
 import javax.swing.GroupLayout;
@@ -27,7 +22,7 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import java.awt.Dimension;
+
 
 public class FrmCliente extends javax.swing.JInternalFrame implements ActionListener {
 	ClienteBO _Clientebo;
@@ -86,7 +81,7 @@ public class FrmCliente extends javax.swing.JInternalFrame implements ActionList
         	new Object[][] {
         	},
         	new String[] {
-        		"IDCliente", "Nombre", "Apellido Paterno", "Apellido Materno", "Telefono", "Direcci\u00F3n", "Sexo", "DNI", "RUC"
+        		"IDCliente", "Nombre", "Apellido Paterno", "Apellido Materno", "Telefono", "Direccion", "Sexo", "DNI", "RUC"
         	}
         ));
         tblCliente.getColumnModel().getColumn(2).setPreferredWidth(110);

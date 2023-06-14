@@ -5,68 +5,87 @@
  */
 package app.modconta.entity;
 
-/**
- *
- * @author MARCELO
- */
 public class Proveedor {
     private int IdProveedor;
-    private String RazonSocial;
+    private String Nombre;
     private String Telefono;
     private String Direccion;
     private String RUC;
+    private String CTA;
+    private String Estado;
 
     public Proveedor() {
     }
 
-    public Proveedor(int IdProveedor, String RazonSocial, String Telefono, String Direccion, String RUC) {
-        this.IdProveedor = IdProveedor;
-        this.RazonSocial = RazonSocial;
-        this.Telefono = Telefono;
-        this.Direccion = Direccion;
-        this.RUC = RUC;
-    }
+	public Proveedor(int idProveedor, String nombre, String telefono, String direccion, String rUC, String cTA, String estado) {
+		IdProveedor = idProveedor;
+		Nombre = nombre;
+		Telefono = telefono;
+		Direccion = direccion;
+		RUC = rUC;
+		CTA = cTA;
+		Estado = estado;
+	}
 
-    public int getIdProveedor() {
-        return IdProveedor;
-    }
+	public int getIdProveedor() {
+		return IdProveedor;
+	}
 
-    public void setIdProveedor(int IdProveedor) {
-        this.IdProveedor = IdProveedor;
-    }
+	public void setIdProveedor(int idProveedor) {
+		IdProveedor = idProveedor;
+	}
 
-    public String getRazonSocial() {
-        return RazonSocial;
-    }
+	public String getNombre() {
+		return Nombre;
+	}
 
-    public void setRazonSocial(String RazonSocial) {
-        this.RazonSocial = RazonSocial;
-    }
+	public void setNombre(String nombre) {
+		Nombre = nombre;
+	}
 
-    public String getTelefono() {
-        return Telefono;
-    }
+	public String getTelefono() {
+		return Telefono;
+	}
 
-    public void setTelefono(String Telefono) {
-        this.Telefono = Telefono;
-    }
+	public void setTelefono(String telefono) {
+		Telefono = telefono;
+	}
 
-    public String getDireccion() {
-        return Direccion;
-    }
+	public String getDireccion() {
+		return Direccion;
+	}
 
-    public void setDireccion(String Direccion) {
-        this.Direccion = Direccion;
-    }
+	public void setDireccion(String direccion) {
+		Direccion = direccion;
+	}
 
-    public String getRUC() {
-        return RUC;
-    }
+	public String getRUC() {
+		return RUC;
+	}
 
-    public void setRUC(String RUC) {
-        this.RUC = RUC;
-    }
-      
+	public void setRUC(String rUC) {
+		RUC = rUC;
+	}
+
+	public String getCTA() {
+		return CTA;
+	}
+
+	public void setCTA(String cTA) {
+		CTA = cTA;
+	}
+
+	public String getEstado() {
+		return Estado;
+	}
+
+	public void setEstado(String estado) {
+		Estado = estado;
+	}
+	
+	
+
+   
     
 
     

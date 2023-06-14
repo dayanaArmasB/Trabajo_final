@@ -32,7 +32,7 @@ import javax.swing.DefaultComboBoxModel;
 public class Repository {
 
     
-   //función genérica para listar combo
+   //funcion generica para listar combo
     public DefaultComboBoxModel getvaluesName(String campoNombre, String NombreTabla)
     {  
         String sSQL ="";

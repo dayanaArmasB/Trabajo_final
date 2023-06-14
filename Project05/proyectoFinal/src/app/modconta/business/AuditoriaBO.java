@@ -6,7 +6,7 @@ import java.util.List;
 import app.modconta.dataaccess.AuditoriaRepository;
 import app.modconta.entity.Mutation;
 
-public class AuditoriaBO  implements IGeneralBO<Mutation>{
+public class AuditoriaBO implements IGeneralBO<Mutation>{
 
 	AuditoriaRepository _doMutation;
 	public AuditoriaBO() {
