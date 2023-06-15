@@ -6,6 +6,11 @@ import javax.swing.GroupLayout.Alignment;
 import javax.swing.GroupLayout;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.JFrame;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+import javax.swing.JMenu;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class MDIApplication extends javax.swing.JFrame {
 
@@ -200,6 +205,22 @@ public class MDIApplication extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
 
         pack();
+        
+        menuBar = new JMenuBar();
+        setJMenuBar(menuBar);
+        
+        mnNewMenu = new JMenu("Options");
+        menuBar.add(mnNewMenu);
+        
+        mntmOptiions = new JMenuItem("Optiions");
+        mntmOptiions.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent arg0) {
+        		
+        		cargarFormulario(FrmTemas.class);
+        		
+        	}
+        });
+        mnNewMenu.add(mntmOptiions);
     }
 
     private void btnClientesActionPerformed(java.awt.event.ActionEvent evt) {
@@ -321,6 +342,9 @@ public class MDIApplication extends javax.swing.JFrame {
     private javax.swing.JToolBar.Separator jSeparator8;
     private javax.swing.JToolBar.Separator jSeparator9;
     private javax.swing.JToolBar jToolBar1;
+    private JMenuBar menuBar;
+    private JMenu mnNewMenu;
+    private JMenuItem mntmOptiions;
     // End of variables declaration//GEN-END:variables
 
 }

@@ -11,6 +11,7 @@
 .mtj.tmp/
 app.modconta.egener/build
 app.modconta.egener/dist
+bin/
 # Package Files #
 
 *.war
