@@ -49,6 +49,18 @@ public class FrmTemas extends javax.swing.JInternalFrame {
     	setTitle("CONSULTAS");
     	
         initComponents();
+        cmbFiltro.addItem("Acryl");
+        cmbFiltro.addItem("Aero");
+        cmbFiltro.addItem("Bernstein");
+        cmbFiltro.addItem("Fast");
+        cmbFiltro.addItem("Graphite");
+        cmbFiltro.addItem("Hifi");
+        cmbFiltro.addItem("Luna");
+        cmbFiltro.addItem("McWin");
+        cmbFiltro.addItem("Mint");
+        cmbFiltro.addItem("Noire");
+        cmbFiltro.addItem("Smart");
+        cmbFiltro.addItem("Texture");
     }
 
      
@@ -63,11 +75,9 @@ public class FrmTemas extends javax.swing.JInternalFrame {
         cmbFiltro = new javax.swing.JComboBox<>();
         jLabel2 = new javax.swing.JLabel();
         btnGenerarPDF = new javax.swing.JButton();
-
         jLabel1.setFont(new Font("Tahoma", Font.BOLD, 24)); // NOI18N
-        jLabel1.setText("CONSULTAS DE AUDITORIA");
-
-        btnLeer.setText("Leer");
+        jLabel1.setText("PERSONALIZACI\u00D3N DE TEMAS");
+        btnLeer.setText("Aplicar y guardar");
         btnLeer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLeerActionPerformed(evt);
@@ -80,8 +90,6 @@ public class FrmTemas extends javax.swing.JInternalFrame {
                 btnSalirActionPerformed(evt);
             }
         });
-
-        cmbFiltro.setModel(new DefaultComboBoxModel(new String[] {"Pedidos", "Productos", "Ventas", "Clientes", "Empleados", " "}));
         cmbFiltro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmbFiltroActionPerformed(evt);
@@ -90,7 +98,7 @@ public class FrmTemas extends javax.swing.JInternalFrame {
 
         jLabel2.setText("Filtro");
 
-        btnGenerarPDF.setText("Exportar PDF");
+        btnGenerarPDF.setText("Aplicar\r\n");
         btnGenerarPDF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnGenerarPDFActionPerformed(evt);
@@ -105,19 +113,21 @@ public class FrmTemas extends javax.swing.JInternalFrame {
         			.addComponent(jLabel1)
         			.addContainerGap(232, Short.MAX_VALUE))
         		.addGroup(layout.createSequentialGroup()
-        			.addGap(20)
-        			.addComponent(jLabel2)
-        			.addPreferredGap(ComponentPlacement.UNRELATED)
-        			.addComponent(cmbFiltro, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE)
-        			.addPreferredGap(ComponentPlacement.RELATED, 288, Short.MAX_VALUE)
-        			.addComponent(btnGenerarPDF)
-        			.addPreferredGap(ComponentPlacement.UNRELATED)
-        			.addComponent(btnLeer, GroupLayout.PREFERRED_SIZE, 79, GroupLayout.PREFERRED_SIZE)
-        			.addGap(163))
-        		.addGroup(layout.createSequentialGroup()
-        			.addContainerGap(691, Short.MAX_VALUE)
-        			.addComponent(btnSalir, GroupLayout.PREFERRED_SIZE, 80, GroupLayout.PREFERRED_SIZE)
-        			.addContainerGap())
+        			.addGroup(layout.createParallelGroup(Alignment.TRAILING)
+        				.addGroup(layout.createSequentialGroup()
+        					.addContainerGap()
+        					.addComponent(btnSalir, GroupLayout.PREFERRED_SIZE, 80, GroupLayout.PREFERRED_SIZE))
+        				.addGroup(layout.createSequentialGroup()
+        					.addGap(20)
+        					.addComponent(jLabel2)
+        					.addGap(41)
+        					.addComponent(cmbFiltro, 0, 374, Short.MAX_VALUE)
+        					.addPreferredGap(ComponentPlacement.UNRELATED)
+        					.addComponent(btnGenerarPDF)
+        					.addPreferredGap(ComponentPlacement.RELATED)
+        					.addComponent(btnLeer, GroupLayout.PREFERRED_SIZE, 141, GroupLayout.PREFERRED_SIZE)
+        					.addPreferredGap(ComponentPlacement.RELATED)))
+        			.addGap(162))
         );
         layout.setVerticalGroup(
         	layout.createParallelGroup(Alignment.LEADING)
@@ -126,13 +136,13 @@ public class FrmTemas extends javax.swing.JInternalFrame {
         			.addComponent(jLabel1)
         			.addGap(24)
         			.addGroup(layout.createParallelGroup(Alignment.BASELINE)
-        				.addComponent(btnLeer)
         				.addComponent(jLabel2)
         				.addComponent(cmbFiltro, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-        				.addComponent(btnGenerarPDF))
-        			.addGap(289)
+        				.addComponent(btnGenerarPDF)
+        				.addComponent(btnLeer))
+        			.addPreferredGap(ComponentPlacement.UNRELATED)
         			.addComponent(btnSalir)
-        			.addContainerGap())
+        			.addGap(301))
         );
         getContentPane().setLayout(layout);
 
@@ -167,8 +177,8 @@ public class FrmTemas extends javax.swing.JInternalFrame {
 
     private void btnGenerarPDFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarPDFActionPerformed
         try {
-       
-         javax.swing.UIManager.setLookAndFeel("com.jtattoo.plaf.graphite.GraphiteLookAndFeel");
+            String selectedItem = (String) cmbFiltro.getSelectedItem();
+         javax.swing.UIManager.setLookAndFeel("com.jtattoo.plaf."+ selectedItem.toLowerCase()+ "."+ selectedItem  +"LookAndFeel");
          //SwingUtilities.updateComponentTreeUI(this);
          // Obtén todas las ventanas abiertas en tu aplicación
          Window[] windows = Window.getWindows();
