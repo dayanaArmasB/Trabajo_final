@@ -25,7 +25,7 @@ public class ProveedorBO implements IGeneralBO<Proveedor> {
 
 	@Override
 	public void Delete(int id) {
-		
+		_doProveedorRep.Delete(id);
 	}
 
 	@Override

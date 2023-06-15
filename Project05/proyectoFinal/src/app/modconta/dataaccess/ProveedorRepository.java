@@ -56,7 +56,16 @@ public class ProveedorRepository implements IRepository<Proveedor> {
 
 	@Override
 	public void Delete(int id) {
-
+		int resultado = 0;
+        String sql = "";
+        dbBean con = new dbBean();   
+        try{
+        	sql = "delete from proveedor  where idproveedor = '"+id+"'";
+	        resultado = con.updateSQL(sql);
+	        con.close();
+        }catch(java.sql.SQLException e){
+            e.printStackTrace();
+        }
 		
 	}
 

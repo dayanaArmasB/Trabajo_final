@@ -19,8 +19,10 @@ import javax.swing.GroupLayout;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
+import javax.swing.JButton;
+import java.awt.event.ActionEvent;
 
-public class FrmProveedor extends javax.swing.JInternalFrame {
+public class FrmProveedor extends javax.swing.JInternalFrame implements ActionListener {
 	ProveedorBO _Proveedorbo;
     DefaultTableModel _DefaultTableModel;
     boolean sw = false;
@@ -239,6 +241,41 @@ public void llenaTabla(boolean swr, String cadr)
                                                                                 lblCuentaCorriente.setText("Cuenta Corriente");
                                                                                 lblCuentaCorriente.setBounds(10, 290, 116, 21);
                                                                                 jPanel4.add(lblCuentaCorriente);
+                                                                                btnRegistrar = new javax.swing.JButton();
+                                                                                btnRegistrar.setBounds(581, 99, 90, 30);
+                                                                                jPanel4.add(btnRegistrar);
+                                                                                
+                                                                                        btnRegistrar.setText("Registrar");
+                                                                                        btnLimpiar = new javax.swing.JButton();
+                                                                                        btnLimpiar.setBounds(581, 150, 90, 30);
+                                                                                        jPanel4.add(btnLimpiar);
+                                                                                        
+                                                                                                btnLimpiar.setText("Limpiar");
+                                                                                                jButton2 = new javax.swing.JButton();
+                                                                                                jButton2.setBounds(597, 202, 60, 32);
+                                                                                                jPanel4.add(jButton2);
+                                                                                                
+                                                                                                        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/buscar.gif")));
+                                                                                                        jButton2.addActionListener(new java.awt.event.ActionListener() {
+                                                                                                            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                                                                                                jButton2ActionPerformed(evt);
+                                                                                                            }
+                                                                                                        });
+                                                                                                btnLimpiar.addActionListener(new java.awt.event.ActionListener() {
+                                                                                                    public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                                                                                        btnLimpiarActionPerformed(evt);
+                                                                                                    }
+                                                                                                });
+                                                                                        btnRegistrar.addActionListener(new java.awt.event.ActionListener() {
+                                                                                            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                                                                                btnRegistrarActionPerformed(evt);
+                                                                                            }
+                                                                                        });
+                                                                                        btnRegistrar.addKeyListener(new java.awt.event.KeyAdapter() {
+                                                                                            public void keyPressed(java.awt.event.KeyEvent evt) {
+                                                                                                btnRegistrarKeyPressed(evt);
+                                                                                            }
+                                                                                        });
         jPanel3.add(jTextField1);
         jTextField1.setBounds(230, 10, 250, 30);
 
@@ -248,47 +285,18 @@ public void llenaTabla(boolean swr, String cadr)
         jComboBox1.setBounds(100, 10, 120, 30);
 
         jTabbedPane1.addTab("Búsqueda", jPanel3);
-        btnRegistrar = new javax.swing.JButton();
-        
-                btnRegistrar.setText("Registrar");
-                btnRegistrar.addActionListener(new java.awt.event.ActionListener() {
-                    public void actionPerformed(java.awt.event.ActionEvent evt) {
-                        btnRegistrarActionPerformed(evt);
-                    }
-                });
-                btnRegistrar.addKeyListener(new java.awt.event.KeyAdapter() {
-                    public void keyPressed(java.awt.event.KeyEvent evt) {
-                        btnRegistrarKeyPressed(evt);
-                    }
-                });
-        btnLimpiar = new javax.swing.JButton();
-        
-                btnLimpiar.setText("Limpiar");
-                btnLimpiar.addActionListener(new java.awt.event.ActionListener() {
-                    public void actionPerformed(java.awt.event.ActionEvent evt) {
-                        btnLimpiarActionPerformed(evt);
-                    }
-                });
-        jButton2 = new javax.swing.JButton();
-        
-                jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/buscar.gif"))); // NOI18N
-                jButton2.addActionListener(new java.awt.event.ActionListener() {
-                    public void actionPerformed(java.awt.event.ActionEvent evt) {
-                        jButton2ActionPerformed(evt);
-                    }
-                });
+        {
+        	btnEliminar = new JButton("Eliminar registro");
+        	btnEliminar.addActionListener(this);
+        	btnEliminar.setBounds(644, 14, 120, 23);
+        	jPanel3.add(btnEliminar);
+        }
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         layout.setHorizontalGroup(
         	layout.createParallelGroup(Alignment.LEADING)
-        		.addGroup(layout.createSequentialGroup()
-        			.addGap(49)
-        			.addComponent(btnRegistrar, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE)
-        			.addGap(18)
-        			.addComponent(btnLimpiar, GroupLayout.PREFERRED_SIZE, 80, GroupLayout.PREFERRED_SIZE)
-        			.addGap(18)
-        			.addComponent(jButton2, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE)
-        			.addPreferredGap(ComponentPlacement.RELATED, 436, Short.MAX_VALUE)
+        		.addGroup(Alignment.TRAILING, layout.createSequentialGroup()
+        			.addContainerGap(751, Short.MAX_VALUE)
         			.addComponent(btnSalir, GroupLayout.PREFERRED_SIZE, 73, GroupLayout.PREFERRED_SIZE)
         			.addGap(20))
         		.addGroup(layout.createSequentialGroup()
@@ -307,18 +315,9 @@ public void llenaTabla(boolean swr, String cadr)
         			.addComponent(lblTitulo)
         			.addGap(18)
         			.addComponent(jTabbedPane1, GroupLayout.PREFERRED_SIZE, 389, GroupLayout.PREFERRED_SIZE)
-        			.addGroup(layout.createParallelGroup(Alignment.LEADING)
-        				.addGroup(layout.createSequentialGroup()
-        					.addPreferredGap(ComponentPlacement.RELATED)
-        					.addGroup(layout.createParallelGroup(Alignment.LEADING)
-        						.addGroup(layout.createParallelGroup(Alignment.BASELINE)
-        							.addComponent(btnRegistrar, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-        							.addComponent(btnLimpiar, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE))
-        						.addComponent(jButton2, GroupLayout.PREFERRED_SIZE, 32, GroupLayout.PREFERRED_SIZE)))
-        				.addGroup(layout.createSequentialGroup()
-        					.addGap(34)
-        					.addComponent(btnSalir)))
-        			.addContainerGap(56, Short.MAX_VALUE))
+        			.addGap(34)
+        			.addComponent(btnSalir)
+        			.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         getContentPane().setLayout(layout);
 
@@ -339,18 +338,18 @@ public void llenaTabla(boolean swr, String cadr)
         }
     }
 
-    private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
+    private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {
         limpiaControles();
     }
 
-    private void txtRUCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtRUCActionPerformed
+    private void txtRUCActionPerformed(java.awt.event.ActionEvent evt) {
        
     }
 
-    private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
+    private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {
 
         String proc = this.btnRegistrar.getText();
-        int id = 0, est;
+        int id = 0;
         String pr = "";
         if(valida()){
             util u = new util();
@@ -363,7 +362,6 @@ public void llenaTabla(boolean swr, String cadr)
             p.setCTA(txtCta.getText());
 
             if(proc.equals("Registrar")){
-               // id = u.idNext("Cliente", "idCliente");
                 pr = "insert";
             }
             if(proc.equals("Actualizar")){
@@ -392,7 +390,7 @@ public void llenaTabla(boolean swr, String cadr)
 
     private void tblClienteMouseClicked(java.awt.event.MouseEvent evt) {
         if(evt.getClickCount() == 1){
-            this.jTabbedPane1.setSelectedIndex(1);
+            jTabbedPane1.setSelectedIndex(1);
             //llenaModifica();
         }
     }
@@ -424,4 +422,22 @@ public void llenaTabla(boolean swr, String cadr)
     private javax.swing.JTextField txtTelefono;
     private JTextField txtEstado;
     private JTextField txtCta;
+    private JButton btnEliminar;
+	public void actionPerformed(ActionEvent arg0) {
+		if (arg0.getSource() == btnEliminar) {
+			do_btnEliminar_actionPerformed(arg0);
+		}
+	}
+	protected void do_btnEliminar_actionPerformed(ActionEvent arg0) {
+		try{
+			 int id= Integer.parseInt(String.valueOf(_DefaultTableModel.getValueAt(tblProveedor.getSelectedRow(),0)));
+			 _Proveedorbo.Delete(id);
+				 limpiaTabla();
+		         llenaTabla(false, "");
+		         JOptionPane.showMessageDialog(this, "Se elimnó el resgistro con exito");
+		 }
+		 catch(Exception e1){
+			 System.out.println(e1);
+		 }
+	}
 }
