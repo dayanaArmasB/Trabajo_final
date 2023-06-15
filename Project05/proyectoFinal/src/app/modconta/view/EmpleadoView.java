@@ -91,7 +91,6 @@ public class EmpleadoView extends javax.swing.JInternalFrame implements ActionLi
     public void llenaTabla(boolean swr, String cadr)
     {
         List<Empleado> Empleados = _Empleadobo.readAll();
-        System.out.print("test");
         int i = Empleados.size(); 
         for(int j = 0; j<i;j++){
             Vector vect = new Vector();
@@ -103,6 +102,8 @@ public class EmpleadoView extends javax.swing.JInternalFrame implements ActionLi
             vect.addElement(Empleados.get(j).getTelefono());
             vect.addElement(Empleados.get(j).getDireccion());   
             vect.addElement(Empleados.get(j).getDNI());
+            vect.addElement(Empleados.get(j).getEstado());
+            vect.addElement(Empleados.get(j).getRol());
             dtm.addRow(vect);
         }
     } 
@@ -221,9 +222,9 @@ public class EmpleadoView extends javax.swing.JInternalFrame implements ActionLi
 
         jLabel9.setText("Dirección");
         jPanel4.add(jLabel9);
-        jLabel9.setBounds(30, 264, 60, 14);
+        jLabel9.setBounds(30, 223, 60, 14);
         jPanel4.add(txtDireccion);
-        txtDireccion.setBounds(130, 256, 330, 30);
+        txtDireccion.setBounds(130, 215, 330, 30);
         jPanel4.add(jLabel11);
         jLabel11.setBounds(0, 0, 0, 0);
 
@@ -264,9 +265,9 @@ public class EmpleadoView extends javax.swing.JInternalFrame implements ActionLi
 
         jLabel13.setText("Código");
         jPanel4.add(jLabel13);
-        jLabel13.setBounds(30, 301, 50, 14);
+        jLabel13.setBounds(30, 264, 50, 14);
         jPanel4.add(txtCodigo);
-        txtCodigo.setBounds(130, 293, 330, 30);
+        txtCodigo.setBounds(130, 256, 330, 30);
 
         jTabbedPane1.addTab("Registrar", jPanel4);
         {
@@ -434,7 +435,7 @@ public class EmpleadoView extends javax.swing.JInternalFrame implements ActionLi
         	new Object[][] {
         	},
         	new String[] {
-        		"ID", "Apellido Paterno", "Apellido Materno", "Nombre", "Sexo", "Telefono", "Direccion", "DNI"
+        		"ID", "Apellido Paterno", "Apellido Materno", "Nombre", "Sexo", "Telefono", "Direccion", "DNI", "Estado", "Rol"
         	}
         ));
         tblEmpleado.setToolTipText("");

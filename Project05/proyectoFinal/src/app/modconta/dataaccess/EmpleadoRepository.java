@@ -20,7 +20,7 @@ public class EmpleadoRepository implements IRepository<Empleado> {
         String sql = "";
         dbBean con = new dbBean();
         try{
-        	sql = "insert into empleado values ('" + p.getApellidoPaterno()+"','"+p.getApellidoMaterno()+"', '"+ p.getNombre() + "', '"+  p.getSexo().charAt(0)+"','"+p.getTelefono()+"', '"+ p.getDireccion()+"', '"+  p.getDNI() + "')" ;
+        	sql = "insert into empleado (ap_paterno,ap_materno,nombre,SEXO,telefono,domicilio,DNI,estado,rol)  values ('" + p.getApellidoPaterno()+"','"+p.getApellidoMaterno()+"', '"+ p.getNombre() + "', '"+  p.getSexo().charAt(0)+"','"+p.getTelefono()+"', '"+ p.getDireccion()+"', '"+  p.getDNI() + "','S','DYAB')" ;
         	Statement s = con.getConnection().createStatement();
              s.executeUpdate(sql);
              con.close();
@@ -77,7 +77,9 @@ public class EmpleadoRepository implements IRepository<Empleado> {
                  emple.setApellidoMaterno(resultado.getString(3));
                  emple.setNombre(resultado.getString(4));
                  emple.setSexo(resultado.getString(5));
+                 emple.setEstado(resultado.getString(6));
                  emple.setTelefono(resultado.getString(7));
+                 emple.setRol(resultado.getString(8));
                  emple.setDireccion(resultado.getString(9));
                  emple.setDNI(resultado.getString(10));
                  EmpleadosCollection.add(emple);     

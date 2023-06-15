@@ -24,7 +24,7 @@ public class ClienteRepository implements IRepository<Cliente> {
         String sql = "";
         dbBean con = new dbBean();
         try{
-        	sql = "insert into clientes values ('" + p.getApellidoP()+"','"+p.getApellidoM()+"', '"+ p.getNombre() + "', '"+  p.getTelefono()+"', '"+p.getDireccion()+"', 'S','"+ p.getSexo().charAt(0)+"', '"+  p.getDNI() + "', '"+p.getRUC() +"')" ;
+        	sql = "insert into clientes (ap_paterno,ap_materno,nombre,telefono,direccion,estado,sexo,DNI,RUC) values ('" + p.getApellidoP()+"','"+p.getApellidoM()+"', '"+ p.getNombre() + "', '"+  p.getTelefono()+"', '"+p.getDireccion()+"', 'S','"+ p.getSexo().charAt(0)+"', '"+  p.getDNI() + "', '"+p.getRUC() +"')" ;
         	Statement s = con.getConnection().createStatement();
              s.executeUpdate(sql);
              con.close();
@@ -103,6 +103,7 @@ public class ClienteRepository implements IRepository<Cliente> {
                 clien.setApellidoM(resultado.getString(4));
                 clien.setTelefono(resultado.getString(5));
                 clien.setDireccion(resultado.getString(6));
+                clien.setEstado(resultado.getString(7));
                 clien.setSexo(resultado.getString(7));
                 clien.setDNI(resultado.getString(8));
                 clien.setRUC(resultado.getString(9));

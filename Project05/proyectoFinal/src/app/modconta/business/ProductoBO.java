@@ -25,13 +25,13 @@ public class ProductoBO implements IGeneralBO<Producto>{
 
 	@Override
 	public void Delete(int id) {
-		// TODO Auto-generated method stub
+
 		
 	}
 
 	@Override
 	public Producto Find(int code) {
-		// TODO Auto-generated method stub
+
 		return null;
 	}
 

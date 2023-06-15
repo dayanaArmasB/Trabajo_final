@@ -8,7 +8,6 @@ import app.modconta.databaase.dbBean;
 import app.modconta.databaase.util;
 import app.modconta.entity.Cliente;
 import java.sql.Connection;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Vector;
 import javax.swing.JOptionPane;
@@ -44,23 +43,40 @@ public class FrmCliente extends javax.swing.JInternalFrame implements ActionList
         buttonGroup = new ButtonGroup();
         buttonGroup.add(jRadioButton1);
         buttonGroup.add(jRadioButton2);
+        btnRegistrar = new javax.swing.JButton();
+        btnRegistrar.setBounds(606, 92, 90, 30);
+        jPanel4.add(btnRegistrar);
+        
+                btnRegistrar.setText("Registrar");
+                btnLimpiar = new javax.swing.JButton();
+                btnLimpiar.setBounds(606, 135, 90, 30);
+                jPanel4.add(btnLimpiar);
+                
+                        btnLimpiar.setText("Limpiar");
+                        
+                        btnActualizar = new JButton("Actualizar");
+                        btnActualizar.setBounds(606, 176, 90, 30);
+                        jPanel4.add(btnActualizar);
+                        btnActualizar.addActionListener(this);
+                        btnLimpiar.addActionListener(new java.awt.event.ActionListener() {
+                            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                btnLimpiarActionPerformed(evt);
+                            }
+                        });
+                btnRegistrar.addActionListener(new java.awt.event.ActionListener() {
+                    public void actionPerformed(java.awt.event.ActionEvent evt) {
+                        btnRegistrarActionPerformed(evt);
+                    }
+                });
+                btnRegistrar.addKeyListener(new java.awt.event.KeyAdapter() {
+                    public void keyPressed(java.awt.event.KeyEvent evt) {
+                        btnRegistrarKeyPressed(evt);
+                    }
+                });
         getContentPane().setLayout(null);
         getContentPane().add(lblTitulo);
         getContentPane().add(jTabbedPane1);
-        getContentPane().add(btnRegistrar);
-        getContentPane().add(btnLimpiar);
-        getContentPane().add(btnBuscar);
         getContentPane().add(btnSalir);
-        
-        btnActualizar = new JButton("Actualizar");
-        btnActualizar.addActionListener(this);
-        btnActualizar.setBounds(221, 517, 97, 25);
-        getContentPane().add(btnActualizar);
-        
-        btnEliminar = new JButton("Eliminar");
-        btnEliminar.addActionListener(this);
-        btnEliminar.setBounds(325, 517, 97, 25);
-        getContentPane().add(btnEliminar);
     }
 
 
@@ -69,7 +85,7 @@ public class FrmCliente extends javax.swing.JInternalFrame implements ActionList
         lblTitulo = new javax.swing.JLabel();
         lblTitulo.setBounds(143, 20, 574, 29);
         btnSalir = new javax.swing.JButton();
-        btnSalir.setBounds(802, 533, 73, 25);
+        btnSalir.setBounds(804, 490, 73, 25);
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jTabbedPane1.setBounds(41, 68, 798, 411);
         jTabbedPane1.setToolTipText("test");
@@ -81,7 +97,7 @@ public class FrmCliente extends javax.swing.JInternalFrame implements ActionList
         	new Object[][] {
         	},
         	new String[] {
-        		"IDCliente", "Nombre", "Apellido Paterno", "Apellido Materno", "Telefono", "Direccion", "Sexo", "DNI", "RUC"
+        		"IDCliente", "Nombre", "Apellido Paterno", "Apellido Materno", "Estado", "Telefono", "Direccion", "Sexo", "DNI", "RUC"
         	}
         ));
         tblCliente.getColumnModel().getColumn(2).setPreferredWidth(110);
@@ -270,31 +286,13 @@ jPanel4.add(txtApellidoP);
         jComboBox1.setBounds(100, 10, 120, 30);
 
         jTabbedPane1.addTab("Búsqueda", jPanel3);
-        btnRegistrar = new javax.swing.JButton();
-        btnRegistrar.setBounds(27, 514, 90, 30);
         
-                btnRegistrar.setText("Registrar");
-                btnRegistrar.addActionListener(new java.awt.event.ActionListener() {
-                    public void actionPerformed(java.awt.event.ActionEvent evt) {
-                        btnRegistrarActionPerformed(evt);
-                    }
-                });
-                btnRegistrar.addKeyListener(new java.awt.event.KeyAdapter() {
-                    public void keyPressed(java.awt.event.KeyEvent evt) {
-                        btnRegistrarKeyPressed(evt);
-                    }
-                });
-        btnLimpiar = new javax.swing.JButton();
-        btnLimpiar.setBounds(129, 514, 80, 30);
-        
-                btnLimpiar.setText("Limpiar");
-                btnLimpiar.addActionListener(new java.awt.event.ActionListener() {
-                    public void actionPerformed(java.awt.event.ActionEvent evt) {
-                        btnLimpiarActionPerformed(evt);
-                    }
-                });
+        btnEliminar = new JButton("Eliminar Registro");
+        btnEliminar.setBounds(554, 13, 111, 25);
+        jPanel3.add(btnEliminar);
         btnBuscar = new javax.swing.JButton();
-        btnBuscar.setBounds(434, 514, 60, 33);
+        btnBuscar.setBounds(688, 10, 60, 30);
+        jPanel3.add(btnBuscar);
         
                 btnBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/buscar.gif"))); // NOI18N
                 btnBuscar.addActionListener(new java.awt.event.ActionListener() {
@@ -302,6 +300,7 @@ jPanel4.add(txtApellidoP);
                         jButton2ActionPerformed(evt);
                     }
                 });
+        btnEliminar.addActionListener(this);
 
         pack();
     }
@@ -362,6 +361,7 @@ jPanel4.add(txtApellidoP);
             vect.addElement(Clientes.get(j).getNombre());
             vect.addElement(Clientes.get(j).getApellidoP());
             vect.addElement(Clientes.get(j).getApellidoM());
+            vect.addElement(Clientes.get(j).getEstado());
             vect.addElement(Clientes.get(j).getTelefono());
             vect.addElement(Clientes.get(j).getDireccion());
             vect.addElement(Clientes.get(j).getSexo());

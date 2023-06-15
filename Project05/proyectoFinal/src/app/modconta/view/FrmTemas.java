@@ -5,9 +5,6 @@
  */
 package app.modconta.view;
 
-
-import app.modconta.business.AuditoriaBO;
-import app.modconta.business.Negocios;
 import app.modconta.databaase.dbBean;
 import app.modconta.entity.Mutation;
 import java.awt.Color;
@@ -15,12 +12,6 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Vector;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.table.DefaultTableModel;
 import net.sf.jasperreports.engine.JasperCompileManager;
 import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
@@ -41,12 +32,10 @@ import java.awt.Window;
 
 public class FrmTemas extends javax.swing.JInternalFrame {
 
-     AuditoriaBO _auditoriaBO;
-     DefaultTableModel dtm;
        
     public FrmTemas() 
     {
-    	setTitle("CONSULTAS");
+    	setTitle("User Settings");
     	
         initComponents();
         cmbFiltro.addItem("Acryl");
@@ -76,7 +65,7 @@ public class FrmTemas extends javax.swing.JInternalFrame {
         jLabel2 = new javax.swing.JLabel();
         btnGenerarPDF = new javax.swing.JButton();
         jLabel1.setFont(new Font("Tahoma", Font.BOLD, 24)); // NOI18N
-        jLabel1.setText("PERSONALIZACI\u00D3N DE TEMAS");
+        jLabel1.setText("PERSONALIZACIÓN DE TEMAS");
         btnLeer.setText("Aplicar y guardar");
         btnLeer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

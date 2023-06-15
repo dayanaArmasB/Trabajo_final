@@ -10,8 +10,19 @@ public class Cliente
     private String Sexo;
     private String DNI;
     private String RUC;
+    private String Estado;
+    
+    
 
-    public String getDireccion() {
+    public String getEstado() {
+		return Estado;
+	}
+
+	public void setEstado(String estado) {
+		Estado = estado;
+	}
+
+	public String getDireccion() {
         return Direccion;
     }
 

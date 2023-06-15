@@ -60,7 +60,6 @@ public void llenaTabla(boolean swr, String cadr)
         txtDireccion.setText("");
         txtRUC.setText("");
         txtCta.setText("");
-        txtEstado.setText("");
         btnRegistrar.setText("Registrar");
         txtNombre.requestFocus();
     }
@@ -222,16 +221,6 @@ public void llenaTabla(boolean swr, String cadr)
                                                                                 jPanel4.add(jLabel1);
                                                                                 jPanel4.add(txtDireccion);
                                                                                 
-                                                                                JLabel lblEstado = new JLabel();
-                                                                                lblEstado.setText("Estado");
-                                                                                lblEstado.setBounds(58, 188, 50, 21);
-                                                                                jPanel4.add(lblEstado);
-                                                                                
-                                                                                txtEstado = new JTextField();
-                                                                                txtEstado.setName("txtRUC");
-                                                                                txtEstado.setBounds(130, 183, 310, 30);
-                                                                                jPanel4.add(txtEstado);
-                                                                                
                                                                                 txtCta = new JTextField();
                                                                                 txtCta.setName("txtRUC");
                                                                                 txtCta.setBounds(130, 285, 310, 30);
@@ -357,7 +346,6 @@ public void llenaTabla(boolean swr, String cadr)
             p.setNombre(txtNombre.getText());
             p.setTelefono(txtTelefono.getText());
             p.setDireccion(txtDireccion.getText());
-            p.setEstado(txtEstado.getText());
             p.setRUC(txtRUC.getText());
             p.setCTA(txtCta.getText());
 
@@ -420,7 +408,6 @@ public void llenaTabla(boolean swr, String cadr)
     private javax.swing.JTextField txtNombre;
     private javax.swing.JTextField txtRUC;
     private javax.swing.JTextField txtTelefono;
-    private JTextField txtEstado;
     private JTextField txtCta;
     private JButton btnEliminar;
 	public void actionPerformed(ActionEvent arg0) {

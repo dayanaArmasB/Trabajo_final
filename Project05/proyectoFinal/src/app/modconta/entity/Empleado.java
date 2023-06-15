@@ -12,8 +12,19 @@ public class Empleado {
     private String Sexo; 
     private String Estado;
     private String CodigoContrato;
+    private String Rol;
+    
+    
 
-    public String getCodigoContrato() {
+    public String getRol() {
+		return Rol;
+	}
+
+	public void setRol(String rol) {
+		Rol = rol;
+	}
+
+	public String getCodigoContrato() {
         return CodigoContrato;
     }
 
