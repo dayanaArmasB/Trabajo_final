@@ -546,9 +546,8 @@ public class EmpleadoView extends javax.swing.JInternalFrame implements ActionLi
             if(rbtnF.isSelected())
             p.setSexo(rbtnF.getText());
             p.setTelefono(txtTelefono.getText());
-            p.setDNI(txtDNI.getText());
             p.setDireccion(txtDireccion.getText());
-            p.setCodigoContrato(txtCodigo.getText());
+            p.setDNI(txtDNI.getText());
             
             if(proc.equals("Registrar")){
                 pr = "insert";
