@@ -20,6 +20,7 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.awt.Dialog.ModalExclusionType;
 import java.awt.event.ActionEvent;
 
 
@@ -32,6 +33,7 @@ public class FrmCliente extends javax.swing.JInternalFrame implements ActionList
     ButtonGroup buttonGroup;
 
     public FrmCliente() {
+    	
     	setMaximizable(true);
     	setIconifiable(true);
     	setTitle("CLIENTES");
@@ -81,7 +83,7 @@ public class FrmCliente extends javax.swing.JInternalFrame implements ActionList
 
 
 
-    private void initComponents() {
+	private void initComponents() {
         lblTitulo = new javax.swing.JLabel();
         lblTitulo.setBounds(143, 20, 574, 29);
         btnSalir = new javax.swing.JButton();
@@ -118,7 +120,7 @@ public class FrmCliente extends javax.swing.JInternalFrame implements ActionList
 
         jPanel3.setLayout(null);
 
-        jLabel2.setText("B\u00FAsqueda");
+        jLabel2.setText("Busqueda");
         jLabel2.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
         jPanel3.add(jLabel2);
         jLabel2.setBounds(20, 10, 80, 30);
@@ -189,7 +191,7 @@ public void keyPressed(java.awt.event.KeyEvent evt) {
                                         
 jLabel5.setText("DNI");
                                                         
-txtRUC.setName("txtRUC"); // NOI18N
+txtRUC.setName("txtRUC");
  txtRUC.addActionListener(new java.awt.event.ActionListener() {
   public void actionPerformed(java.awt.event.ActionEvent evt) {
 txtRUCActionPerformed(evt);
@@ -198,14 +200,14 @@ txtRUCActionPerformed(evt);
                                                                 
 jLabel6.setText("Telefono");
                                                                         
-txtTelefono.setName("txtDireccion"); // NOI18N
+txtTelefono.setName("txtDireccion"); 
  txtTelefono.addActionListener(new java.awt.event.ActionListener() {
 public void actionPerformed(java.awt.event.ActionEvent evt) {
 txtTelefonoActionPerformed(evt);
  }
 });
                                                                                 
-txtDNI.setName("txtDireccion"); // NOI18N
+txtDNI.setName("txtDireccion"); 
 txtDNI.addActionListener(new java.awt.event.ActionListener() {
 public void actionPerformed(java.awt.event.ActionEvent evt) {
 txtDNIActionPerformed(evt);

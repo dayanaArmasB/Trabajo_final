@@ -165,7 +165,6 @@ public class Login extends javax.swing.JFrame {
     }
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {
-        
         System.exit(0);
     }
 
