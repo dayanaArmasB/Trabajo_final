@@ -4,10 +4,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import javax.swing.DefaultComboBoxModel;
-/**
- *
- * @author MARCELO
- */
+
 public class Helper extends dbBean{
    
 

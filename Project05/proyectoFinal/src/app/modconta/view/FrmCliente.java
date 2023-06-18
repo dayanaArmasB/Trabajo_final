@@ -40,7 +40,7 @@ public class FrmCliente extends javax.swing.JInternalFrame implements ActionList
         initComponents();
         _Clientebo = new ClienteBO();
         _DefaultTableModel = (DefaultTableModel)tblCliente.getModel();
-        llenaTabla(false, "");
+        llenaTabla();
         
         buttonGroup = new ButtonGroup();
         buttonGroup.add(jRadioButton1);
@@ -353,84 +353,7 @@ jPanel4.add(txtApellidoP);
         }
     }
     
-    public void llenaTabla(boolean swr, String cadr)
-    {
-        List<Cliente> Clientes = _Clientebo.readAll();
-        int i = Clientes.size(); 
-        for(int j = 0; j<i;j++){
-            Vector vect = new Vector();
-            vect.addElement(Clientes.get(j).getIdCliente());
-            vect.addElement(Clientes.get(j).getNombre());
-            vect.addElement(Clientes.get(j).getApellidoP());
-            vect.addElement(Clientes.get(j).getApellidoM());
-            vect.addElement(Clientes.get(j).getEstado());
-            vect.addElement(Clientes.get(j).getTelefono());
-            vect.addElement(Clientes.get(j).getDireccion());
-            vect.addElement(Clientes.get(j).getSexo());
-            vect.addElement(Clientes.get(j).getDNI());
-            vect.addElement(Clientes.get(j).getRUC());
-            _DefaultTableModel.addRow(vect);
-        }
-        
-    }     
-       public void limpiaControles(){
-        txtNombre.setText("");
-        txtApellidoP.setText("");
-        txtApellidoM.setText("");
-        txtTelefono.setText("");
-        txtDNI.setText("");
-        txtDireccion.setText("");
-        txtRUC.setText("");
-        btnRegistrar.setText("Registrar");
-        txtNombre.requestFocus();
-    }
-    public void limpiaTabla(){
-        DefaultTableModel dm = (DefaultTableModel)tblCliente.getModel();
-        if(dm.getRowCount()>0){
-            while(dm.getRowCount()>0){
-                dm.removeRow(dm.getRowCount()-1);
-            }
-        }
-    }
-    public boolean valida(){
-        boolean sw = false;
-        if (txtNombre.getText().equals("")) {
-        	JOptionPane.showMessageDialog(this, "Ingrese Nombres");
-        	return sw;
-		}
-        if(txtApellidoP.getText().equals("")){
-        	JOptionPane.showMessageDialog(this, "Debe ingresar apellido paterno");
-         	return sw;
-        }
 
-        if(txtApellidoM.getText().equals("")){
-        	JOptionPane.showMessageDialog(this, "Debe ingresar apellido Materno ");
-        	return sw;
-        }
-        if(txtDireccion.getText().equals("")){
-        	JOptionPane.showMessageDialog(this, "Debe ingresar direccion");
-        	return sw;
-        }
-        if(txtTelefono.getText().equals("")){
-        	JOptionPane.showMessageDialog(this, "Debe ingresar telefono");
-        	return sw;
-        }
-        if(txtDNI.getText().equals("")){
-        	JOptionPane.showMessageDialog(this, "Debe ingresar DNI");
-        	return sw;
-        }
-        if(txtRUC.getText().equals("")){
-        	JOptionPane.showMessageDialog(this, "Debe ingresar RUC");
-        	return sw;
-        }
-        if(buttonGroup.getSelection()== null){
-        	JOptionPane.showMessageDialog(this, "Debe seleccionar un sexo");
-        	return sw;
-        }
-        
-        return sw = true;
-    }
-    
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {
         int x ;
         x = Integer.parseInt(JOptionPane.showInputDialog(" Ingrese el codigo del Cliente"));
@@ -442,7 +365,6 @@ jPanel4.add(txtApellidoP);
         } catch (Exception e) {
         	JOptionPane.showMessageDialog(this, "error ");
         }
-        
         
         /*creamos un objeto dbBean
         dbBean aux = new dbBean();
@@ -457,44 +379,8 @@ jPanel4.add(txtApellidoP);
         JasperViewer jv= new JasperViewer(jp,false);
         jv.setVisible(true);*/
     }
-    private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {
-        limpiaControles();
-    }
-    private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {
 
-        String proc = btnRegistrar.getText();
-        int id = 0;
-        String pr = "";
-        if(valida()){
-            util u = new util();
-            Cliente p = new Cliente();
-            p.setNombre(txtNombre.getText());
-            p.setApellidoP(txtApellidoP.getText());
-            p.setApellidoM(txtApellidoM.getText());
-            p.setTelefono(txtTelefono.getText());
-            p.setDireccion(txtDireccion.getText());
-            if(jRadioButton1.isSelected())
-            p.setSexo(jRadioButton1.getText());
-            if(jRadioButton2.isSelected())
-            p.setSexo(jRadioButton2.getText());
-            p.setDNI(txtDNI.getText());
-            p.setRUC(txtRUC.getText());
-
-            if(proc.equals("Registrar")){
-                pr = "insert";
-            }
-            if(proc.equals("Actualizar")){
-                id = idClie;
-                pr = "update";
-            }
-            p.setIdCliente(id);
-            _Clientebo.Create(p);
-            limpiaControles();
-            limpiaTabla();
-            llenaTabla(false, "");
-        }
-    }
-
+    
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {
         
     }
@@ -550,7 +436,7 @@ jPanel4.add(txtApellidoP);
 		p.setNombre(nombre.toString());
         _Clientebo.Update(p);
         limpiaTabla();
-        llenaTabla(false, "");
+        llenaTabla();
         JOptionPane.showMessageDialog(this, "Se actuaizó el resgistro con exito");
         
 	}
@@ -560,7 +446,7 @@ jPanel4.add(txtApellidoP);
 			 int id= Integer.parseInt(String.valueOf(_DefaultTableModel.getValueAt(tblCliente.getSelectedRow(),0)));
 				_Clientebo.Delete(id);
 				 limpiaTabla();
-		         llenaTabla(false, "");
+		         llenaTabla();
 		         JOptionPane.showMessageDialog(this, "Se elimnó el resgistro con exito");
 		 }
 		 catch(Exception e1){
@@ -568,4 +454,116 @@ jPanel4.add(txtApellidoP);
 		 }
 		
 	}
+	
+    private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {
+        limpiaControles();
+    }
+	
+	private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {
+
+        int id = 0;
+        String pr = "";
+        if(valida()){
+            util u = new util();
+            Cliente p = new Cliente();
+            p.setNombre(txtNombre.getText());
+            p.setApellidoP(txtApellidoP.getText());
+            p.setApellidoM(txtApellidoM.getText());
+            p.setTelefono(txtTelefono.getText());
+            p.setDireccion(txtDireccion.getText());
+            if(jRadioButton1.isSelected())
+            p.setSexo(jRadioButton1.getText());
+            if(jRadioButton2.isSelected())
+            p.setSexo(jRadioButton2.getText());
+            p.setDNI(txtDNI.getText());
+            p.setRUC(txtRUC.getText());
+            p.setIdCliente(id);
+            _Clientebo.Create(p);
+            limpiaControles();
+            limpiaTabla();
+            llenaTabla();
+        }
+    }
+	
+	public boolean valida(){
+        boolean sw = false;
+        if (txtNombre.getText().equals("")) {
+        	JOptionPane.showMessageDialog(this, "Ingrese Nombres");
+        	return sw;
+		}
+        if(txtApellidoP.getText().equals("")){
+        	JOptionPane.showMessageDialog(this, "Debe ingresar apellido paterno");
+         	return sw;
+        }
+
+        if(txtApellidoM.getText().equals("")){
+        	JOptionPane.showMessageDialog(this, "Debe ingresar apellido Materno ");
+        	return sw;
+        }
+        if(txtDireccion.getText().equals("")){
+        	JOptionPane.showMessageDialog(this, "Debe ingresar direccion");
+        	return sw;
+        }
+        if(txtTelefono.getText().equals("")){
+        	JOptionPane.showMessageDialog(this, "Debe ingresar telefono");
+        	return sw;
+        }
+        if(txtDNI.getText().equals("")){
+        	JOptionPane.showMessageDialog(this, "Debe ingresar DNI");
+        	return sw;
+        }
+        if(txtRUC.getText().equals("")){
+        	JOptionPane.showMessageDialog(this, "Debe ingresar RUC");
+        	return sw;
+        }
+        if(buttonGroup.getSelection()== null){
+        	JOptionPane.showMessageDialog(this, "Debe seleccionar un sexo");
+        	return sw;
+        }
+        
+        return sw = true;
+    }
+	
+    public void limpiaControles(){
+        txtNombre.setText("");
+        txtApellidoP.setText("");
+        txtApellidoM.setText("");
+        txtTelefono.setText("");
+        txtDNI.setText("");
+        txtDireccion.setText("");
+        txtRUC.setText("");
+        buttonGroup.clearSelection();
+        txtNombre.requestFocus();
+        
+    }
+    
+    public void limpiaTabla(){
+        DefaultTableModel dm = (DefaultTableModel)tblCliente.getModel();
+        if(dm.getRowCount()>0){
+            while(dm.getRowCount()>0){
+                dm.removeRow(dm.getRowCount()-1);
+            }
+        }
+    }
+    
+    public void llenaTabla()
+    {
+        List<Cliente> Clientes = _Clientebo.readAll();
+        int i = Clientes.size(); 
+        for(int j = 0; j<i;j++){
+            Vector vect = new Vector();
+            vect.addElement(Clientes.get(j).getIdCliente());
+            vect.addElement(Clientes.get(j).getNombre());
+            vect.addElement(Clientes.get(j).getApellidoP());
+            vect.addElement(Clientes.get(j).getApellidoM());
+            vect.addElement(Clientes.get(j).getEstado());
+            vect.addElement(Clientes.get(j).getTelefono());
+            vect.addElement(Clientes.get(j).getDireccion());
+            vect.addElement(Clientes.get(j).getSexo());
+            vect.addElement(Clientes.get(j).getDNI());
+            vect.addElement(Clientes.get(j).getRUC());
+            _DefaultTableModel.addRow(vect);
+        }
+        
+    }
 }

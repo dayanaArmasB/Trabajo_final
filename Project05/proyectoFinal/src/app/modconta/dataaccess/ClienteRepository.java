@@ -98,15 +98,15 @@ public class ClienteRepository implements IRepository<Cliente> {
                 Cliente clien;
                 clien = new Cliente();
                 clien.setIdCliente(resultado.getInt(1));
-                clien.setNombre(resultado.getString(2));
-                clien.setApellidoP(resultado.getString(3));
-                clien.setApellidoM(resultado.getString(4));
+                clien.setNombre(resultado.getString(4));
+                clien.setApellidoP(resultado.getString(2));
+                clien.setApellidoM(resultado.getString(3));
                 clien.setTelefono(resultado.getString(5));
                 clien.setDireccion(resultado.getString(6));
                 clien.setEstado(resultado.getString(7));
-                clien.setSexo(resultado.getString(7));
-                clien.setDNI(resultado.getString(8));
-                clien.setRUC(resultado.getString(9));
+                clien.setSexo(resultado.getString(8));
+                clien.setDNI(resultado.getString(9));
+                clien.setRUC(resultado.getString(10));
                 ClientesCollection.add(clien);     
             }
             con.close();

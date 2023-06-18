@@ -32,19 +32,18 @@ public class PedidoBO implements IGeneralBO<Pedido> {
 
 	@Override
 	public void Delete(int id) {
-		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
 	public Pedido Find(int code) {
-		// TODO Auto-generated method stub
+
 		return null;
 	}
 
 	@Override
 	public List<Pedido> readAll() {
-		// TODO Auto-generated method stub
+
 		return null;
 	}
 

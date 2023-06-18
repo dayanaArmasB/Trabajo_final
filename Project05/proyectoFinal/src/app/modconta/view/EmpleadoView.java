@@ -88,27 +88,6 @@ public class EmpleadoView extends javax.swing.JInternalFrame implements ActionLi
                 });
     }
    
-    public void llenaTabla(boolean swr, String cadr)
-    {
-        List<Empleado> Empleados = _Empleadobo.readAll();
-        int i = Empleados.size(); 
-        for(int j = 0; j<i;j++){
-            Vector vect = new Vector();
-            vect.addElement(Empleados.get(j).getIdEmpleado());
-            vect.addElement(Empleados.get(j).getApellidoPaterno());
-            vect.addElement(Empleados.get(j).getApellidoMaterno());
-            vect.addElement(Empleados.get(j).getNombre());
-            vect.addElement(Empleados.get(j).getSexo());
-            vect.addElement(Empleados.get(j).getTelefono());
-            vect.addElement(Empleados.get(j).getDireccion());   
-            vect.addElement(Empleados.get(j).getDNI());
-            vect.addElement(Empleados.get(j).getEstado());
-            vect.addElement(Empleados.get(j).getRol());
-            dtm.addRow(vect);
-        }
-    } 
-     
-
     private void initComponents() {
 
         sexo = new javax.swing.ButtonGroup();
@@ -450,7 +429,7 @@ public class EmpleadoView extends javax.swing.JInternalFrame implements ActionLi
         jPanel3.add(jScrollPane1);
         jScrollPane1.setBounds(10, 60, 610, 200);
 
-        jTextField1.setName("txtBusqueda"); // NOI18N
+        jTextField1.setName("txtBusqueda");
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
@@ -478,7 +457,7 @@ public class EmpleadoView extends javax.swing.JInternalFrame implements ActionLi
             }
         });
 
-        lblTitulo.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        lblTitulo.setFont(new java.awt.Font("Tahoma", 1, 24));
         lblTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTitulo.setText("EMPLEADOS");
 
@@ -515,10 +494,6 @@ public class EmpleadoView extends javax.swing.JInternalFrame implements ActionLi
         pack();}
 
 
-    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {
-        this.dispose();
-    }
-
     private void cbxAreaActionPerformed(java.awt.event.ActionEvent evt) {
        
     }
@@ -531,51 +506,6 @@ public class EmpleadoView extends javax.swing.JInternalFrame implements ActionLi
 
     }
 
-    private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {
-        
-        String proc = btnRegistrar.getText();
-        int id = 0;
-        String pr = ""; 
-            if(valida()){
-            util u = new util();
-            Empleado p = new Empleado();
-            p.setApellidoPaterno(txtApellidoP.getText());
-            p.setApellidoMaterno(txtApellidoM.getText());
-            p.setNombre(txtNombre.getText());
-            if(rbtnM.isSelected())
-            p.setSexo(rbtnM.getText());
-            if(rbtnF.isSelected())
-            p.setSexo(rbtnF.getText());
-            p.setTelefono(txtTelefono.getText());
-            p.setDireccion(txtDireccion.getText());
-            p.setDNI(txtDNI.getText());
-            
-            if(proc.equals("Registrar")){
-                pr = "insert";
-            }
-            if(proc.equals("Actualizar")){
-                id = idEmp;
-                pr = "update";
-            }
-            p.setIdEmpleado(id);
-            _Empleadobo.Create(p);
-            limpiaControles();
-            limpiaTabla();
-            llenaTabla(false, "");
-            
-            //  c.setCodigo(this.txtCodigoContrato.getText());
-            // c.setArea(this.cbxArea.getSelectedItem().toString());
-            // c.setCargo(this.cbxCargo.getSelectedItem().toString());
-            // c.setFechaInicio(this.dcFechaIncio.getDate().toString());
-            // c.setFechaFinal(this.dcFechaFin.getDate().toString());
-            // c.setSueldo(parseFloat(txtSueldo.getText()));
-            
-        }
-    }
-
-    private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {
-        // limpiaControles();
-    }
 
     private void txtApellidosKeyPressed(java.awt.event.KeyEvent evt) {
         if(evt.getKeyCode() == evt.VK_ENTER){
@@ -584,7 +514,7 @@ public class EmpleadoView extends javax.swing.JInternalFrame implements ActionLi
     }
 
     private void txtApellidosActionPerformed(java.awt.event.ActionEvent evt) {
-        // TODO add your handling code here:
+
     }
 
     private void txtNombreKeyPressed(java.awt.event.KeyEvent evt) {
@@ -600,7 +530,6 @@ public class EmpleadoView extends javax.swing.JInternalFrame implements ActionLi
         if(evt.getClickCount() == 1){
             this.jTabbedPane1.setSelectedIndex(1);
 
-            //llenaModifica();
         }
     }
 
@@ -741,63 +670,6 @@ public class EmpleadoView extends javax.swing.JInternalFrame implements ActionLi
         //}
     }
 
- public void limpiaControles(){
-        txtNombre.setText("");
-        txtApellidoP.setText("");
-        txtTelefono.setText("");
-        txtDireccion.setText("");
-        txtDNI.setText("");
-        txtCodigo.setText("");
-        buttonGroup.clearSelection();
-        btnRegistrar.setText("Registrar");
-        txtNombre.requestFocus();
-        
-    }
-    public void limpiaTabla(){
-        DefaultTableModel dm = (DefaultTableModel)tblEmpleado.getModel();
-        if(dm.getRowCount()>0){
-            while(dm.getRowCount()>0){
-                dm.removeRow(dm.getRowCount()-1);
-            }
-        }
-    }
-    
-    public boolean valida(){
-        boolean sw = false;
-        if (txtNombre.getText().equals("")) {
-        	JOptionPane.showMessageDialog(this, "Ingrese Nombres");
-        	return sw;
-		}
-        if(txtApellidoP.getText().equals("")){
-        	JOptionPane.showMessageDialog(this, "Debe ingresar apellido paterno");
-         	return sw;
-        }
-
-        if(txtApellidoM.getText().equals("")){
-        	JOptionPane.showMessageDialog(this, "Debe ingresar apellido Materno ");
-        	return sw;
-        }
-        if(txtDireccion.getText().equals("")){
-        	JOptionPane.showMessageDialog(this, "Debe ingresar direccion");
-        	return sw;
-        }
-        if(txtTelefono.getText().equals("")){
-        	JOptionPane.showMessageDialog(this, "Debe ingresar telefono");
-        	return sw;
-        }
-        if(txtDNI.getText().equals("")){
-        	JOptionPane.showMessageDialog(this, "Debe ingresar DNI");
-        	return sw;
-        }
-        
-        if(buttonGroup.getSelection()== null){
-        	JOptionPane.showMessageDialog(this, "Debe seleccionar un sexo");
-        	return sw;
-        }
-        
-        return sw = true;
-    }
-    
     private javax.swing.JButton btnLimpiar;
     private javax.swing.JButton btnLimpiar1;
     private javax.swing.JButton btnRegistrar;
@@ -854,6 +726,14 @@ public class EmpleadoView extends javax.swing.JInternalFrame implements ActionLi
 			do_btnEliminar_actionPerformed(e);
 		}
 	}
+	
+    private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {
+        limpiaControles();
+    }
+	
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {
+        this.dispose();
+    }
 	protected void do_btnEliminar_actionPerformed(ActionEvent e) {
 		try{
 			 int id= Integer.parseInt(String.valueOf(dtm.getValueAt(tblEmpleado.getSelectedRow(),0)));
@@ -867,4 +747,115 @@ public class EmpleadoView extends javax.swing.JInternalFrame implements ActionLi
 		 }
 		
 	}
+	private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {
+        
+        String proc = btnRegistrar.getText();
+        int id = 0;
+        String pr = ""; 
+            if(valida()){
+            util u = new util();
+            Empleado p = new Empleado();
+            p.setApellidoPaterno(txtApellidoP.getText());
+            p.setApellidoMaterno(txtApellidoM.getText());
+            p.setNombre(txtNombre.getText());
+            if(rbtnM.isSelected())
+            p.setSexo(rbtnM.getText());
+            if(rbtnF.isSelected())
+            p.setSexo(rbtnF.getText());
+            p.setTelefono(txtTelefono.getText());
+            p.setDireccion(txtDireccion.getText());
+            p.setDNI(txtDNI.getText());
+            p.setIdEmpleado(id);
+            _Empleadobo.Create(p);
+            limpiaControles();
+            limpiaTabla();
+            llenaTabla(false, "");
+            
+            //  c.setCodigo(this.txtCodigoContrato.getText());
+            // c.setArea(this.cbxArea.getSelectedItem().toString());
+            // c.setCargo(this.cbxCargo.getSelectedItem().toString());
+            // c.setFechaInicio(this.dcFechaIncio.getDate().toString());
+            // c.setFechaFinal(this.dcFechaFin.getDate().toString());
+            // c.setSueldo(parseFloat(txtSueldo.getText()));
+            
+        }
+    }
+	
+	 public void limpiaControles(){
+	        txtNombre.setText("");
+	        txtApellidoP.setText("");
+	        txtTelefono.setText("");
+	        txtDireccion.setText("");
+	        txtDNI.setText("");
+	        txtCodigo.setText("");
+	        buttonGroup.clearSelection();
+	        btnRegistrar.setText("Registrar");
+	        txtNombre.requestFocus();
+	        
+	    }
+    public void limpiaTabla(){
+        DefaultTableModel dm = (DefaultTableModel)tblEmpleado.getModel();
+        if(dm.getRowCount()>0){
+            while(dm.getRowCount()>0){
+                dm.removeRow(dm.getRowCount()-1);
+            }
+        }
+    }
+	
+	public boolean valida(){
+        boolean sw = false;
+        if (txtNombre.getText().equals("")) {
+        	JOptionPane.showMessageDialog(this, "Ingrese Nombres");
+        	return sw;
+		}
+        if(txtApellidoP.getText().equals("")){
+        	JOptionPane.showMessageDialog(this, "Debe ingresar apellido paterno");
+         	return sw;
+        }
+
+        if(txtApellidoM.getText().equals("")){
+        	JOptionPane.showMessageDialog(this, "Debe ingresar apellido Materno ");
+        	return sw;
+        }
+        if(txtDireccion.getText().equals("")){
+        	JOptionPane.showMessageDialog(this, "Debe ingresar direccion");
+        	return sw;
+        }
+        if(txtTelefono.getText().equals("")){
+        	JOptionPane.showMessageDialog(this, "Debe ingresar telefono");
+        	return sw;
+        }
+        if(txtDNI.getText().equals("")){
+        	JOptionPane.showMessageDialog(this, "Debe ingresar DNI");
+        	return sw;
+        }
+        
+        if(buttonGroup.getSelection()== null){
+        	JOptionPane.showMessageDialog(this, "Debe seleccionar un sexo");
+        	return sw;
+        }
+        
+        return sw = true;
+    }
+	
+	public void llenaTabla(boolean swr, String cadr)
+    {
+        List<Empleado> Empleados = _Empleadobo.readAll();
+        int i = Empleados.size(); 
+        for(int j = 0; j<i;j++){
+            Vector vect = new Vector();
+            vect.addElement(Empleados.get(j).getIdEmpleado());
+            vect.addElement(Empleados.get(j).getApellidoPaterno());
+            vect.addElement(Empleados.get(j).getApellidoMaterno());
+            vect.addElement(Empleados.get(j).getNombre());
+            vect.addElement(Empleados.get(j).getSexo());
+            vect.addElement(Empleados.get(j).getTelefono());
+            vect.addElement(Empleados.get(j).getDireccion());   
+            vect.addElement(Empleados.get(j).getDNI());
+            vect.addElement(Empleados.get(j).getEstado());
+            vect.addElement(Empleados.get(j).getRol());
+            dtm.addRow(vect);
+        }
+    } 
+
 }

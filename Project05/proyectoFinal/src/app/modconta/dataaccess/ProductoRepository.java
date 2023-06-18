@@ -1,8 +1,15 @@
 package app.modconta.dataaccess;
 
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+import javax.sound.midi.SysexMessage;
 
 import app.modconta.databaase.dbBean;
 import app.modconta.entity.Producto;
@@ -10,7 +17,6 @@ import app.modconta.entity.Producto;
 public class ProductoRepository implements IRepository<Producto>{
 
 	public ProductoRepository() {
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
@@ -20,8 +26,11 @@ public class ProductoRepository implements IRepository<Producto>{
 	        dbBean con = new dbBean();
 	        try
 	        {    
-		        sql = "insert into Equipo values ('"+ p.getIdProducto()+"', '"+p.getNombre()+"', "+ p.getStock()+","+ p.getStockMax()+"," +p.getStockMin()+","+p.getIdModelo()+")"; 
-	         	resultado = con.updateSQL(sql);
+		        //sql = "insert into Equipo values ('"+ p.getIdProducto()+"', '"+p.getNombre()+"', "+ p.getStock()+","+ p.getStockMax()+"," +p.getStockMin()+","+p.getIdModelo()+")"; 
+		        sql = "insert into productos (ID,NOMBRE,DESCRIPCION) values ('"+ p.getIdProducto()+"', '"+p.getNombre()+"', "+ p.getDescripcion()+"')"; 
+		        System.out.println("entró");
+		        Statement s = con.getConnection().createStatement();
+	             s.executeUpdate(sql);
 	            con.close();
 	        }catch(java.sql.SQLException e){
 	            e.printStackTrace();
@@ -44,44 +53,39 @@ public class ProductoRepository implements IRepository<Producto>{
 
 	@Override
 	public void Delete(int id) {
-		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
 	public Producto Find(int code) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public List<Producto> readAll() {
-	       List<Producto> lsproductos  = new ArrayList<>();
+	       List<Producto> ProductosCollection  = new ArrayList<>();
 	        dbBean con = new dbBean();
-	        String sql = "Select idproducto,nombre from productos";
-	        //El criterio de busqueda para mostrar datos 
-	       /* if(sw == true)
-	        {
-	            sql = sql + " where Nombre_Equipo like '"+str +" %'";
-	        }*/
+	        PreparedStatement pe = null;
+	        try {
+	            pe = con.dbCon.prepareCall("usp_productos_listar");
+	        } catch (SQLException ex) {
+	            Logger.getLogger(ProductoRepository.class.getName()).log(Level.SEVERE, null, ex);
+	        }
 	        try{
-	            ResultSet resultado = con.execSQL(sql);
+	        	ResultSet resultado = pe.executeQuery();
 	            while(resultado.next()){
-	                Producto e; 
-	                e = new Producto();
-	                e.setIdProducto(resultado.getInt(1));
-	                e.setNombre(resultado.getString(2));
-	                //e.setStock(resultado.getInt(7));
-	                //e.setStockMax(resultado.getInt(8));
-	                //e.setStockMin(resultado.getInt(9));
-	                //e.setIdModelo(resultado.getInt(10));         
-	                lsproductos.add(e);
+	                Producto Produc; 
+	                Produc = new Producto();
+	                Produc.setIdProducto(resultado.getInt(1));
+	                Produc.setNombre(resultado.getString(2));
+	                Produc.setDescripcion(resultado.getString(3));
+	                ProductosCollection.add(Produc);
 	            }            
 	            con.close();
 	        }catch(java.sql.SQLException e){
 	            e.printStackTrace();
 	        }
-	        return lsproductos;
+	        return ProductosCollection;
 	}
 
 }

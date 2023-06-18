@@ -348,14 +348,6 @@ public void llenaTabla(boolean swr, String cadr)
             p.setDireccion(txtDireccion.getText());
             p.setRUC(txtRUC.getText());
             p.setCTA(txtCta.getText());
-
-            if(proc.equals("Registrar")){
-                pr = "insert";
-            }
-            if(proc.equals("Actualizar")){
-                id = idProve;
-                pr = "update";
-            }
             p.setIdProveedor(id);
             _Proveedorbo.Create(p);
             limpiaControles();

@@ -161,6 +161,16 @@ public class Login extends javax.swing.JFrame {
         pack();
     }
 
+    private javax.swing.JButton btnIngresar;
+    private javax.swing.JButton btnSalir;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPasswordField txtPassword;
+    private javax.swing.JTextField txtUsuario;
+    
     private void txtPasswordActionPerformed(java.awt.event.ActionEvent evt) {
     }
 
@@ -235,13 +245,4 @@ public class Login extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null,"Ocurrio un error " + e.getMessage());             
         }
     }
-    private javax.swing.JButton btnIngresar;
-    private javax.swing.JButton btnSalir;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPasswordField txtPassword;
-    private javax.swing.JTextField txtUsuario;
 }

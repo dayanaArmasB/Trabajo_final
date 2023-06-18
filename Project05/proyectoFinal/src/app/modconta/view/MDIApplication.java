@@ -23,7 +23,6 @@ public class MDIApplication extends javax.swing.JFrame {
         }
        
     }
-    @SuppressWarnings("unchecked")
 
     private void initComponents() {
 
@@ -241,6 +240,7 @@ public class MDIApplication extends javax.swing.JFrame {
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {
       System.exit(0);
+      //cargarFormulario(Login.class);
     }
 
     private void btnVentasActionPerformed(java.awt.event.ActionEvent evt) {
@@ -263,61 +263,6 @@ public class MDIApplication extends javax.swing.JFrame {
          cargarFormulario(FrmAuditoria.class);
     }
 
-//    public static void main(String args[]) {
-//        /* Set the Nimbus look and feel */
-//        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-//        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-//         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-//         */
-//        try {
-//                     //            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-//                //                if ("Nimbus".equals(info.getName())) {
-//                //                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-//                //                    break;
-//                //                }
-//                //            }
-//         javax.swing.UIManager.setLookAndFeel("com.jtattoo.plaf.hifi.HiFiLookAndFeel");
-//        } catch (ClassNotFoundException ex) {
-//            java.util.logging.Logger.getLogger(MDIApplication.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (InstantiationException ex) {
-//            java.util.logging.Logger.getLogger(MDIApplication.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (IllegalAccessException ex) {
-//            java.util.logging.Logger.getLogger(MDIApplication.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-//            java.util.logging.Logger.getLogger(MDIApplication.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        }
-//        //</editor-fold>
-//
-//        /* Create and display the form */
-//        java.awt.EventQueue.invokeLater(new Runnable() {
-//            public void run() {
-//                new MDIApplication().setVisible(true);
-//            }
-//        });
-//    }
-    
-     private void cargarFormulario(Class<?> aClass) {
-        try {
-
-            JInternalFrame view = null;
-            for(JInternalFrame f:escritorio.getAllFrames() )
-            {
-              if(aClass.isInstance(f)){
-                  view=f;
-                  break;
-              }
-            }
-            if(view==null)
-            {
-              view = (JInternalFrame) Class.forName(aClass.getName()).newInstance();
-              escritorio.add(view);
-              view.setVisible(true);   
-            }
-        view.setSelected(true);
-        } catch (Exception e) {
-            System.out.println("Ocurrio un error al abrir el formulario" + e.getMessage());
-        }
-    }
 
     private javax.swing.JButton btnAuditoria;
     private javax.swing.JButton btnClientes;
@@ -345,6 +290,28 @@ public class MDIApplication extends javax.swing.JFrame {
     private JMenuBar menuBar;
     private JMenu mnNewMenu;
     private JMenuItem mntmOptiions;
-    // End of variables declaration//GEN-END:variables
+
+    private void cargarFormulario(Class<?> aClass) {
+        try {
+
+            JInternalFrame view = null;
+            for(JInternalFrame f:escritorio.getAllFrames() )
+            {
+              if(aClass.isInstance(f)){
+                  view=f;
+                  break;
+              }
+            }
+            if(view==null)
+            {
+              view = (JInternalFrame) Class.forName(aClass.getName()).newInstance();
+              escritorio.add(view);
+              view.setVisible(true);   
+            }
+        view.setSelected(true);
+        } catch (Exception e) {
+            System.out.println("Ocurrio un error al abrir el formulario" + e.getMessage());
+        }
+    }
 
 }
