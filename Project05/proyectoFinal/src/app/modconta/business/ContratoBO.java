@@ -2,18 +2,21 @@ package app.modconta.business;
 
 import java.util.List;
 
-import app.modconta.entity.Compra;
+import app.modconta.dataaccess.ContratoRepository;
+import app.modconta.entity.Contrato;
 
-public class CompraBO implements IGeneralBO<Compra> {
+public class ContratoBO implements IGeneralBO<Contrato> {
+
+	ContratoRepository _doContraRep;
 
 	@Override
-	public void Create(Compra param) {
+	public void Create(Contrato param) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void Update(Compra param) {
+	public void Update(Contrato param) {
 		// TODO Auto-generated method stub
 		
 	}
@@ -25,19 +28,15 @@ public class CompraBO implements IGeneralBO<Compra> {
 	}
 
 	@Override
-	public Compra Find(int code) {
+	public Contrato Find(int code) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public List<Compra> readAll() {
+	public List<Contrato> readAll() {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
- 
-
-
-
+	
 }

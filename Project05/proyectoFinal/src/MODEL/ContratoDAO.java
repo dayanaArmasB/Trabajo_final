@@ -3,10 +3,7 @@ import app.modconta.databaase.dbBean;
 import app.modconta.entity.Contrato;
 import java.sql.ResultSet;
 import java.util.Vector;
-/**
- *
- * @author MARCELO
- */
+
 public class ContratoDAO {
   public Vector<Contrato> ListaItem(boolean sw, String str){
      Vector<Contrato> item = new Vector<Contrato>();
@@ -30,13 +27,6 @@ public class ContratoDAO {
                  c.setArea(resultado.getString(5));
                  c.setCargo(resultado.getString(6));
                  c.setSueldo(resultado.getFloat(7));
-               //e.setIdEmpleado(resultado.getInt(1));
-                 //e.setNombre(resultado.getString(2));
-                // e.setApellidos(resultado.getString(3));
-                // e.setSexo(resultado.getString(4));
-                // e.setTelefono(resultado.getString(5));
-                 //e.setDNI(resultado.getString(6));
-                 //e.setContrato(resultado.getString(7));
                 item.addElement(c);     
             }
             

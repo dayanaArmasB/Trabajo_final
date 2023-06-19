@@ -10,7 +10,7 @@ import java.sql.Statement;
 
 
 public class dbBean {
-    String dbURL = "jdbc:sqlserver://localhost:1433;databaseName=dblogistica;integratedSecurity=true";
+    String dbURL = "jdbc:sqlserver://localhost:1433;databaseName=dblogistica1;integratedSecurity=true";
     String dbDriver="com.microsoft.sqlserver.jdbc.SQLServerDriver" ;
     public Connection dbCon;
     private String Login=Constantes.user_sa;

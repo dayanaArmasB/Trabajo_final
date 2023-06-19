@@ -6,7 +6,6 @@
 package app.modconta.view;
 
 import app.modconta.databaase.dbBean;
-import app.modconta.entity.Mutation;
 import java.awt.Color;
 import java.sql.Connection;
 import java.sql.DriverManager;

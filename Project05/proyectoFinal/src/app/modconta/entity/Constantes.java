@@ -5,10 +5,6 @@
  */
 package app.modconta.entity;
 
-/**
- *
- * @author RAUL
- */
 public class Constantes 
 {
     public final static String CADENA_CONEXION = "jdbc:sqlserver://localhost:1433;databaseName=dblogistica;user=sa;password=sasasa;";

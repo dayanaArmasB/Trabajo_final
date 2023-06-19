@@ -2,7 +2,6 @@ package app.modconta.business;
 
 import java.util.List;
 
-import app.modconta.dataaccess.AuditoriaRepository;
 import app.modconta.dataaccess.ProductoRepository;
 import app.modconta.entity.Producto;
 

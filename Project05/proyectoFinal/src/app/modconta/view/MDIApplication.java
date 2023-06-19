@@ -35,15 +35,6 @@ public class MDIApplication extends javax.swing.JFrame {
         btnProveedores = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JToolBar.Separator();
         btnEquipos = new javax.swing.JButton();
-        jSeparator9 = new javax.swing.JToolBar.Separator();
-        jButton3 = new javax.swing.JButton();
-        jSeparator2 = new javax.swing.JToolBar.Separator();
-        btnVentas = new javax.swing.JButton();
-        jSeparator8 = new javax.swing.JToolBar.Separator();
-        btnServicios = new javax.swing.JButton();
-        jSeparator10 = new javax.swing.JToolBar.Separator();
-        btnPedidos = new javax.swing.JButton();
-        jSeparator3 = new javax.swing.JToolBar.Separator();
         jSeparator4 = new javax.swing.JToolBar.Separator();
         btnSalir = new javax.swing.JButton();
 
@@ -98,67 +89,6 @@ public class MDIApplication extends javax.swing.JFrame {
             }
         });
         jToolBar1.add(btnEquipos);
-        jToolBar1.add(jSeparator9);
-
-        jButton3.setFont(new java.awt.Font("Arial Black", 3, 12)); // NOI18N
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Shopping_Full.png"))); // NOI18N
-        jButton3.setText("Compras");
-        jButton3.setFocusable(false);
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
-            }
-        });
-        jToolBar1.add(jButton3);
-        jToolBar1.add(jSeparator2);
-
-        btnVentas.setFont(new java.awt.Font("Arial Black", 3, 12)); // NOI18N
-        btnVentas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/sign_dolar_24_1.png"))); // NOI18N
-        btnVentas.setText("Ventas");
-        btnVentas.setFocusable(false);
-        btnVentas.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnVentasActionPerformed(evt);
-            }
-        });
-        jToolBar1.add(btnVentas);
-        jToolBar1.add(jSeparator8);
-
-        btnServicios.setFont(new java.awt.Font("Arial Black", 3, 12)); // NOI18N
-        btnServicios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/dollar blue.png"))); // NOI18N
-        btnServicios.setText("Cotizaciones");
-        btnServicios.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnServiciosActionPerformed(evt);
-            }
-        });
-        jToolBar1.add(btnServicios);
-        jToolBar1.add(jSeparator10);
-
-        btnPedidos.setFont(new java.awt.Font("Arial Black", 3, 12)); // NOI18N
-        btnPedidos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/shopping_cart.png"))); // NOI18N
-        btnPedidos.setText("Pedidos");
-        btnPedidos.setFocusable(false);
-        btnPedidos.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnPedidosActionPerformed(evt);
-            }
-        });
-        jToolBar1.add(btnPedidos);
-        jToolBar1.add(jSeparator3);
-        btnAuditoria = new javax.swing.JButton();
-        jToolBar1.add(btnAuditoria);
-        
-                btnAuditoria.setFont(new java.awt.Font("Arial Black", 3, 12)); // NOI18N
-                btnAuditoria.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/edit.png"))); // NOI18N
-                btnAuditoria.setText("Auditoria");
-                btnAuditoria.setFocusable(false);
-                btnAuditoria.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-                btnAuditoria.addActionListener(new java.awt.event.ActionListener() {
-                    public void actionPerformed(java.awt.event.ActionEvent evt) {
-                        btnAuditoriaActionPerformed(evt);
-                    }
-                });
         jToolBar1.add(jSeparator4);
 
         btnSalir.setFont(new java.awt.Font("Arial Black", 3, 12)); // NOI18N
@@ -221,19 +151,12 @@ public class MDIApplication extends javax.swing.JFrame {
         });
         mnNewMenu.add(mntmOptiions);
     }
-
-
-    private javax.swing.JButton btnAuditoria;
     private javax.swing.JButton btnClientes;
     private javax.swing.JButton btnEmpleados;
     private javax.swing.JButton btnEquipos;
-    private javax.swing.JButton btnPedidos;
     private javax.swing.JButton btnProveedores;
     private javax.swing.JButton btnSalir;
-    private javax.swing.JButton btnServicios;
-    private javax.swing.JButton btnVentas;
     public static javax.swing.JDesktopPane escritorio;
-    private javax.swing.JButton jButton3;
     private javax.swing.JToolBar.Separator jSeparator1;
     private javax.swing.JToolBar.Separator jSeparator10;
     private javax.swing.JToolBar.Separator jSeparator11;
@@ -262,32 +185,12 @@ public class MDIApplication extends javax.swing.JFrame {
       cargarFormulario(EmpleadoView.class);
     }
 
-    private void btnServiciosActionPerformed(java.awt.event.ActionEvent evt) {
-        cargarFormulario(CotizacionView.class);
-    }
-
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {
       System.exit(0);
     }
 
-    private void btnVentasActionPerformed(java.awt.event.ActionEvent evt) {
-       cargarFormulario(VentaView.class);
-    }
-
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {
-        cargarFormulario(CompraView.class);
-    }
-
     private void btnProveedoresActionPerformed(java.awt.event.ActionEvent evt) {
     	cargarFormulario(FrmProveedor.class);
-    }
-
-    private void btnPedidosActionPerformed(java.awt.event.ActionEvent evt) {
-         cargarFormulario(PedidoView.class);
-    }
-
-    private void btnAuditoriaActionPerformed(java.awt.event.ActionEvent evt) {
-         cargarFormulario(FrmAuditoria.class);
     }
     
     private void cargarFormulario(Class<?> aClass) {
