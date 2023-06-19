@@ -47,7 +47,7 @@ public class EmpleadoView extends javax.swing.JInternalFrame implements ActionLi
         dcFechaIncio.setEnabled(true);
         dcFechaFin.setEnabled(true);
         dtm = (DefaultTableModel)tblEmpleado.getModel();
-        llenaTabla(false, "");
+        llenaTabla();
         buttonGroup = new ButtonGroup();
         buttonGroup.add(rbtnM);
         buttonGroup.add(rbtnF);
@@ -630,7 +630,7 @@ public class EmpleadoView extends javax.swing.JInternalFrame implements ActionLi
            System.out.println(id);
             limpiaControles();
             limpiaTabla();
-            llenaTabla(false, "");       
+            llenaTabla();       
     }
  }
 
@@ -739,7 +739,7 @@ public class EmpleadoView extends javax.swing.JInternalFrame implements ActionLi
 			 int id= Integer.parseInt(String.valueOf(dtm.getValueAt(tblEmpleado.getSelectedRow(),0)));
 			 _Empleadobo.Delete(id);
 				 limpiaTabla();
-		         llenaTabla(false, "");
+		         llenaTabla();
 		         JOptionPane.showMessageDialog(this, "Se elimnó el resgistro con exito");
 		 }
 		 catch(Exception e1){
@@ -769,7 +769,7 @@ public class EmpleadoView extends javax.swing.JInternalFrame implements ActionLi
             _Empleadobo.Create(p);
             limpiaControles();
             limpiaTabla();
-            llenaTabla(false, "");
+            llenaTabla();
             
             //  c.setCodigo(this.txtCodigoContrato.getText());
             // c.setArea(this.cbxArea.getSelectedItem().toString());
@@ -838,7 +838,7 @@ public class EmpleadoView extends javax.swing.JInternalFrame implements ActionLi
         return sw = true;
     }
 	
-	public void llenaTabla(boolean swr, String cadr)
+	public void llenaTabla()
     {
         List<Empleado> Empleados = _Empleadobo.readAll();
         int i = Empleados.size(); 

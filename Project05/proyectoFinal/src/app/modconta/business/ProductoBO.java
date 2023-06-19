@@ -26,7 +26,7 @@ public class ProductoBO implements IGeneralBO<Producto>{
 	@Override
 	public void Delete(int id) {
 
-		
+		_doProductoRep.Delete(id);
 	}
 
 	@Override

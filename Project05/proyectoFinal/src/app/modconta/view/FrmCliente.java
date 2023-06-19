@@ -46,20 +46,15 @@ public class FrmCliente extends javax.swing.JInternalFrame implements ActionList
         buttonGroup.add(jRadioButton1);
         buttonGroup.add(jRadioButton2);
         btnRegistrar = new javax.swing.JButton();
-        btnRegistrar.setBounds(606, 92, 90, 30);
-        jPanel4.add(btnRegistrar);
+        btnRegistrar.setBounds(606, 145, 90, 30);
+        jPanelRegistro.add(btnRegistrar);
         
                 btnRegistrar.setText("Registrar");
                 btnLimpiar = new javax.swing.JButton();
-                btnLimpiar.setBounds(606, 135, 90, 30);
-                jPanel4.add(btnLimpiar);
+                btnLimpiar.setBounds(606, 188, 90, 30);
+                jPanelRegistro.add(btnLimpiar);
                 
                         btnLimpiar.setText("Limpiar");
-                        
-                        btnActualizar = new JButton("Actualizar");
-                        btnActualizar.setBounds(606, 176, 90, 30);
-                        jPanel4.add(btnActualizar);
-                        btnActualizar.addActionListener(this);
                         btnLimpiar.addActionListener(new java.awt.event.ActionListener() {
                             public void actionPerformed(java.awt.event.ActionEvent evt) {
                                 btnLimpiarActionPerformed(evt);
@@ -77,7 +72,7 @@ public class FrmCliente extends javax.swing.JInternalFrame implements ActionList
                 });
         getContentPane().setLayout(null);
         getContentPane().add(lblTitulo);
-        getContentPane().add(jTabbedPane1);
+        getContentPane().add(jTabbedPaneGroupCliente);
         getContentPane().add(btnSalir);
     }
 
@@ -88,10 +83,10 @@ public class FrmCliente extends javax.swing.JInternalFrame implements ActionList
         lblTitulo.setBounds(143, 20, 574, 29);
         btnSalir = new javax.swing.JButton();
         btnSalir.setBounds(804, 490, 73, 25);
-        jTabbedPane1 = new javax.swing.JTabbedPane();
-        jTabbedPane1.setBounds(41, 68, 798, 411);
-        jTabbedPane1.setToolTipText("test");
-        jPanel3 = new javax.swing.JPanel();
+        jTabbedPaneGroupCliente = new javax.swing.JTabbedPane();
+        jTabbedPaneGroupCliente.setBounds(39, 66, 798, 411);
+        jTabbedPaneGroupCliente.setToolTipText("test");
+        jPanelBusqueda = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblCliente = new javax.swing.JTable();
@@ -118,11 +113,11 @@ public class FrmCliente extends javax.swing.JInternalFrame implements ActionList
             }
         });
 
-        jPanel3.setLayout(null);
+        jPanelBusqueda.setLayout(null);
 
         jLabel2.setText("Busqueda");
         jLabel2.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
-        jPanel3.add(jLabel2);
+        jPanelBusqueda.add(jLabel2);
         jLabel2.setBounds(20, 10, 80, 30);
         tblCliente.setToolTipText("");
         tblCliente.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -133,7 +128,7 @@ public class FrmCliente extends javax.swing.JInternalFrame implements ActionList
         });
         jScrollPane1.setViewportView(tblCliente);
 
-        jPanel3.add(jScrollPane1);
+        jPanelBusqueda.add(jScrollPane1);
         jScrollPane1.setBounds(20, 80, 744, 261);
 
         jTextField1.setName("txtBusqueda");
@@ -142,7 +137,7 @@ public class FrmCliente extends javax.swing.JInternalFrame implements ActionList
                 jTextField1ActionPerformed(evt);
             }
         });
-        jPanel4 = new javax.swing.JPanel();
+        jPanelRegistro = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel3.setBounds(50, 20, 60, 21);
         jLabel4 = new javax.swing.JLabel();
@@ -172,7 +167,7 @@ public class FrmCliente extends javax.swing.JInternalFrame implements ActionList
         jLabel8 = new javax.swing.JLabel();
         jLabel8.setBounds(50, 150, 40, 21);
         
-jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+jPanelRegistro.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
                 
  jLabel3.setText("Nombre");
                         
@@ -252,7 +247,7 @@ jPanelrbtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                                                                                                         
 jLabel8.setText("Sexo");
                                                                                                                                                         
-   jTabbedPane1.addTab("Registrar", jPanel4);
+   jTabbedPaneGroupCliente.addTab("Registrar", jPanelRegistro);
                                                                                                                                                                 
  lblApellidoMaterno = new JLabel();
  lblApellidoMaterno.setBounds(16, 97, 102, 21);
@@ -260,41 +255,41 @@ jLabel8.setText("Sexo");
                                                                                                                                                                 
  txtApellidoM = new JTextField();
 txtApellidoM.setBounds(130, 92, 189, 30);
-jPanel4.setLayout(null);
-  jPanel4.add(jLabel3);
-  jPanel4.add(jLabel4);
-  jPanel4.add(txtNombre);
- jPanel4.add(jLabel5);
-  jPanel4.add(txtRUC);
-  jPanel4.add(jLabel6);
-   jPanel4.add(txtTelefono);
- jPanel4.add(txtDNI);
- jPanel4.add(jLabel7);
-  jPanel4.add(jLabel1);
- jPanel4.add(jPanelrbtn);
-  jPanel4.add(txtDireccion);
- jPanel4.add(jLabel8);
-  jPanel4.add(lblApellidoMaterno);
- jPanel4.add(txtApellidoM);
+jPanelRegistro.setLayout(null);
+  jPanelRegistro.add(jLabel3);
+  jPanelRegistro.add(jLabel4);
+  jPanelRegistro.add(txtNombre);
+ jPanelRegistro.add(jLabel5);
+  jPanelRegistro.add(txtRUC);
+  jPanelRegistro.add(jLabel6);
+   jPanelRegistro.add(txtTelefono);
+ jPanelRegistro.add(txtDNI);
+ jPanelRegistro.add(jLabel7);
+  jPanelRegistro.add(jLabel1);
+ jPanelRegistro.add(jPanelrbtn);
+  jPanelRegistro.add(txtDireccion);
+ jPanelRegistro.add(jLabel8);
+  jPanelRegistro.add(lblApellidoMaterno);
+ jPanelRegistro.add(txtApellidoM);
 txtApellidoP = new JTextField();
 txtApellidoP.setBounds(130, 53, 189, 30);
-jPanel4.add(txtApellidoP);
-        jPanel3.add(jTextField1);
+jPanelRegistro.add(txtApellidoP);
+        jPanelBusqueda.add(jTextField1);
         jTextField1.setBounds(230, 10, 250, 30);
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "(Elija el criterio)", "Nombre", "Apellidos", "DNI", "RUC" }));
         jComboBox1.setAutoscrolls(true);
-        jPanel3.add(jComboBox1);
+        jPanelBusqueda.add(jComboBox1);
         jComboBox1.setBounds(100, 10, 120, 30);
 
-        jTabbedPane1.addTab("Búsqueda", jPanel3);
+        jTabbedPaneGroupCliente.addTab("Búsqueda", jPanelBusqueda);
         
         btnEliminar = new JButton("Eliminar Registro");
         btnEliminar.setBounds(554, 13, 111, 25);
-        jPanel3.add(btnEliminar);
+        jPanelBusqueda.add(btnEliminar);
         btnBuscar = new javax.swing.JButton();
         btnBuscar.setBounds(688, 10, 60, 30);
-        jPanel3.add(btnBuscar);
+        jPanelBusqueda.add(btnBuscar);
         
                 btnBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/buscar.gif"))); // NOI18N
                 btnBuscar.addActionListener(new java.awt.event.ActionListener() {
@@ -347,9 +342,11 @@ jPanel4.add(txtApellidoP);
     
 
     private void tblClienteMouseClicked(java.awt.event.MouseEvent evt) {
+       
         if(evt.getClickCount() == 1){
-            this.jTabbedPane1.setSelectedIndex(1);
-            //llenaModifica();
+           jTabbedPaneGroupCliente.setSelectedIndex(1);
+        FrmUpdateCliente frmUpclient = new FrmUpdateCliente();
+        frmUpclient.show();
         }
     }
     
@@ -398,13 +395,13 @@ jPanel4.add(txtApellidoP);
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanelBusqueda;
+    private javax.swing.JPanel jPanelRegistro;
     private javax.swing.JPanel jPanelrbtn;
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTabbedPane jTabbedPaneGroupCliente;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel lblTitulo;
     private javax.swing.JTable tblCliente;
@@ -416,7 +413,6 @@ jPanel4.add(txtApellidoP);
     private JLabel lblApellidoMaterno;
     private JTextField txtApellidoM;
     private JTextField txtApellidoP;
-    private JButton btnActualizar;
     private JButton btnEliminar;
     
    
@@ -425,20 +421,6 @@ jPanel4.add(txtApellidoP);
 		if (e.getSource() == btnEliminar) {
 			do_btnEliminar_actionPerformed(e);
 		}
-		if (e.getSource() == btnActualizar) {
-			do_btnActualizar_actionPerformed(e);
-		}
-	}
-	protected void do_btnActualizar_actionPerformed(ActionEvent e) {
-        
-		String nombre = String.valueOf(_DefaultTableModel.getValueAt(tblCliente.getSelectedRow(),1));
-		Cliente p = new Cliente();
-		p.setNombre(nombre.toString());
-        _Clientebo.Update(p);
-        limpiaTabla();
-        llenaTabla();
-        JOptionPane.showMessageDialog(this, "Se actuaizó el resgistro con exito");
-        
 	}
 	protected void do_btnEliminar_actionPerformed(ActionEvent e) {
 		

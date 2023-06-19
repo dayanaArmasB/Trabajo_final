@@ -54,7 +54,7 @@ public class FrmProductos extends javax.swing.JInternalFrame implements ActionLi
         txtNombre1 = new javax.swing.JTextField();
         btnLimpiar1 = new javax.swing.JButton();
         btnRegistrar1 = new javax.swing.JButton();
-        jPanel3 = new javax.swing.JPanel();
+        jPanelBusqueda = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblProductos = new javax.swing.JTable();
@@ -170,11 +170,11 @@ public class FrmProductos extends javax.swing.JInternalFrame implements ActionLi
                                                                                                                         spinstockMIN.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
                                                                                                                                 lblDescipcion = new JLabel("Descipcion");
                                                                                                                                 scrollPane = new JScrollPane();
-                                                                                                                                btnRegistrar = new JButton("Registrar");
-                                                                                                                                btnRegistrar.addActionListener(this);
                                                                                                                                 
                                                                                                                                 btnActualizar = new JButton("Actualizar");
                                                                                                                                 btnActualizar.addActionListener(this);
+                                                                                                                                btnRegistrar = new JButton("Registrar");
+                                                                                                                                btnRegistrar.addActionListener(this);
                                                                                                                         
                                                                                                                                 javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
                                                                                                                                 jPanel4Layout.setHorizontalGroup(
@@ -197,9 +197,10 @@ public class FrmProductos extends javax.swing.JInternalFrame implements ActionLi
                                                                                                                                 								.addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 318, GroupLayout.PREFERRED_SIZE))
                                                                                                                                 							.addGap(172)
                                                                                                                                 							.addGroup(jPanel4Layout.createParallelGroup(Alignment.LEADING)
-                                                                                                                                								.addComponent(btnActualizar, GroupLayout.DEFAULT_SIZE, 134, Short.MAX_VALUE)
-                                                                                                                                								.addComponent(btnLimpiar, GroupLayout.DEFAULT_SIZE, 134, Short.MAX_VALUE)
-                                                                                                                                								.addComponent(btnRegistrar, GroupLayout.DEFAULT_SIZE, 134, Short.MAX_VALUE)))
+                                                                                                                                								.addComponent(btnRegistrar, GroupLayout.PREFERRED_SIZE, 134, GroupLayout.PREFERRED_SIZE)
+                                                                                                                                								.addGroup(jPanel4Layout.createParallelGroup(Alignment.LEADING)
+                                                                                                                                									.addComponent(btnActualizar, GroupLayout.DEFAULT_SIZE, 134, Short.MAX_VALUE)
+                                                                                                                                									.addComponent(btnLimpiar, GroupLayout.DEFAULT_SIZE, 134, Short.MAX_VALUE))))
                                                                                                                                 						.addGroup(jPanel4Layout.createSequentialGroup()
                                                                                                                                 							.addGroup(jPanel4Layout.createParallelGroup(Alignment.LEADING)
                                                                                                                                 								.addGroup(jPanel4Layout.createSequentialGroup()
@@ -221,7 +222,7 @@ public class FrmProductos extends javax.swing.JInternalFrame implements ActionLi
                                                                                                                                 jPanel4Layout.setVerticalGroup(
                                                                                                                                 	jPanel4Layout.createParallelGroup(Alignment.LEADING)
                                                                                                                                 		.addGroup(jPanel4Layout.createSequentialGroup()
-                                                                                                                                			.addGroup(jPanel4Layout.createParallelGroup(Alignment.TRAILING)
+                                                                                                                                			.addGroup(jPanel4Layout.createParallelGroup(Alignment.LEADING)
                                                                                                                                 				.addGroup(jPanel4Layout.createSequentialGroup()
                                                                                                                                 					.addGap(71)
                                                                                                                                 					.addGroup(jPanel4Layout.createParallelGroup(Alignment.BASELINE)
@@ -235,12 +236,11 @@ public class FrmProductos extends javax.swing.JInternalFrame implements ActionLi
                                                                                                                                 					.addGroup(jPanel4Layout.createParallelGroup(Alignment.BASELINE)
                                                                                                                                 						.addComponent(jLabel6, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
                                                                                                                                 						.addComponent(comboModelo, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
-                                                                                                                                				.addGroup(Alignment.LEADING, jPanel4Layout.createSequentialGroup()
-                                                                                                                                					.addGap(100)
+                                                                                                                                				.addGroup(jPanel4Layout.createSequentialGroup()
+                                                                                                                                					.addGap(86)
                                                                                                                                 					.addComponent(btnRegistrar)
-                                                                                                                                					.addGap(27)
-                                                                                                                                					.addComponent(btnActualizar)
-                                                                                                                                					.addPreferredGap(ComponentPlacement.RELATED)))
+                                                                                                                                					.addGap(41)
+                                                                                                                                					.addComponent(btnActualizar)))
                                                                                                                                 			.addGroup(jPanel4Layout.createParallelGroup(Alignment.LEADING)
                                                                                                                                 				.addGroup(jPanel4Layout.createSequentialGroup()
                                                                                                                                 					.addGap(38)
@@ -322,10 +322,10 @@ public class FrmProductos extends javax.swing.JInternalFrame implements ActionLi
 
         jTabbedPane1.addTab("Marcas", jPanel5);
 
-        jPanel3.setLayout(null);
+        jPanelBusqueda.setLayout(null);
 
         jLabel2.setText("Tipo");
-        jPanel3.add(jLabel2);
+        jPanelBusqueda.add(jLabel2);
         jLabel2.setBounds(30, 28, 70, 30);
 
         tblProductos.setModel(new DefaultTableModel(
@@ -345,25 +345,30 @@ public class FrmProductos extends javax.swing.JInternalFrame implements ActionLi
         });
         jScrollPane1.setViewportView(tblProductos);
 
-        jPanel3.add(jScrollPane1);
+        jPanelBusqueda.add(jScrollPane1);
         jScrollPane1.setBounds(30, 110, 800, 350);
 
         jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel3.add(jComboBox4);
+        jPanelBusqueda.add(jComboBox4);
         jComboBox4.setBounds(110, 28, 310, 30);
-        jPanel3.add(jTextField2);
+        jPanelBusqueda.add(jTextField2);
         jTextField2.setBounds(110, 69, 310, 30);
 
         jLabel15.setText("Búsqueda");
-        jPanel3.add(jLabel15);
+        jPanelBusqueda.add(jLabel15);
         jLabel15.setBounds(30, 69, 70, 30);
 
-        jTabbedPane1.addTab("Búqueda", jPanel3);
+        jTabbedPane1.addTab("Búqueda", jPanelBusqueda);
                 jButton2 = new javax.swing.JButton();
                 jButton2.setBounds(699, 28, 60, 46);
-                jPanel3.add(jButton2);
+                jPanelBusqueda.add(jButton2);
                 
                         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/buscar.gif"))); // NOI18N
+                        
+                        btnEliminarReg = new JButton("Eliminar registro");
+                        btnEliminarReg.addActionListener(this);
+                        btnEliminarReg.setBounds(519, 41, 135, 25);
+                        jPanelBusqueda.add(btnEliminarReg);
                         jButton2.addActionListener(new java.awt.event.ActionListener() {
                             public void actionPerformed(java.awt.event.ActionEvent evt) {
                                 jButton2ActionPerformed(evt);
@@ -384,17 +389,17 @@ public class FrmProductos extends javax.swing.JInternalFrame implements ActionLi
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         layout.setHorizontalGroup(
-        	layout.createParallelGroup(Alignment.LEADING)
+        	layout.createParallelGroup(Alignment.TRAILING)
         		.addGroup(layout.createSequentialGroup()
-        			.addContainerGap(261, Short.MAX_VALUE)
+        			.addContainerGap(415, Short.MAX_VALUE)
         			.addComponent(lblTitulo, GroupLayout.PREFERRED_SIZE, 500, GroupLayout.PREFERRED_SIZE)
         			.addGap(184))
-        		.addGroup(layout.createSequentialGroup()
+        		.addGroup(Alignment.LEADING, layout.createSequentialGroup()
         			.addGap(22)
         			.addComponent(jTabbedPane1, GroupLayout.PREFERRED_SIZE, 853, GroupLayout.PREFERRED_SIZE)
-        			.addContainerGap(70, Short.MAX_VALUE))
-        		.addGroup(Alignment.TRAILING, layout.createSequentialGroup()
-        			.addContainerGap(830, Short.MAX_VALUE)
+        			.addContainerGap(224, Short.MAX_VALUE))
+        		.addGroup(layout.createSequentialGroup()
+        			.addContainerGap(982, Short.MAX_VALUE)
         			.addComponent(btnSalir1, GroupLayout.PREFERRED_SIZE, 105, GroupLayout.PREFERRED_SIZE)
         			.addContainerGap())
         );
@@ -416,7 +421,8 @@ public class FrmProductos extends javax.swing.JInternalFrame implements ActionLi
 
     private void tblEquipoMouseClicked(java.awt.event.MouseEvent evt) {
         if(evt.getClickCount() == 1){
-            this.jTabbedPane1.setSelectedIndex(1);
+           //jTabbedPane1.setSelectedIndex(1);
+        	
         }
     }
 
@@ -517,7 +523,7 @@ public class FrmProductos extends javax.swing.JInternalFrame implements ActionLi
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanelBusqueda;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
@@ -538,6 +544,7 @@ public class FrmProductos extends javax.swing.JInternalFrame implements ActionLi
     private JTextField txtDescripcion;
     private JButton btnRegistrar;
     private JButton btnActualizar;
+    private JButton btnEliminarReg;
 
     public void llenaTabla()
     {
@@ -559,6 +566,7 @@ public class FrmProductos extends javax.swing.JInternalFrame implements ActionLi
     public void limpiaControles(){
         txtNombreProduc.setText("");
         btnRegistrar.setText("Registrar");
+        txtDescripcion.setText("");
         txtNombreProduc.requestFocus();
     }
       
@@ -571,14 +579,17 @@ public class FrmProductos extends javax.swing.JInternalFrame implements ActionLi
         }
     }
     public boolean valida(){
-        boolean sw = false;
+        boolean boolIsValid = false;
         if(txtNombreProduc.getText().equals("")){
-           JOptionPane.showMessageDialog(this, "Ingrese Nombre del Product");
+           JOptionPane.showMessageDialog(this, "Ingrese Nombre del Producto");
+           return boolIsValid;
         }
         if(txtDescripcion.getText().equals("")){
               JOptionPane.showMessageDialog(this, "Ingresa la descripción");
+              return boolIsValid;
         }
-        return sw; 
+        boolIsValid = true;
+        return boolIsValid; 
     }
         
     private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {
@@ -590,6 +601,9 @@ public class FrmProductos extends javax.swing.JInternalFrame implements ActionLi
     }
 
 	public void actionPerformed(ActionEvent e) {
+		if (e.getSource() == btnEliminarReg) {
+			do_btnEliminarReg_actionPerformed(e);
+		}
 		if (e.getSource() == btnActualizar) {
 			do_btnActualizar_actionPerformed(e);
 		}
@@ -599,8 +613,8 @@ public class FrmProductos extends javax.swing.JInternalFrame implements ActionLi
 	}
 	protected void do_btnRegistrar_actionPerformed(ActionEvent e) {
 		int id = 0;
-        String pr = "";
-        if(valida() == true)
+
+        if(valida())
         {
               util u = new util();
               Producto p = new Producto();
@@ -610,15 +624,24 @@ public class FrmProductos extends javax.swing.JInternalFrame implements ActionLi
               p.setStockMax(Integer.parseInt(spinstockMAX.getValue().toString()));
               p.setStockMin(Integer.parseInt(spinstockMIN.getValue().toString()));*/
               p.setIdProducto(id);
-              JOptionPane.showMessageDialog(this, "entro 1");
               _Productobo.Create(p);
-              JOptionPane.showMessageDialog(this, "entro 2");
               limpiaControles();
               limpiaTabla();
               llenaTabla();
-              JOptionPane.showMessageDialog(this, "entro 3");
         }
 	}
 	protected void do_btnActualizar_actionPerformed(ActionEvent e) {
+	}
+	protected void do_btnEliminarReg_actionPerformed(ActionEvent e) {
+		try{
+			 int id= Integer.parseInt(String.valueOf(dtm.getValueAt(tblProductos.getSelectedRow(),0)));
+			 _Productobo.Delete(id);
+				 limpiaTabla();
+		         llenaTabla();
+		         JOptionPane.showMessageDialog(this, "Se elimnó el resgistro con exito");
+		 }
+		 catch(Exception e1){
+			 System.out.println(e1);
+		 }
 	}
 }

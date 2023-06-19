@@ -27,7 +27,7 @@ public class ProductoRepository implements IRepository<Producto>{
 	        try
 	        {    
 		        //sql = "insert into Equipo values ('"+ p.getIdProducto()+"', '"+p.getNombre()+"', "+ p.getStock()+","+ p.getStockMax()+"," +p.getStockMin()+","+p.getIdModelo()+")"; 
-		        sql = "insert into productos (ID,NOMBRE,DESCRIPCION) values ('"+ p.getIdProducto()+"', '"+p.getNombre()+"', "+ p.getDescripcion()+"')"; 
+		        sql = "insert into productos (NOMBRE,DESCRIPCION) values ('"+p.getNombre()+"', '"+ p.getDescripcion()+"')"; 
 		        System.out.println("entró");
 		        Statement s = con.getConnection().createStatement();
 	             s.executeUpdate(sql);
@@ -53,7 +53,16 @@ public class ProductoRepository implements IRepository<Producto>{
 
 	@Override
 	public void Delete(int id) {
-		
+		int resultado = 0;
+        String sql = "";
+        dbBean con = new dbBean();   
+        try{
+        	sql = "delete from productos where idproducto = '"+id+"'";
+	        resultado = con.updateSQL(sql);
+	        con.close();
+        }catch(java.sql.SQLException e){
+            e.printStackTrace();
+        }
 	}
 
 	@Override

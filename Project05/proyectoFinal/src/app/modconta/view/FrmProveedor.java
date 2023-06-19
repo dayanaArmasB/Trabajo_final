@@ -34,10 +34,10 @@ public class FrmProveedor extends javax.swing.JInternalFrame implements ActionLi
         initComponents();
         _Proveedorbo = new ProveedorBO();
         _DefaultTableModel = (DefaultTableModel)tblProveedor.getModel();
-        llenaTabla(false, "");
+        llenaTabla();
         
     }
-public void llenaTabla(boolean swr, String cadr)
+public void llenaTabla()
     {
 	List<Proveedor> Proveedores = _Proveedorbo.readAll();
         int i = Proveedores.size(); 
@@ -60,7 +60,6 @@ public void llenaTabla(boolean swr, String cadr)
         txtDireccion.setText("");
         txtRUC.setText("");
         txtCta.setText("");
-        btnRegistrar.setText("Registrar");
         txtNombre.requestFocus();
     }
     public void limpiaTabla(){
@@ -95,8 +94,6 @@ public void llenaTabla(boolean swr, String cadr)
         	return sw;
         }
     
-        
-        
         return sw = true;
     }
 
@@ -190,7 +187,7 @@ public void llenaTabla(boolean swr, String cadr)
                                     }
                                 });
                                 
-                                        txtRUC.setName("txtRUC"); // NOI18N
+                                        txtRUC.setName("txtRUC"); 
                                         txtRUC.addActionListener(new java.awt.event.ActionListener() {
                                             public void actionPerformed(java.awt.event.ActionEvent evt) {
                                                 txtRUCActionPerformed(evt);
@@ -199,7 +196,7 @@ public void llenaTabla(boolean swr, String cadr)
                                         
                                                 jLabel6.setText("Telefono");
                                                 
-                                                        txtTelefono.setName("txtDireccion"); // NOI18N
+                                                        txtTelefono.setName("txtDireccion"); 
                                                         txtTelefono.addActionListener(new java.awt.event.ActionListener() {
                                                             public void actionPerformed(java.awt.event.ActionEvent evt) {
                                                                 txtTelefonoActionPerformed(evt);
@@ -208,7 +205,7 @@ public void llenaTabla(boolean swr, String cadr)
                                                         
                                                                 jLabel7.setText("RUC");
                                                                 
-                                                                        jLabel1.setText("Direcci\u00F3n");
+                                                                        jLabel1.setText("Direccion");
                                                                         
                                                                                 jTabbedPane1.addTab("Registrar", jPanel4);
                                                                                 jPanel4.setLayout(null);
@@ -260,11 +257,7 @@ public void llenaTabla(boolean swr, String cadr)
                                                                                                 btnRegistrarActionPerformed(evt);
                                                                                             }
                                                                                         });
-                                                                                        btnRegistrar.addKeyListener(new java.awt.event.KeyAdapter() {
-                                                                                            public void keyPressed(java.awt.event.KeyEvent evt) {
-                                                                                                btnRegistrarKeyPressed(evt);
-                                                                                            }
-                                                                                        });
+
         jPanel3.add(jTextField1);
         jTextField1.setBounds(230, 10, 250, 30);
 
@@ -323,7 +316,7 @@ public void llenaTabla(boolean swr, String cadr)
 
     private void txtNombreKeyPressed(java.awt.event.KeyEvent evt) {
         if(evt.getKeyCode() == evt.VK_ENTER){
-            this.getFocusOwner().transferFocus();
+           getFocusOwner().transferFocus();
         }
     }
 
@@ -352,13 +345,10 @@ public void llenaTabla(boolean swr, String cadr)
             _Proveedorbo.Create(p);
             limpiaControles();
             limpiaTabla();
-            llenaTabla(false, "");
+            llenaTabla();
         }
     }
 
-    private void btnRegistrarKeyPressed(java.awt.event.KeyEvent evt) {
-
-    }
 
     private void txtTelefonoActionPerformed(java.awt.event.ActionEvent evt) {
       
@@ -371,7 +361,6 @@ public void llenaTabla(boolean swr, String cadr)
     private void tblClienteMouseClicked(java.awt.event.MouseEvent evt) {
         if(evt.getClickCount() == 1){
             jTabbedPane1.setSelectedIndex(1);
-            //llenaModifica();
         }
     }
 
@@ -412,7 +401,7 @@ public void llenaTabla(boolean swr, String cadr)
 			 int id= Integer.parseInt(String.valueOf(_DefaultTableModel.getValueAt(tblProveedor.getSelectedRow(),0)));
 			 _Proveedorbo.Delete(id);
 				 limpiaTabla();
-		         llenaTabla(false, "");
+		         llenaTabla();
 		         JOptionPane.showMessageDialog(this, "Se elimnó el resgistro con exito");
 		 }
 		 catch(Exception e1){
