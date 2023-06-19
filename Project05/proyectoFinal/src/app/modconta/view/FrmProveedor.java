@@ -82,13 +82,13 @@ public class FrmProveedor extends javax.swing.JInternalFrame implements ActionLi
         txtNombre = new javax.swing.JTextField();
         txtNombre.setBounds(130, 26, 310, 30);
         txtRUC = new javax.swing.JTextField();
-        txtRUC.setBounds(130, 238, 310, 30);
+        txtRUC.setBounds(130, 180, 310, 30);
         jLabel6 = new javax.swing.JLabel();
         jLabel6.setBounds(58, 131, 50, 21);
         txtTelefono = new javax.swing.JTextField();
         txtTelefono.setBounds(130, 126, 310, 30);
         jLabel7 = new javax.swing.JLabel();
-        jLabel7.setBounds(58, 238, 30, 21);
+        jLabel7.setBounds(58, 185, 30, 21);
         jLabel1 = new javax.swing.JLabel();
         jLabel1.setBounds(58, 80, 70, 20);
         txtDireccion = new javax.swing.JTextField();
@@ -142,12 +142,12 @@ public class FrmProveedor extends javax.swing.JInternalFrame implements ActionLi
                                                                                 
                                                                                 txtCta = new JTextField();
                                                                                 txtCta.setName("txtRUC");
-                                                                                txtCta.setBounds(130, 285, 310, 30);
+                                                                                txtCta.setBounds(130, 231, 310, 30);
                                                                                 jPanel4.add(txtCta);
                                                                                 
                                                                                 JLabel lblCuentaCorriente = new JLabel();
                                                                                 lblCuentaCorriente.setText("Cuenta Corriente");
-                                                                                lblCuentaCorriente.setBounds(10, 290, 116, 21);
+                                                                                lblCuentaCorriente.setBounds(12, 231, 116, 21);
                                                                                 jPanel4.add(lblCuentaCorriente);
                                                                                 btnRegistrar = new javax.swing.JButton();
                                                                                 btnRegistrar.setBounds(581, 99, 90, 30);
@@ -243,9 +243,7 @@ public class FrmProveedor extends javax.swing.JInternalFrame implements ActionLi
     }
 
     private void tblClienteMouseClicked(java.awt.event.MouseEvent evt) {
-        if(evt.getClickCount() == 1){
-            jTabbedPane1.setSelectedIndex(1);
-        }
+
     }
 
     private javax.swing.JButton btnLimpiar;

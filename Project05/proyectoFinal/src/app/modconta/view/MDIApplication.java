@@ -121,15 +121,13 @@ public class MDIApplication extends javax.swing.JFrame {
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         layout.setHorizontalGroup(
         	layout.createParallelGroup(Alignment.LEADING)
-        		.addGroup(layout.createSequentialGroup()
-        			.addComponent(escritorio, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-        			.addContainerGap(24, Short.MAX_VALUE))
+        		.addComponent(escritorio, GroupLayout.DEFAULT_SIZE, 1455, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
         	layout.createParallelGroup(Alignment.LEADING)
         		.addGroup(layout.createSequentialGroup()
-        			.addComponent(escritorio, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-        			.addContainerGap(223, Short.MAX_VALUE))
+        			.addComponent(escritorio, GroupLayout.PREFERRED_SIZE, 718, GroupLayout.PREFERRED_SIZE)
+        			.addContainerGap(41, Short.MAX_VALUE))
         );
         getContentPane().setLayout(layout);
 

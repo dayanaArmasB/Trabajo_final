@@ -314,14 +314,7 @@ jPanelRegistro.add(txtApellidoP);
     
 
     private void tblClienteMouseClicked(java.awt.event.MouseEvent evt) {
-       
-        if(evt.getClickCount() == 1){
-           jTabbedPaneGroupCliente.setSelectedIndex(1);
-        FrmUpdateCliente frmUpclient = new FrmUpdateCliente();
-        frmUpclient.show();
 
-        
-        }
     }
     
 
