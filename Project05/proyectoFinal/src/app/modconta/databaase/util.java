@@ -17,7 +17,6 @@ public class util {
                 countReg = result.getInt(1);
                 result.close();
                 if(countReg > 0){
-                    System.out.append("Entrooo IM");
                     try{
                         sql = "SELECT MAX("+ nombCamp +") AS idMax FROM "+ nombTbl +"";
                         
@@ -57,13 +56,7 @@ public class util {
             x = 3;
         }
         return x;
-        //Reglas
-            //Para DISPOSITIVO
-                //NO ACTIVO: Cuando no esta asignado a algún area o permanece en almacen informática
-                //ACTIVO: Cuando ya está asignado a algún area <> a almacen informática
-            //Para PERSONAL
-                //NO ACTIVO:
-                //ACTIVO:
+
     }
 
     public String estados(int whatEver){
@@ -155,13 +148,12 @@ public class util {
         }
           return fecha;
      }
+        
    public int numRows(String sql){
             String bigSQL= "";
             int nR = 0;
             dbBean con = new dbBean();
             bigSQL = "SELECT COUNT(*) AS NumReg FROM ("+ sql +") DERIVEDTBL";
-
-            //System.out.println("bigSQL  "+bigSQL);
 
             try{
                 ResultSet resultado = con.execSQL(bigSQL);
@@ -189,7 +181,7 @@ public class util {
             return null; 
         }        
         return resultado; 
-    } 
+    }
 }
 
 

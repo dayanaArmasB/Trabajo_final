@@ -2,7 +2,6 @@ package app.modconta.view;
 import app.modconta.business.ProductoBO;
 import app.modconta.databaase.Helper;
 import app.modconta.databaase.dbBean;
-import app.modconta.databaase.util;
 import app.modconta.entity.Producto;
 import java.sql.Connection;
 import java.util.HashMap;
@@ -55,12 +54,8 @@ public class FrmProductos extends javax.swing.JInternalFrame implements ActionLi
         btnLimpiar1 = new javax.swing.JButton();
         btnRegistrar1 = new javax.swing.JButton();
         jPanelBusqueda = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblProductos = new javax.swing.JTable();
-        jComboBox4 = new javax.swing.JComboBox<>();
-        jTextField2 = new javax.swing.JTextField();
-        jLabel15 = new javax.swing.JLabel();
         lblTitulo = new javax.swing.JLabel();
         setIconifiable(true);
         setMaximizable(true);
@@ -324,10 +319,6 @@ public class FrmProductos extends javax.swing.JInternalFrame implements ActionLi
 
         jPanelBusqueda.setLayout(null);
 
-        jLabel2.setText("Tipo");
-        jPanelBusqueda.add(jLabel2);
-        jLabel2.setBounds(30, 28, 70, 30);
-
         tblProductos.setModel(new DefaultTableModel(
         	new Object[][] {
         	},
@@ -348,26 +339,16 @@ public class FrmProductos extends javax.swing.JInternalFrame implements ActionLi
         jPanelBusqueda.add(jScrollPane1);
         jScrollPane1.setBounds(30, 110, 800, 350);
 
-        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanelBusqueda.add(jComboBox4);
-        jComboBox4.setBounds(110, 28, 310, 30);
-        jPanelBusqueda.add(jTextField2);
-        jTextField2.setBounds(110, 69, 310, 30);
-
-        jLabel15.setText("Búsqueda");
-        jPanelBusqueda.add(jLabel15);
-        jLabel15.setBounds(30, 69, 70, 30);
-
         jTabbedPane1.addTab("Búqueda", jPanelBusqueda);
                 jButton2 = new javax.swing.JButton();
-                jButton2.setBounds(699, 28, 60, 46);
+                jButton2.setBounds(393, 29, 60, 46);
                 jPanelBusqueda.add(jButton2);
                 
                         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/buscar.gif"))); // NOI18N
                         
                         btnEliminarReg = new JButton("Eliminar registro");
                         btnEliminarReg.addActionListener(this);
-                        btnEliminarReg.setBounds(519, 41, 135, 25);
+                        btnEliminarReg.setBounds(221, 40, 135, 25);
                         jPanelBusqueda.add(btnEliminarReg);
                         jButton2.addActionListener(new java.awt.event.ActionListener() {
                             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -512,13 +493,10 @@ public class FrmProductos extends javax.swing.JInternalFrame implements ActionLi
     private javax.swing.JComboBox<String> comboModelo;
     private javax.swing.JButton jButton2;
     private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JComboBox<String> jComboBox4;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;
@@ -529,7 +507,6 @@ public class FrmProductos extends javax.swing.JInternalFrame implements ActionLi
     private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTextField jTextField2;
     private javax.swing.JLabel lblMarca;
     private javax.swing.JLabel lblTitulo;
     private javax.swing.JSpinner spinstock;
@@ -549,8 +526,8 @@ public class FrmProductos extends javax.swing.JInternalFrame implements ActionLi
     public void llenaTabla()
     {
          List<Producto> equip = _Productobo.readAll();
-        int i = equip.size(); 
-        for(int j = 0; j<i;j++){
+         int i = equip.size(); 
+         for(int j = 0; j<i;j++){
           Vector vect = new Vector();
           vect.addElement(equip.get(j).getIdProducto());
           vect.addElement(equip.get(j).getNombre());
@@ -565,7 +542,6 @@ public class FrmProductos extends javax.swing.JInternalFrame implements ActionLi
     } 
     public void limpiaControles(){
         txtNombreProduc.setText("");
-        btnRegistrar.setText("Registrar");
         txtDescripcion.setText("");
         txtNombreProduc.requestFocus();
     }
@@ -616,7 +592,6 @@ public class FrmProductos extends javax.swing.JInternalFrame implements ActionLi
 
         if(valida())
         {
-              util u = new util();
               Producto p = new Producto();
               p.setNombre(txtNombreProduc.getText());
               p.setDescripcion(txtDescripcion.getText());
@@ -628,6 +603,7 @@ public class FrmProductos extends javax.swing.JInternalFrame implements ActionLi
               limpiaControles();
               limpiaTabla();
               llenaTabla();
+              JOptionPane.showMessageDialog(this, "se registro con exito");
         }
 	}
 	protected void do_btnActualizar_actionPerformed(ActionEvent e) {

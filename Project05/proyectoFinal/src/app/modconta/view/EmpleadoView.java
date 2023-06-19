@@ -5,20 +5,11 @@ import app.modconta.entity.Contrato;
 import app.modconta.entity.Empleado;
 import MODEL.ContratoDAO;
 import static java.lang.Float.parseFloat;
-import java.sql.Connection;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.time.LocalDate;
 import java.util.Calendar;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Vector;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-import net.sf.jasperreports.engine.JasperCompileManager;
-import net.sf.jasperreports.engine.JasperFillManager;
-import net.sf.jasperreports.engine.JasperReport;
-import net.sf.jasperreports.view.JasperViewer;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.GroupLayout;
 import javax.swing.LayoutStyle.ComponentPlacement;
@@ -29,6 +20,7 @@ import javax.swing.JLabel;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.ImageIcon;
 
 public class EmpleadoView extends javax.swing.JInternalFrame implements ActionListener {
 	EmpleadoBO _Empleadobo;
@@ -61,16 +53,6 @@ public class EmpleadoView extends javax.swing.JInternalFrame implements ActionLi
                 jPanel4.add(btnLimpiar);
                 
                         btnLimpiar.setText("Limpiar");
-                        jButton2 = new javax.swing.JButton();
-                        jButton2.setBounds(541, 189, 57, 47);
-                        jPanel4.add(jButton2);
-                        
-                                jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/buscar.gif")));
-                                jButton2.addActionListener(new java.awt.event.ActionListener() {
-                                    public void actionPerformed(java.awt.event.ActionEvent evt) {
-                                        jButton2ActionPerformed(evt);
-                                    }
-                                });
                         btnLimpiar.addActionListener(new java.awt.event.ActionListener() {
                             public void actionPerformed(java.awt.event.ActionEvent evt) {
                                 btnLimpiarActionPerformed(evt);
@@ -128,11 +110,8 @@ public class EmpleadoView extends javax.swing.JInternalFrame implements ActionLi
         idint2 = new javax.swing.JTextField();
         jLabel17 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblEmpleado = new javax.swing.JTable();
-        jTextField1 = new javax.swing.JTextField();
-        jComboBox3 = new javax.swing.JComboBox<>();
         btnSalir = new javax.swing.JButton();
         lblTitulo = new javax.swing.JLabel();
         setIconifiable(true);
@@ -406,10 +385,6 @@ public class EmpleadoView extends javax.swing.JInternalFrame implements ActionLi
 
         jPanel3.setLayout(null);
 
-        jLabel2.setText("Búsqueda");
-        jPanel3.add(jLabel2);
-        jLabel2.setBounds(10, 30, 60, 20);
-
         tblEmpleado.setModel(new DefaultTableModel(
         	new Object[][] {
         	},
@@ -429,26 +404,17 @@ public class EmpleadoView extends javax.swing.JInternalFrame implements ActionLi
         jPanel3.add(jScrollPane1);
         jScrollPane1.setBounds(10, 60, 610, 200);
 
-        jTextField1.setName("txtBusqueda");
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
-            }
-        });
-        jPanel3.add(jTextField1);
-        jTextField1.setBounds(230, 20, 300, 30);
-
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "(Elija el criterio)" }));
-        jComboBox3.setToolTipText("");
-        jPanel3.add(jComboBox3);
-        jComboBox3.setBounds(70, 20, 150, 30);
-
         jTabbedPane1.addTab("Búsqueda", jPanel3);
         
         btnEliminar = new JButton("Eliminar registro");
         btnEliminar.addActionListener(this);
-        btnEliminar.setBounds(258, 307, 109, 23);
+        btnEliminar.setBounds(148, 299, 211, 23);
         jPanel3.add(btnEliminar);
+        
+        button = new JButton();
+        button.setIcon(new ImageIcon(EmpleadoView.class.getResource("/Icons/buscar.gif")));
+        button.setBounds(382, 286, 57, 47);
+        jPanel3.add(button);
 
         btnSalir.setText("Salir");
         btnSalir.addActionListener(new java.awt.event.ActionListener() {
@@ -521,9 +487,6 @@ public class EmpleadoView extends javax.swing.JInternalFrame implements ActionLi
         if(evt.getKeyCode() == evt.VK_ENTER){
             this.getFocusOwner().transferFocus();
         }
-    }
-
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {
     }
 
     private void tblClienteMouseClicked(java.awt.event.MouseEvent evt) {
@@ -649,27 +612,6 @@ public class EmpleadoView extends javax.swing.JInternalFrame implements ActionLi
       
     }
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {
-        int x ;
-        x = Integer.parseInt(JOptionPane.showInputDialog(" Ingrese el codigo del Empleado"));
-        //try {
-            /*creamos un objeto dbBean
-            dbBean aux = new dbBean();
-            HashMap map = new HashMap();
-            //Connection cn = DriverManager.getConnection("jdbc:sqlserver://localhost:1433;databaseName=ST;user=sa;password=sasasa;");
-            Connection cn = aux.getConnection();
-            JasperReport jr= JasperCompileManager.compileReport("src/REPORTS/EmpleadoReporte.jrxml");
-            map.put("idCliente",x);
-            JasperPrint jp = JasperFillManager.fillReport(jr,map,cn);
-            // JasperPrint jp= JasperFillManager.fillReport(jr,idClie,cn);
-
-            JasperViewer jv= new JasperViewer(jp,false);
-            jv.setVisible(true);
-        } catch (Exception e) {
-            System.out.println(e);*/
-        //}
-    }
-
     private javax.swing.JButton btnLimpiar;
     private javax.swing.JButton btnLimpiar1;
     private javax.swing.JButton btnRegistrar;
@@ -680,8 +622,6 @@ public class EmpleadoView extends javax.swing.JInternalFrame implements ActionLi
     private com.toedter.calendar.JDateChooser dcFechaFin;
     private com.toedter.calendar.JDateChooser dcFechaIncio;
     private javax.swing.JTextField idint2;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JComboBox<String> jComboBox3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -690,7 +630,6 @@ public class EmpleadoView extends javax.swing.JInternalFrame implements ActionLi
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -704,7 +643,6 @@ public class EmpleadoView extends javax.swing.JInternalFrame implements ActionLi
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel lblTitulo;
     private javax.swing.JRadioButton rbtnF;
     private javax.swing.JRadioButton rbtnM;
@@ -721,6 +659,7 @@ public class EmpleadoView extends javax.swing.JInternalFrame implements ActionLi
     private JTextField txtApellidoM;
     private JLabel lblApellidoMaterno;
     private JButton btnEliminar;
+    private JButton button;
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == btnEliminar) {
 			do_btnEliminar_actionPerformed(e);
@@ -749,11 +688,9 @@ public class EmpleadoView extends javax.swing.JInternalFrame implements ActionLi
 	}
 	private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {
         
-        String proc = btnRegistrar.getText();
+
         int id = 0;
-        String pr = ""; 
             if(valida()){
-            util u = new util();
             Empleado p = new Empleado();
             p.setApellidoPaterno(txtApellidoP.getText());
             p.setApellidoMaterno(txtApellidoM.getText());
@@ -770,6 +707,7 @@ public class EmpleadoView extends javax.swing.JInternalFrame implements ActionLi
             limpiaControles();
             limpiaTabla();
             llenaTabla();
+            JOptionPane.showMessageDialog(this, "se registro con exito");
             
             //  c.setCodigo(this.txtCodigoContrato.getText());
             // c.setArea(this.cbxArea.getSelectedItem().toString());

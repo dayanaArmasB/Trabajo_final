@@ -4,23 +4,19 @@
  */
 package app.modconta.view;
 import app.modconta.business.ProveedorBO;
-import app.modconta.databaase.dbBean;
-import app.modconta.databaase.util;
 import app.modconta.entity.Proveedor;
 import java.awt.event.ActionListener;
-import java.sql.Connection;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Vector;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.GroupLayout;
-import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionEvent;
+import javax.swing.ImageIcon;
 
 public class FrmProveedor extends javax.swing.JInternalFrame implements ActionListener {
 	ProveedorBO _Proveedorbo;
@@ -37,74 +33,14 @@ public class FrmProveedor extends javax.swing.JInternalFrame implements ActionLi
         llenaTabla();
         
     }
-public void llenaTabla()
-    {
-	List<Proveedor> Proveedores = _Proveedorbo.readAll();
-        int i = Proveedores.size(); 
-        for(int j = 0; j<i;j++){
-            Vector vect = new Vector();
-            vect.addElement(Proveedores.get(j).getIdProveedor());
-            vect.addElement(Proveedores.get(j).getNombre());
-            vect.addElement(Proveedores.get(j).getDireccion());
-            vect.addElement(Proveedores.get(j).getTelefono());
-            vect.addElement(Proveedores.get(j).getEstado());
-            vect.addElement(Proveedores.get(j).getRUC());
-            vect.addElement(Proveedores.get(j).getCTA());
-            _DefaultTableModel.addRow(vect);
-        }
-        
-    }     
-       public void limpiaControles(){
-        txtNombre.setText("");
-        txtTelefono.setText("");
-        txtDireccion.setText("");
-        txtRUC.setText("");
-        txtCta.setText("");
-        txtNombre.requestFocus();
-    }
-    public void limpiaTabla(){
-        DefaultTableModel dm = (DefaultTableModel)this.tblProveedor.getModel();
-        if(dm.getRowCount()>0){
-            while(dm.getRowCount()>0){
-                dm.removeRow(dm.getRowCount()-1);
-            }
-        }
-    }
-    public boolean valida(){
-        boolean sw = false;
-        if (txtNombre.getText().equals("")) {
-        	JOptionPane.showMessageDialog(this, "Ingrese Nombres");
-        	return sw;
-		}
 
-        if(txtDireccion.getText().equals("")){
-        	JOptionPane.showMessageDialog(this, "Debe ingresar direccion");
-        	return sw;
-        }
-        if(txtTelefono.getText().equals("")){
-        	JOptionPane.showMessageDialog(this, "Debe ingresar telefono");
-        	return sw;
-        }
-        if(txtRUC.getText().equals("")){
-        	JOptionPane.showMessageDialog(this, "Debe ingresar RUC");
-        	return sw;
-        }
-        if(txtCta.getText().equals("")){
-        	JOptionPane.showMessageDialog(this, "Debe ingresar Numero de cuenta");
-        	return sw;
-        }
-    
-        return sw = true;
-    }
 
-   
     private void initComponents() {
         lblTitulo = new javax.swing.JLabel();
         btnSalir = new javax.swing.JButton();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jTabbedPane1.setToolTipText("test");
         jPanel3 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblProveedor = new javax.swing.JTable();
         tblProveedor.setModel(new DefaultTableModel(
@@ -116,8 +52,6 @@ public void llenaTabla()
         ));
         tblProveedor.getColumnModel().getColumn(4).setResizable(false);
         tblProveedor.getColumnModel().getColumn(6).setPreferredWidth(121);
-        jTextField1 = new javax.swing.JTextField();
-        jComboBox1 = new javax.swing.JComboBox<>();
 
         lblTitulo.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         lblTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -131,11 +65,6 @@ public void llenaTabla()
         });
 
         jPanel3.setLayout(null);
-
-        jLabel2.setText("Busqueda");
-        jLabel2.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
-        jPanel3.add(jLabel2);
-        jLabel2.setBounds(20, 10, 80, 30);
         tblProveedor.setToolTipText("");
         tblProveedor.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         tblProveedor.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -147,13 +76,6 @@ public void llenaTabla()
 
         jPanel3.add(jScrollPane1);
         jScrollPane1.setBounds(20, 80, 744, 261);
-
-        jTextField1.setName("txtBusqueda");
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
-            }
-        });
         jPanel4 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel3.setBounds(58, 31, 60, 21);
@@ -237,16 +159,6 @@ public void llenaTabla()
                                                                                         jPanel4.add(btnLimpiar);
                                                                                         
                                                                                                 btnLimpiar.setText("Limpiar");
-                                                                                                jButton2 = new javax.swing.JButton();
-                                                                                                jButton2.setBounds(597, 202, 60, 32);
-                                                                                                jPanel4.add(jButton2);
-                                                                                                
-                                                                                                        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/buscar.gif")));
-                                                                                                        jButton2.addActionListener(new java.awt.event.ActionListener() {
-                                                                                                            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                                                                                                                jButton2ActionPerformed(evt);
-                                                                                                            }
-                                                                                                        });
                                                                                                 btnLimpiar.addActionListener(new java.awt.event.ActionListener() {
                                                                                                     public void actionPerformed(java.awt.event.ActionEvent evt) {
                                                                                                         btnLimpiarActionPerformed(evt);
@@ -258,21 +170,18 @@ public void llenaTabla()
                                                                                             }
                                                                                         });
 
-        jPanel3.add(jTextField1);
-        jTextField1.setBounds(230, 10, 250, 30);
-
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "(Elija el criterio)", "Nombre", "Apellidos", "DNI", "RUC" }));
-        jComboBox1.setAutoscrolls(true);
-        jPanel3.add(jComboBox1);
-        jComboBox1.setBounds(100, 10, 120, 30);
-
         jTabbedPane1.addTab("Búsqueda", jPanel3);
         {
         	btnEliminar = new JButton("Eliminar registro");
         	btnEliminar.addActionListener(this);
-        	btnEliminar.setBounds(644, 14, 120, 23);
+        	btnEliminar.setBounds(217, 27, 190, 23);
         	jPanel3.add(btnEliminar);
         }
+        
+        button = new JButton();
+        button.setIcon(new ImageIcon(FrmProveedor.class.getResource("/Icons/buscar.gif")));
+        button.setBounds(435, 18, 60, 32);
+        jPanel3.add(button);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         layout.setHorizontalGroup(
@@ -306,9 +215,7 @@ public void llenaTabla()
         pack();
     }
 
-    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {
-        this.dispose();
-    }
+
 
     private void txtNombreActionPerformed(java.awt.event.ActionEvent evt) {
 
@@ -328,13 +235,52 @@ public void llenaTabla()
        
     }
 
-    private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {
+    
 
-        String proc = this.btnRegistrar.getText();
+
+    private void txtTelefonoActionPerformed(java.awt.event.ActionEvent evt) {
+      
+    }
+
+    private void tblClienteMouseClicked(java.awt.event.MouseEvent evt) {
+        if(evt.getClickCount() == 1){
+            jTabbedPane1.setSelectedIndex(1);
+        }
+    }
+
+    private javax.swing.JButton btnLimpiar;
+    private javax.swing.JButton btnRegistrar;
+    private javax.swing.JButton btnSalir;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JLabel lblTitulo;
+    private javax.swing.JTable tblProveedor;
+    private javax.swing.JTextField txtDireccion;
+    private javax.swing.JTextField txtNombre;
+    private javax.swing.JTextField txtRUC;
+    private javax.swing.JTextField txtTelefono;
+    private JTextField txtCta;
+    private JButton btnEliminar;
+    private JButton button;
+	public void actionPerformed(ActionEvent arg0) {
+		if (arg0.getSource() == btnEliminar) {
+			do_btnEliminar_actionPerformed(arg0);
+		}
+	}
+	
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {
+        this.dispose();
+    }
+	private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {
+
         int id = 0;
-        String pr = "";
         if(valida()){
-            util u = new util();
             Proveedor p = new Proveedor();
             p.setNombre(txtNombre.getText());
             p.setTelefono(txtTelefono.getText());
@@ -346,56 +292,9 @@ public void llenaTabla()
             limpiaControles();
             limpiaTabla();
             llenaTabla();
+            JOptionPane.showMessageDialog(this, "se registro con exito");
         }
     }
-
-
-    private void txtTelefonoActionPerformed(java.awt.event.ActionEvent evt) {
-      
-    }
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {
-
-    }
-
-    private void tblClienteMouseClicked(java.awt.event.MouseEvent evt) {
-        if(evt.getClickCount() == 1){
-            jTabbedPane1.setSelectedIndex(1);
-        }
-    }
-
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {
-      
-    }
-
-    private javax.swing.JButton btnLimpiar;
-    private javax.swing.JButton btnRegistrar;
-    private javax.swing.JButton btnSalir;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JLabel lblTitulo;
-    private javax.swing.JTable tblProveedor;
-    private javax.swing.JTextField txtDireccion;
-    private javax.swing.JTextField txtNombre;
-    private javax.swing.JTextField txtRUC;
-    private javax.swing.JTextField txtTelefono;
-    private JTextField txtCta;
-    private JButton btnEliminar;
-	public void actionPerformed(ActionEvent arg0) {
-		if (arg0.getSource() == btnEliminar) {
-			do_btnEliminar_actionPerformed(arg0);
-		}
-	}
 	protected void do_btnEliminar_actionPerformed(ActionEvent arg0) {
 		try{
 			 int id= Integer.parseInt(String.valueOf(_DefaultTableModel.getValueAt(tblProveedor.getSelectedRow(),0)));
@@ -408,4 +307,64 @@ public void llenaTabla()
 			 System.out.println(e1);
 		 }
 	}
+	
+	public void llenaTabla()
+    {
+	List<Proveedor> Proveedores = _Proveedorbo.readAll();
+        int i = Proveedores.size(); 
+        for(int j = 0; j<i;j++){
+            Vector vect = new Vector();
+            vect.addElement(Proveedores.get(j).getIdProveedor());
+            vect.addElement(Proveedores.get(j).getNombre());
+            vect.addElement(Proveedores.get(j).getDireccion());
+            vect.addElement(Proveedores.get(j).getTelefono());
+            vect.addElement(Proveedores.get(j).getEstado());
+            vect.addElement(Proveedores.get(j).getRUC());
+            vect.addElement(Proveedores.get(j).getCTA());
+            _DefaultTableModel.addRow(vect);
+        }
+        
+    }     
+       public void limpiaControles(){
+        txtNombre.setText("");
+        txtTelefono.setText("");
+        txtDireccion.setText("");
+        txtRUC.setText("");
+        txtCta.setText("");
+        txtNombre.requestFocus();
+    }
+    public void limpiaTabla(){
+        DefaultTableModel dm = (DefaultTableModel)this.tblProveedor.getModel();
+        if(dm.getRowCount()>0){
+            while(dm.getRowCount()>0){
+                dm.removeRow(dm.getRowCount()-1);
+            }
+        }
+    }
+    public boolean valida(){
+        boolean sw = false;
+        if (txtNombre.getText().equals("")) {
+        	JOptionPane.showMessageDialog(this, "Ingrese Nombres");
+        	return sw;
+		}
+
+        if(txtDireccion.getText().equals("")){
+        	JOptionPane.showMessageDialog(this, "Debe ingresar direccion");
+        	return sw;
+        }
+        if(txtTelefono.getText().equals("")){
+        	JOptionPane.showMessageDialog(this, "Debe ingresar telefono");
+        	return sw;
+        }
+        if(txtRUC.getText().equals("")){
+        	JOptionPane.showMessageDialog(this, "Debe ingresar RUC");
+        	return sw;
+        }
+        if(txtCta.getText().equals("")){
+        	JOptionPane.showMessageDialog(this, "Debe ingresar Numero de cuenta");
+        	return sw;
+        }
+    
+        return sw = true;
+    }
 }

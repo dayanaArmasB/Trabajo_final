@@ -30,22 +30,6 @@ public class ProveedorRepository implements IRepository<Proveedor> {
         }catch(java.sql.SQLException e){
             e.printStackTrace();
         }	
-        
-        /*int resultado=0;
-        String sql="";
-        dbBean con=new dbBean();
-        if (proc.equals("insert")) {
-            sql=" insert into Proveedor values("+p.getIdProveedor()+", '"+p.getRazonSocial()+"', '"+p.getTelefono()+"', '"+p.getDireccion()+"', '"+p.getRUC()+"')";
-        }
-        if(proc.equals("update")){
-                sql=" update Proveedor set RazonSocial = '"+p.getRazonSocial()+"',Telefono='"+p.getTelefono()+"', Direccion='"+p.getDireccion()+"', RUC='"+p.getRUC()+"' where IdProveedor="+p.getIdProveedor();
-        }
-        
-        try {
-            resultado=con.updateSQL(sql);
-        } catch (java.sql.SQLException e) {
-        }
-        return resultado;*/
 	}
 
 	@Override

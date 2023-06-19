@@ -54,6 +54,8 @@ public class FrmUpdateCliente extends JFrame {
 	}
 
 	public FrmUpdateCliente() {
+		//int id= Integer.parseInt(String.valueOf(_DefaultTableModel.getValueAt(tblCliente.getSelectedRow(),0)));
+		//txtApellM.setText(id);
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 868, 544);
 		contentPane = new JPanel();
@@ -65,7 +67,7 @@ public class FrmUpdateCliente extends JFrame {
 			label.setText("ACTUALIZAR DATOS CLIENTES");
 			label.setHorizontalAlignment(SwingConstants.CENTER);
 			label.setFont(new Font("Tahoma", Font.BOLD, 24));
-			label.setBounds(134, 13, 574, 29);
+			label.setBounds(164, 13, 574, 29);
 			contentPane.add(label);
 		}
 		{
@@ -129,7 +131,7 @@ public class FrmUpdateCliente extends JFrame {
 				}
 				{
 					label_5 = new JLabel();
-					label_5.setText("Direcci\u00F3n");
+					label_5.setText("Direccion");
 					label_5.setBounds(12, 215, 70, 20);
 					panel.add(label_5);
 				}
@@ -181,6 +183,7 @@ public class FrmUpdateCliente extends JFrame {
 				}
 			}
 		}
+		
 	}
 
 }

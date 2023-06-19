@@ -222,47 +222,6 @@ public class MDIApplication extends javax.swing.JFrame {
         mnNewMenu.add(mntmOptiions);
     }
 
-    private void btnClientesActionPerformed(java.awt.event.ActionEvent evt) {
-        cargarFormulario(FrmCliente.class);
-    }
-
-    private void btnEquiposActionPerformed(java.awt.event.ActionEvent evt) {
-        cargarFormulario(FrmProductos.class);
-    }
-
-    private void btnEmpleadosActionPerformed(java.awt.event.ActionEvent evt) {
-      cargarFormulario(EmpleadoView.class);
-    }
-
-    private void btnServiciosActionPerformed(java.awt.event.ActionEvent evt) {
-        cargarFormulario(CotizacionView.class);
-    }
-
-    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {
-      System.exit(0);
-      //cargarFormulario(Login.class);
-    }
-
-    private void btnVentasActionPerformed(java.awt.event.ActionEvent evt) {
-       cargarFormulario(VentaView.class);
-    }
-
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {
-        cargarFormulario(CompraView.class);
-    }
-
-    private void btnProveedoresActionPerformed(java.awt.event.ActionEvent evt) {
-    	cargarFormulario(FrmProveedor.class);
-    }
-
-    private void btnPedidosActionPerformed(java.awt.event.ActionEvent evt) {
-         cargarFormulario(PedidoView.class);
-    }
-
-    private void btnAuditoriaActionPerformed(java.awt.event.ActionEvent evt) {
-         cargarFormulario(FrmAuditoria.class);
-    }
-
 
     private javax.swing.JButton btnAuditoria;
     private javax.swing.JButton btnClientes;
@@ -291,6 +250,46 @@ public class MDIApplication extends javax.swing.JFrame {
     private JMenu mnNewMenu;
     private JMenuItem mntmOptiions;
 
+    private void btnClientesActionPerformed(java.awt.event.ActionEvent evt) {
+        cargarFormulario(FrmCliente.class);
+    }
+
+    private void btnEquiposActionPerformed(java.awt.event.ActionEvent evt) {
+        cargarFormulario(FrmProductos.class);
+    }
+
+    private void btnEmpleadosActionPerformed(java.awt.event.ActionEvent evt) {
+      cargarFormulario(EmpleadoView.class);
+    }
+
+    private void btnServiciosActionPerformed(java.awt.event.ActionEvent evt) {
+        cargarFormulario(CotizacionView.class);
+    }
+
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {
+      System.exit(0);
+    }
+
+    private void btnVentasActionPerformed(java.awt.event.ActionEvent evt) {
+       cargarFormulario(VentaView.class);
+    }
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {
+        cargarFormulario(CompraView.class);
+    }
+
+    private void btnProveedoresActionPerformed(java.awt.event.ActionEvent evt) {
+    	cargarFormulario(FrmProveedor.class);
+    }
+
+    private void btnPedidosActionPerformed(java.awt.event.ActionEvent evt) {
+         cargarFormulario(PedidoView.class);
+    }
+
+    private void btnAuditoriaActionPerformed(java.awt.event.ActionEvent evt) {
+         cargarFormulario(FrmAuditoria.class);
+    }
+    
     private void cargarFormulario(Class<?> aClass) {
         try {
 

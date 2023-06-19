@@ -4,23 +4,17 @@
  */
 package app.modconta.view;
 import app.modconta.business.ClienteBO;
-import app.modconta.databaase.dbBean;
-import app.modconta.databaase.util;
 import app.modconta.entity.Cliente;
-import java.sql.Connection;
 import java.util.List;
 import java.util.Vector;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.GroupLayout.Alignment;
 import javax.swing.ButtonGroup;
-import javax.swing.GroupLayout;
-import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
-import java.awt.Dialog.ModalExclusionType;
+
 import java.awt.event.ActionEvent;
 
 
@@ -87,7 +81,6 @@ public class FrmCliente extends javax.swing.JInternalFrame implements ActionList
         jTabbedPaneGroupCliente.setBounds(39, 66, 798, 411);
         jTabbedPaneGroupCliente.setToolTipText("test");
         jPanelBusqueda = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblCliente = new javax.swing.JTable();
         tblCliente.setModel(new DefaultTableModel(
@@ -99,8 +92,6 @@ public class FrmCliente extends javax.swing.JInternalFrame implements ActionList
         ));
         tblCliente.getColumnModel().getColumn(2).setPreferredWidth(110);
         tblCliente.getColumnModel().getColumn(3).setPreferredWidth(114);
-        jTextField1 = new javax.swing.JTextField();
-        jComboBox1 = new javax.swing.JComboBox<>();
 
         lblTitulo.setFont(new java.awt.Font("Tahoma", 1, 24));
         lblTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -114,11 +105,6 @@ public class FrmCliente extends javax.swing.JInternalFrame implements ActionList
         });
 
         jPanelBusqueda.setLayout(null);
-
-        jLabel2.setText("Busqueda");
-        jLabel2.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
-        jPanelBusqueda.add(jLabel2);
-        jLabel2.setBounds(20, 10, 80, 30);
         tblCliente.setToolTipText("");
         tblCliente.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         tblCliente.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -130,13 +116,6 @@ public class FrmCliente extends javax.swing.JInternalFrame implements ActionList
 
         jPanelBusqueda.add(jScrollPane1);
         jScrollPane1.setBounds(20, 80, 744, 261);
-
-        jTextField1.setName("txtBusqueda");
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
-            }
-        });
         jPanelRegistro = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel3.setBounds(50, 20, 60, 21);
@@ -274,21 +253,14 @@ jPanelRegistro.setLayout(null);
 txtApellidoP = new JTextField();
 txtApellidoP.setBounds(130, 53, 189, 30);
 jPanelRegistro.add(txtApellidoP);
-        jPanelBusqueda.add(jTextField1);
-        jTextField1.setBounds(230, 10, 250, 30);
-
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "(Elija el criterio)", "Nombre", "Apellidos", "DNI", "RUC" }));
-        jComboBox1.setAutoscrolls(true);
-        jPanelBusqueda.add(jComboBox1);
-        jComboBox1.setBounds(100, 10, 120, 30);
 
         jTabbedPaneGroupCliente.addTab("Búsqueda", jPanelBusqueda);
         
         btnEliminar = new JButton("Eliminar Registro");
-        btnEliminar.setBounds(554, 13, 111, 25);
+        btnEliminar.setBounds(253, 26, 159, 25);
         jPanelBusqueda.add(btnEliminar);
         btnBuscar = new javax.swing.JButton();
-        btnBuscar.setBounds(688, 10, 60, 30);
+        btnBuscar.setBounds(428, 13, 60, 43);
         jPanelBusqueda.add(btnBuscar);
         
                 btnBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/buscar.gif"))); // NOI18N
@@ -347,6 +319,8 @@ jPanelRegistro.add(txtApellidoP);
            jTabbedPaneGroupCliente.setSelectedIndex(1);
         FrmUpdateCliente frmUpclient = new FrmUpdateCliente();
         frmUpclient.show();
+
+        
         }
     }
     
@@ -377,18 +351,11 @@ jPanelRegistro.add(txtApellidoP);
         jv.setVisible(true);*/
     }
 
-    
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {
-        
-    }
-
     private javax.swing.JButton btnLimpiar;
     private javax.swing.JButton btnRegistrar;
     private javax.swing.JButton btnSalir;
     private javax.swing.JButton btnBuscar;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -402,7 +369,6 @@ jPanelRegistro.add(txtApellidoP);
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTabbedPane jTabbedPaneGroupCliente;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel lblTitulo;
     private javax.swing.JTable tblCliente;
     private javax.swing.JTextField txtDNI;
@@ -444,9 +410,7 @@ jPanelRegistro.add(txtApellidoP);
 	private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {
 
         int id = 0;
-        String pr = "";
         if(valida()){
-            util u = new util();
             Cliente p = new Cliente();
             p.setNombre(txtNombre.getText());
             p.setApellidoP(txtApellidoP.getText());
@@ -464,6 +428,7 @@ jPanelRegistro.add(txtApellidoP);
             limpiaControles();
             limpiaTabla();
             llenaTabla();
+            JOptionPane.showMessageDialog(this, "se registro con exito");
         }
     }
 	
