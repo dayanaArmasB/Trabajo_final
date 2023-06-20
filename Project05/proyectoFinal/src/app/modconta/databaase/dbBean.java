@@ -27,7 +27,7 @@ public class dbBean {
         try {
             Class.forName(dbDriver);
              cn = DriverManager.getConnection(Constantes.CADENA_CONEXION);
-             this.dbCon = cn;
+             dbCon = cn;
            } catch (Exception e) {
             System.out.println(e);
            }
