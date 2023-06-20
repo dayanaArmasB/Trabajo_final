@@ -16,7 +16,6 @@ public class EmpleadoRepository implements IRepository<Empleado> {
 	
 	@Override
 	public void Create(Empleado p) {
-		int resultado = 0;
         String sql = "";
         dbBean con = new dbBean();
         try{

@@ -8,9 +8,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
-import javax.sound.midi.SysexMessage;
-
 import app.modconta.databaase.dbBean;
 import app.modconta.entity.Producto;
 
@@ -21,7 +18,6 @@ public class ProductoRepository implements IRepository<Producto>{
 
 	@Override
 	public void Create(Producto p) {
-		   int resultado = 0;
 	        String sql = "";
 	        dbBean con = new dbBean();
 	        try

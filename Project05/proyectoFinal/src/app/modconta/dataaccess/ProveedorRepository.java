@@ -19,7 +19,6 @@ public class ProveedorRepository implements IRepository<Proveedor> {
 
 	@Override
 	public void Create(Proveedor p) {
-		int resultado = 0;
         String sql = "";
         dbBean con = new dbBean();
         try{

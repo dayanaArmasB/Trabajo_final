@@ -6,7 +6,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -20,7 +19,6 @@ public class ClienteRepository implements IRepository<Cliente> {
 
 	@Override
 	public void Create(Cliente p) {
-		int resultado = 0;
         String sql = "";
         dbBean con = new dbBean();
         try{
