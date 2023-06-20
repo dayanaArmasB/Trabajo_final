@@ -8,7 +8,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
 import app.modconta.databaase.dbBean;
 import app.modconta.entity.Cliente;
 
@@ -64,20 +63,21 @@ public class ClienteRepository implements IRepository<Cliente> {
 	@Override
 	public Cliente Find(int code) {
 		
-		int resultado = 0;
         String sql = "";
         dbBean con = new dbBean();
         
         	try{
              	sql = "SELECT * FROM clientes WHERE idCliente = '"+code+"'";
-     	        resultado = con.updateSQL(sql);
-     	       //resultado = con.execSQL(sql);
+             	Statement s = con.getConnection().createStatement();
+                s.executeUpdate(sql);
      	        con.close();
              }catch(java.sql.SQLException e){
                  e.printStackTrace();
              } 
         	 return null;
-	}
+        	 
+		}	
+ 
 	
 
 	@Override

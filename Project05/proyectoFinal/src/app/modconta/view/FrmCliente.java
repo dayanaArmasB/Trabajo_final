@@ -375,12 +375,10 @@ jPanelRegistro.add(txtApellidoP);
         int x ;
         x = Integer.parseInt(JOptionPane.showInputDialog(" Ingrese el codigo del Cliente"));
         try {
-           
         	_Clientebo.Find(x);
             JOptionPane.showMessageDialog(this, "Se encontró el resgistro con exito");
-            
         } catch (Exception e) {
-        	JOptionPane.showMessageDialog(this, "error ");
+        	JOptionPane.showMessageDialog(this, "no existe el codigo ingresado");
         }
         
         /*creamos un objeto dbBean
