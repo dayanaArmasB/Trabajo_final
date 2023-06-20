@@ -11,8 +11,10 @@ public class Empleado {
     private String DNI;
     private String Sexo; 
     private String Estado;
-    private String CodigoContrato;
     private String Rol;
+    private int Sueldo; 
+    private String Cargo;
+    private String Area;
     
     
 
@@ -24,9 +26,6 @@ public class Empleado {
 		Rol = rol;
 	}
 
-	public String getCodigoContrato() {
-        return CodigoContrato;
-    }
 
     public String getApellidoPaterno() {
 		return ApellidoPaterno;
@@ -52,10 +51,6 @@ public class Empleado {
 		Estado = estado;
 	}
 
-	public void setCodigoContrato(String CodigoContrato) {
-        this.CodigoContrato = CodigoContrato;
-    }
-    
     
     public String getSexo() {
         return Sexo;
@@ -105,5 +100,31 @@ public class Empleado {
     public void setDNI(String DNI) {
         this.DNI = DNI;
     }
+
+	public int getSueldo() {
+		return Sueldo;
+	}
+
+	public void setSueldo(int sueldo) {
+		Sueldo = sueldo;
+	}
+
+	public String getCargo() {
+		return Cargo;
+	}
+
+	public void setCargo(String cargo) {
+		Cargo = cargo;
+	}
+
+	public String getArea() {
+		return Area;
+	}
+
+	public void setArea(String area) {
+		Area = area;
+	}
+    
+    
    
 }

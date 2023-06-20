@@ -41,18 +41,6 @@ public class FrmProductos extends javax.swing.JInternalFrame implements ActionLi
     private void initComponents() {
 
         jTabbedPane1 = new javax.swing.JTabbedPane();
-        jPanel6 = new javax.swing.JPanel();
-        jLabel13 = new javax.swing.JLabel();
-        txtNombre2 = new javax.swing.JTextField();
-        btnLimpiar2 = new javax.swing.JButton();
-        btnRegistrar2 = new javax.swing.JButton();
-        jLabel14 = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox<>();
-        jPanel5 = new javax.swing.JPanel();
-        jLabel8 = new javax.swing.JLabel();
-        txtNombre1 = new javax.swing.JTextField();
-        btnLimpiar1 = new javax.swing.JButton();
-        btnRegistrar1 = new javax.swing.JButton();
         jPanelBusqueda = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblProductos = new javax.swing.JTable();
@@ -65,54 +53,10 @@ public class FrmProductos extends javax.swing.JInternalFrame implements ActionLi
         setVisible(true);
 
         jTabbedPane1.setMaximumSize(new java.awt.Dimension(32769, 32769));
-
-        jPanel6.setLayout(null);
-
-        jLabel13.setText("Nombre");
-        jPanel6.add(jLabel13);
-        jLabel13.setBounds(40, 20, 50, 30);
-
-        txtNombre2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNombre2ActionPerformed(evt);
-            }
-        });
-        txtNombre2.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                txtNombre2KeyPressed(evt);
-            }
-        });
-        jPanel6.add(txtNombre2);
-        txtNombre2.setBounds(100, 20, 370, 30);
-
-        btnLimpiar2.setText("Limpiar");
-        btnLimpiar2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnLimpiar2ActionPerformed(evt);
-            }
-        });
-        jPanel6.add(btnLimpiar2);
-        btnLimpiar2.setBounds(290, 120, 120, 25);
-
-        btnRegistrar2.setText("Registrar");
-        btnRegistrar2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRegistrar2ActionPerformed(evt);
-            }
-        });
-        btnRegistrar2.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                btnRegistrar2KeyPressed(evt);
-            }
-        });
         jPanel4 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        lblMarca = new javax.swing.JLabel();
         txtNombreProduc = new javax.swing.JTextField();
         btnLimpiar = new javax.swing.JButton();
-        jLabel6 = new javax.swing.JLabel();
-        comboMarca = new javax.swing.JComboBox<>();
-        comboModelo = new javax.swing.JComboBox<>();
         jLabel4 = new javax.swing.JLabel();
         spinstock = new javax.swing.JSpinner();
         jLabel11 = new javax.swing.JLabel();
@@ -123,8 +67,6 @@ public class FrmProductos extends javax.swing.JInternalFrame implements ActionLi
                 jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
                 
                         jLabel3.setText("Nombre");
-                        
-                                lblMarca.setText("Marca");
                                 
                                         txtNombreProduc.addKeyListener(new java.awt.event.KeyAdapter() {
                                             public void keyPressed(java.awt.event.KeyEvent evt) {
@@ -138,19 +80,6 @@ public class FrmProductos extends javax.swing.JInternalFrame implements ActionLi
                                                         btnLimpiarActionPerformed(evt);
                                                     }
                                                 });
-                                                
-                                                        jLabel6.setText("Modelo");
-                                                        
-                                                                comboMarca.addMouseListener(new java.awt.event.MouseAdapter() {
-                                                                    public void mouseClicked(java.awt.event.MouseEvent evt) {
-                                                                        comboMarcaMouseClicked(evt);
-                                                                    }
-                                                                });
-                                                                comboMarca.addActionListener(new java.awt.event.ActionListener() {
-                                                                    public void actionPerformed(java.awt.event.ActionEvent evt) {
-                                                                        comboMarcaActionPerformed(evt);
-                                                                    }
-                                                                });
                                                                         
                                                                                 jLabel4.setText("Stock");
                                                                                 
@@ -178,75 +107,52 @@ public class FrmProductos extends javax.swing.JInternalFrame implements ActionLi
                                                                                                                                 			.addGap(31)
                                                                                                                                 			.addGroup(jPanel4Layout.createParallelGroup(Alignment.LEADING)
                                                                                                                                 				.addGroup(jPanel4Layout.createSequentialGroup()
-                                                                                                                                					.addComponent(jLabel12, GroupLayout.PREFERRED_SIZE, 120, GroupLayout.PREFERRED_SIZE)
-                                                                                                                                					.addGap(18)
-                                                                                                                                					.addComponent(spinstockMIN, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)
-                                                                                                                                					.addGap(627))
+                                                                                                                                					.addComponent(lblDescipcion)
+                                                                                                                                					.addContainerGap())
                                                                                                                                 				.addGroup(jPanel4Layout.createParallelGroup(Alignment.LEADING)
                                                                                                                                 					.addGroup(jPanel4Layout.createSequentialGroup()
-                                                                                                                                						.addComponent(jLabel6, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)
-                                                                                                                                						.addContainerGap())
+                                                                                                                                						.addComponent(jLabel12, GroupLayout.PREFERRED_SIZE, 120, GroupLayout.PREFERRED_SIZE)
+                                                                                                                                						.addGap(18)
+                                                                                                                                						.addComponent(spinstockMIN, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)
+                                                                                                                                						.addGap(627))
                                                                                                                                 					.addGroup(jPanel4Layout.createSequentialGroup()
                                                                                                                                 						.addGroup(jPanel4Layout.createParallelGroup(Alignment.LEADING)
-                                                                                                                                							.addGroup(jPanel4Layout.createSequentialGroup()
-                                                                                                                                								.addGroup(jPanel4Layout.createParallelGroup(Alignment.LEADING)
-                                                                                                                                									.addGroup(jPanel4Layout.createSequentialGroup()
-                                                                                                                                										.addGroup(jPanel4Layout.createParallelGroup(Alignment.LEADING)
-                                                                                                                                											.addComponent(lblMarca, GroupLayout.PREFERRED_SIZE, 70, GroupLayout.PREFERRED_SIZE)
-                                                                                                                                											.addComponent(lblDescipcion)
-                                                                                                                                											.addComponent(jLabel4, GroupLayout.PREFERRED_SIZE, 34, GroupLayout.PREFERRED_SIZE))
-                                                                                                                                										.addGap(18)
-                                                                                                                                										.addGroup(jPanel4Layout.createParallelGroup(Alignment.LEADING)
-                                                                                                                                											.addComponent(spinstock, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)
-                                                                                                                                											.addComponent(txtDescripcion, GroupLayout.PREFERRED_SIZE, 316, GroupLayout.PREFERRED_SIZE)
-                                                                                                                                											.addComponent(comboModelo, GroupLayout.PREFERRED_SIZE, 310, GroupLayout.PREFERRED_SIZE)
-                                                                                                                                											.addComponent(comboMarca, GroupLayout.PREFERRED_SIZE, 310, GroupLayout.PREFERRED_SIZE)))
-                                                                                                                                									.addGroup(jPanel4Layout.createSequentialGroup()
-                                                                                                                                										.addComponent(jLabel11, GroupLayout.PREFERRED_SIZE, 130, GroupLayout.PREFERRED_SIZE)
-                                                                                                                                										.addGap(18)
-                                                                                                                                										.addComponent(spinstockMAX, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)))
-                                                                                                                                								.addGap(172)
-                                                                                                                                								.addGroup(jPanel4Layout.createParallelGroup(Alignment.LEADING)
-                                                                                                                                									.addComponent(btnRegistrar, GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
-                                                                                                                                									.addComponent(btnLimpiar, GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)))
-                                                                                                                                							.addGroup(jPanel4Layout.createSequentialGroup()
-                                                                                                                                								.addComponent(jLabel3, GroupLayout.PREFERRED_SIZE, 80, GroupLayout.PREFERRED_SIZE)
-                                                                                                                                								.addPreferredGap(ComponentPlacement.RELATED)
-                                                                                                                                								.addComponent(txtNombreProduc, GroupLayout.PREFERRED_SIZE, 310, GroupLayout.PREFERRED_SIZE)))
-                                                                                                                                						.addGap(99)))))
+                                                                                                                                							.addComponent(jLabel3, GroupLayout.PREFERRED_SIZE, 80, GroupLayout.PREFERRED_SIZE)
+                                                                                                                                							.addComponent(jLabel4, GroupLayout.PREFERRED_SIZE, 34, GroupLayout.PREFERRED_SIZE)
+                                                                                                                                							.addComponent(jLabel11, GroupLayout.PREFERRED_SIZE, 130, GroupLayout.PREFERRED_SIZE))
+                                                                                                                                						.addPreferredGap(ComponentPlacement.RELATED)
+                                                                                                                                						.addGroup(jPanel4Layout.createParallelGroup(Alignment.LEADING)
+                                                                                                                                							.addGroup(jPanel4Layout.createParallelGroup(Alignment.LEADING)
+                                                                                                                                								.addComponent(spinstock, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)
+                                                                                                                                								.addGroup(jPanel4Layout.createSequentialGroup()
+                                                                                                                                									.addGroup(jPanel4Layout.createParallelGroup(Alignment.TRAILING, false)
+                                                                                                                                										.addComponent(txtDescripcion, Alignment.LEADING)
+                                                                                                                                										.addComponent(txtNombreProduc, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 310, Short.MAX_VALUE))
+                                                                                                                                									.addGap(6)))
+                                                                                                                                							.addComponent(spinstockMAX, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE))
+                                                                                                                                						.addContainerGap(455, Short.MAX_VALUE)))))
+                                                                                                                                		.addGroup(jPanel4Layout.createSequentialGroup()
+                                                                                                                                			.addGap(247)
+                                                                                                                                			.addComponent(btnRegistrar, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                                                                                                			.addGap(104)
+                                                                                                                                			.addComponent(btnLimpiar, GroupLayout.DEFAULT_SIZE, 85, Short.MAX_VALUE)
+                                                                                                                                			.addGap(410))
                                                                                                                                 );
                                                                                                                                 jPanel4Layout.setVerticalGroup(
                                                                                                                                 	jPanel4Layout.createParallelGroup(Alignment.LEADING)
                                                                                                                                 		.addGroup(jPanel4Layout.createSequentialGroup()
-                                                                                                                                			.addGroup(jPanel4Layout.createParallelGroup(Alignment.TRAILING)
-                                                                                                                                				.addGroup(jPanel4Layout.createSequentialGroup()
-                                                                                                                                					.addGap(28)
-                                                                                                                                					.addGroup(jPanel4Layout.createParallelGroup(Alignment.BASELINE)
-                                                                                                                                						.addComponent(jLabel3)
-                                                                                                                                						.addComponent(txtNombreProduc, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE))
-                                                                                                                                					.addGap(18)
-                                                                                                                                					.addGroup(jPanel4Layout.createParallelGroup(Alignment.BASELINE)
-                                                                                                                                						.addComponent(lblMarca, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
-                                                                                                                                						.addComponent(comboMarca, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-                                                                                                                                					.addGap(18)
-                                                                                                                                					.addGroup(jPanel4Layout.createParallelGroup(Alignment.BASELINE)
-                                                                                                                                						.addComponent(jLabel6, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
-                                                                                                                                						.addComponent(comboModelo, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-                                                                                                                                					.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                                                                                                					.addGroup(jPanel4Layout.createParallelGroup(Alignment.BASELINE)
-                                                                                                                                						.addComponent(lblDescipcion)
-                                                                                                                                						.addComponent(txtDescripcion, GroupLayout.PREFERRED_SIZE, 48, GroupLayout.PREFERRED_SIZE))
-                                                                                                                                					.addGap(30)
-                                                                                                                                					.addGroup(jPanel4Layout.createParallelGroup(Alignment.BASELINE)
-                                                                                                                                						.addComponent(jLabel4, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
-                                                                                                                                						.addComponent(spinstock, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE))
-                                                                                                                                					.addGap(10))
-                                                                                                                                				.addGroup(jPanel4Layout.createSequentialGroup()
-                                                                                                                                					.addContainerGap()
-                                                                                                                                					.addComponent(btnRegistrar)
-                                                                                                                                					.addGap(18)
-                                                                                                                                					.addComponent(btnLimpiar)
-                                                                                                                                					.addGap(32)))
+                                                                                                                                			.addGap(28)
+                                                                                                                                			.addGroup(jPanel4Layout.createParallelGroup(Alignment.BASELINE)
+                                                                                                                                				.addComponent(jLabel3)
+                                                                                                                                				.addComponent(txtNombreProduc, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE))
+                                                                                                                                			.addGap(31)
+                                                                                                                                			.addGroup(jPanel4Layout.createParallelGroup(Alignment.BASELINE)
+                                                                                                                                				.addComponent(lblDescipcion)
+                                                                                                                                				.addComponent(txtDescripcion, GroupLayout.PREFERRED_SIZE, 48, GroupLayout.PREFERRED_SIZE))
+                                                                                                                                			.addGap(32)
+                                                                                                                                			.addGroup(jPanel4Layout.createParallelGroup(Alignment.BASELINE)
+                                                                                                                                				.addComponent(spinstock, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+                                                                                                                                				.addComponent(jLabel4, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE))
                                                                                                                                 			.addGap(18)
                                                                                                                                 			.addGroup(jPanel4Layout.createParallelGroup(Alignment.BASELINE)
                                                                                                                                 				.addComponent(jLabel11, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
@@ -255,60 +161,14 @@ public class FrmProductos extends javax.swing.JInternalFrame implements ActionLi
                                                                                                                                 			.addGroup(jPanel4Layout.createParallelGroup(Alignment.BASELINE)
                                                                                                                                 				.addComponent(jLabel12, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
                                                                                                                                 				.addComponent(spinstockMIN, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE))
-                                                                                                                                			.addContainerGap(93, Short.MAX_VALUE))
+                                                                                                                                			.addGap(72)
+                                                                                                                                			.addGroup(jPanel4Layout.createParallelGroup(Alignment.BASELINE)
+                                                                                                                                				.addComponent(btnRegistrar)
+                                                                                                                                				.addComponent(btnLimpiar))
+                                                                                                                                			.addContainerGap(60, Short.MAX_VALUE))
                                                                                                                                 );
            jPanel4.setLayout(jPanel4Layout);
             jTabbedPane1.addTab("Productos", jPanel4);
-        jPanel6.add(btnRegistrar2);
-        btnRegistrar2.setBounds(170, 120, 110, 25);
-
-        jLabel14.setText("Marca");
-        jPanel6.add(jLabel14);
-        jLabel14.setBounds(40, 70, 35, 16);
-
-        jPanel6.add(jComboBox2);
-        jComboBox2.setBounds(100, 60, 80, 30);
-
-        jTabbedPane1.addTab("Modelos", jPanel6);
-
-        jPanel5.setLayout(null);
-
-        jLabel8.setText("Nombre");
-        jPanel5.add(jLabel8);
-        jLabel8.setBounds(50, 20, 60, 20);
-
-        txtNombre1.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                txtNombre1KeyPressed(evt);
-            }
-        });
-        jPanel5.add(txtNombre1);
-        txtNombre1.setBounds(120, 20, 320, 30);
-
-        btnLimpiar1.setText("Limpiar");
-        btnLimpiar1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnLimpiar1ActionPerformed(evt);
-            }
-        });
-        jPanel5.add(btnLimpiar1);
-        btnLimpiar1.setBounds(320, 70, 120, 25);
-
-        btnRegistrar1.setText("Registrar");
-        btnRegistrar1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRegistrar1ActionPerformed(evt);
-            }
-        });
-        btnRegistrar1.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                btnRegistrar1KeyPressed(evt);
-            }
-        });
-        jPanel5.add(btnRegistrar1);
-        btnRegistrar1.setBounds(200, 70, 110, 25);
-
-        jTabbedPane1.addTab("Marcas", jPanel5);
 
         jPanelBusqueda.setLayout(null);
 
@@ -316,10 +176,10 @@ public class FrmProductos extends javax.swing.JInternalFrame implements ActionLi
         	new Object[][] {
         	},
         	new String[] {
-        		"ID", "Nombre", "Descripcion", "Marca", "Modelo", "Stock actual", "Stock maximo", "Stock minimo"
+        		"ID", "Nombre", "Descripcion", "Stock actual", "Stock maximo", "Stock minimo"
         	}
         ));
-        tblProductos.getColumnModel().getColumn(6).setResizable(false);
+        tblProductos.getColumnModel().getColumn(4).setResizable(false);
         tblProductos.setToolTipText("");
         tblProductos.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         tblProductos.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -406,53 +266,6 @@ public class FrmProductos extends javax.swing.JInternalFrame implements ActionLi
         }
     }
 
-
-
-    private void txtNombre1KeyPressed(java.awt.event.KeyEvent evt) {
-        
-    }
-
-    private void btnLimpiar1ActionPerformed(java.awt.event.ActionEvent evt) {
-       
-    }
-
-    private void btnRegistrar1ActionPerformed(java.awt.event.ActionEvent evt) {
-        
-    }
-
-    private void btnRegistrar1KeyPressed(java.awt.event.KeyEvent evt) {
-        
-    }
-
-    private void btnRegistrar2KeyPressed(java.awt.event.KeyEvent evt) {
-        
-    }
-
-    private void btnRegistrar2ActionPerformed(java.awt.event.ActionEvent evt) {
-       
-    }
-
-    private void btnLimpiar2ActionPerformed(java.awt.event.ActionEvent evt) {
-
-    }
-
-    private void txtNombre2KeyPressed(java.awt.event.KeyEvent evt) {
-       
-    }
-
-    private void comboMarcaActionPerformed(java.awt.event.ActionEvent evt) {
-
-     comboModelo.setModel(h.getvaluesofModelo("Modelo",comboMarca.getSelectedItem().toString()));   
-    }
-
-    private void comboMarcaMouseClicked(java.awt.event.MouseEvent evt) {
-    
-    }
-
-    private void txtNombre2ActionPerformed(java.awt.event.ActionEvent evt) {
-        
-    }
-
    
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {
@@ -477,37 +290,21 @@ public class FrmProductos extends javax.swing.JInternalFrame implements ActionLi
     }
 
     private javax.swing.JButton btnLimpiar;
-    private javax.swing.JButton btnLimpiar1;
-    private javax.swing.JButton btnLimpiar2;
-    private javax.swing.JButton btnRegistrar1;
-    private javax.swing.JButton btnRegistrar2;
     private javax.swing.JButton btnSalir1;
-    private javax.swing.JComboBox<String> comboMarca;
-    private javax.swing.JComboBox<String> comboModelo;
     private javax.swing.JButton jButton2;
-    private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanelBusqueda;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JLabel lblMarca;
     private javax.swing.JLabel lblTitulo;
     private javax.swing.JSpinner spinstock;
     private javax.swing.JSpinner spinstockMAX;
     private javax.swing.JSpinner spinstockMIN;
     private javax.swing.JTable tblProductos;
-    private javax.swing.JTextField txtNombre1;
-    private javax.swing.JTextField txtNombre2;
     private javax.swing.JTextField txtNombreProduc;
     private JLabel lblDescipcion;
     private JTextField txtDescripcion;
