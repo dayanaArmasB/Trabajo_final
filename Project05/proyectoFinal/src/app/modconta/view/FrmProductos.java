@@ -17,7 +17,6 @@ import java.awt.event.ActionEvent;
 
 public class FrmProductos extends javax.swing.JInternalFrame implements ActionListener {
     
-
     ProductoBO _Productobo;
     DefaultTableModel dtm;
     int idProd; 
@@ -167,10 +166,10 @@ public class FrmProductos extends javax.swing.JInternalFrame implements ActionLi
         	new Object[][] {
         	},
         	new String[] {
-        		"ID", "Nombre", "Descripcion", "Stock actual", "Stock maximo", "Stock minimo"
+        		"ID", "Nombre", "Descripcion", "Estado", "Stock actual", "Stock maximo", "Stock minimo"
         	}
         ));
-        tblProductos.getColumnModel().getColumn(4).setResizable(false);
+        tblProductos.getColumnModel().getColumn(5).setResizable(false);
         tblProductos.setToolTipText("");
         tblProductos.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         tblProductos.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -286,9 +285,10 @@ public class FrmProductos extends javax.swing.JInternalFrame implements ActionLi
           vect.addElement(produc.get(j).getIdProducto());
           vect.addElement(produc.get(j).getNombre());
           vect.addElement(produc.get(j).getDescripcion());
-          /*vect.addElement(produc.get(j).getStock());
+          vect.addElement(produc.get(j).getEstado());
+          vect.addElement(produc.get(j).getStock());
           vect.addElement(produc.get(j).getStockMax());
-          vect.addElement(produc.get(j).getStockMin());*/
+          vect.addElement(produc.get(j).getStockMin());
           dtm.addRow(vect);
         }
             
@@ -296,6 +296,9 @@ public class FrmProductos extends javax.swing.JInternalFrame implements ActionLi
     public void limpiaControles(){
         txtNombreProduc.setText("");
         txtDescripcion.setText("");
+        spinstock.setValue(0);
+        spinstockMAX.setValue(0);
+        spinstockMIN.setValue(0);
         txtNombreProduc.requestFocus();
     }
       
@@ -317,8 +320,8 @@ public class FrmProductos extends javax.swing.JInternalFrame implements ActionLi
               JOptionPane.showMessageDialog(this, "Ingresa la descripción");
               return boolIsValid;
         }
-        boolIsValid = true;
-        return boolIsValid; 
+        
+        return boolIsValid = true;
     }
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {
         int x ;
@@ -368,9 +371,9 @@ public class FrmProductos extends javax.swing.JInternalFrame implements ActionLi
               Producto p = new Producto();
               p.setNombre(txtNombreProduc.getText());
               p.setDescripcion(txtDescripcion.getText());
-              /*p.setStock(Integer.parseInt(spinstock.getValue().toString()));
+              p.setStock(Integer.parseInt(spinstock.getValue().toString()));
               p.setStockMax(Integer.parseInt(spinstockMAX.getValue().toString()));
-              p.setStockMin(Integer.parseInt(spinstockMIN.getValue().toString()));*/
+              p.setStockMin(Integer.parseInt(spinstockMIN.getValue().toString()));
               p.setIdProducto(id);
               _Productobo.Create(p);
               limpiaControles();

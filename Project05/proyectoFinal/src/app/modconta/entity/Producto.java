@@ -10,15 +10,13 @@ public class Producto
     private int Stock;
     private int StockMax;
     private int StockMin;
-    private int idModelo;
-    private int idCategoria;
+    private String Estado;
     
     public Producto() {
     }
 
 
-	public Producto(int idProducto, String nombre, String descripcion, int stock, int stockMax, int stockMin,
-			int idModelo, int idCategoria) {
+	public Producto(int idProducto, String nombre, String descripcion, int stock, int stockMax, int stockMin) {
 		super();
 		this.idProducto = idProducto;
 		Nombre = nombre;
@@ -26,8 +24,17 @@ public class Producto
 		Stock = stock;
 		StockMax = stockMax;
 		StockMin = stockMin;
-		this.idModelo = idModelo;
-		this.idCategoria = idCategoria;
+	}
+
+	
+
+	public String getEstado() {
+		return Estado;
+	}
+
+
+	public void setEstado(String estado) {
+		Estado = estado;
 	}
 
 
@@ -80,22 +87,7 @@ public class Producto
 		StockMin = stockMin;
 	}
 
-	public int getIdModelo() {
-		return idModelo;
-	}
-
-	public void setIdModelo(int idModelo) {
-		this.idModelo = idModelo;
-	}
-
-	public int getIdCategoria() {
-		return idCategoria;
-	}
-
-	public void setIdCategoria(int idCategoria) {
-		this.idCategoria = idCategoria;
-	}
-    
+	
 
   
     

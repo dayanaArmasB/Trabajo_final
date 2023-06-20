@@ -26,8 +26,7 @@ public class ProductoRepository implements IRepository<Producto>{
 	        dbBean con = new dbBean();
 	        try
 	        {    
-		        //sql = "insert into Equipo values ('"+ p.getIdProducto()+"', '"+p.getNombre()+"', "+ p.getStock()+","+ p.getStockMax()+"," +p.getStockMin()+","+p.getIdModelo()+")"; 
-		        sql = "insert into productos (NOMBRE,DESCRIPCION) values ('"+p.getNombre()+"', '"+ p.getDescripcion()+"')"; 
+		        sql = "insert into productos (nombre,descripcion,estado,Stock,Stock_max,Stock_min) values ('"+p.getNombre()+"', '"+ p.getDescripcion()+"', 'S', '"+ p.getStock()+"', '"+ p.getStockMax()+"', '"+ p.getStockMin()+"')"; 
 		        Statement s = con.getConnection().createStatement();
 	             s.executeUpdate(sql);
 	            con.close();
@@ -87,6 +86,10 @@ public class ProductoRepository implements IRepository<Producto>{
 	                Produc.setIdProducto(resultado.getInt(1));
 	                Produc.setNombre(resultado.getString(2));
 	                Produc.setDescripcion(resultado.getString(3));
+	                Produc.setEstado(resultado.getString(4));
+	                Produc.setStock(resultado.getInt(5));
+	                Produc.setStockMax(resultado.getInt(6));
+	                Produc.setStockMin(resultado.getInt(7));
 	                ProductosCollection.add(Produc);
 	            }            
 	            con.close();
