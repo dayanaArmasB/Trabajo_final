@@ -4,8 +4,6 @@
  * and open the template in the editor.
  */
 package app.modconta.view;
-
-import app.modconta.databaase.dbBean;
 import app.modconta.databaase.util;
 import java.awt.HeadlessException;
 import java.awt.event.KeyEvent;

@@ -5,26 +5,10 @@
  */
 package app.modconta.view;
 
-import app.modconta.databaase.dbBean;
-import java.awt.Color;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import net.sf.jasperreports.engine.JasperCompileManager;
-import net.sf.jasperreports.engine.JasperFillManager;
-import net.sf.jasperreports.engine.JasperPrint;
-import net.sf.jasperreports.engine.JasperReport;
-import net.sf.jasperreports.engine.design.JasperDesign;
-import net.sf.jasperreports.engine.xml.JRXmlLoader;
-import net.sf.jasperreports.view.JasperViewer;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.GroupLayout;
 import javax.swing.LayoutStyle.ComponentPlacement;
-import javax.swing.JScrollPane;
-import javax.swing.JTable;
 import javax.swing.SwingUtilities;
-import javax.swing.DefaultComboBoxModel;
 import java.awt.Font;
 import java.awt.Window;
 
@@ -52,9 +36,6 @@ public class FrmTemas extends javax.swing.JInternalFrame {
     }
 
      
- 
-
-    @SuppressWarnings("unchecked")
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
@@ -139,7 +120,7 @@ public class FrmTemas extends javax.swing.JInternalFrame {
 
     private void btnLeerActionPerformed(java.awt.event.ActionEvent evt) {
         try {
-        //FrmTemas.setDefaultLookAndFeelDecorated(true);
+
          javax.swing.UIManager.setLookAndFeel("com.jtattoo.plaf.fast.FastLookAndFeel");
          //Obtén todas las ventanas abiertas en tu aplicación
          Window[] windows = Window.getWindows();
@@ -160,14 +141,14 @@ public class FrmTemas extends javax.swing.JInternalFrame {
 
     private void cmbFiltroActionPerformed(java.awt.event.ActionEvent evt) {
  
-        //comboEquipos.setModel(h.getvaluesEqVe(Integer.parseInt(comboGrupos.getSelectedItem().toString())));
+        
     }
 
     private void btnGenerarPDFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarPDFActionPerformed
         try {
             String selectedItem = (String) cmbFiltro.getSelectedItem();
          javax.swing.UIManager.setLookAndFeel("com.jtattoo.plaf."+ selectedItem.toLowerCase()+ "."+ selectedItem  +"LookAndFeel");
-         //SwingUtilities.updateComponentTreeUI(this);
+         
          // Obtén todas las ventanas abiertas en tu aplicación
          Window[] windows = Window.getWindows();
          

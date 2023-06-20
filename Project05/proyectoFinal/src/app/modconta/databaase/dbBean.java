@@ -1,4 +1,3 @@
-
 package app.modconta.databaase;
 
 import app.modconta.entity.Constantes;

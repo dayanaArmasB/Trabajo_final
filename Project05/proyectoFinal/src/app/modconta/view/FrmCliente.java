@@ -318,31 +318,7 @@ jPanelRegistro.add(txtApellidoP);
     }
     
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {
-        int x ;
-        x = Integer.parseInt(JOptionPane.showInputDialog(" Ingrese el codigo del Cliente"));
-        try {
-           
-        	_Clientebo.Find(x);
-            JOptionPane.showMessageDialog(this, "Se encontró el resgistro con exito");
-            
-        } catch (Exception e) {
-        	JOptionPane.showMessageDialog(this, "error ");
-        }
-        
-        /*creamos un objeto dbBean
-        dbBean aux = new dbBean();
-        HashMap map = new HashMap();
-        //Connection cn = DriverManager.getConnection("jdbc:sqlserver://localhost:1433;databaseName=ST;user=sa;password=sasasa;");
-        Connection cn = aux.getConnection();
-        JasperReport jr= JasperCompileManager.compileReport("src/REPORTS/ClienteReporte.jrxml");
-        map.put("idCliente",x);
-        JasperPrint jp = JasperFillManager.fillReport(jr,map,cn);
-        // JasperPrint jp= JasperFillManager.fillReport(jr,idClie,cn);
-
-        JasperViewer jv= new JasperViewer(jp,false);
-        jv.setVisible(true);*/
-    }
+    
 
     private javax.swing.JButton btnLimpiar;
     private javax.swing.JButton btnRegistrar;
@@ -395,6 +371,31 @@ jPanelRegistro.add(txtApellidoP);
 		 }
 		
 	}
+	private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {
+        int x ;
+        x = Integer.parseInt(JOptionPane.showInputDialog(" Ingrese el codigo del Cliente"));
+        try {
+           
+        	_Clientebo.Find(x);
+            JOptionPane.showMessageDialog(this, "Se encontró el resgistro con exito");
+            
+        } catch (Exception e) {
+        	JOptionPane.showMessageDialog(this, "error ");
+        }
+        
+        /*creamos un objeto dbBean
+        dbBean aux = new dbBean();
+        HashMap map = new HashMap();
+        //Connection cn = DriverManager.getConnection("jdbc:sqlserver://localhost:1433;databaseName=ST;user=sa;password=sasasa;");
+        Connection cn = aux.getConnection();
+        JasperReport jr= JasperCompileManager.compileReport("src/REPORTS/ClienteReporte.jrxml");
+        map.put("idCliente",x);
+        JasperPrint jp = JasperFillManager.fillReport(jr,map,cn);
+        // JasperPrint jp= JasperFillManager.fillReport(jr,idClie,cn);
+
+        JasperViewer jv= new JasperViewer(jp,false);
+        jv.setVisible(true);*/
+    }
 	
     private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {
         limpiaControles();

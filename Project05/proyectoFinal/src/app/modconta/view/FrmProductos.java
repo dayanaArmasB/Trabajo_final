@@ -1,19 +1,10 @@
 package app.modconta.view;
 import app.modconta.business.ProductoBO;
-import app.modconta.databaase.Helper;
-import app.modconta.databaase.dbBean;
 import app.modconta.entity.Producto;
-import java.sql.Connection;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Vector;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-import net.sf.jasperreports.engine.JasperCompileManager;
-import net.sf.jasperreports.engine.JasperFillManager;
-import net.sf.jasperreports.engine.JasperPrint;
-import net.sf.jasperreports.engine.JasperReport;
-import net.sf.jasperreports.view.JasperViewer;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.GroupLayout;
 import javax.swing.LayoutStyle.ComponentPlacement;
@@ -22,11 +13,11 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import javax.swing.JScrollPane;
+
 
 public class FrmProductos extends javax.swing.JInternalFrame implements ActionListener {
     
-    Helper h = new Helper();
+
     ProductoBO _Productobo;
     DefaultTableModel dtm;
     int idProd; 
@@ -254,10 +245,7 @@ public class FrmProductos extends javax.swing.JInternalFrame implements ActionLi
     }
 
     private void tblEquipoMouseClicked(java.awt.event.MouseEvent evt) {
-        //if(evt.getClickCount() == 1){
-           //jTabbedPane1.setSelectedIndex(1);
-        	
-        //}
+
     }
 
     private void txtNombreEquipKeyPressed(java.awt.event.KeyEvent evt) {
@@ -266,28 +254,6 @@ public class FrmProductos extends javax.swing.JInternalFrame implements ActionLi
         }
     }
 
-   
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {
-     int x ;
-     x = Integer.parseInt(JOptionPane.showInputDialog(" Ingrese el codigo del Producto"));
-      try { 
-            //creamos un objeto dbBean
-              dbBean aux = new dbBean();
-              HashMap map = new HashMap();
-              //Connection cn = DriverManager.getConnection("jdbc:sqlserver://localhost:1433;databaseName=ST;user=sa;password=sasasa;");
-              Connection cn = aux.getConnection();
-              JasperReport jr= JasperCompileManager.compileReport("src/REPORTS/EquipoReporte.jrxml");
-              map.put("idCliente",x); 
-              JasperPrint jp = JasperFillManager.fillReport(jr,map,cn);
-            // JasperPrint jp= JasperFillManager.fillReport(jr,idClie,cn);
-              
-              JasperViewer jv= new JasperViewer(jp,false);
-              jv.setVisible(true);
-        } catch (Exception e) {
-            System.out.println(e);
-        }        
-    }
 
     private javax.swing.JButton btnLimpiar;
     private javax.swing.JButton btnSalir1;
@@ -313,17 +279,16 @@ public class FrmProductos extends javax.swing.JInternalFrame implements ActionLi
 
     public void llenaTabla()
     {
-         List<Producto> equip = _Productobo.readAll();
-         int i = equip.size(); 
+         List<Producto> produc = _Productobo.readAll();
+         int i = produc.size(); 
          for(int j = 0; j<i;j++){
           Vector vect = new Vector();
-          vect.addElement(equip.get(j).getIdProducto());
-          vect.addElement(equip.get(j).getNombre());
-          vect.addElement(equip.get(j).getDescripcion());
-          /*vect.addElement(equip.get(j).getStock());
-          vect.addElement(equip.get(j).getStockMax());
-          vect.addElement(equip.get(j).getStockMin());
-          vect.addElement(equip.get(j).getIdModelo());*/
+          vect.addElement(produc.get(j).getIdProducto());
+          vect.addElement(produc.get(j).getNombre());
+          vect.addElement(produc.get(j).getDescripcion());
+          /*vect.addElement(produc.get(j).getStock());
+          vect.addElement(produc.get(j).getStockMax());
+          vect.addElement(produc.get(j).getStockMin());*/
           dtm.addRow(vect);
         }
             
@@ -355,6 +320,29 @@ public class FrmProductos extends javax.swing.JInternalFrame implements ActionLi
         boolIsValid = true;
         return boolIsValid; 
     }
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {
+        int x ;
+        x = Integer.parseInt(JOptionPane.showInputDialog(" Ingrese el codigo del Producto"));
+         try { 
+       	  _Productobo.Find(x);
+               
+         } catch (Exception e) {
+             System.out.println(e);
+         } 
+       	  
+       	  /*dbBean aux = new dbBean();
+                 HashMap map = new HashMap();
+                 //Connection cn = DriverManager.getConnection("jdbc:sqlserver://localhost:1433;databaseName=ST;user=sa;password=sasasa;");
+                 Connection cn = aux.getConnection();
+                 JasperReport jr= JasperCompileManager.compileReport("src/REPORTS/EquipoReporte.jrxml");
+                 map.put("idCliente",x); 
+                 JasperPrint jp = JasperFillManager.fillReport(jr,map,cn);
+               // JasperPrint jp= JasperFillManager.fillReport(jr,idClie,cn);
+                 
+                 JasperViewer jv= new JasperViewer(jp,false);
+                 jv.setVisible(true);*/
+          
+       }
         
     private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {
         limpiaControles();
