@@ -4,6 +4,7 @@
  */
 package app.modconta.view;
 import app.modconta.business.ProveedorBO;
+import app.modconta.entity.Producto;
 import app.modconta.entity.Proveedor;
 import java.awt.event.ActionListener;
 import java.util.List;
@@ -179,6 +180,7 @@ public class FrmProveedor extends javax.swing.JInternalFrame implements ActionLi
         }
         
         button = new JButton();
+        button.addActionListener(this);
         button.setIcon(new ImageIcon(FrmProveedor.class.getResource("/Icons/buscar.gif")));
         button.setBounds(435, 18, 60, 32);
         jPanel3.add(button);
@@ -267,6 +269,9 @@ public class FrmProveedor extends javax.swing.JInternalFrame implements ActionLi
     private JButton btnEliminar;
     private JButton button;
 	public void actionPerformed(ActionEvent arg0) {
+		if (arg0.getSource() == button) {
+			do_button_actionPerformed(arg0);
+		}
 		if (arg0.getSource() == btnEliminar) {
 			do_btnEliminar_actionPerformed(arg0);
 		}
@@ -365,4 +370,19 @@ public class FrmProveedor extends javax.swing.JInternalFrame implements ActionLi
     
         return sw = true;
     }
+	protected void do_button_actionPerformed(ActionEvent arg0) {
+		int x ;
+	    x = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el código del Proveedor"));
+	    try {
+	    	Proveedor proveedor = _Proveedorbo.Find(x);
+	        if (proveedor != null) {
+	            JOptionPane.showMessageDialog(this, "Se encontró el registro con éxito");
+	        } else {
+	            JOptionPane.showMessageDialog(this, "No existe el código ingresado");
+	        }
+	    } catch (Exception ex) {
+	        ex.printStackTrace();
+	        JOptionPane.showMessageDialog(this, "Ocurrió un error al buscar el registro");
+	    }
+	}
 }

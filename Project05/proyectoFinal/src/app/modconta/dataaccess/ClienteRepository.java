@@ -32,7 +32,7 @@ public class ClienteRepository implements IRepository<Cliente> {
 
 	@Override
 	public void Update(Cliente p) {
-		
+		  
 		
 	}
 
@@ -53,23 +53,31 @@ public class ClienteRepository implements IRepository<Cliente> {
 
 	@Override
 	public Cliente Find(int code) {
-		
-        String sql = "";
-        dbBean con = new dbBean();
-        
-        	try{
-             	sql = "SELECT * FROM clientes WHERE idCliente = '"+code+"'";
-             	Statement s = con.getConnection().createStatement();
-                s.executeUpdate(sql);
-     	        con.close();
-             }catch(java.sql.SQLException e){
-                 e.printStackTrace();
-             } 
-        	 return null;
-        	 
-	}	
- 
 	
+		    String sql = "SELECT * FROM clientes WHERE idcliente = ?";
+		    dbBean con = new dbBean();
+		    Cliente cliente = null;
+		    
+		    try {
+		    	//el prepared statement nos prepara una consulta que se usa como parametro 
+		        PreparedStatement stmt = con.getConnection().prepareStatement(sql);
+		        //se inicializa(condicion 1 de la query, arugmento de busqueda) 
+		        stmt.setInt(1, code);
+		        //se ejcuta la consulta 
+		        ResultSet rs = stmt.executeQuery();
+		        //si se encuenta la consulta
+		        if (rs.next()) {
+		            cliente = new Cliente();
+		            cliente.setIdCliente(rs.getInt("idcliente"));
+		        }
+		        
+		        con.close();
+		    } catch (SQLException e) {
+		        e.printStackTrace();
+		    }
+		    
+		    return cliente;
+		}
 
 	@Override
 	public List<Cliente> readAll() {

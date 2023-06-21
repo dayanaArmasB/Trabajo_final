@@ -13,10 +13,14 @@ import javax.swing.JOptionPane;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.GroupLayout;
+import java.awt.Toolkit;
+import java.awt.Color;
 
 public class Login extends javax.swing.JFrame {
 
     public Login() {
+    	getContentPane().setForeground(new Color(0, 0, 0));
+    	setIconImage(Toolkit.getDefaultToolkit().getImage(Login.class.getResource("/Icons/Vista Users.png")));
         initComponents();   
     }
 
@@ -172,17 +176,6 @@ public class Login extends javax.swing.JFrame {
     private void txtPasswordActionPerformed(java.awt.event.ActionEvent evt) {
     }
 
-    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {
-        System.exit(0);
-    }
-
-    private void btnIngresarActionPerformed(java.awt.event.ActionEvent evt) {
-        String p1 = txtPassword.getText();
-        String u1 = txtUsuario.getText();
-        Identificar(u1,p1);
-        
-    }
-
     private void formKeyPressed(java.awt.event.KeyEvent evt) {
         
          if(evt.getKeyCode() == KeyEvent.VK_ENTER)
@@ -218,14 +211,23 @@ public class Login extends javax.swing.JFrame {
         });
     }
     
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {
+        System.exit(0);
+    }
     
-    
+    private void btnIngresarActionPerformed(java.awt.event.ActionEvent evt) {
+        String p1 = txtPassword.getText();
+        String u1 = txtUsuario.getText();
+        Identificar(u1,p1);
+        
+    }
+        
  private void Identificar(String usuario, String password) {
        
    try { 
             util u = new util();
             String consul = " select 1 from usuarios where usuario='"+ usuario +"'  and clave = '" + password + "'";            
-            ResultSet rr=u.consultar(consul);
+            ResultSet rr= u.consultar(consul);
             if(rr.next())
             {
                 MDIApplication menu = new MDIApplication();

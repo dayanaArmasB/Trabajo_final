@@ -20,7 +20,7 @@ public class ProveedorBO implements IGeneralBO<Proveedor> {
 
 	@Override
 	public void Update(Proveedor param) {
-		
+		_doProveedorRep.Update(param);
 	}
 
 	@Override
@@ -30,12 +30,11 @@ public class ProveedorBO implements IGeneralBO<Proveedor> {
 
 	@Override
 	public Proveedor Find(int code) {
-		return null;
+		return _doProveedorRep.Find(code);
 	}
 
 	@Override
 	public List<Proveedor> readAll() {
-		
 		
 		return _doProveedorRep.readAll();
 	}

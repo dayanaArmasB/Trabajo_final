@@ -39,19 +39,12 @@ public class FrmTemas extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        btnLeer = new javax.swing.JButton();
         btnSalir = new javax.swing.JButton();
         cmbFiltro = new javax.swing.JComboBox<>();
         jLabel2 = new javax.swing.JLabel();
         btnGenerarPDF = new javax.swing.JButton();
         jLabel1.setFont(new Font("Tahoma", Font.BOLD, 24)); // NOI18N
         jLabel1.setText("PERSONALIZACIÓN DE TEMAS");
-        btnLeer.setText("Aplicar y guardar");
-        btnLeer.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnLeerActionPerformed(evt);
-            }
-        });
 
         btnSalir.setText("Salir");
         btnSalir.addActionListener(new java.awt.event.ActionListener() {
@@ -80,23 +73,17 @@ public class FrmTemas extends javax.swing.JInternalFrame {
         		.addGroup(layout.createSequentialGroup()
         			.addGap(214)
         			.addComponent(jLabel1)
-        			.addContainerGap(232, Short.MAX_VALUE))
+        			.addContainerGap(262, Short.MAX_VALUE))
         		.addGroup(layout.createSequentialGroup()
-        			.addGroup(layout.createParallelGroup(Alignment.TRAILING)
-        				.addGroup(layout.createSequentialGroup()
-        					.addContainerGap()
-        					.addComponent(btnSalir, GroupLayout.PREFERRED_SIZE, 80, GroupLayout.PREFERRED_SIZE))
-        				.addGroup(layout.createSequentialGroup()
-        					.addGap(20)
-        					.addComponent(jLabel2)
-        					.addGap(41)
-        					.addComponent(cmbFiltro, 0, 374, Short.MAX_VALUE)
-        					.addPreferredGap(ComponentPlacement.UNRELATED)
-        					.addComponent(btnGenerarPDF)
-        					.addPreferredGap(ComponentPlacement.RELATED)
-        					.addComponent(btnLeer, GroupLayout.PREFERRED_SIZE, 141, GroupLayout.PREFERRED_SIZE)
-        					.addPreferredGap(ComponentPlacement.RELATED)))
-        			.addGap(162))
+        			.addGap(20)
+        			.addComponent(jLabel2)
+        			.addGap(41)
+        			.addComponent(cmbFiltro, 0, 374, Short.MAX_VALUE)
+        			.addPreferredGap(ComponentPlacement.UNRELATED)
+        			.addComponent(btnGenerarPDF)
+        			.addPreferredGap(ComponentPlacement.UNRELATED)
+        			.addComponent(btnSalir, GroupLayout.PREFERRED_SIZE, 80, GroupLayout.PREFERRED_SIZE)
+        			.addGap(219))
         );
         layout.setVerticalGroup(
         	layout.createParallelGroup(Alignment.LEADING)
@@ -108,31 +95,12 @@ public class FrmTemas extends javax.swing.JInternalFrame {
         				.addComponent(jLabel2)
         				.addComponent(cmbFiltro, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
         				.addComponent(btnGenerarPDF)
-        				.addComponent(btnLeer))
-        			.addPreferredGap(ComponentPlacement.UNRELATED)
-        			.addComponent(btnSalir)
-        			.addGap(301))
+        				.addComponent(btnSalir))
+        			.addGap(335))
         );
         getContentPane().setLayout(layout);
 
         pack();
-    }
-
-    private void btnLeerActionPerformed(java.awt.event.ActionEvent evt) {
-        try {
-        	//llamado a la libreria
-         javax.swing.UIManager.setLookAndFeel("com.jtattoo.plaf.fast.FastLookAndFeel");
-         //Obtén todas las ventanas abiertas en tu aplicación
-         Window[] windows = Window.getWindows();
-         
-         // Actualiza cada ventana
-         for (Window window : windows) {
-             SwingUtilities.updateComponentTreeUI(window);
-             window.pack(); // Opcionalmente, puedes llamar al método pack() para redimensionar la ventana según el nuevo aspecto
-         }
-        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FrmTemas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
     }
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {
@@ -144,7 +112,7 @@ public class FrmTemas extends javax.swing.JInternalFrame {
         
     }
 
-    private void btnGenerarPDFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarPDFActionPerformed
+    private void btnGenerarPDFActionPerformed(java.awt.event.ActionEvent evt) {
         try {
             String selectedItem = (String) cmbFiltro.getSelectedItem();
          javax.swing.UIManager.setLookAndFeel("com.jtattoo.plaf."+ selectedItem.toLowerCase()+ "."+ selectedItem  +"LookAndFeel");
@@ -163,7 +131,6 @@ public class FrmTemas extends javax.swing.JInternalFrame {
     }
 
     private javax.swing.JButton btnGenerarPDF;
-    private javax.swing.JButton btnLeer;
     private javax.swing.JButton btnSalir;
     private javax.swing.JComboBox<String> cmbFiltro;
     private javax.swing.JLabel jLabel1;

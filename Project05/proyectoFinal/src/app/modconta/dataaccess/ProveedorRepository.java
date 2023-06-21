@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import app.modconta.databaase.dbBean;
+import app.modconta.entity.Producto;
 import app.modconta.entity.Proveedor;
 
 public class ProveedorRepository implements IRepository<Proveedor> {
@@ -54,7 +55,26 @@ public class ProveedorRepository implements IRepository<Proveedor> {
 
 	@Override
 	public Proveedor Find(int code) {
-		return null;
+		String sql = "SELECT * FROM proveedor WHERE idproveedor = ?";
+	    dbBean con = new dbBean();
+	    Proveedor proveedor = null;
+	    
+	    try {
+	        PreparedStatement stmt = con.getConnection().prepareStatement(sql);
+	        stmt.setInt(1, code);
+	        ResultSet rs = stmt.executeQuery();
+	        
+	        if (rs.next()) {
+	        	proveedor = new Proveedor();
+	        	proveedor.setIdProveedor(rs.getInt("IdProveedor"));
+	        }
+	        
+	        con.close();
+	    } catch (SQLException e) {
+	        e.printStackTrace();
+	    }
+	    
+	    return proveedor;
 	}
 
 	@Override

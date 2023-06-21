@@ -21,7 +21,7 @@ public class EmpleadoBO implements IGeneralBO<Empleado>{
 	@Override
 	public void Update(Empleado param) {
 
-		
+		_doEmpleRep.Update(param);
 	}
 
 	@Override
@@ -33,7 +33,7 @@ public class EmpleadoBO implements IGeneralBO<Empleado>{
 	@Override
 	public Empleado Find(int code) {
 
-		return null;
+		return _doEmpleRep.Find(code);
 	}
 
 	@Override

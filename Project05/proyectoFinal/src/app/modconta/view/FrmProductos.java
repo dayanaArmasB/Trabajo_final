@@ -1,5 +1,6 @@
 package app.modconta.view;
 import app.modconta.business.ProductoBO;
+import app.modconta.entity.Empleado;
 import app.modconta.entity.Producto;
 import java.util.List;
 import java.util.Vector;
@@ -324,26 +325,19 @@ public class FrmProductos extends javax.swing.JInternalFrame implements ActionLi
         return boolIsValid = true;
     }
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {
-        int x ;
-        x = Integer.parseInt(JOptionPane.showInputDialog(" Ingrese el codigo del Producto"));
-         try { 
-       	  _Productobo.Find(x);
-               
-         } catch (Exception e) {
-             System.out.println(e);
-         } 
-       	  
-       	  /*dbBean aux = new dbBean();
-                 HashMap map = new HashMap();
-                 //Connection cn = DriverManager.getConnection("jdbc:sqlserver://localhost:1433;databaseName=ST;user=sa;password=sasasa;");
-                 Connection cn = aux.getConnection();
-                 JasperReport jr= JasperCompileManager.compileReport("src/REPORTS/EquipoReporte.jrxml");
-                 map.put("idCliente",x); 
-                 JasperPrint jp = JasperFillManager.fillReport(jr,map,cn);
-               // JasperPrint jp= JasperFillManager.fillReport(jr,idClie,cn);
-                 
-                 JasperViewer jv= new JasperViewer(jp,false);
-                 jv.setVisible(true);*/
+		int x ;
+	    x = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el código del Producto"));
+	    try {
+	        Producto producto = _Productobo.Find(x);
+	        if (producto != null) {
+	            JOptionPane.showMessageDialog(this, "Se encontró el registro con éxito");
+	        } else {
+	            JOptionPane.showMessageDialog(this, "No existe el código ingresado");
+	        }
+	    } catch (Exception ex) {
+	        ex.printStackTrace();
+	        JOptionPane.showMessageDialog(this, "Ocurrió un error al buscar el registro");
+	    }
           
        }
         

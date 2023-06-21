@@ -11,10 +11,12 @@ import javax.swing.JMenuItem;
 import javax.swing.JMenu;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Toolkit;
 
 public class MDIApplication extends javax.swing.JFrame {
 
     public MDIApplication() {
+    	setIconImage(Toolkit.getDefaultToolkit().getImage(MDIApplication.class.getResource("/Icons/Banned User.png")));
         
         try {
              initComponents();

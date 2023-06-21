@@ -1,5 +1,6 @@
 package app.modconta.view;
 import app.modconta.business.EmpleadoBO;
+import app.modconta.entity.Cliente;
 import app.modconta.entity.Empleado;
 import java.util.List;
 import java.util.Vector;
@@ -277,6 +278,14 @@ public class EmpleadoView extends javax.swing.JInternalFrame implements ActionLi
         jPanel3.add(btnEliminar);
         
         button = new JButton();
+        button.addActionListener(new ActionListener() {
+        
+        	public void actionPerformed(ActionEvent e) {
+        		if (e.getSource() == button) {
+        			do_button_actionPerformed(e);
+        		}
+        	}
+        });
         button.setIcon(new ImageIcon(EmpleadoView.class.getResource("/Icons/buscar.gif")));
         button.setBounds(539, 284, 57, 47);
         jPanel3.add(button);
@@ -387,10 +396,7 @@ public class EmpleadoView extends javax.swing.JInternalFrame implements ActionLi
     }
 
     private void tblClienteMouseClicked(java.awt.event.MouseEvent evt) {
-        if(evt.getClickCount() == 1){
-            this.jTabbedPane1.setSelectedIndex(1);
 
-        }
     }
 
     private void txtTelefonoActionPerformed(java.awt.event.ActionEvent evt) {
@@ -575,4 +581,20 @@ public class EmpleadoView extends javax.swing.JInternalFrame implements ActionLi
         }
     } 
 
+	protected void do_button_actionPerformed(ActionEvent e) {
+		int x ;
+	    x = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el código del Empleado"));
+	    try {
+	        Empleado empleado = _Empleadobo.Find(x);
+	        if (empleado != null) {
+	            JOptionPane.showMessageDialog(this, "Se encontró el registro con éxito");
+	        } else {
+	            JOptionPane.showMessageDialog(this, "No existe el código ingresado");
+	        }
+	    } catch (Exception e1) {
+	        e1.printStackTrace();
+	        JOptionPane.showMessageDialog(this, "Ocurrió un error al buscar el registro");
+	    }
+		
+	}
 }

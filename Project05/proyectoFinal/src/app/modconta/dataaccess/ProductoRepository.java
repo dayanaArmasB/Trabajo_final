@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import app.modconta.databaase.dbBean;
+import app.modconta.entity.Empleado;
 import app.modconta.entity.Producto;
 
 public class ProductoRepository implements IRepository<Producto>{
@@ -33,16 +34,7 @@ public class ProductoRepository implements IRepository<Producto>{
 
 	@Override
 	public void Update(Producto p) {
-		  int resultado = 0;
-	        String sql = "";
-	        dbBean con = new dbBean();   
-	        try{
-		        sql = "update Cliente set Nombre = '"+ p.getNombre()+"' where idproducto = '"+ p.getIdProducto()+"'";
-		        resultado = con.updateSQL(sql);
-		        con.close();
-	        }catch(java.sql.SQLException e){
-	            e.printStackTrace();
-	        }
+
 	}
 
 	@Override
@@ -61,7 +53,26 @@ public class ProductoRepository implements IRepository<Producto>{
 
 	@Override
 	public Producto Find(int code) {
-		return null;
+		String sql = "SELECT * FROM productos WHERE idproducto = ?";
+	    dbBean con = new dbBean();
+	    Producto producto = null;
+	    
+	    try {
+	        PreparedStatement stmt = con.getConnection().prepareStatement(sql);
+	        stmt.setInt(1, code);
+	        ResultSet rs = stmt.executeQuery();
+	        
+	        if (rs.next()) {
+	        	producto = new Producto();
+	        	producto.setIdProducto(rs.getInt("idproducto"));
+	        }
+	        
+	        con.close();
+	    } catch (SQLException e) {
+	        e.printStackTrace();
+	    }
+	    
+	    return producto;
 	}
 
 	@Override

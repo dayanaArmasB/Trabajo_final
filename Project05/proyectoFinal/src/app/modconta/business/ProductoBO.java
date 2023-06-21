@@ -31,7 +31,7 @@ public class ProductoBO implements IGeneralBO<Producto>{
 	@Override
 	public Producto Find(int code) {
 
-		return null;
+		return _doProductoRep.Find(code);
 	}
 
 	@Override

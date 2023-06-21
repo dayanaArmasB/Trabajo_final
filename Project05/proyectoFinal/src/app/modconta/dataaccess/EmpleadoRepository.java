@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import app.modconta.databaase.dbBean;
+import app.modconta.entity.Cliente;
 import app.modconta.entity.Empleado;
 
 public class EmpleadoRepository implements IRepository<Empleado> {
@@ -31,7 +32,7 @@ public class EmpleadoRepository implements IRepository<Empleado> {
 
 	@Override
 	public void Update(Empleado param) {
-		
+
 	}
 
 	@Override
@@ -51,8 +52,27 @@ public class EmpleadoRepository implements IRepository<Empleado> {
 
 	@Override
 	public Empleado Find(int code) {
-
-		return null;
+		 
+		String sql = "SELECT * FROM empleado WHERE idempleado = ?";
+	    dbBean con = new dbBean();
+	    Empleado empleado = null;
+	    
+	    try {
+	        PreparedStatement stmt = con.getConnection().prepareStatement(sql);
+	        stmt.setInt(1, code);
+	        ResultSet rs = stmt.executeQuery();
+	        
+	        if (rs.next()) {
+	        	empleado = new Empleado();
+	            empleado.setIdEmpleado(rs.getInt("idempleado"));
+	        }
+	        
+	        con.close();
+	    } catch (SQLException e) {
+	        e.printStackTrace();
+	    }
+	    
+	    return empleado;
 	}
 
 	@Override

@@ -371,27 +371,21 @@ jPanelRegistro.add(txtApellidoP);
 		
 	}
 	private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {
-        int x ;
-        x = Integer.parseInt(JOptionPane.showInputDialog(" Ingrese el codigo del Cliente"));
-        try {
-        	_Clientebo.Find(x);
-            JOptionPane.showMessageDialog(this, "Se encontró el resgistro con exito");
-        } catch (Exception e) {
-        	JOptionPane.showMessageDialog(this, "no existe el codigo ingresado");
-        }
-        
-        /*creamos un objeto dbBean
-        dbBean aux = new dbBean();
-        HashMap map = new HashMap();
-        //Connection cn = DriverManager.getConnection("jdbc:sqlserver://localhost:1433;databaseName=ST;user=sa;password=sasasa;");
-        Connection cn = aux.getConnection();
-        JasperReport jr= JasperCompileManager.compileReport("src/REPORTS/ClienteReporte.jrxml");
-        map.put("idCliente",x);
-        JasperPrint jp = JasperFillManager.fillReport(jr,map,cn);
-        // JasperPrint jp= JasperFillManager.fillReport(jr,idClie,cn);
-
-        JasperViewer jv= new JasperViewer(jp,false);
-        jv.setVisible(true);*/
+		int x ;
+	    x = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el código del Cliente"));
+	    try {
+	        Cliente cliente = _Clientebo.Find(x);
+	        if (cliente != null) {
+	            JOptionPane.showMessageDialog(this, "Se encontró el registro con éxito");
+	        } else {
+	            JOptionPane.showMessageDialog(this, "No existe el código ingresado");
+	        }
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	        JOptionPane.showMessageDialog(this, "Ocurrió un error al buscar el registro");
+	    }
+		
+		
     }
 	
     private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {
