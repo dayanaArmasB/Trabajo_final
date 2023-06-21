@@ -358,7 +358,6 @@ jPanelRegistro.add(txtApellidoP);
 		}
 	}
 	protected void do_btnEliminar_actionPerformed(ActionEvent e) {
-		
 		 try{
 			 int id= Integer.parseInt(String.valueOf(_DefaultTableModel.getValueAt(tblCliente.getSelectedRow(),0)));
 				_Clientebo.Delete(id);

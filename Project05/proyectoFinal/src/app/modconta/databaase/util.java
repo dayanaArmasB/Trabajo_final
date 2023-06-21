@@ -8,7 +8,6 @@ public class util {
 
     }
      
-
  public ResultSet consultar(String sql) { 
         dbBean cons = new dbBean();
         ResultSet resultado = null; 

@@ -488,9 +488,7 @@ public class EmpleadoView extends javax.swing.JInternalFrame implements ActionLi
             limpiaTabla();
             llenaTabla();
             JOptionPane.showMessageDialog(this, "se registro con exito");
-            
-           
-            
+ 
         }
     }
 	

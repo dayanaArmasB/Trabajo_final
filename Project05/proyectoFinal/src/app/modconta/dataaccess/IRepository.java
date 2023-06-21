@@ -4,7 +4,6 @@ import java.util.List;
 
 public interface IRepository<T> {
 
-	
     void Create(T param);
     
     void Update(T param);

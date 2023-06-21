@@ -32,16 +32,7 @@ public class ClienteRepository implements IRepository<Cliente> {
 
 	@Override
 	public void Update(Cliente p) {
-		int resultado = 0;
-        String sql = "";
-        dbBean con = new dbBean();   
-        try{
-	        sql = "update Cliente set Nombre = '"+ p.getNombre()+"' where idCliente = '"+ p.getIdCliente()+"'";
-	        resultado = con.updateSQL(sql);
-	        con.close();
-        }catch(java.sql.SQLException e){
-            e.printStackTrace();
-        }
+		
 		
 	}
 
@@ -76,7 +67,7 @@ public class ClienteRepository implements IRepository<Cliente> {
              } 
         	 return null;
         	 
-		}	
+	}	
  
 	
 

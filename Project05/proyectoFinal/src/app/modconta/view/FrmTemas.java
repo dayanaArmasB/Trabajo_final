@@ -120,7 +120,7 @@ public class FrmTemas extends javax.swing.JInternalFrame {
 
     private void btnLeerActionPerformed(java.awt.event.ActionEvent evt) {
         try {
-
+        	//llamado a la libreria
          javax.swing.UIManager.setLookAndFeel("com.jtattoo.plaf.fast.FastLookAndFeel");
          //Obtén todas las ventanas abiertas en tu aplicación
          Window[] windows = Window.getWindows();
