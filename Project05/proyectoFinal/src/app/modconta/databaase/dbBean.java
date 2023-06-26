@@ -9,6 +9,7 @@ import java.sql.Statement;
 
 
 public class dbBean {
+	//jdbc:sqlserver://<servidor>:<puerto>;databaseName=<nombreBaseDatos>
     String dbURL = "jdbc:sqlserver://localhost:1433;databaseName=dblogistica1;integratedSecurity=true";
     String dbDriver="com.microsoft.sqlserver.jdbc.SQLServerDriver" ;
     public Connection dbCon;

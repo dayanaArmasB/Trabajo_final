@@ -1,6 +1,5 @@
 package app.modconta.view;
 import app.modconta.business.ProductoBO;
-import app.modconta.entity.Empleado;
 import app.modconta.entity.Producto;
 import java.util.List;
 import java.util.Vector;
