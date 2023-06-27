@@ -81,10 +81,10 @@ public class FrmCliente extends javax.swing.JInternalFrame implements ActionList
         lblTitulo.setBounds(300, 24, 574, 29);
         btnSalir = new javax.swing.JButton();
         btnSalir.setFont(new Font("Tahoma", Font.PLAIN, 15));
-        btnSalir.setBounds(1089, 490, 73, 25);
+        btnSalir.setBounds(1089, 572, 73, 25);
         jTabbedPaneGroupCliente = new javax.swing.JTabbedPane();
         jTabbedPaneGroupCliente.setFont(new Font("Tahoma", Font.PLAIN, 15));
-        jTabbedPaneGroupCliente.setBounds(39, 66, 1123, 406);
+        jTabbedPaneGroupCliente.setBounds(39, 66, 1123, 493);
         jTabbedPaneGroupCliente.setToolTipText("test");
         jPanelBusqueda = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -122,7 +122,7 @@ public class FrmCliente extends javax.swing.JInternalFrame implements ActionList
         jScrollPane1.setViewportView(tblCliente);
 
         jPanelBusqueda.add(jScrollPane1);
-        jScrollPane1.setBounds(20, 80, 1086, 253);
+        jScrollPane1.setBounds(20, 80, 1086, 352);
         jPanelRegistro = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel3.setFont(new Font("Tahoma", Font.BOLD, 15));

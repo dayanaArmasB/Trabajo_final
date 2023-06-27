@@ -18,6 +18,8 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionEvent;
 import javax.swing.ImageIcon;
+import java.awt.Font;
+import javax.swing.LayoutStyle.ComponentPlacement;
 
 public class FrmProveedor extends javax.swing.JInternalFrame implements ActionListener {
 	ProveedorBO _Proveedorbo;
@@ -27,6 +29,8 @@ public class FrmProveedor extends javax.swing.JInternalFrame implements ActionLi
     int idProve; 
 
     public FrmProveedor() {
+    	setIconifiable(true);
+    	setMaximizable(true);
     	setTitle("PROVEEDORES");
         initComponents();
         _Proveedorbo = new ProveedorBO();
@@ -39,7 +43,9 @@ public class FrmProveedor extends javax.swing.JInternalFrame implements ActionLi
     private void initComponents() {
         lblTitulo = new javax.swing.JLabel();
         btnSalir = new javax.swing.JButton();
+        btnSalir.setFont(new Font("Tahoma", Font.PLAIN, 15));
         jTabbedPane1 = new javax.swing.JTabbedPane();
+        jTabbedPane1.setFont(new Font("Tahoma", Font.PLAIN, 15));
         jTabbedPane1.setToolTipText("test");
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -76,24 +82,28 @@ public class FrmProveedor extends javax.swing.JInternalFrame implements ActionLi
         jScrollPane1.setViewportView(tblProveedor);
 
         jPanel3.add(jScrollPane1);
-        jScrollPane1.setBounds(20, 80, 744, 261);
+        jScrollPane1.setBounds(20, 80, 905, 328);
         jPanel4 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel3.setBounds(58, 31, 60, 21);
+        jLabel3.setFont(new Font("Tahoma", Font.BOLD, 15));
+        jLabel3.setBounds(120, 27, 60, 21);
         txtNombre = new javax.swing.JTextField();
-        txtNombre.setBounds(130, 26, 310, 30);
+        txtNombre.setBounds(285, 23, 310, 30);
         txtRUC = new javax.swing.JTextField();
-        txtRUC.setBounds(130, 180, 310, 30);
+        txtRUC.setBounds(285, 248, 310, 30);
         jLabel6 = new javax.swing.JLabel();
-        jLabel6.setBounds(58, 131, 50, 21);
+        jLabel6.setFont(new Font("Tahoma", Font.BOLD, 15));
+        jLabel6.setBounds(124, 174, 80, 21);
         txtTelefono = new javax.swing.JTextField();
-        txtTelefono.setBounds(130, 126, 310, 30);
+        txtTelefono.setBounds(285, 170, 310, 30);
         jLabel7 = new javax.swing.JLabel();
-        jLabel7.setBounds(58, 185, 30, 21);
+        jLabel7.setFont(new Font("Tahoma", Font.BOLD, 15));
+        jLabel7.setBounds(140, 252, 60, 21);
         jLabel1 = new javax.swing.JLabel();
-        jLabel1.setBounds(58, 80, 70, 20);
+        jLabel1.setFont(new Font("Tahoma", Font.BOLD, 15));
+        jLabel1.setBounds(112, 102, 92, 20);
         txtDireccion = new javax.swing.JTextField();
-        txtDireccion.setBounds(130, 75, 310, 30);
+        txtDireccion.setBounds(285, 98, 310, 30);
         
                 jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
                 
@@ -143,20 +153,23 @@ public class FrmProveedor extends javax.swing.JInternalFrame implements ActionLi
                                                                                 
                                                                                 txtCta = new JTextField();
                                                                                 txtCta.setName("txtRUC");
-                                                                                txtCta.setBounds(130, 231, 310, 30);
+                                                                                txtCta.setBounds(285, 328, 310, 30);
                                                                                 jPanel4.add(txtCta);
                                                                                 
                                                                                 JLabel lblCuentaCorriente = new JLabel();
+                                                                                lblCuentaCorriente.setFont(new Font("Tahoma", Font.BOLD, 15));
                                                                                 lblCuentaCorriente.setText("Cuenta Corriente");
-                                                                                lblCuentaCorriente.setBounds(12, 231, 116, 21);
+                                                                                lblCuentaCorriente.setBounds(99, 332, 138, 21);
                                                                                 jPanel4.add(lblCuentaCorriente);
                                                                                 btnRegistrar = new javax.swing.JButton();
-                                                                                btnRegistrar.setBounds(581, 99, 90, 30);
+                                                                                btnRegistrar.setFont(new Font("Tahoma", Font.PLAIN, 15));
+                                                                                btnRegistrar.setBounds(735, 126, 90, 30);
                                                                                 jPanel4.add(btnRegistrar);
                                                                                 
                                                                                         btnRegistrar.setText("Registrar");
                                                                                         btnLimpiar = new javax.swing.JButton();
-                                                                                        btnLimpiar.setBounds(581, 150, 90, 30);
+                                                                                        btnLimpiar.setFont(new Font("Tahoma", Font.PLAIN, 15));
+                                                                                        btnLimpiar.setBounds(735, 169, 90, 30);
                                                                                         jPanel4.add(btnLimpiar);
                                                                                         
                                                                                                 btnLimpiar.setText("Limpiar");
@@ -174,12 +187,14 @@ public class FrmProveedor extends javax.swing.JInternalFrame implements ActionLi
         jTabbedPane1.addTab("Búsqueda", jPanel3);
         {
         	btnEliminar = new JButton("Eliminar registro");
+        	btnEliminar.setFont(new Font("Tahoma", Font.PLAIN, 15));
         	btnEliminar.addActionListener(this);
         	btnEliminar.setBounds(217, 27, 190, 23);
         	jPanel3.add(btnEliminar);
         }
         
         button = new JButton();
+        button.setFont(new Font("Tahoma", Font.PLAIN, 15));
         button.addActionListener(this);
         button.setIcon(new ImageIcon(FrmProveedor.class.getResource("/Icons/buscar.gif")));
         button.setBounds(435, 18, 60, 32);
@@ -187,19 +202,19 @@ public class FrmProveedor extends javax.swing.JInternalFrame implements ActionLi
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         layout.setHorizontalGroup(
-        	layout.createParallelGroup(Alignment.LEADING)
-        		.addGroup(Alignment.TRAILING, layout.createSequentialGroup()
-        			.addContainerGap(751, Short.MAX_VALUE)
-        			.addComponent(btnSalir, GroupLayout.PREFERRED_SIZE, 73, GroupLayout.PREFERRED_SIZE)
-        			.addGap(20))
-        		.addGroup(layout.createSequentialGroup()
-        			.addGap(27)
-        			.addComponent(jTabbedPane1, GroupLayout.PREFERRED_SIZE, 787, GroupLayout.PREFERRED_SIZE)
-        			.addContainerGap(30, Short.MAX_VALUE))
+        	layout.createParallelGroup(Alignment.TRAILING)
         		.addGroup(layout.createSequentialGroup()
         			.addGap(169)
         			.addComponent(lblTitulo, GroupLayout.DEFAULT_SIZE, 484, Short.MAX_VALUE)
         			.addGap(191))
+        		.addGroup(layout.createSequentialGroup()
+        			.addContainerGap(866, Short.MAX_VALUE)
+        			.addComponent(btnSalir, GroupLayout.PREFERRED_SIZE, 73, GroupLayout.PREFERRED_SIZE)
+        			.addContainerGap())
+        		.addGroup(Alignment.LEADING, layout.createSequentialGroup()
+        			.addGap(27)
+        			.addComponent(jTabbedPane1, GroupLayout.PREFERRED_SIZE, 958, GroupLayout.PREFERRED_SIZE)
+        			.addContainerGap(21, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
         	layout.createParallelGroup(Alignment.LEADING)
@@ -207,10 +222,10 @@ public class FrmProveedor extends javax.swing.JInternalFrame implements ActionLi
         			.addGap(20)
         			.addComponent(lblTitulo)
         			.addGap(18)
-        			.addComponent(jTabbedPane1, GroupLayout.PREFERRED_SIZE, 389, GroupLayout.PREFERRED_SIZE)
-        			.addGap(34)
+        			.addComponent(jTabbedPane1, GroupLayout.DEFAULT_SIZE, 465, Short.MAX_VALUE)
+        			.addPreferredGap(ComponentPlacement.UNRELATED)
         			.addComponent(btnSalir)
-        			.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        			.addGap(25))
         );
         getContentPane().setLayout(layout);
 

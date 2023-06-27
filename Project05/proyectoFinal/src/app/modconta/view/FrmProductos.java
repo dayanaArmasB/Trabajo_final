@@ -13,6 +13,7 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Font;
 
 
 public class FrmProductos extends javax.swing.JInternalFrame implements ActionListener {
@@ -31,9 +32,11 @@ public class FrmProductos extends javax.swing.JInternalFrame implements ActionLi
     private void initComponents() {
 
         jTabbedPane1 = new javax.swing.JTabbedPane();
+        jTabbedPane1.setFont(new Font("Tahoma", Font.PLAIN, 15));
         jPanelBusqueda = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblProductos = new javax.swing.JTable();
+        tblProductos.setFont(new Font("Tahoma", Font.PLAIN, 17));
         lblTitulo = new javax.swing.JLabel();
         setIconifiable(true);
         setMaximizable(true);
@@ -45,14 +48,23 @@ public class FrmProductos extends javax.swing.JInternalFrame implements ActionLi
         jTabbedPane1.setMaximumSize(new java.awt.Dimension(32769, 32769));
         jPanel4 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
+        jLabel3.setFont(new Font("Tahoma", Font.BOLD, 15));
         txtNombreProduc = new javax.swing.JTextField();
+        txtNombreProduc.setFont(new Font("Tahoma", Font.PLAIN, 15));
         btnLimpiar = new javax.swing.JButton();
+        btnLimpiar.setFont(new Font("Tahoma", Font.PLAIN, 15));
         jLabel4 = new javax.swing.JLabel();
+        jLabel4.setFont(new Font("Tahoma", Font.BOLD, 15));
         spinstock = new javax.swing.JSpinner();
+        spinstock.setFont(new Font("Tahoma", Font.PLAIN, 15));
         jLabel11 = new javax.swing.JLabel();
+        jLabel11.setFont(new Font("Tahoma", Font.BOLD, 15));
         spinstockMAX = new javax.swing.JSpinner();
+        spinstockMAX.setFont(new Font("Tahoma", Font.PLAIN, 15));
         jLabel12 = new javax.swing.JLabel();
+        jLabel12.setFont(new Font("Tahoma", Font.BOLD, 15));
         spinstockMIN = new javax.swing.JSpinner();
+        spinstockMIN.setFont(new Font("Tahoma", Font.PLAIN, 15));
         
                 jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
                 
@@ -83,10 +95,13 @@ public class FrmProductos extends javax.swing.JInternalFrame implements ActionLi
                                                                                                                 
                                                                                                                         spinstockMIN.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
                                                                                                                                 lblDescipcion = new JLabel("Descipcion");
+                                                                                                                                lblDescipcion.setFont(new Font("Tahoma", Font.BOLD, 15));
                                                                                                                                 btnRegistrar = new JButton("Registrar");
+                                                                                                                                btnRegistrar.setFont(new Font("Tahoma", Font.PLAIN, 15));
                                                                                                                                 btnRegistrar.addActionListener(this);
                                                                                                                                 {
                                                                                                                                    txtDescripcion = new JTextField();
+                                                                                                                                   txtDescripcion.setFont(new Font("Tahoma", Font.PLAIN, 15));
                                                                                                                                       txtDescripcion.setColumns(10);
                                                                                                                                           }
                                                                                                                         
@@ -96,37 +111,33 @@ public class FrmProductos extends javax.swing.JInternalFrame implements ActionLi
                                                                                                                                 		.addGroup(jPanel4Layout.createSequentialGroup()
                                                                                                                                 			.addGap(31)
                                                                                                                                 			.addGroup(jPanel4Layout.createParallelGroup(Alignment.LEADING)
+                                                                                                                                				.addComponent(lblDescipcion, GroupLayout.PREFERRED_SIZE, 95, GroupLayout.PREFERRED_SIZE)
                                                                                                                                 				.addGroup(jPanel4Layout.createSequentialGroup()
-                                                                                                                                					.addComponent(lblDescipcion)
-                                                                                                                                					.addContainerGap())
-                                                                                                                                				.addGroup(jPanel4Layout.createParallelGroup(Alignment.LEADING)
-                                                                                                                                					.addGroup(jPanel4Layout.createSequentialGroup()
-                                                                                                                                						.addComponent(jLabel12, GroupLayout.PREFERRED_SIZE, 120, GroupLayout.PREFERRED_SIZE)
-                                                                                                                                						.addGap(18)
-                                                                                                                                						.addComponent(spinstockMIN, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)
-                                                                                                                                						.addGap(627))
-                                                                                                                                					.addGroup(jPanel4Layout.createSequentialGroup()
-                                                                                                                                						.addGroup(jPanel4Layout.createParallelGroup(Alignment.LEADING)
-                                                                                                                                							.addComponent(jLabel3, GroupLayout.PREFERRED_SIZE, 80, GroupLayout.PREFERRED_SIZE)
-                                                                                                                                							.addComponent(jLabel4, GroupLayout.PREFERRED_SIZE, 34, GroupLayout.PREFERRED_SIZE)
-                                                                                                                                							.addComponent(jLabel11, GroupLayout.PREFERRED_SIZE, 130, GroupLayout.PREFERRED_SIZE))
-                                                                                                                                						.addPreferredGap(ComponentPlacement.RELATED)
-                                                                                                                                						.addGroup(jPanel4Layout.createParallelGroup(Alignment.LEADING)
-                                                                                                                                							.addGroup(jPanel4Layout.createParallelGroup(Alignment.LEADING)
+                                                                                                                                					.addGroup(jPanel4Layout.createParallelGroup(Alignment.TRAILING, false)
+                                                                                                                                						.addComponent(jLabel12, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                                                                                                						.addComponent(jLabel3, Alignment.LEADING, GroupLayout.PREFERRED_SIZE, 83, GroupLayout.PREFERRED_SIZE)
+                                                                                                                                						.addComponent(jLabel4, Alignment.LEADING, GroupLayout.PREFERRED_SIZE, 59, GroupLayout.PREFERRED_SIZE)
+                                                                                                                                						.addComponent(jLabel11, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                                                                                                                					.addPreferredGap(ComponentPlacement.RELATED)
+                                                                                                                                					.addGroup(jPanel4Layout.createParallelGroup(Alignment.LEADING)
+                                                                                                                                						.addGroup(jPanel4Layout.createSequentialGroup()
+                                                                                                                                							.addPreferredGap(ComponentPlacement.RELATED)
+                                                                                                                                							.addGroup(jPanel4Layout.createParallelGroup(Alignment.TRAILING, false)
+                                                                                                                                								.addComponent(txtDescripcion, Alignment.LEADING)
+                                                                                                                                								.addComponent(txtNombreProduc, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 310, Short.MAX_VALUE)))
+                                                                                                                                						.addGroup(jPanel4Layout.createSequentialGroup()
+                                                                                                                                							.addGap(31)
+                                                                                                                                							.addGroup(jPanel4Layout.createParallelGroup(Alignment.TRAILING)
+                                                                                                                                								.addComponent(spinstockMAX, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)
                                                                                                                                 								.addComponent(spinstock, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)
-                                                                                                                                								.addGroup(jPanel4Layout.createSequentialGroup()
-                                                                                                                                									.addGroup(jPanel4Layout.createParallelGroup(Alignment.TRAILING, false)
-                                                                                                                                										.addComponent(txtDescripcion, Alignment.LEADING)
-                                                                                                                                										.addComponent(txtNombreProduc, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 310, Short.MAX_VALUE))
-                                                                                                                                									.addGap(6)))
-                                                                                                                                							.addComponent(spinstockMAX, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE))
-                                                                                                                                						.addContainerGap(455, Short.MAX_VALUE)))))
+                                                                                                                                								.addComponent(spinstockMIN, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE))))))
+                                                                                                                                			.addContainerGap(345, Short.MAX_VALUE))
                                                                                                                                 		.addGroup(jPanel4Layout.createSequentialGroup()
-                                                                                                                                			.addGap(247)
+                                                                                                                                			.addGap(344)
                                                                                                                                 			.addComponent(btnRegistrar, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                                                                                                			.addGap(104)
-                                                                                                                                			.addComponent(btnLimpiar, GroupLayout.DEFAULT_SIZE, 85, Short.MAX_VALUE)
-                                                                                                                                			.addGap(410))
+                                                                                                                                			.addGap(61)
+                                                                                                                                			.addComponent(btnLimpiar, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                                                                                                			.addGap(356))
                                                                                                                                 );
                                                                                                                                 jPanel4Layout.setVerticalGroup(
                                                                                                                                 	jPanel4Layout.createParallelGroup(Alignment.LEADING)
@@ -141,8 +152,8 @@ public class FrmProductos extends javax.swing.JInternalFrame implements ActionLi
                                                                                                                                 				.addComponent(txtDescripcion, GroupLayout.PREFERRED_SIZE, 48, GroupLayout.PREFERRED_SIZE))
                                                                                                                                 			.addGap(32)
                                                                                                                                 			.addGroup(jPanel4Layout.createParallelGroup(Alignment.BASELINE)
-                                                                                                                                				.addComponent(spinstock, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-                                                                                                                                				.addComponent(jLabel4, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE))
+                                                                                                                                				.addComponent(jLabel4, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
+                                                                                                                                				.addComponent(spinstock, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE))
                                                                                                                                 			.addGap(18)
                                                                                                                                 			.addGroup(jPanel4Layout.createParallelGroup(Alignment.BASELINE)
                                                                                                                                 				.addComponent(jLabel11, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
@@ -153,9 +164,9 @@ public class FrmProductos extends javax.swing.JInternalFrame implements ActionLi
                                                                                                                                 				.addComponent(spinstockMIN, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE))
                                                                                                                                 			.addGap(72)
                                                                                                                                 			.addGroup(jPanel4Layout.createParallelGroup(Alignment.BASELINE)
-                                                                                                                                				.addComponent(btnRegistrar)
-                                                                                                                                				.addComponent(btnLimpiar))
-                                                                                                                                			.addContainerGap(60, Short.MAX_VALUE))
+                                                                                                                                				.addComponent(btnLimpiar)
+                                                                                                                                				.addComponent(btnRegistrar))
+                                                                                                                                			.addContainerGap(56, Short.MAX_VALUE))
                                                                                                                                 );
            jPanel4.setLayout(jPanel4Layout);
             jTabbedPane1.addTab("Productos", jPanel4);
@@ -180,18 +191,20 @@ public class FrmProductos extends javax.swing.JInternalFrame implements ActionLi
         jScrollPane1.setViewportView(tblProductos);
 
         jPanelBusqueda.add(jScrollPane1);
-        jScrollPane1.setBounds(25, 72, 800, 350);
+        jScrollPane1.setBounds(12, 72, 1052, 391);
 
         jTabbedPane1.addTab("Búqueda", jPanelBusqueda);
                 jButton2 = new javax.swing.JButton();
-                jButton2.setBounds(389, 13, 60, 46);
+                jButton2.setFont(new Font("Tahoma", Font.PLAIN, 15));
+                jButton2.setBounds(471, 13, 60, 46);
                 jPanelBusqueda.add(jButton2);
                 
                         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/buscar.gif"))); // NOI18N
                         
                         btnEliminarReg = new JButton("Eliminar registro");
+                        btnEliminarReg.setFont(new Font("Tahoma", Font.PLAIN, 15));
                         btnEliminarReg.addActionListener(this);
-                        btnEliminarReg.setBounds(224, 29, 135, 25);
+                        btnEliminarReg.setBounds(324, 27, 135, 25);
                         jPanelBusqueda.add(btnEliminarReg);
                         jButton2.addActionListener(new java.awt.event.ActionListener() {
                             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -203,6 +216,7 @@ public class FrmProductos extends javax.swing.JInternalFrame implements ActionLi
         lblTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTitulo.setText("PRODUCTOS");
         btnSalir1 = new javax.swing.JButton();
+        btnSalir1.setFont(new Font("Tahoma", Font.PLAIN, 15));
         
                 btnSalir1.setText("Salir");
                 btnSalir1.addActionListener(new java.awt.event.ActionListener() {
@@ -213,19 +227,19 @@ public class FrmProductos extends javax.swing.JInternalFrame implements ActionLi
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         layout.setHorizontalGroup(
-        	layout.createParallelGroup(Alignment.TRAILING)
-        		.addGroup(Alignment.LEADING, layout.createSequentialGroup()
-        			.addGap(23)
-        			.addComponent(jTabbedPane1, GroupLayout.PREFERRED_SIZE, 853, GroupLayout.PREFERRED_SIZE)
-        			.addContainerGap(26, Short.MAX_VALUE))
+        	layout.createParallelGroup(Alignment.LEADING)
         		.addGroup(layout.createSequentialGroup()
-        			.addContainerGap(785, Short.MAX_VALUE)
-        			.addComponent(btnSalir1, GroupLayout.PREFERRED_SIZE, 105, GroupLayout.PREFERRED_SIZE)
+        			.addGroup(layout.createParallelGroup(Alignment.LEADING)
+        				.addGroup(Alignment.TRAILING, layout.createSequentialGroup()
+        					.addContainerGap(990, Short.MAX_VALUE)
+        					.addComponent(btnSalir1, GroupLayout.PREFERRED_SIZE, 105, GroupLayout.PREFERRED_SIZE))
+        				.addGroup(layout.createSequentialGroup()
+        					.addGap(23)
+        					.addComponent(jTabbedPane1, GroupLayout.PREFERRED_SIZE, 1072, Short.MAX_VALUE))
+        				.addGroup(layout.createSequentialGroup()
+        					.addGap(285)
+        					.addComponent(lblTitulo, GroupLayout.PREFERRED_SIZE, 500, GroupLayout.PREFERRED_SIZE)))
         			.addContainerGap())
-        		.addGroup(Alignment.LEADING, layout.createSequentialGroup()
-        			.addGap(148)
-        			.addComponent(lblTitulo, GroupLayout.PREFERRED_SIZE, 500, GroupLayout.PREFERRED_SIZE)
-        			.addContainerGap(254, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
         	layout.createParallelGroup(Alignment.LEADING)
@@ -233,10 +247,10 @@ public class FrmProductos extends javax.swing.JInternalFrame implements ActionLi
         			.addContainerGap()
         			.addComponent(lblTitulo)
         			.addGap(18)
-        			.addComponent(jTabbedPane1, GroupLayout.PREFERRED_SIZE, 492, GroupLayout.PREFERRED_SIZE)
-        			.addPreferredGap(ComponentPlacement.RELATED)
+        			.addComponent(jTabbedPane1, GroupLayout.DEFAULT_SIZE, 521, Short.MAX_VALUE)
+        			.addPreferredGap(ComponentPlacement.UNRELATED)
         			.addComponent(btnSalir1, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-        			.addContainerGap(63, Short.MAX_VALUE))
+        			.addGap(32))
         );
         getContentPane().setLayout(layout);
 

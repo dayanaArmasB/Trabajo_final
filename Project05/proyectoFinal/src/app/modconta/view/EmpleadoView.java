@@ -17,6 +17,7 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.ImageIcon;
+import java.awt.Font;
 
 public class EmpleadoView extends javax.swing.JInternalFrame implements ActionListener {
 	EmpleadoBO _Empleadobo;
@@ -40,33 +41,55 @@ public class EmpleadoView extends javax.swing.JInternalFrame implements ActionLi
 
         sexo = new javax.swing.ButtonGroup();
         jTabbedPane1 = new javax.swing.JTabbedPane();
+        jTabbedPane1.setFont(new Font("Tahoma", Font.PLAIN, 15));
         jPanel4 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
+        jLabel3.setFont(new Font("Tahoma", Font.BOLD, 15));
         jLabel4 = new javax.swing.JLabel();
+        jLabel4.setFont(new Font("Tahoma", Font.BOLD, 15));
         txtNombre = new javax.swing.JTextField();
+        txtNombre.setFont(new Font("Tahoma", Font.PLAIN, 15));
         txtApellidoP = new javax.swing.JTextField();
+        txtApellidoP.setFont(new Font("Tahoma", Font.PLAIN, 15));
         jLabel6 = new javax.swing.JLabel();
+        jLabel6.setFont(new Font("Tahoma", Font.BOLD, 15));
         txtDNI = new javax.swing.JTextField();
+        txtDNI.setFont(new Font("Tahoma", Font.PLAIN, 15));
         jLabel7 = new javax.swing.JLabel();
+        jLabel7.setFont(new Font("Tahoma", Font.BOLD, 15));
         txtTelefono = new javax.swing.JTextField();
+        txtTelefono.setFont(new Font("Tahoma", Font.PLAIN, 15));
         jLabel9 = new javax.swing.JLabel();
+        jLabel9.setFont(new Font("Tahoma", Font.BOLD, 15));
         txtDireccion = new javax.swing.JTextField();
+        txtDireccion.setFont(new Font("Tahoma", Font.PLAIN, 15));
         jLabel11 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
+        jLabel8.setFont(new Font("Tahoma", Font.BOLD, 15));
         jPanel1 = new javax.swing.JPanel();
         rbtnM = new javax.swing.JRadioButton();
+        rbtnM.setFont(new Font("Tahoma", Font.PLAIN, 15));
         rbtnF = new javax.swing.JRadioButton();
+        rbtnF.setFont(new Font("Tahoma", Font.PLAIN, 15));
         jPanel2 = new javax.swing.JPanel();
         txtSueldo = new javax.swing.JTextField();
+        txtSueldo.setFont(new Font("Tahoma", Font.PLAIN, 15));
         jLabel1 = new javax.swing.JLabel();
+        jLabel1.setFont(new Font("Tahoma", Font.BOLD, 15));
         cbxCargo = new javax.swing.JComboBox<>();
+        cbxCargo.setFont(new Font("Tahoma", Font.PLAIN, 15));
         jLabel10 = new javax.swing.JLabel();
+        jLabel10.setFont(new Font("Tahoma", Font.BOLD, 15));
         cbxArea = new javax.swing.JComboBox<>();
+        cbxArea.setFont(new Font("Tahoma", Font.PLAIN, 15));
         jLabel5 = new javax.swing.JLabel();
+        jLabel5.setFont(new Font("Tahoma", Font.BOLD, 15));
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblEmpleado = new javax.swing.JTable();
+        tblEmpleado.setFont(new Font("Tahoma", Font.PLAIN, 17));
         btnSalir = new javax.swing.JButton();
+        btnSalir.setFont(new Font("Tahoma", Font.PLAIN, 15));
         lblTitulo = new javax.swing.JLabel();
         setIconifiable(true);
         setMaximizable(true);
@@ -84,7 +107,7 @@ public class EmpleadoView extends javax.swing.JInternalFrame implements ActionLi
 
         jLabel4.setText("Apellido Paterno");
         jPanel4.add(jLabel4);
-        jLabel4.setBounds(30, 56, 90, 20);
+        jLabel4.setBounds(30, 56, 130, 20);
 
         txtNombre.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
@@ -92,7 +115,7 @@ public class EmpleadoView extends javax.swing.JInternalFrame implements ActionLi
             }
         });
         jPanel4.add(txtNombre);
-        txtNombre.setBounds(130, 11, 330, 30);
+        txtNombre.setBounds(156, 12, 330, 30);
 
         txtApellidoP.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -105,11 +128,11 @@ public class EmpleadoView extends javax.swing.JInternalFrame implements ActionLi
             }
         });
         jPanel4.add(txtApellidoP);
-        txtApellidoP.setBounds(130, 51, 330, 30);
+        txtApellidoP.setBounds(156, 52, 330, 30);
 
         jLabel6.setText("DNI");
         jPanel4.add(jLabel6);
-        jLabel6.setBounds(30, 143, 50, 10);
+        jLabel6.setBounds(30, 143, 50, 20);
 
         txtDNI.setName("txtDireccion"); // NOI18N
         txtDNI.addActionListener(new java.awt.event.ActionListener() {
@@ -118,11 +141,11 @@ public class EmpleadoView extends javax.swing.JInternalFrame implements ActionLi
             }
         });
         jPanel4.add(txtDNI);
-        txtDNI.setBounds(130, 133, 110, 30);
+        txtDNI.setBounds(157, 133, 110, 30);
 
         jLabel7.setText("Celular");
         jPanel4.add(jLabel7);
-        jLabel7.setBounds(267, 141, 50, 14);
+        jLabel7.setBounds(279, 142, 65, 23);
 
         txtTelefono.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -130,11 +153,11 @@ public class EmpleadoView extends javax.swing.JInternalFrame implements ActionLi
             }
         });
         jPanel4.add(txtTelefono);
-        txtTelefono.setBounds(330, 133, 130, 30);
+        txtTelefono.setBounds(356, 133, 130, 30);
 
         jLabel9.setText("Dirección");
         jPanel4.add(jLabel9);
-        jLabel9.setBounds(30, 223, 60, 14);
+        jLabel9.setBounds(30, 223, 74, 14);
         jPanel4.add(txtDireccion);
         txtDireccion.setBounds(130, 215, 330, 30);
         jPanel4.add(jLabel11);
@@ -142,7 +165,7 @@ public class EmpleadoView extends javax.swing.JInternalFrame implements ActionLi
 
         jLabel8.setText("Sexo");
         jPanel4.add(jLabel8);
-        jLabel8.setBounds(30, 179, 50, 14);
+        jLabel8.setBounds(30, 179, 50, 20);
 
         jPanel1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(0, 51, 51)));
 
@@ -178,13 +201,15 @@ public class EmpleadoView extends javax.swing.JInternalFrame implements ActionLi
         jTabbedPane1.addTab("Registrar", jPanel4);
         {
         	txtApellidoM = new JTextField();
-        	txtApellidoM.setBounds(130, 92, 330, 30);
+        	txtApellidoM.setFont(new Font("Tahoma", Font.PLAIN, 15));
+        	txtApellidoM.setBounds(156, 95, 330, 30);
         	jPanel4.add(txtApellidoM);
         }
         {
         	lblApellidoMaterno = new JLabel();
+        	lblApellidoMaterno.setFont(new Font("Tahoma", Font.BOLD, 15));
         	lblApellidoMaterno.setText("Apellido Materno");
-        	lblApellidoMaterno.setBounds(30, 97, 90, 20);
+        	lblApellidoMaterno.setBounds(30, 97, 130, 20);
         	jPanel4.add(lblApellidoMaterno);
         }
 
@@ -214,17 +239,17 @@ public class EmpleadoView extends javax.swing.JInternalFrame implements ActionLi
         jPanel2Layout.setHorizontalGroup(
         	jPanel2Layout.createParallelGroup(Alignment.TRAILING)
         		.addGroup(jPanel2Layout.createSequentialGroup()
-        			.addContainerGap(230, Short.MAX_VALUE)
-        			.addGroup(jPanel2Layout.createParallelGroup(Alignment.LEADING)
-        				.addComponent(jLabel10, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE)
-        				.addComponent(jLabel5, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-        				.addComponent(jLabel1, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE))
-        			.addGap(63)
+        			.addContainerGap(259, Short.MAX_VALUE)
+        			.addGroup(jPanel2Layout.createParallelGroup(Alignment.LEADING, false)
+        				.addComponent(jLabel1, GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+        				.addComponent(jLabel5, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        				.addComponent(jLabel10, GroupLayout.PREFERRED_SIZE, 48, GroupLayout.PREFERRED_SIZE))
+        			.addGap(55)
         			.addGroup(jPanel2Layout.createParallelGroup(Alignment.LEADING)
         				.addComponent(txtSueldo, GroupLayout.PREFERRED_SIZE, 120, GroupLayout.PREFERRED_SIZE)
         				.addComponent(cbxCargo, GroupLayout.PREFERRED_SIZE, 128, GroupLayout.PREFERRED_SIZE)
         				.addComponent(cbxArea, GroupLayout.PREFERRED_SIZE, 128, GroupLayout.PREFERRED_SIZE))
-        			.addContainerGap(429, Short.MAX_VALUE))
+        			.addContainerGap(458, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
         	jPanel2Layout.createParallelGroup(Alignment.LEADING)
@@ -268,16 +293,18 @@ public class EmpleadoView extends javax.swing.JInternalFrame implements ActionLi
         jScrollPane1.setViewportView(tblEmpleado);
 
         jPanel3.add(jScrollPane1);
-        jScrollPane1.setBounds(10, 60, 926, 200);
+        jScrollPane1.setBounds(10, 79, 1221, 320);
 
         jTabbedPane1.addTab("Búsqueda", jPanel3);
         
         btnEliminar = new JButton("Eliminar registro");
+        btnEliminar.setFont(new Font("Tahoma", Font.PLAIN, 15));
         btnEliminar.addActionListener(this);
-        btnEliminar.setBounds(297, 299, 211, 23);
+        btnEliminar.setBounds(380, 24, 211, 23);
         jPanel3.add(btnEliminar);
         
         button = new JButton();
+        button.setFont(new Font("Tahoma", Font.PLAIN, 17));
         button.addActionListener(new ActionListener() {
         
         	public void actionPerformed(ActionEvent e) {
@@ -287,7 +314,7 @@ public class EmpleadoView extends javax.swing.JInternalFrame implements ActionLi
         	}
         });
         button.setIcon(new ImageIcon(EmpleadoView.class.getResource("/Icons/buscar.gif")));
-        button.setBounds(539, 284, 57, 47);
+        button.setBounds(602, 13, 57, 47);
         jPanel3.add(button);
 
         btnSalir.setText("Salir");
@@ -301,6 +328,7 @@ public class EmpleadoView extends javax.swing.JInternalFrame implements ActionLi
         lblTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTitulo.setText("EMPLEADOS");
         btnRegistrar = new javax.swing.JButton();
+        btnRegistrar.setFont(new Font("Tahoma", Font.PLAIN, 15));
         
                 btnRegistrar.setText("Registrar");
                 btnRegistrar.addActionListener(new java.awt.event.ActionListener() {
@@ -314,6 +342,7 @@ public class EmpleadoView extends javax.swing.JInternalFrame implements ActionLi
                     }
                 });
         btnLimpiar = new javax.swing.JButton();
+        btnLimpiar.setFont(new Font("Tahoma", Font.PLAIN, 15));
         
                 btnLimpiar.setText("Limpiar");
                 btnLimpiar.addActionListener(new java.awt.event.ActionListener() {
@@ -325,24 +354,22 @@ public class EmpleadoView extends javax.swing.JInternalFrame implements ActionLi
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         layout.setHorizontalGroup(
         	layout.createParallelGroup(Alignment.LEADING)
-        		.addGroup(layout.createSequentialGroup()
-        			.addGap(58)
-        			.addComponent(lblTitulo, GroupLayout.PREFERRED_SIZE, 608, GroupLayout.PREFERRED_SIZE)
-        			.addContainerGap(342, Short.MAX_VALUE))
-        		.addGroup(layout.createSequentialGroup()
-        			.addContainerGap(937, Short.MAX_VALUE)
-        			.addComponent(btnSalir)
-        			.addContainerGap())
         		.addGroup(Alignment.TRAILING, layout.createSequentialGroup()
-        			.addContainerGap(506, Short.MAX_VALUE)
-        			.addComponent(btnRegistrar, GroupLayout.PREFERRED_SIZE, 97, GroupLayout.PREFERRED_SIZE)
-        			.addGap(18)
-        			.addComponent(btnLimpiar, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE)
-        			.addGap(297))
-        		.addGroup(layout.createSequentialGroup()
-        			.addGap(30)
-        			.addComponent(jTabbedPane1, GroupLayout.PREFERRED_SIZE, 953, GroupLayout.PREFERRED_SIZE)
-        			.addContainerGap(25, Short.MAX_VALUE))
+        			.addGroup(layout.createParallelGroup(Alignment.TRAILING)
+        				.addGroup(Alignment.LEADING, layout.createSequentialGroup()
+        					.addGap(30)
+        					.addComponent(jTabbedPane1, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        				.addGroup(Alignment.LEADING, layout.createSequentialGroup()
+        					.addGap(270)
+        					.addComponent(lblTitulo, GroupLayout.PREFERRED_SIZE, 608, GroupLayout.PREFERRED_SIZE))
+        				.addGroup(Alignment.LEADING, layout.createSequentialGroup()
+        					.addContainerGap(453, Short.MAX_VALUE)
+        					.addComponent(btnRegistrar, GroupLayout.PREFERRED_SIZE, 97, GroupLayout.PREFERRED_SIZE)
+        					.addGap(37)
+        					.addComponent(btnLimpiar, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE)
+        					.addGap(504)
+        					.addComponent(btnSalir, GroupLayout.PREFERRED_SIZE, 93, GroupLayout.PREFERRED_SIZE)))
+        			.addContainerGap())
         );
         layout.setVerticalGroup(
         	layout.createParallelGroup(Alignment.LEADING)
@@ -350,16 +377,18 @@ public class EmpleadoView extends javax.swing.JInternalFrame implements ActionLi
         			.addContainerGap()
         			.addComponent(lblTitulo)
         			.addPreferredGap(ComponentPlacement.RELATED)
-        			.addComponent(jTabbedPane1, GroupLayout.PREFERRED_SIZE, 416, GroupLayout.PREFERRED_SIZE)
-        			.addGap(18)
+        			.addComponent(jTabbedPane1, GroupLayout.PREFERRED_SIZE, 445, GroupLayout.PREFERRED_SIZE)
+        			.addPreferredGap(ComponentPlacement.RELATED)
         			.addGroup(layout.createParallelGroup(Alignment.LEADING)
         				.addGroup(layout.createSequentialGroup()
-        					.addGap(38)
+        					.addGap(66)
         					.addComponent(btnSalir, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE))
-        				.addGroup(layout.createParallelGroup(Alignment.BASELINE)
-        					.addComponent(btnLimpiar, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-        					.addComponent(btnRegistrar, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)))
-        			.addGap(17))
+        				.addGroup(layout.createSequentialGroup()
+        					.addGap(42)
+        					.addGroup(layout.createParallelGroup(Alignment.BASELINE)
+        						.addComponent(btnRegistrar, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+        						.addComponent(btnLimpiar, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE))))
+        			.addGap(20))
         );
         getContentPane().setLayout(layout);
 
