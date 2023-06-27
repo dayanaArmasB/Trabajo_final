@@ -295,7 +295,7 @@ public class FrmProveedor extends javax.swing.JInternalFrame implements ActionLi
             limpiaControles();
             limpiaTabla();
             llenaTabla();
-            JOptionPane.showMessageDialog(this, "se registro con exito");
+            JOptionPane.showMessageDialog(this, "se registró con exito");
         }
     }
 	protected void do_btnEliminar_actionPerformed(ActionEvent arg0) {
@@ -352,11 +352,11 @@ public class FrmProveedor extends javax.swing.JInternalFrame implements ActionLi
 		}
 
         if(txtDireccion.getText().equals("")){
-        	JOptionPane.showMessageDialog(this, "Debe ingresar direccion");
+        	JOptionPane.showMessageDialog(this, "Debe ingresar Dirección");
         	return sw;
         }
         if(txtTelefono.getText().equals("")){
-        	JOptionPane.showMessageDialog(this, "Debe ingresar telefono");
+        	JOptionPane.showMessageDialog(this, "Debe ingresar Teléfono");
         	return sw;
         }
         if(txtRUC.getText().equals("")){
@@ -364,7 +364,7 @@ public class FrmProveedor extends javax.swing.JInternalFrame implements ActionLi
         	return sw;
         }
         if(txtCta.getText().equals("")){
-        	JOptionPane.showMessageDialog(this, "Debe ingresar Numero de cuenta");
+        	JOptionPane.showMessageDialog(this, "Debe ingresar número de cuenta");
         	return sw;
         }
     
@@ -378,7 +378,7 @@ public class FrmProveedor extends javax.swing.JInternalFrame implements ActionLi
 	        if (proveedor != null) {
 	            JOptionPane.showMessageDialog(this, "Se encontró el registro con éxito");
 	        } else {
-	            JOptionPane.showMessageDialog(this, "No existe el código ingresado");
+	            JOptionPane.showMessageDialog(this, "No existe el registro con el código ingresado");
 	        }
 	    } catch (Exception ex) {
 	        ex.printStackTrace();

@@ -199,7 +199,7 @@ public class Login extends javax.swing.JFrame {
     
     public static void main(String args[]) {
         try {
-         javax.swing.UIManager.setLookAndFeel("com.jtattoo.plaf.hifi.HiFiLookAndFeel");
+         javax.swing.UIManager.setLookAndFeel("com.jtattoo.plaf.fast.FastLookAndFeel");
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
@@ -237,12 +237,12 @@ public class Login extends javax.swing.JFrame {
             }
            else
             {
-               JOptionPane.showMessageDialog(null, "Usuario o Password No Valido");   
+               JOptionPane.showMessageDialog(null, "Usuario o Password No Válido");   
             }
         } 
         catch (HeadlessException | SQLException e) 
         { 
-            JOptionPane.showMessageDialog(null,"Ocurrio un error " + e.getMessage());             
+            JOptionPane.showMessageDialog(null,"Ocurrió un error " + e.getMessage());             
         }
     }
 }

@@ -16,6 +16,8 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 
 import java.awt.event.ActionEvent;
+import java.awt.Font;
+import java.awt.Cursor;
 
 
 public class FrmCliente extends javax.swing.JInternalFrame implements ActionListener {
@@ -40,11 +42,13 @@ public class FrmCliente extends javax.swing.JInternalFrame implements ActionList
         buttonGroup.add(jRadioButton1);
         buttonGroup.add(jRadioButton2);
         btnRegistrar = new javax.swing.JButton();
+        btnRegistrar.setFont(new Font("Tahoma", Font.PLAIN, 15));
         btnRegistrar.setBounds(606, 145, 90, 30);
         jPanelRegistro.add(btnRegistrar);
         
                 btnRegistrar.setText("Registrar");
                 btnLimpiar = new javax.swing.JButton();
+                btnLimpiar.setFont(new Font("Tahoma", Font.PLAIN, 15));
                 btnLimpiar.setBounds(606, 188, 90, 30);
                 jPanelRegistro.add(btnLimpiar);
                 
@@ -74,15 +78,18 @@ public class FrmCliente extends javax.swing.JInternalFrame implements ActionList
 
 	private void initComponents() {
         lblTitulo = new javax.swing.JLabel();
-        lblTitulo.setBounds(143, 20, 574, 29);
+        lblTitulo.setBounds(300, 24, 574, 29);
         btnSalir = new javax.swing.JButton();
-        btnSalir.setBounds(804, 490, 73, 25);
+        btnSalir.setFont(new Font("Tahoma", Font.PLAIN, 15));
+        btnSalir.setBounds(1089, 490, 73, 25);
         jTabbedPaneGroupCliente = new javax.swing.JTabbedPane();
-        jTabbedPaneGroupCliente.setBounds(39, 66, 798, 411);
+        jTabbedPaneGroupCliente.setFont(new Font("Tahoma", Font.PLAIN, 15));
+        jTabbedPaneGroupCliente.setBounds(39, 66, 1123, 406);
         jTabbedPaneGroupCliente.setToolTipText("test");
         jPanelBusqueda = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblCliente = new javax.swing.JTable();
+        tblCliente.setFont(new Font("Tahoma", Font.PLAIN, 17));
         tblCliente.setModel(new DefaultTableModel(
         	new Object[][] {
         	},
@@ -106,7 +113,7 @@ public class FrmCliente extends javax.swing.JInternalFrame implements ActionList
 
         jPanelBusqueda.setLayout(null);
         tblCliente.setToolTipText("");
-        tblCliente.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        tblCliente.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         tblCliente.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tblClienteMouseClicked(evt);
@@ -115,35 +122,49 @@ public class FrmCliente extends javax.swing.JInternalFrame implements ActionList
         jScrollPane1.setViewportView(tblCliente);
 
         jPanelBusqueda.add(jScrollPane1);
-        jScrollPane1.setBounds(20, 80, 744, 261);
+        jScrollPane1.setBounds(20, 80, 1086, 253);
         jPanelRegistro = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
+        jLabel3.setFont(new Font("Tahoma", Font.BOLD, 15));
         jLabel3.setBounds(50, 20, 60, 21);
         jLabel4 = new javax.swing.JLabel();
-        jLabel4.setBounds(16, 54, 102, 21);
+        jLabel4.setFont(new Font("Tahoma", Font.BOLD, 15));
+        jLabel4.setBounds(16, 54, 138, 21);
         txtNombre = new javax.swing.JTextField();
+        txtNombre.setFont(new Font("Tahoma", Font.PLAIN, 15));
         txtNombre.setBounds(130, 10, 310, 30);
         jLabel5 = new javax.swing.JLabel();
+        jLabel5.setFont(new Font("Tahoma", Font.BOLD, 15));
         jLabel5.setBounds(58, 279, 60, 20);
         txtRUC = new javax.swing.JTextField();
+        txtRUC.setFont(new Font("Tahoma", Font.PLAIN, 15));
         txtRUC.setBounds(130, 317, 310, 30);
         jLabel6 = new javax.swing.JLabel();
-        jLabel6.setBounds(50, 236, 50, 21);
+        jLabel6.setFont(new Font("Tahoma", Font.BOLD, 15));
+        jLabel6.setBounds(40, 235, 70, 21);
         txtTelefono = new javax.swing.JTextField();
+        txtTelefono.setFont(new Font("Tahoma", Font.PLAIN, 15));
         txtTelefono.setBounds(130, 231, 310, 30);
         txtDNI = new javax.swing.JTextField();
+        txtDNI.setFont(new Font("Tahoma", Font.PLAIN, 15));
         txtDNI.setBounds(130, 274, 310, 30);
         jLabel7 = new javax.swing.JLabel();
-        jLabel7.setBounds(59, 322, 30, 21);
+        jLabel7.setFont(new Font("Tahoma", Font.BOLD, 15));
+        jLabel7.setBounds(59, 322, 51, 21);
         jLabel1 = new javax.swing.JLabel();
-        jLabel1.setBounds(40, 193, 70, 20);
+        jLabel1.setFont(new Font("Tahoma", Font.BOLD, 15));
+        jLabel1.setBounds(40, 193, 90, 20);
         jPanelrbtn = new javax.swing.JPanel();
         jPanelrbtn.setBounds(131, 135, 266, 40);
         jRadioButton1 = new javax.swing.JRadioButton();
+        jRadioButton1.setFont(new Font("Tahoma", Font.PLAIN, 15));
         jRadioButton2 = new javax.swing.JRadioButton();
+        jRadioButton2.setFont(new Font("Tahoma", Font.PLAIN, 15));
         txtDireccion = new javax.swing.JTextField();
+        txtDireccion.setFont(new Font("Tahoma", Font.PLAIN, 15));
         txtDireccion.setBounds(130, 188, 310, 30);
         jLabel8 = new javax.swing.JLabel();
+        jLabel8.setFont(new Font("Tahoma", Font.BOLD, 15));
         jLabel8.setBounds(50, 150, 40, 21);
         
 jPanelRegistro.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -172,7 +193,7 @@ txtRUCActionPerformed(evt);
  }
 });
                                                                 
-jLabel6.setText("Telefono");
+jLabel6.setText("Tel\u00E9fono");
                                                                         
 txtTelefono.setName("txtDireccion"); 
  txtTelefono.addActionListener(new java.awt.event.ActionListener() {
@@ -229,11 +250,13 @@ jLabel8.setText("Sexo");
    jTabbedPaneGroupCliente.addTab("Registrar", jPanelRegistro);
                                                                                                                                                                 
  lblApellidoMaterno = new JLabel();
- lblApellidoMaterno.setBounds(16, 97, 102, 21);
+ lblApellidoMaterno.setFont(new Font("Tahoma", Font.BOLD, 15));
+ lblApellidoMaterno.setBounds(16, 97, 138, 21);
  lblApellidoMaterno.setText("Apellido Materno");
                                                                                                                                                                 
  txtApellidoM = new JTextField();
-txtApellidoM.setBounds(130, 92, 189, 30);
+ txtApellidoM.setFont(new Font("Tahoma", Font.PLAIN, 15));
+txtApellidoM.setBounds(155, 92, 189, 30);
 jPanelRegistro.setLayout(null);
   jPanelRegistro.add(jLabel3);
   jPanelRegistro.add(jLabel4);
@@ -251,16 +274,19 @@ jPanelRegistro.setLayout(null);
   jPanelRegistro.add(lblApellidoMaterno);
  jPanelRegistro.add(txtApellidoM);
 txtApellidoP = new JTextField();
-txtApellidoP.setBounds(130, 53, 189, 30);
+txtApellidoP.setFont(new Font("Tahoma", Font.PLAIN, 15));
+txtApellidoP.setBounds(155, 50, 189, 30);
 jPanelRegistro.add(txtApellidoP);
 
         jTabbedPaneGroupCliente.addTab("Búsqueda", jPanelBusqueda);
         
         btnEliminar = new JButton("Eliminar Registro");
-        btnEliminar.setBounds(253, 26, 159, 25);
+        btnEliminar.setFont(new Font("Tahoma", Font.PLAIN, 15));
+        btnEliminar.setBounds(424, 31, 159, 25);
         jPanelBusqueda.add(btnEliminar);
         btnBuscar = new javax.swing.JButton();
-        btnBuscar.setBounds(428, 13, 60, 43);
+        btnBuscar.setFont(new Font("Tahoma", Font.PLAIN, 15));
+        btnBuscar.setBounds(595, 24, 60, 43);
         jPanelBusqueda.add(btnBuscar);
         
                 btnBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/buscar.gif"))); // NOI18N
@@ -363,7 +389,7 @@ jPanelRegistro.add(txtApellidoP);
 				_Clientebo.Delete(id);
 				 limpiaTabla();
 		         llenaTabla();
-		         JOptionPane.showMessageDialog(this, "Se elimnó el resgistro con exito");
+		         JOptionPane.showMessageDialog(this, "Se eliminó el registro con éxito");
 		 }
 		 catch(Exception e1){
 			 System.out.println(e1);
@@ -413,31 +439,34 @@ jPanelRegistro.add(txtApellidoP);
             limpiaControles();
             limpiaTabla();
             llenaTabla();
-            JOptionPane.showMessageDialog(this, "se registro con exito");
+            JOptionPane.showMessageDialog(this, "Se registró con éxito");
         }
     }
 	
 	public boolean valida(){
         boolean sw = false;
+        String dni = txtDNI.getText();
+        String ruc = txtRUC.getText();
+        String telf = txtTelefono.getText();
         if (txtNombre.getText().equals("")) {
         	JOptionPane.showMessageDialog(this, "Ingrese Nombres");
         	return sw;
 		}
         if(txtApellidoP.getText().equals("")){
-        	JOptionPane.showMessageDialog(this, "Debe ingresar apellido paterno");
+        	JOptionPane.showMessageDialog(this, "Debe ingresar Apellido Paterno");
          	return sw;
         }
 
         if(txtApellidoM.getText().equals("")){
-        	JOptionPane.showMessageDialog(this, "Debe ingresar apellido Materno ");
+        	JOptionPane.showMessageDialog(this, "Debe ingresar Apellido Materno ");
         	return sw;
         }
         if(txtDireccion.getText().equals("")){
-        	JOptionPane.showMessageDialog(this, "Debe ingresar direccion");
+        	JOptionPane.showMessageDialog(this, "Debe ingresar Dirección");
         	return sw;
         }
         if(txtTelefono.getText().equals("")){
-        	JOptionPane.showMessageDialog(this, "Debe ingresar telefono");
+        	JOptionPane.showMessageDialog(this, "Debe ingresar Teléfono");
         	return sw;
         }
         if(txtDNI.getText().equals("")){
@@ -452,6 +481,32 @@ jPanelRegistro.add(txtApellidoP);
         	JOptionPane.showMessageDialog(this, "Debe seleccionar un sexo");
         	return sw;
         }
+        if (dni.length() != 8 || !dni.matches("\\d+")
+        	    || ruc.length() != 11 || !ruc.matches("\\d+")
+        	    || telf.length() != 9 || !telf.matches("\\d+")) {
+
+        	    if (dni.length() != 8) {
+        	        JOptionPane.showMessageDialog(this, "El campo DNI debe contener 8 dígitos");
+        	    }
+        	    if (!dni.matches("\\d+")) {
+        	        JOptionPane.showMessageDialog(this, "El campo DNI solo debe contener números");
+        	    }
+        	    if (ruc.length() != 11) {
+        	        JOptionPane.showMessageDialog(this, "El campo RUC debe contener 11 dígitos");
+        	    }
+        	    if (!ruc.matches("\\d+")) {
+        	        JOptionPane.showMessageDialog(this, "El campo RUC solo debe contener números");
+        	    }
+        	    if (telf.length() != 9) {
+        	        JOptionPane.showMessageDialog(this, "El campo Teléfono debe contener 9 dígitos");
+        	    }
+        	    if (!telf.matches("\\d+")) {
+        	        JOptionPane.showMessageDialog(this, "El campo Teléfono solo debe contener números");
+        	    }
+        	    
+        	    return sw;
+        	}
+
         
         return sw = true;
     }

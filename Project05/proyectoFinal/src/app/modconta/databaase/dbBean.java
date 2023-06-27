@@ -19,7 +19,8 @@ public class dbBean {
   public dbBean(){
 	  getConnection();
   }
- //proporciona la conexion a la base de datos utilizando el controlador sqljdbc4
+  
+ //proporciona la conexión a la base de datos utilizando el controlador sqljdbc4
   public Connection getConnection()
    {
       Connection cn= null;
@@ -50,9 +51,6 @@ public class dbBean {
                    int r = s.executeUpdate(sql);
                    return (r == 0) ? 0 : r;
                 }
-
-
-
 
    
 }

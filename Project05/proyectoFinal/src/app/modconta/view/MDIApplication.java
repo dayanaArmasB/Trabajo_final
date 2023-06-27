@@ -12,6 +12,7 @@ import javax.swing.JMenu;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Toolkit;
+import java.awt.Font;
 
 public class MDIApplication extends javax.swing.JFrame {
 
@@ -30,6 +31,7 @@ public class MDIApplication extends javax.swing.JFrame {
 
         escritorio = new javax.swing.JDesktopPane();
         jToolBar1 = new javax.swing.JToolBar();
+        jToolBar1.setFont(new Font("Segoe UI", Font.PLAIN, 20));
         btnClientes = new javax.swing.JButton();
         jSeparator6 = new javax.swing.JToolBar.Separator();
         btnEmpleados = new javax.swing.JButton();
@@ -49,8 +51,8 @@ public class MDIApplication extends javax.swing.JFrame {
         jToolBar1.setRollover(true);
         jToolBar1.setMaximumSize(new java.awt.Dimension(466, 33));
 
-        btnClientes.setFont(new java.awt.Font("Arial Black", 3, 12)); // NOI18N
-        btnClientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/User_1.png"))); // NOI18N
+        btnClientes.setFont(new Font("Arial Black", Font.BOLD | Font.ITALIC, 15)); 
+        btnClientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/User_1.png"))); 
         btnClientes.setText("Clientes");
         btnClientes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -60,8 +62,8 @@ public class MDIApplication extends javax.swing.JFrame {
         jToolBar1.add(btnClientes);
         jToolBar1.add(jSeparator6);
 
-        btnEmpleados.setFont(new java.awt.Font("Arial Black", 3, 12)); // NOI18N
-        btnEmpleados.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Business_People_01_1.png"))); // NOI18N
+        btnEmpleados.setFont(new Font("Arial Black", Font.BOLD | Font.ITALIC, 15)); 
+        btnEmpleados.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Business_People_01_1.png"))); 
         btnEmpleados.setText("Empleados ");
         btnEmpleados.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -71,8 +73,8 @@ public class MDIApplication extends javax.swing.JFrame {
         jToolBar1.add(btnEmpleados);
         jToolBar1.add(jSeparator5);
 
-        btnProveedores.setFont(new java.awt.Font("Arial Black", 3, 12)); // NOI18N
-        btnProveedores.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/contact-list.png"))); // NOI18N
+        btnProveedores.setFont(new Font("Arial Black", Font.BOLD | Font.ITALIC, 15)); 
+        btnProveedores.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/contact-list.png"))); 
         btnProveedores.setText("Proveedores");
         btnProveedores.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -82,8 +84,8 @@ public class MDIApplication extends javax.swing.JFrame {
         jToolBar1.add(btnProveedores);
         jToolBar1.add(jSeparator1);
 
-        btnEquipos.setFont(new java.awt.Font("Arial Black", 3, 12)); // NOI18N
-        btnEquipos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/backup-restore.png"))); // NOI18N
+        btnEquipos.setFont(new Font("Arial Black", Font.BOLD | Font.ITALIC, 15)); 
+        btnEquipos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/backup-restore.png"))); 
         btnEquipos.setText("Productos");
         btnEquipos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -93,8 +95,8 @@ public class MDIApplication extends javax.swing.JFrame {
         jToolBar1.add(btnEquipos);
         jToolBar1.add(jSeparator4);
 
-        btnSalir.setFont(new java.awt.Font("Arial Black", 3, 12)); // NOI18N
-        btnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Log Off.png"))); // NOI18N
+        btnSalir.setFont(new Font("Arial Black", Font.BOLD | Font.ITALIC, 15)); 
+        btnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Log Off.png"))); 
         btnSalir.setText("Salir");
         btnSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -109,14 +111,14 @@ public class MDIApplication extends javax.swing.JFrame {
         escritorioLayout.setHorizontalGroup(
         	escritorioLayout.createParallelGroup(Alignment.LEADING)
         		.addGroup(escritorioLayout.createSequentialGroup()
-        			.addComponent(jToolBar1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-        			.addContainerGap(1306, Short.MAX_VALUE))
+        			.addComponent(jToolBar1, GroupLayout.PREFERRED_SIZE, 160, GroupLayout.PREFERRED_SIZE)
+        			.addContainerGap(1295, Short.MAX_VALUE))
         );
         escritorioLayout.setVerticalGroup(
         	escritorioLayout.createParallelGroup(Alignment.LEADING)
         		.addGroup(escritorioLayout.createSequentialGroup()
-        			.addComponent(jToolBar1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-        			.addContainerGap(359, Short.MAX_VALUE))
+        			.addComponent(jToolBar1, GroupLayout.PREFERRED_SIZE, 210, GroupLayout.PREFERRED_SIZE)
+        			.addContainerGap(726, Short.MAX_VALUE))
         );
         escritorio.setLayout(escritorioLayout);
 
@@ -128,8 +130,8 @@ public class MDIApplication extends javax.swing.JFrame {
         layout.setVerticalGroup(
         	layout.createParallelGroup(Alignment.LEADING)
         		.addGroup(layout.createSequentialGroup()
-        			.addComponent(escritorio, GroupLayout.PREFERRED_SIZE, 718, GroupLayout.PREFERRED_SIZE)
-        			.addContainerGap(41, Short.MAX_VALUE))
+        			.addComponent(escritorio, GroupLayout.PREFERRED_SIZE, 936, GroupLayout.PREFERRED_SIZE)
+        			.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         getContentPane().setLayout(layout);
 
@@ -212,7 +214,7 @@ public class MDIApplication extends javax.swing.JFrame {
             }
         view.setSelected(true);
         } catch (Exception e) {
-            System.out.println("Ocurrio un error al abrir el formulario" + e.getMessage());
+            System.out.println("Ocurrió un error al abrir el formulario" + e.getMessage());
         }
     }
 

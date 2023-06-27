@@ -462,7 +462,7 @@ public class EmpleadoView extends javax.swing.JInternalFrame implements ActionLi
 			 _Empleadobo.Delete(id);
 				 limpiaTabla();
 		         llenaTabla();
-		         JOptionPane.showMessageDialog(this, "Se elimnó el resgistro con exito");
+		         JOptionPane.showMessageDialog(this, "Se elimnó el registro con exito");
 		 }
 		 catch(Exception e1){
 			 System.out.println(e1);
@@ -493,7 +493,7 @@ public class EmpleadoView extends javax.swing.JInternalFrame implements ActionLi
             limpiaControles();
             limpiaTabla();
             llenaTabla();
-            JOptionPane.showMessageDialog(this, "se registro con exito");
+            JOptionPane.showMessageDialog(this, "Se registró con éxito");
  
         }
     }
@@ -521,24 +521,24 @@ public class EmpleadoView extends javax.swing.JInternalFrame implements ActionLi
 	public boolean valida(){
         boolean sw = false;
         if (txtNombre.getText().equals("")) {
-        	JOptionPane.showMessageDialog(this, "Ingrese Nombres");
+        	JOptionPane.showMessageDialog(this, "Ingrese Nombre");
         	return sw;
 		}
         if(txtApellidoP.getText().equals("")){
-        	JOptionPane.showMessageDialog(this, "Debe ingresar apellido paterno");
+        	JOptionPane.showMessageDialog(this, "Debe ingresar Apellido Paterno");
          	return sw;
         }
 
         if(txtApellidoM.getText().equals("")){
-        	JOptionPane.showMessageDialog(this, "Debe ingresar apellido Materno ");
+        	JOptionPane.showMessageDialog(this, "Debe ingresar Apellido Materno ");
         	return sw;
         }
         if(txtDireccion.getText().equals("")){
-        	JOptionPane.showMessageDialog(this, "Debe ingresar direccion");
+        	JOptionPane.showMessageDialog(this, "Debe ingresar Dirección");
         	return sw;
         }
         if(txtTelefono.getText().equals("")){
-        	JOptionPane.showMessageDialog(this, "Debe ingresar telefono");
+        	JOptionPane.showMessageDialog(this, "Debe ingresar Teléfono");
         	return sw;
         }
         if(txtDNI.getText().equals("")){
@@ -589,7 +589,7 @@ public class EmpleadoView extends javax.swing.JInternalFrame implements ActionLi
 	        if (empleado != null) {
 	            JOptionPane.showMessageDialog(this, "Se encontró el registro con éxito");
 	        } else {
-	            JOptionPane.showMessageDialog(this, "No existe el código ingresado");
+	            JOptionPane.showMessageDialog(this, "No existe el registro con el código ingresado");
 	        }
 	    } catch (Exception e1) {
 	        e1.printStackTrace();

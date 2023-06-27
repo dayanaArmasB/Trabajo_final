@@ -317,7 +317,7 @@ public class FrmProductos extends javax.swing.JInternalFrame implements ActionLi
            return boolIsValid;
         }
         if(txtDescripcion.getText().equals("")){
-              JOptionPane.showMessageDialog(this, "Ingresa la descripción");
+              JOptionPane.showMessageDialog(this, "Ingrese una descripción");
               return boolIsValid;
         }
         
@@ -331,7 +331,7 @@ public class FrmProductos extends javax.swing.JInternalFrame implements ActionLi
 	        if (producto != null) {
 	            JOptionPane.showMessageDialog(this, "Se encontró el registro con éxito");
 	        } else {
-	            JOptionPane.showMessageDialog(this, "No existe el código ingresado");
+	            JOptionPane.showMessageDialog(this, "No existe el registro con el código ingresado");
 	        }
 	    } catch (Exception ex) {
 	        ex.printStackTrace();
@@ -372,7 +372,7 @@ public class FrmProductos extends javax.swing.JInternalFrame implements ActionLi
               limpiaControles();
               limpiaTabla();
               llenaTabla();
-              JOptionPane.showMessageDialog(this, "se registro con exito");
+              JOptionPane.showMessageDialog(this, "Se registro con exito");
         }
 	}
 	protected void do_btnEliminarReg_actionPerformed(ActionEvent e) {
@@ -381,7 +381,7 @@ public class FrmProductos extends javax.swing.JInternalFrame implements ActionLi
 			 _Productobo.Delete(id);
 				 limpiaTabla();
 		         llenaTabla();
-		         JOptionPane.showMessageDialog(this, "Se elimnó el resgistro con exito");
+		         JOptionPane.showMessageDialog(this, "Se elimnó el resgistro con éxito");
 		 }
 		 catch(Exception e1){
 			 System.out.println(e1);
