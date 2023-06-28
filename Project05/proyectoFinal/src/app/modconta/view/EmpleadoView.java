@@ -103,11 +103,11 @@ public class EmpleadoView extends javax.swing.JInternalFrame implements ActionLi
 
         jLabel3.setText("Nombre");
         jPanel4.add(jLabel3);
-        jLabel3.setBounds(30, 19, 60, 14);
+        jLabel3.setBounds(30, 35, 60, 14);
 
         jLabel4.setText("Apellido Paterno");
         jPanel4.add(jLabel4);
-        jLabel4.setBounds(30, 56, 130, 20);
+        jLabel4.setBounds(28, 89, 130, 20);
 
         txtNombre.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
@@ -115,7 +115,7 @@ public class EmpleadoView extends javax.swing.JInternalFrame implements ActionLi
             }
         });
         jPanel4.add(txtNombre);
-        txtNombre.setBounds(156, 12, 330, 30);
+        txtNombre.setBounds(166, 28, 330, 30);
 
         txtApellidoP.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -128,11 +128,11 @@ public class EmpleadoView extends javax.swing.JInternalFrame implements ActionLi
             }
         });
         jPanel4.add(txtApellidoP);
-        txtApellidoP.setBounds(156, 52, 330, 30);
+        txtApellidoP.setBounds(182, 85, 330, 30);
 
         jLabel6.setText("DNI");
         jPanel4.add(jLabel6);
-        jLabel6.setBounds(30, 143, 50, 20);
+        jLabel6.setBounds(30, 193, 50, 20);
 
         txtDNI.setName("txtDireccion"); // NOI18N
         txtDNI.addActionListener(new java.awt.event.ActionListener() {
@@ -141,11 +141,11 @@ public class EmpleadoView extends javax.swing.JInternalFrame implements ActionLi
             }
         });
         jPanel4.add(txtDNI);
-        txtDNI.setBounds(157, 133, 110, 30);
+        txtDNI.setBounds(129, 189, 110, 30);
 
         jLabel7.setText("Celular");
         jPanel4.add(jLabel7);
-        jLabel7.setBounds(279, 142, 65, 23);
+        jLabel7.setBounds(30, 253, 65, 23);
 
         txtTelefono.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -153,19 +153,19 @@ public class EmpleadoView extends javax.swing.JInternalFrame implements ActionLi
             }
         });
         jPanel4.add(txtTelefono);
-        txtTelefono.setBounds(356, 133, 130, 30);
+        txtTelefono.setBounds(129, 250, 130, 30);
 
         jLabel9.setText("Dirección");
         jPanel4.add(jLabel9);
-        jLabel9.setBounds(30, 223, 74, 14);
+        jLabel9.setBounds(35, 361, 74, 14);
         jPanel4.add(txtDireccion);
-        txtDireccion.setBounds(130, 215, 330, 30);
+        txtDireccion.setBounds(130, 354, 330, 30);
         jPanel4.add(jLabel11);
         jLabel11.setBounds(0, 0, 0, 0);
 
         jLabel8.setText("Sexo");
         jPanel4.add(jLabel8);
-        jLabel8.setBounds(30, 179, 50, 20);
+        jLabel8.setBounds(30, 300, 50, 20);
 
         jPanel1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(0, 51, 51)));
 
@@ -196,20 +196,20 @@ public class EmpleadoView extends javax.swing.JInternalFrame implements ActionLi
         jPanel1.setLayout(jPanel1Layout);
 
         jPanel4.add(jPanel1);
-        jPanel1.setBounds(130, 174, 330, 30);
+        jPanel1.setBounds(129, 300, 330, 30);
 
         jTabbedPane1.addTab("Registrar", jPanel4);
         {
         	txtApellidoM = new JTextField();
         	txtApellidoM.setFont(new Font("Tahoma", Font.PLAIN, 15));
-        	txtApellidoM.setBounds(156, 95, 330, 30);
+        	txtApellidoM.setBounds(182, 131, 330, 30);
         	jPanel4.add(txtApellidoM);
         }
         {
         	lblApellidoMaterno = new JLabel();
         	lblApellidoMaterno.setFont(new Font("Tahoma", Font.BOLD, 15));
         	lblApellidoMaterno.setText("Apellido Materno");
-        	lblApellidoMaterno.setBounds(30, 97, 130, 20);
+        	lblApellidoMaterno.setBounds(28, 135, 130, 20);
         	jPanel4.add(lblApellidoMaterno);
         }
 
@@ -549,6 +549,9 @@ public class EmpleadoView extends javax.swing.JInternalFrame implements ActionLi
 	
 	public boolean valida(){
         boolean sw = false;
+        String dni = txtDNI.getText();
+        String telf = txtTelefono.getText();
+        String sueldo = txtSueldo.getText();
         if (txtNombre.getText().equals("")) {
         	JOptionPane.showMessageDialog(this, "Ingrese Nombre");
         	return sw;
@@ -583,6 +586,32 @@ public class EmpleadoView extends javax.swing.JInternalFrame implements ActionLi
         	JOptionPane.showMessageDialog(this, "Debe ingresar sueldo");
         	return sw;
         }
+     // "\\d+" es una expresion regular que significa un digito o mas 
+        if (dni.length() != 8 || !dni.matches("\\d+")
+        	    || telf.length() != 9 || !telf.matches("\\d+")
+        	   || sueldo.length() != 4 || !sueldo.matches("\\d+")){
+
+        	    if (dni.length() != 8) {
+        	        JOptionPane.showMessageDialog(this, "El campo DNI debe contener 8 dígitos");
+        	    }
+        	    if (!dni.matches("\\d+")) {
+        	        JOptionPane.showMessageDialog(this, "El campo DNI solo debe contener números");
+        	    }
+        	    if (telf.length() != 9) {
+        	        JOptionPane.showMessageDialog(this, "El campo Teléfono debe contener 9 dígitos");
+        	    }
+        	    if (!telf.matches("\\d+")) {
+        	        JOptionPane.showMessageDialog(this, "El campo Teléfono solo debe contener números");
+        	    }
+        	    if (sueldo.length() != 4) {
+        	        JOptionPane.showMessageDialog(this, "El campo Sueldo debe contener 4 dígitos");
+        	    }
+        	    if (!sueldo.matches("\\d+")) {
+        	        JOptionPane.showMessageDialog(this, "El campo Sueldo solo debe contener números");
+        	    }
+        	    
+        	    return sw;
+        	}
         
         return sw = true;
     }

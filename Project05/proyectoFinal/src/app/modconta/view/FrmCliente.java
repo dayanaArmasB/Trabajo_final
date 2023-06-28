@@ -481,6 +481,7 @@ jPanelRegistro.add(txtApellidoP);
         	JOptionPane.showMessageDialog(this, "Debe seleccionar un sexo");
         	return sw;
         }
+        // "\\d+" es una expresion regular que significa un digito o mas 
         if (dni.length() != 8 || !dni.matches("\\d+")
         	    || ruc.length() != 11 || !ruc.matches("\\d+")
         	    || telf.length() != 9 || !telf.matches("\\d+")) {

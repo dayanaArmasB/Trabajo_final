@@ -361,6 +361,9 @@ public class FrmProveedor extends javax.swing.JInternalFrame implements ActionLi
     }
     public boolean valida(){
         boolean sw = false;
+        String cta = txtCta.getText();
+        String ruc = txtRUC.getText();
+        String telf = txtTelefono.getText();
         if (txtNombre.getText().equals("")) {
         	JOptionPane.showMessageDialog(this, "Ingrese Nombres");
         	return sw;
@@ -382,6 +385,31 @@ public class FrmProveedor extends javax.swing.JInternalFrame implements ActionLi
         	JOptionPane.showMessageDialog(this, "Debe ingresar número de cuenta");
         	return sw;
         }
+        if (cta.length() != 8 || !cta.matches("\\d+")
+        	    || ruc.length() != 11 || !ruc.matches("\\d+")
+        	    || telf.length() != 9 || !telf.matches("\\d+")) {
+
+        	    if (cta.length() != 21) {
+        	        JOptionPane.showMessageDialog(this, "El campo de cuenta corriente debe contener 21 dígitos");
+        	    }
+        	    if (!cta.matches("\\d+")) {
+        	        JOptionPane.showMessageDialog(this, "El campo de cuenta corriente solo debe contener números");
+        	    }
+        	    if (ruc.length() != 20) {
+        	        JOptionPane.showMessageDialog(this, "El campo RUC debe contener 20 dígitos");
+        	    }
+        	    if (!ruc.matches("\\d+")) {
+        	        JOptionPane.showMessageDialog(this, "El campo RUC solo debe contener números");
+        	    }
+        	    if (telf.length() != 9) {
+        	        JOptionPane.showMessageDialog(this, "El campo Teléfono debe contener 9 dígitos");
+        	    }
+        	    if (!telf.matches("\\d+")) {
+        	        JOptionPane.showMessageDialog(this, "El campo Teléfono solo debe contener números");
+        	    }
+        	    
+        	    return sw;
+        	}
     
         return sw = true;
     }

@@ -14,6 +14,7 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Font;
+import javax.swing.SpinnerNumberModel;
 
 
 public class FrmProductos extends javax.swing.JInternalFrame implements ActionListener {
@@ -23,7 +24,8 @@ public class FrmProductos extends javax.swing.JInternalFrame implements ActionLi
     int idProd; 
    
     public FrmProductos() {
-        initComponents();    
+        initComponents();
+
         dtm = (DefaultTableModel)tblProductos.getModel();
         _Productobo = new ProductoBO();
         llenaTabla();    
@@ -85,15 +87,15 @@ public class FrmProductos extends javax.swing.JInternalFrame implements ActionLi
                                                                         
                                                                                 jLabel4.setText("Stock");
                                                                                 
-                                                                                        spinstock.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+                                                                                        spinstock.setModel(new SpinnerNumberModel(new Integer(1), new Integer(1), null, new Integer(1)));
                                                                                         
                                                                                                 jLabel11.setText("Existencias maximas");
                                                                                                 
-                                                                                                        spinstockMAX.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+                                                                                                        spinstockMAX.setModel(new SpinnerNumberModel(new Integer(1), new Integer(1), null, new Integer(1)));
                                                                                                         
                                                                                                                 jLabel12.setText("Existencias minimas");
                                                                                                                 
-                                                                                                                        spinstockMIN.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+                                                                                                                        spinstockMIN.setModel(new SpinnerNumberModel(new Integer(1), new Integer(1), null, new Integer(1)));
                                                                                                                                 lblDescipcion = new JLabel("Descipcion");
                                                                                                                                 lblDescipcion.setFont(new Font("Tahoma", Font.BOLD, 15));
                                                                                                                                 btnRegistrar = new JButton("Registrar");
@@ -310,9 +312,9 @@ public class FrmProductos extends javax.swing.JInternalFrame implements ActionLi
     public void limpiaControles(){
         txtNombreProduc.setText("");
         txtDescripcion.setText("");
-        spinstock.setValue(0);
-        spinstockMAX.setValue(0);
-        spinstockMIN.setValue(0);
+        spinstock.setValue(1);
+        spinstockMAX.setValue(1);
+        spinstockMIN.setValue(1);
         txtNombreProduc.requestFocus();
     }
       
