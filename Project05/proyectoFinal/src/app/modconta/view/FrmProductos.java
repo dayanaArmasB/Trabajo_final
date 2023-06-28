@@ -55,6 +55,7 @@ public class FrmProductos extends javax.swing.JInternalFrame implements ActionLi
         txtNombreProduc = new javax.swing.JTextField();
         txtNombreProduc.setFont(new Font("Tahoma", Font.PLAIN, 15));
         btnLimpiar = new javax.swing.JButton();
+        btnLimpiar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         btnLimpiar.setFont(new Font("Tahoma", Font.PLAIN, 15));
         jLabel4 = new javax.swing.JLabel();
         jLabel4.setFont(new Font("Tahoma", Font.BOLD, 15));
@@ -100,6 +101,7 @@ public class FrmProductos extends javax.swing.JInternalFrame implements ActionLi
                                                                                                                                 lblDescipcion = new JLabel("Descipcion");
                                                                                                                                 lblDescipcion.setFont(new Font("Tahoma", Font.BOLD, 15));
                                                                                                                                 btnRegistrar = new JButton("Registrar");
+                                                                                                                                btnRegistrar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
                                                                                                                                 btnRegistrar.setFont(new Font("Tahoma", Font.PLAIN, 15));
                                                                                                                                 btnRegistrar.addActionListener(this);
                                                                                                                                 {
@@ -198,6 +200,7 @@ public class FrmProductos extends javax.swing.JInternalFrame implements ActionLi
 
         jTabbedPane1.addTab("Búqueda", jPanelBusqueda);
                 jButton2 = new javax.swing.JButton();
+                jButton2.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
                 jButton2.setFont(new Font("Tahoma", Font.PLAIN, 15));
                 jButton2.setBounds(471, 13, 60, 46);
                 jPanelBusqueda.add(jButton2);
@@ -205,6 +208,7 @@ public class FrmProductos extends javax.swing.JInternalFrame implements ActionLi
                         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/buscar.gif"))); // NOI18N
                         
                         btnEliminarReg = new JButton("Eliminar registro");
+                        btnEliminarReg.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
                         btnEliminarReg.setFont(new Font("Tahoma", Font.PLAIN, 15));
                         btnEliminarReg.addActionListener(this);
                         btnEliminarReg.setBounds(324, 27, 135, 25);
@@ -219,6 +223,7 @@ public class FrmProductos extends javax.swing.JInternalFrame implements ActionLi
         lblTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTitulo.setText("PRODUCTOS");
         btnSalir1 = new javax.swing.JButton();
+        btnSalir1.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         btnSalir1.setFont(new Font("Tahoma", Font.PLAIN, 15));
         
                 btnSalir1.setText("Salir");

@@ -44,6 +44,7 @@ public class FrmProveedor extends javax.swing.JInternalFrame implements ActionLi
     private void initComponents() {
         lblTitulo = new javax.swing.JLabel();
         btnSalir = new javax.swing.JButton();
+        btnSalir.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         btnSalir.setFont(new Font("Tahoma", Font.PLAIN, 15));
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jTabbedPane1.setFont(new Font("Tahoma", Font.PLAIN, 15));
@@ -163,12 +164,14 @@ public class FrmProveedor extends javax.swing.JInternalFrame implements ActionLi
                                                                                 lblCuentaCorriente.setBounds(99, 332, 138, 21);
                                                                                 jPanel4.add(lblCuentaCorriente);
                                                                                 btnRegistrar = new javax.swing.JButton();
+                                                                                btnRegistrar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
                                                                                 btnRegistrar.setFont(new Font("Tahoma", Font.PLAIN, 15));
                                                                                 btnRegistrar.setBounds(735, 126, 90, 30);
                                                                                 jPanel4.add(btnRegistrar);
                                                                                 
                                                                                         btnRegistrar.setText("Registrar");
                                                                                         btnLimpiar = new javax.swing.JButton();
+                                                                                        btnLimpiar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
                                                                                         btnLimpiar.setFont(new Font("Tahoma", Font.PLAIN, 15));
                                                                                         btnLimpiar.setBounds(735, 169, 90, 30);
                                                                                         jPanel4.add(btnLimpiar);
@@ -188,6 +191,7 @@ public class FrmProveedor extends javax.swing.JInternalFrame implements ActionLi
         jTabbedPane1.addTab("Búsqueda", jPanel3);
         {
         	btnEliminar = new JButton("Eliminar registro");
+        	btnEliminar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         	btnEliminar.setFont(new Font("Tahoma", Font.PLAIN, 15));
         	btnEliminar.addActionListener(this);
         	btnEliminar.setBounds(217, 27, 190, 23);
@@ -195,10 +199,11 @@ public class FrmProveedor extends javax.swing.JInternalFrame implements ActionLi
         }
         
         button = new JButton();
+        button.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         button.setFont(new Font("Tahoma", Font.PLAIN, 15));
         button.addActionListener(this);
         button.setIcon(new ImageIcon(FrmProveedor.class.getResource("/Icons/buscar.gif")));
-        button.setBounds(435, 18, 60, 32);
+        button.setBounds(431, 11, 60, 51);
         jPanel3.add(button);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

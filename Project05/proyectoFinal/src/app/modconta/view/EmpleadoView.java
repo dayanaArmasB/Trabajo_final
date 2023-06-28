@@ -90,6 +90,7 @@ public class EmpleadoView extends javax.swing.JInternalFrame implements ActionLi
         tblEmpleado = new javax.swing.JTable();
         tblEmpleado.setFont(new Font("Tahoma", Font.PLAIN, 17));
         btnSalir = new javax.swing.JButton();
+        btnSalir.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         btnSalir.setFont(new Font("Tahoma", Font.PLAIN, 15));
         lblTitulo = new javax.swing.JLabel();
         setIconifiable(true);
@@ -299,12 +300,14 @@ public class EmpleadoView extends javax.swing.JInternalFrame implements ActionLi
         jTabbedPane1.addTab("Búsqueda", jPanel3);
         
         btnEliminar = new JButton("Eliminar registro");
+        btnEliminar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         btnEliminar.setFont(new Font("Tahoma", Font.PLAIN, 15));
         btnEliminar.addActionListener(this);
         btnEliminar.setBounds(380, 24, 211, 23);
         jPanel3.add(btnEliminar);
         
         button = new JButton();
+        button.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         button.setFont(new Font("Tahoma", Font.PLAIN, 17));
         button.addActionListener(new ActionListener() {
         
@@ -329,6 +332,7 @@ public class EmpleadoView extends javax.swing.JInternalFrame implements ActionLi
         lblTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTitulo.setText("EMPLEADOS");
         btnRegistrar = new javax.swing.JButton();
+        btnRegistrar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         btnRegistrar.setFont(new Font("Tahoma", Font.PLAIN, 15));
         
                 btnRegistrar.setText("Registrar");
@@ -343,6 +347,7 @@ public class EmpleadoView extends javax.swing.JInternalFrame implements ActionLi
                     }
                 });
         btnLimpiar = new javax.swing.JButton();
+        btnLimpiar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         btnLimpiar.setFont(new Font("Tahoma", Font.PLAIN, 15));
         
                 btnLimpiar.setText("Limpiar");

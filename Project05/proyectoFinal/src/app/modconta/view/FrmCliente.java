@@ -42,12 +42,14 @@ public class FrmCliente extends javax.swing.JInternalFrame implements ActionList
         buttonGroup.add(jRadioButton1);
         buttonGroup.add(jRadioButton2);
         btnRegistrar = new javax.swing.JButton();
+        btnRegistrar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         btnRegistrar.setFont(new Font("Tahoma", Font.PLAIN, 15));
         btnRegistrar.setBounds(606, 145, 90, 30);
         jPanelRegistro.add(btnRegistrar);
         
                 btnRegistrar.setText("Registrar");
                 btnLimpiar = new javax.swing.JButton();
+                btnLimpiar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
                 btnLimpiar.setFont(new Font("Tahoma", Font.PLAIN, 15));
                 btnLimpiar.setBounds(606, 188, 90, 30);
                 jPanelRegistro.add(btnLimpiar);
@@ -80,6 +82,7 @@ public class FrmCliente extends javax.swing.JInternalFrame implements ActionList
         lblTitulo = new javax.swing.JLabel();
         lblTitulo.setBounds(300, 24, 574, 29);
         btnSalir = new javax.swing.JButton();
+        btnSalir.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         btnSalir.setFont(new Font("Tahoma", Font.PLAIN, 15));
         btnSalir.setBounds(1089, 572, 73, 25);
         jTabbedPaneGroupCliente = new javax.swing.JTabbedPane();
@@ -281,10 +284,12 @@ jPanelRegistro.add(txtApellidoP);
         jTabbedPaneGroupCliente.addTab("Búsqueda", jPanelBusqueda);
         
         btnEliminar = new JButton("Eliminar Registro");
+        btnEliminar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         btnEliminar.setFont(new Font("Tahoma", Font.PLAIN, 15));
         btnEliminar.setBounds(424, 31, 159, 25);
         jPanelBusqueda.add(btnEliminar);
         btnBuscar = new javax.swing.JButton();
+        btnBuscar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         btnBuscar.setFont(new Font("Tahoma", Font.PLAIN, 15));
         btnBuscar.setBounds(595, 24, 60, 43);
         jPanelBusqueda.add(btnBuscar);
