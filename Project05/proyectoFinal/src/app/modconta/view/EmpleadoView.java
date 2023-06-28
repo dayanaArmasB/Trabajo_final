@@ -18,6 +18,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.ImageIcon;
 import java.awt.Font;
+import java.awt.Cursor;
 
 public class EmpleadoView extends javax.swing.JInternalFrame implements ActionListener {
 	EmpleadoBO _Empleadobo;
@@ -284,7 +285,7 @@ public class EmpleadoView extends javax.swing.JInternalFrame implements ActionLi
         	}
         ));
         tblEmpleado.setToolTipText("");
-        tblEmpleado.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        tblEmpleado.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         tblEmpleado.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tblClienteMouseClicked(evt);

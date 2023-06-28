@@ -46,7 +46,7 @@ public class FrmTemas extends javax.swing.JInternalFrame implements ActionListen
         cmbFiltro.setFont(new Font("Tahoma", Font.PLAIN, 15));
         jLabel2 = new javax.swing.JLabel();
         jLabel2.setFont(new Font("Tahoma", Font.PLAIN, 15));
-        jLabel1.setFont(new Font("Tahoma", Font.BOLD, 24)); // NOI18N
+        jLabel1.setFont(new Font("Tahoma", Font.BOLD, 24));
         jLabel1.setText("PERSONALIZACIÓN DE TEMAS");
         cmbFiltro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

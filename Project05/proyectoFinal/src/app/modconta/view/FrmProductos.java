@@ -15,6 +15,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Font;
 import javax.swing.SpinnerNumberModel;
+import java.awt.Cursor;
 
 
 public class FrmProductos extends javax.swing.JInternalFrame implements ActionListener {
@@ -184,7 +185,7 @@ public class FrmProductos extends javax.swing.JInternalFrame implements ActionLi
         ));
         tblProductos.getColumnModel().getColumn(5).setResizable(false);
         tblProductos.setToolTipText("");
-        tblProductos.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        tblProductos.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         tblProductos.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tblEquipoMouseClicked(evt);

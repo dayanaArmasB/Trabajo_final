@@ -20,6 +20,7 @@ import java.awt.event.ActionEvent;
 import javax.swing.ImageIcon;
 import java.awt.Font;
 import javax.swing.LayoutStyle.ComponentPlacement;
+import java.awt.Cursor;
 
 public class FrmProveedor extends javax.swing.JInternalFrame implements ActionListener {
 	ProveedorBO _Proveedorbo;
@@ -73,7 +74,7 @@ public class FrmProveedor extends javax.swing.JInternalFrame implements ActionLi
 
         jPanel3.setLayout(null);
         tblProveedor.setToolTipText("");
-        tblProveedor.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        tblProveedor.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         tblProveedor.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tblClienteMouseClicked(evt);
