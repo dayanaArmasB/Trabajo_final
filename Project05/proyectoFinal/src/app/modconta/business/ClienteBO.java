@@ -6,7 +6,7 @@ import app.modconta.dataaccess.ClienteRepository;
 import app.modconta.entity.Cliente;
 
 public class ClienteBO implements IGeneralBO<Cliente>{
-	
+	//VARIABLE QUE AYUDA A CONECTAR LA CAPA BUSINESS CON DATAACCESS
 	ClienteRepository _doClienteRep;
 	
 	public ClienteBO() {

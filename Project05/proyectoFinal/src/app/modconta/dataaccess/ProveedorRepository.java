@@ -23,7 +23,7 @@ public class ProveedorRepository implements IRepository<Proveedor> {
         String sql = "";
         dbBean con = new dbBean();
         try{
-        	sql = "insert into proveedor values ('" + p.getNombre() + "', '"+  p.getTelefono()+"', 'S', '"+p.getDireccion()+"',  '"+  p.getRUC() + "', '"+p.getCTA() +"')" ;
+        	sql = "insert into proveedor (nombre,telefono,estado,direccion,RUC,cta) values ('" + p.getNombre() + "','"+p.getTelefono()+"', 'S', '"+p.getDireccion()+"',  '"+  p.getRUC() + "', '"+p.getCTA() +"')" ;
         	Statement s = con.getConnection().createStatement();
              s.executeUpdate(sql);
              con.close();

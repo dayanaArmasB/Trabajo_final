@@ -21,7 +21,9 @@ import java.awt.Cursor;
 
 
 public class FrmCliente extends javax.swing.JInternalFrame implements ActionListener {
+	//objeto de la clase CLIENTEBO dentro del package business para el acceso a los metodos de tratamiento de datos
 	ClienteBO _Clientebo;
+	//clase de una tabla para la asignacion o creacion de modelo mediante codigo 
     DefaultTableModel _DefaultTableModel;
     boolean sw = false;
     String cad = "";
@@ -319,8 +321,6 @@ jPanelRegistro.add(txtApellidoP);
         }
     }
 
-    
-
     private void txtRUCActionPerformed(java.awt.event.ActionEvent evt) {
         
     }
@@ -342,15 +342,10 @@ jPanelRegistro.add(txtApellidoP);
        
     }
 
-    
-
     private void tblClienteMouseClicked(java.awt.event.MouseEvent evt) {
 
     }
     
-
-    
-
     private javax.swing.JButton btnLimpiar;
     private javax.swing.JButton btnRegistrar;
     private javax.swing.JButton btnSalir;
@@ -415,8 +410,6 @@ jPanelRegistro.add(txtApellidoP);
 	        e.printStackTrace();
 	        JOptionPane.showMessageDialog(this, "Ocurrió un error al buscar el registro");
 	    }
-		
-		
     }
 	
     private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {
@@ -488,7 +481,7 @@ jPanelRegistro.add(txtApellidoP);
         }
         // "\\d+" es una expresion regular que significa un digito o mas 
         if (dni.length() != 8 || !dni.matches("\\d+")
-        	    || ruc.length() != 11 || !ruc.matches("\\d+")
+        	    || ruc.length() != 9 || !ruc.matches("\\d+")
         	    || telf.length() != 9 || !telf.matches("\\d+")) {
 
         	    if (dni.length() != 8) {
@@ -497,8 +490,8 @@ jPanelRegistro.add(txtApellidoP);
         	    if (!dni.matches("\\d+")) {
         	        JOptionPane.showMessageDialog(this, "El campo DNI solo debe contener números");
         	    }
-        	    if (ruc.length() != 11) {
-        	        JOptionPane.showMessageDialog(this, "El campo RUC debe contener 11 dígitos");
+        	    if (ruc.length() != 9) {
+        	        JOptionPane.showMessageDialog(this, "El campo RUC debe contener 9 dígitos");
         	    }
         	    if (!ruc.matches("\\d+")) {
         	        JOptionPane.showMessageDialog(this, "El campo RUC solo debe contener números");

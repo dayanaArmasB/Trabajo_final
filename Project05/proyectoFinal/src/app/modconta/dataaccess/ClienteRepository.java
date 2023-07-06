@@ -19,11 +19,15 @@ public class ClienteRepository implements IRepository<Cliente> {
 	@Override
 	public void Create(Cliente p) {
         String sql = "";
+        //creamos la conexion a la base de datos - inicia 
         dbBean con = new dbBean();
         try{
+        	//DECLARACION DE LA QUERY CREATE 
         	sql = "insert into clientes (ap_paterno,ap_materno,nombre,telefono,direccion,estado,sexo,DNI,RUC) values ('" + p.getApellidoP()+"','"+p.getApellidoM()+"', '"+ p.getNombre() + "', '"+  p.getTelefono()+"', '"+p.getDireccion()+"', 'S','"+ p.getSexo().charAt(0)+"', '"+  p.getDNI() + "', '"+p.getRUC() +"')" ;
+        	//SE CREA UNA SENTENCIA 
         	Statement s = con.getConnection().createStatement();
              s.executeUpdate(sql);
+             //SE CIERRA LA CONEXION
              con.close();
         }catch(java.sql.SQLException e){
             e.printStackTrace();
@@ -39,10 +43,14 @@ public class ClienteRepository implements IRepository<Cliente> {
 	public void Delete(int id) {
 		int resultado = 0;
         String sql = "";
+        //CREA LA CONEXION A LA BD
         dbBean con = new dbBean();   
         try{
+        	//DECLARAMOS LA QUERY DELETE 
         	sql = "delete from clientes  where idCliente = '"+id+"'";
+        	//SE EEJCUTA LA QUERY 
 	        resultado = con.updateSQL(sql);
+	        //SE CIERRA LA CONEXION
 	        con.close();
         }catch(java.sql.SQLException e){
             e.printStackTrace();
@@ -53,8 +61,11 @@ public class ClienteRepository implements IRepository<Cliente> {
 	@Override
 	public Cliente Find(int code) {
 	
+		//DECLARA LA QUERY 
 		    String sql = "SELECT * FROM clientes WHERE idcliente = ?";
+		    //EMPIEZA LA CONEXION
 		    dbBean con = new dbBean();
+		    //SE CREA UN OBJETO DE LA CLASE CLIENTE 
 		    Cliente cliente = null;
 		    
 		    try {
@@ -64,12 +75,13 @@ public class ClienteRepository implements IRepository<Cliente> {
 		        stmt.setInt(1, code);
 		        //se ejcuta la consulta 
 		        ResultSet rs = stmt.executeQuery();
-		        //si se encuenta la consulta
+		        //si se encuenta la consulta (.NEXT BUCLE EN SQL)
+		        //.NEXT ES NATIVO DEL DRIVER
 		        if (rs.next()) {
 		            cliente = new Cliente();
 		            cliente.setIdCliente(rs.getInt("idcliente"));
 		        }
-		        
+		    //CIERRA LA CONEXION
 		        con.close();
 		    } catch (SQLException e) {
 		        e.printStackTrace();
@@ -81,15 +93,21 @@ public class ClienteRepository implements IRepository<Cliente> {
 	@Override
 	public List<Cliente> readAll() {
         List<Cliente> ClientesCollection = new ArrayList<>();
+        //SE CREA LA CONEXION
         dbBean con = new dbBean();
+        //CREACION UNA PREPACION DE SENTENCIA
       PreparedStatement pe = null;
      try {
+    	 //SE CREA LA CONEXION CON EL PROCEDIMIENTO ALMACENADO 
          pe = con.dbCon.prepareCall("usp_clientes_listar");
+         //EL PROCEDIMENTO ALMACENADO TIENE COMO QUERY "SELECT * FROM CLIENTES"
      } catch (SQLException ex) {
          Logger.getLogger(ClienteRepository.class.getName()).log(Level.SEVERE, null, ex);
      }
       try{
+    	  //EJECUCION DE LA QUERY DEL PROCEDIMIENTO ALMACENADO
             ResultSet resultado = pe.executeQuery();
+            //ENTRA A UN BUCLE PARA LA LECTURA DE LOS DATOS DE CADA REGISTRO EN CADA CAMPO
             while(resultado.next()){
                 Cliente clien;
                 clien = new Cliente();
@@ -105,11 +123,12 @@ public class ClienteRepository implements IRepository<Cliente> {
                 clien.setRUC(resultado.getString(10));
                 ClientesCollection.add(clien);     
             }
+            //SE CIERRA LA CONEXION 
             con.close();
         }catch(java.sql.SQLException e){
             e.printStackTrace();
         }
-
+      	//
         return ClientesCollection;  
 	}
 

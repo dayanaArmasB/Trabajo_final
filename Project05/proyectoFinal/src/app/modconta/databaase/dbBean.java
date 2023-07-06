@@ -37,7 +37,7 @@ public class dbBean {
   public void close() throws SQLException{
         dbCon.close();
   }
-//ejecuta las consultas con un obejto statement (este es propio del driver de coexion a la base de datos
+//ejecuta las consultas con un objeto statement (este es propio del driver de coexion a la base de datos
   public ResultSet execSQL(String sql) throws SQLException{
                     Statement s = dbCon.createStatement();
                     ResultSet r = s.executeQuery(sql);
@@ -45,7 +45,7 @@ public class dbBean {
   
   }
   
-  //ejecuta una actualizacion usando el objeto statement 
+  //ejecuta una actualizacion usando el objeto statement(objeto nativo del driver - INSERT - UPDATE - DELETE) 
   public int updateSQL(String sql) throws SQLException{
                    Statement s = dbCon.createStatement();
                    int r = s.executeUpdate(sql);

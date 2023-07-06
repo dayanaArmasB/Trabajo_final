@@ -14,18 +14,7 @@ public class Proveedor {
     private String CTA;
     private String Estado;
 
-    public Proveedor() {
-    }
 
-	public Proveedor(int idProveedor, String nombre, String telefono, String direccion, String rUC, String cTA, String estado) {
-		IdProveedor = idProveedor;
-		Nombre = nombre;
-		Telefono = telefono;
-		Direccion = direccion;
-		RUC = rUC;
-		CTA = cTA;
-		Estado = estado;
-	}
 
 	public int getIdProveedor() {
 		return IdProveedor;
